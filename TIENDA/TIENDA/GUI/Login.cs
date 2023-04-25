@@ -44,6 +44,17 @@ namespace TIENDA.GUI
         {
 
         }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
 }
