@@ -1,0 +1,16 @@
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.AssemblyReference.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Login.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Splash.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.Properties.Resources.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.GenerateResource.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CoreCompileInputs.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.exe.config
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.exe
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\DataManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\SessionManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\DataManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\SessionManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.exe
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.pdb
