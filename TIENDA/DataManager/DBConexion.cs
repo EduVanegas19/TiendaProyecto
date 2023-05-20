@@ -7,11 +7,11 @@ namespace DataManager
     {
         protected SqlConnection _CONEXION = new SqlConnection();
 
-        static string servidor = "localhost";
-        static string BD = "Tienda";
-        static string usuario = "usuario";
-        static string password = "123";
-        static string puerto = "1433";
+        //static string servidor = "localhost";
+        //static string BD = "Tienda";
+        //static string usuario = "usuario";
+        //static string password = "123";
+        //static string puerto = "1433";
 
         String _CadenaConexion = "Data Source=localhost;Initial Catalog = Tienda; User ID = usuario; Password=123;Application Name = MyApp";
 
