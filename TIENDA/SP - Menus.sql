@@ -79,3 +79,23 @@ BEGIN
 END
 
 exec usp_ObtenerPermisos 2
+
+select * from subopciones
+
+select * from permisos
+
+SELECT DISTINCT op.* FROM permisos p
+			JOIN roles r ON r.id_rol = p.id_rol
+			JOIN subopciones so ON so.id_subopcion = p.id_subopcion
+			JOIN opciones op ON op.id_opcion = so.id_opcion
+			JOIN usuarios u ON u.id_rol = p.id_rol AND p.estado=1
+			WHERE u.id_usuario = 2
+
+SELECT DISTINCT u.id_usuario, u.usuario, so.nombre, so.nombreFormulario FROM permisos p
+			JOIN roles r ON r.id_rol = p.id_rol
+			JOIN subopciones so ON so.id_subopcion = p.id_subopcion
+			JOIN opciones op ON op.id_opcion = so.id_opcion
+			JOIN usuarios u ON u.id_rol = p.id_rol AND p.estado=1
+			WHERE u.id_usuario = 1
+
+

@@ -9,6 +9,7 @@ namespace TIENDA.CLS
 {
     internal class AppManager:ApplicationContext
     {
+
         private Boolean Splash()
         {
             Boolean Resultado = true;
@@ -35,6 +36,7 @@ namespace TIENDA.CLS
         }
         public AppManager()
         {
+
             if (Splash())
             {
                 if (Login())

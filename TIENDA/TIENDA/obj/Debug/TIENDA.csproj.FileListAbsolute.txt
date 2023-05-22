@@ -14,3 +14,9 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\Sessio
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.exe
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.exe.config
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Main.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.frmCrearUsuario.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.frmEditarUsuario.resources

@@ -1,0 +1,11 @@
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\General.exe.config
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\General.exe
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\General.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.csproj.AssemblyReference.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.Properties.Resources.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.csproj.GenerateResource.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.csproj.CoreCompileInputs.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.exe
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmCrearUsuario.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmEditarUsuario.resources

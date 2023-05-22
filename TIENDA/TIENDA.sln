@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManager", "DataManager\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionManager", "SessionManager\SessionManager.csproj", "{EFEC3B14-5996-44EB-BD10-C8737BFD413E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "General", "General\General.csproj", "{DAE1256F-FAFE-472C-B2A0-979B51ABD232}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EFEC3B14-5996-44EB-BD10-C8737BFD413E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFEC3B14-5996-44EB-BD10-C8737BFD413E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFEC3B14-5996-44EB-BD10-C8737BFD413E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE1256F-FAFE-472C-B2A0-979B51ABD232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE1256F-FAFE-472C-B2A0-979B51ABD232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE1256F-FAFE-472C-B2A0-979B51ABD232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE1256F-FAFE-472C-B2A0-979B51ABD232}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

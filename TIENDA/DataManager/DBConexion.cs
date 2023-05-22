@@ -14,6 +14,7 @@ namespace DataManager
         //static string puerto = "1433";
 
         String _CadenaConexion = "Data Source=localhost;Initial Catalog = Tienda; User ID = usuario; Password=123;Application Name = MyApp";
+        public static string cn = "Data Source=localhost;Initial Catalog = Tienda; User ID = usuario; Password=123;Application Name = MyApp";
 
         public Boolean Conectar()
         {

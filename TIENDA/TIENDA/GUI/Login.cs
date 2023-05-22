@@ -35,12 +35,13 @@ namespace TIENDA.GUI
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            txtUsuario.Text = "EduV";
+            txtContraseña.Text = "123";
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -63,6 +64,8 @@ namespace TIENDA.GUI
                 txtContraseña.Focus();
                 txtContraseña.SelectAll();
             }
+
+
         }
     }
 }
