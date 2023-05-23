@@ -55,34 +55,6 @@ namespace DataManager
 
 
 
-
-        //public static int Loguear(string usuario, string clave)
-        //{
-        //    int idusuario = 0;
-
-        //    using (SqlConnection cn = new SqlConnection(DBConexion.cn))
-        //    {
-        //        try
-        //        {
-        //            SqlCommand cmd = new SqlCommand("usp_LoginUsuario", cn);
-        //            cmd.Parameters.AddWithValue("usuario", usuario);
-        //            cmd.Parameters.AddWithValue("clave", clave);
-        //            cmd.Parameters.Add("id_usuario", SqlDbType.Int).Direction = ParameterDirection.Output;
-        //            cmd.CommandType = CommandType.StoredProcedure;
-
-        //            cn.Open();
-        //            cmd.ExecuteNonQuery();
-
-        //            idusuario = Convert.ToInt32(cmd.Parameters["id_usuario"].Value);
-        //        }
-        //        catch (Exception)
-        //        {
-        //            idusuario = 0;
-        //        }
-        //    }
-        //    return idusuario;
-        //}
-
         public static List<string> ObtenerPermisosUsuario(string pIdUsuario)
         {
             string connectionString = DBConexion.cn;
@@ -115,60 +87,5 @@ namespace DataManager
         }
 
 
-
-
-
-
-
-        //public static List<opciones> ObtenerPermisos(int pIdUsuario)
-        //{
-        //    List<opciones> Permisos = new List<opciones>();
-        //    String Sentencia = "exec usp_ObtenerPermisos "+pIdUsuario;
-
-        //    using (SqlConnection cn = new SqlConnection(DBConexion.cn))
-        //    {
-        //        try
-        //        {
-        //            SqlCommand cmd = new SqlCommand("usp_ObtenerPermisos", cn);
-        //            cmd.Parameters.AddWithValue("id_usuario", pIdUsuario);
-        //            cmd.CommandType = CommandType.StoredProcedure;
-
-        //            cn.Open();
-
-        //            XmlReader leerxml = cmd.ExecuteXmlReader();
-
-        //            while (leerxml.Read())
-        //            {
-        //                XDocument doc = XDocument.Load(leerxml);
-
-        //                if (doc.Element("permisos") != null)
-        //                {
-        //                    Permisos = doc.Element("permisos").Element("DetalleMenu") == null ? new List<opciones>() :
-        //                    (from opciones in doc.Element("permisos").Element("DetalleMenu").Elements("Opciones")
-        //                     select new opciones()
-        //                     {
-        //                         nombre = opciones.Element("nombre").Value,
-        //                         icono = opciones.Element("icono").Value,
-        //                         listaSubopciones = opciones.Element("DetalleSubMenu") == null ? new List<subopciones>() :
-        //                         (from subopciones in opciones.Element("DetalleSubMenu").Elements("SubOpciones")
-        //                          select new subopciones()
-        //                          {
-        //                              nombre = subopciones.Element("nombre").Value,
-        //                              nombreFormulario = subopciones.Element("nombreFormulario").Value,
-        //                          }
-        //                         ).ToList()
-        //                     }
-        //                    ).ToList();
-        //                }
-        //            }
-        //        }
-        //        catch (Exception)
-        //        {
-        //            Permisos = new List<opciones>();
-        //        }
-
-        //        return Permisos;
-        //    }
-        //}
     }
 }

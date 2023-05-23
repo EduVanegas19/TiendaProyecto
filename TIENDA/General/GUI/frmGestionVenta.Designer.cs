@@ -1,7 +1,7 @@
 ﻿
-namespace TIENDA.GUI
+namespace General.GUI
 {
-    partial class frmEditarUsuario
+    partial class frmGestionVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace TIENDA.GUI
         {
             this.SuspendLayout();
             // 
-            // frmEditarUsuario
+            // frmGestionVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmEditarUsuario";
-            this.Text = "Editar Usuario";
+            this.Name = "frmGestionVenta";
+            this.Text = "Gestion Ventas";
             this.ResumeLayout(false);
 
         }

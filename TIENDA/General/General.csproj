@@ -66,6 +66,24 @@
     <Compile Include="GUI\frmEditarUsuario.Designer.cs">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmGestionReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmGestionReporte.Designer.cs">
+      <DependentUpon>frmGestionReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmGestionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmGestionUsuario.Designer.cs">
+      <DependentUpon>frmGestionUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmGestionVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmGestionVenta.Designer.cs">
+      <DependentUpon>frmGestionVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\frmCrearUsuario.resx">
@@ -73,6 +91,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmGestionReporte.resx">
+      <DependentUpon>frmGestionReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmGestionUsuario.resx">
+      <DependentUpon>frmGestionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmGestionVenta.resx">
+      <DependentUpon>frmGestionVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

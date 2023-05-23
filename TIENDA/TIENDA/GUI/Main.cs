@@ -28,8 +28,42 @@ namespace TIENDA.GUI
 
             if (permisos.Contains(Usuario.AccessibleName))
             {
-                    frmCrearUsuario form1 = new frmCrearUsuario();
+                    General.GUI.frmCrearUsuario form1 = new General.GUI.frmCrearUsuario();
                     form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void Ventas_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(Ventas.AccessibleName))
+            {
+                General.GUI.frmGestionVenta form1 = new General.GUI.frmGestionVenta();
+                form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void Reportes_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(Reportes.AccessibleName))
+            {
+                General.GUI.frmGestionReporte form1 = new General.GUI.frmGestionReporte();
+                form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }
             else

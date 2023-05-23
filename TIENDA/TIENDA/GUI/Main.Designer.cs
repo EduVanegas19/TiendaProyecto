@@ -33,8 +33,8 @@ namespace TIENDA.GUI
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Usuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.frmEditarUsuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.noDebeNada = new System.Windows.Forms.ToolStripMenuItem();
+            this.Ventas = new System.Windows.Forms.ToolStripMenuItem();
+            this.Reportes = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -47,8 +47,8 @@ namespace TIENDA.GUI
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Usuario,
-            this.frmEditarUsuario,
-            this.noDebeNada});
+            this.Ventas,
+            this.Reportes});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 48);
@@ -57,7 +57,7 @@ namespace TIENDA.GUI
             // 
             // Usuario
             // 
-            this.Usuario.AccessibleName = "frmCrearUsuario";
+            this.Usuario.AccessibleName = "frmGestionUsuario";
             this.Usuario.Image = ((System.Drawing.Image)(resources.GetObject("Usuario.Image")));
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(73, 44);
@@ -65,17 +65,21 @@ namespace TIENDA.GUI
             this.Usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Usuario.Click += new System.EventHandler(this.frmCrearUsuario_Click);
             // 
-            // frmEditarUsuario
+            // Ventas
             // 
-            this.frmEditarUsuario.Name = "frmEditarUsuario";
-            this.frmEditarUsuario.Size = new System.Drawing.Size(135, 44);
-            this.frmEditarUsuario.Text = "frmEditarUsuario";
+            this.Ventas.AccessibleName = "frmGestionVenta";
+            this.Ventas.Name = "Ventas";
+            this.Ventas.Size = new System.Drawing.Size(66, 44);
+            this.Ventas.Text = "Ventas";
+            this.Ventas.Click += new System.EventHandler(this.Ventas_Click);
             // 
-            // noDebeNada
+            // Reportes
             // 
-            this.noDebeNada.Name = "noDebeNada";
-            this.noDebeNada.Size = new System.Drawing.Size(115, 44);
-            this.noDebeNada.Text = "no debe nada";
+            this.Reportes.AccessibleName = "frmGestionReporte";
+            this.Reportes.Name = "Reportes";
+            this.Reportes.Size = new System.Drawing.Size(82, 44);
+            this.Reportes.Text = "Reportes";
+            this.Reportes.Click += new System.EventHandler(this.Reportes_Click);
             // 
             // statusStrip1
             // 
@@ -128,8 +132,8 @@ namespace TIENDA.GUI
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem Usuario;
-        private System.Windows.Forms.ToolStripMenuItem frmEditarUsuario;
-        private System.Windows.Forms.ToolStripMenuItem noDebeNada;
+        private System.Windows.Forms.ToolStripMenuItem Ventas;
+        private System.Windows.Forms.ToolStripMenuItem Reportes;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;

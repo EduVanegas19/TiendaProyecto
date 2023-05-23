@@ -1,6 +1,7 @@
 Create database Tienda
 GO
 use Tienda
+GO
 
 Create table opciones(
 	id_opcion bigint identity(1,1) primary key,
@@ -112,11 +113,12 @@ create table tipo_pagos(
 
 create table facturas(
 	id_factura bigint identity(1,1) primary key,
-	precio_unitario money not null,
+
 	fecha date not null,
 	descripcion varchar(100),
 	numero_documento varchar(12),
 	monto_total money not null,
+	cantidad_productos int not null,
 	monto_cliente money not null,
 	cambio money not null,
 	estado bit not null,
@@ -194,6 +196,7 @@ create table detalle_pedido(
 
 create table detalle_factura(
 	id_detallefactura bigint identity(1,1) primary key,
+	precio_unitario money not null,
 	precio_venta money not null,
 	cantidad int not null,
 	id_producto bigint not null,
@@ -259,7 +262,10 @@ values (1, 'Crear Usuario', 'frmCrearUsuario', 1),
 	   (2, 'Eliminar Venta', 'frmEliminarVenta', 1),
 	   (3, 'Crear Reporte', 'frmCrearReporte', 1),
 	   (3, 'Editar Reporte', 'frmEditarReporte', 1),
-	   (3, 'Eliminar Reporte', 'frmEliminarReporte', 1);
+	   (3, 'Eliminar Reporte', 'frmEliminarReporte', 1),
+	   (1, 'Gestion Usuario', 'frmGestionUsuario', 1),
+	   (2, 'Gestion Venta', 'frmGestionVenta', 1),
+	   (3, 'Gestion Reporte', 'frmGestionReporte', 1);
 
 GO
 INSERT INTO roles(rol, estado)
@@ -279,6 +285,9 @@ values ( 1, 1, 1),
 	   ( 1, 7, 1),
 	   ( 1, 8, 1),
 	   ( 1, 9, 1),
+	   ( 1, 10, 1),
+	   ( 1, 11, 1),
+	   ( 1, 12, 1),
 	   ( 2, 1, 0),
 	   ( 2, 2, 0),
 	   ( 2, 3, 0),
@@ -287,7 +296,10 @@ values ( 1, 1, 1),
 	   ( 2, 6, 0),
 	   ( 2, 7, 0),
 	   ( 2, 8, 0),
-	   ( 2, 9, 0);
+	   ( 2, 9, 0),
+	   ( 2, 10, 0),
+	   ( 2, 11, 1),
+	   ( 2, 12, 0);
 
 GO
 INSERT INTO departamentos(departamento)
@@ -354,17 +366,17 @@ values ('Tarjeta'),
 	  ('Efectivo');
 
 GO
-INSERT INTO facturas(precio_unitario, fecha, descripcion, numero_documento, monto_total, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
-values ( 5.10, '2005-01-21', '', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 2.11, '2006-02-22', 'problemas', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 4.55, '2007-03-23', '', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 9.00, '2008-04-24', '', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 2.22, '2009-05-25', 'comentario', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 6.66, '2010-06-26', '', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 3.45, '2011-07-27', '', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 1.15, '2012-08-28', '', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 5.10, '2013-09-29', 'nada', '', 13.50, 15.00, 1.50, 1, 3, 1, null),
-	  ( 15.80, '2014-10-30', '', '', 13.50, 15.00, 1.50, 1, 3, 1, null);
+INSERT INTO facturas(fecha, descripcion, numero_documento, monto_total, cantidad_productos, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
+values ('2005-01-21', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2006-02-22', 'problemas', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2007-03-23', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2008-04-24', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2009-05-25', 'comentario', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2010-06-26', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2011-07-27', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2012-08-28', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2013-09-29', 'nada', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
+	  ('2014-10-30', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null);
 
 GO
 INSERT INTO proveedores(proveedor, numero_documento, esLaboratorio)
@@ -421,17 +433,17 @@ values (33, 15.90, 1, 1, 1),
 	  (2, 1500.90, 1, 5, 5);
 
 GO
-INSERT INTO detalle_factura(precio_venta, cantidad, id_producto, id_factura)
-values (0.70, 3, 1, 10),
-	  (0.90, 3, 3, 8),
-	  (0.30, 3, 10, 8),
-	  (0.40, 3, 9, 8),
-	  (0.50, 4, 8, 8),
-	  (0.60, 7, 7, 4),
-	  (0.70, 3, 1, 4),
-	  (0.70, 3, 9, 5),
-	  (1.35, 3, 8, 5),
-	  (1.10, 3, 2, 5);
+INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura)
+values (0.20, 0.70, 3, 1, 10),
+	  (0.20, 0.90, 3, 3, 8),
+	  (0.20, 0.30, 3, 10, 8),
+	  (0.20, 0.40, 3, 9, 8),
+	  (0.20, 0.50, 4, 8, 8),
+	  (0.20, 0.60, 7, 7, 4),
+	  (0.20, 0.70, 3, 1, 4),
+	  (0.20, 0.70, 3, 9, 5),
+	  (0.20, 1.35, 3, 8, 5),
+	  (0.20, 1.10, 3, 2, 5);
 
 
 -- //////////////////////////////////////////////////////////////////////////// --

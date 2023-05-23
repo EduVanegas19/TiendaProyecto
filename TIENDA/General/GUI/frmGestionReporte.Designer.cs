@@ -1,7 +1,7 @@
 ﻿
-namespace TIENDA.GUI
+namespace General.GUI
 {
-    partial class frmCrearUsuario
+    partial class frmGestionReporte
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,13 @@ namespace TIENDA.GUI
         {
             this.SuspendLayout();
             // 
-            // frmCrearUsuario
+            // frmGestionReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmCrearUsuario";
-            this.Text = "Crear Usuario";
-            this.Load += new System.EventHandler(this.frmCrearUsuario_Load);
+            this.Name = "frmGestionReporte";
+            this.Text = "Gestion Reportes";
             this.ResumeLayout(false);
 
         }

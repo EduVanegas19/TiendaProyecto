@@ -9,3 +9,6 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\Gener
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmCrearUsuario.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmEditarUsuario.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionReporte.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionUsuario.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionVenta.resources

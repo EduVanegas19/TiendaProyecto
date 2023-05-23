@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TIENDA.GUI
+namespace General.GUI
 {
-    public partial class frmCrearUsuario : Form
+    public partial class frmGestionUsuario : Form
     {
-        public frmCrearUsuario()
+        public frmGestionUsuario()
         {
             InitializeComponent();
-        }
-
-        private void frmCrearUsuario_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

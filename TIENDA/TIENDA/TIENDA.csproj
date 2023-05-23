@@ -53,18 +53,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmCrearUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmCrearUsuario.Designer.cs">
-      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\frmEditarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmEditarUsuario.Designer.cs">
-      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,11 +73,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\frmCrearUsuario.resx">
-      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmEditarUsuario.resx">
-      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

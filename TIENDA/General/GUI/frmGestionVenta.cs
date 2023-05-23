@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TIENDA.GUI
+namespace General.GUI
 {
-    public partial class frmEditarUsuario : Form
+    public partial class frmGestionVenta : Form
     {
-        public frmEditarUsuario()
+        public frmGestionVenta()
         {
             InitializeComponent();
         }

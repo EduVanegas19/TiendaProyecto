@@ -98,4 +98,21 @@ SELECT DISTINCT u.id_usuario, u.usuario, so.nombre, so.nombreFormulario FROM per
 			JOIN usuarios u ON u.id_rol = p.id_rol AND p.estado=1
 			WHERE u.id_usuario = 1
 
+select * from opciones
+select * from permisos
+select * from roles
+select * from subopciones
+
+insert into permisos(id_rol, id_subopcion, estado)
+values (1, 10, 1),
+	   (1, 11, 1),
+	   (1, 12, 1),
+	   (2, 10, 0),
+	   (2, 11, 1),
+	   (2, 12, 0);
+
+insert into subopciones(id_opcion, nombre, nombreFormulario, estado)
+values (1, 'Gestion Usuario', 'frmGestionUsuario', 1),
+	   (2, 'Gestion Venta', 'frmGestionVenta', 1),
+	   (3, 'Gestion Reporte', 'frmGestionReporte', 1);
 
