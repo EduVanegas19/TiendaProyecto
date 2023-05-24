@@ -66,6 +66,30 @@
     <Compile Include="GUI\frmEditarUsuario.Designer.cs">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmGestionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmGestionCliente.Designer.cs">
+      <DependentUpon>frmGestionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmGestionEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmGestionEmpleado.Designer.cs">
+      <DependentUpon>frmGestionEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmGestionPedidoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmGestionPedidoProveedor.Designer.cs">
+      <DependentUpon>frmGestionPedidoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmGestionProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmGestionProveedor.Designer.cs">
+      <DependentUpon>frmGestionProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmGestionReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmGestionCliente.resx">
+      <DependentUpon>frmGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmGestionReporte.resx">
       <DependentUpon>frmGestionReporte.cs</DependentUpon>

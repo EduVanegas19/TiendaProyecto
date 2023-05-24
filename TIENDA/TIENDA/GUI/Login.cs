@@ -14,25 +14,6 @@ namespace TIENDA.GUI
             InitializeComponent();
         }
 
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            if (oSesion.IniciarSesion(txtUsuario.Text, txtContraseña.Text))
-            {
-                _Autorizado = true;
-                Close();
-            }
-            else
-            {
-                _Autorizado = false;
-                lblMensaje.Text = "USUARIO O CLAVE INCORRECTOS";
-                txtContraseña.Focus();
-                txtContraseña .SelectAll();
-            }
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
             txtUsuario.Text = "EduV";
@@ -46,8 +27,7 @@ namespace TIENDA.GUI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            Application.Exit();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -66,6 +46,11 @@ namespace TIENDA.GUI
             }
 
 
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Application.Exit();
         }
     }
 }

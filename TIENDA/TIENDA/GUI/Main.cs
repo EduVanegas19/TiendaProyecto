@@ -19,6 +19,7 @@ namespace TIENDA.GUI
         {
             lblUsuario.Text = Session.Instancia.usuario;
             lblRol.Text = Session.Instancia.rol;
+
         }
 
         private void frmCrearUsuario_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace TIENDA.GUI
 
             if (permisos.Contains(Usuario.AccessibleName))
             {
-                    General.GUI.frmCrearUsuario form1 = new General.GUI.frmCrearUsuario();
+                    General.GUI.frmGestionUsuario form1 = new General.GUI.frmGestionUsuario();
                     form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }
@@ -71,6 +72,99 @@ namespace TIENDA.GUI
                 MessageBox.Show("No tienes permisos para acceder a este formulario.");
             }
         }
+
+        private void Clientes_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(Clientes.AccessibleName))
+            {
+                General.GUI.frmGestionCliente form1 = new General.GUI.frmGestionCliente();
+                form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void Empleados_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(Empleados.AccessibleName))
+            {
+                General.GUI.frmGestionEmpleado form1 = new General.GUI.frmGestionEmpleado();
+                form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void Proveedores_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(Proveedores.AccessibleName))
+            {
+                General.GUI.frmGestionProveedor form1 = new General.GUI.frmGestionProveedor();
+                form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void PedidosProveedores_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(PedidosProveedores.AccessibleName))
+            {
+                General.GUI.frmGestionPedidoProveedor form1 = new General.GUI.frmGestionPedidoProveedor();
+                form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        public void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea cerrar sesion?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                this.Hide();
+                CLS.AppManager l = new CLS.AppManager();
+                l.Login();
+            }
+            else
+            {
+
+            }
+        }
+
+
+
+
+
+
 
 
 

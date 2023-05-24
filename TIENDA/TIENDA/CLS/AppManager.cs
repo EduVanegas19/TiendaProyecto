@@ -25,12 +25,13 @@ namespace TIENDA.CLS
             f.ShowDialog();
             return Resultado;
         }
-        private Boolean Login()
+        public Boolean Login()
         {
             Boolean Resultado = true;
             GUI.Login f = new GUI.Login();
             f.ShowDialog();
             Resultado = f.Autorizado;
+            
 
             return Resultado;
         }
