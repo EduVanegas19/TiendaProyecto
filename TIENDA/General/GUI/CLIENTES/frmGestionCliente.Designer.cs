@@ -210,7 +210,7 @@ namespace General.GUI
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "frmGestionCliente";
-            this.Text = "frmGestionCliente";
+            this.Text = "Gestion de Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
