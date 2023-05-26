@@ -156,9 +156,8 @@ namespace TIENDA.GUI
             // lblUsuario
             // 
             this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(95, 24);
+            this.lblUsuario.Size = new System.Drawing.Size(75, 24);
             this.lblUsuario.Text = "USUARIO";
             // 
             // lblRol

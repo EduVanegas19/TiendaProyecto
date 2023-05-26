@@ -54,12 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\General\General.csproj">
-      <Project>{dae1256f-fafe-472c-b2a0-979b51abd232}</Project>
-      <Name>General</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Iconos\Reporte.png" />
     <Content Include="Iconos\Usuario.png" />
     <Content Include="Iconos\Ventas.png" />

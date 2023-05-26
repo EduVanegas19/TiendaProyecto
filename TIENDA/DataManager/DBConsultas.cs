@@ -1,5 +1,4 @@
 ﻿using DataManager;
-using General.CLS;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -53,8 +52,6 @@ namespace DataManager
             return Resultado;
         }
 
-
-
         public static List<string> ObtenerPermisosUsuario(string pIdUsuario)
         {
             string connectionString = DBConexion.cn;
@@ -86,6 +83,261 @@ namespace DataManager
             return permisosUsuario;
         }
 
+        // CARGANDO VER TABLA DE DATOS
+        public static DataTable USUARIOS()  
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM usuarios;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
 
+        public static DataTable AREAS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM  areas;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable CLIENTES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM clientes;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable DEPARTAMENTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM departamentos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable MUNICIPIOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM municipios;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable DETALLE_VENTA()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM detalle_factura;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable DETALLE_PEDIDO()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM detalle_pedido;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable DIRECCIONES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM direcciones;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable EMPLEADOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM empleados;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable VENTAS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM facturas;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable OPCIONES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM opciones;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable PEDIDOS_PROVEEDOR()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM pedidos_proveedor;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable PRODUCTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM productos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable PROVEEDORES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM proveedores;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable TIPO_PAGOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM tipo_pagos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable UNIDAD_MEDIDA()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM unidad_medida;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }

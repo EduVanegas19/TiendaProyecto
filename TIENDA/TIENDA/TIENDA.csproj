@@ -90,6 +90,9 @@
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +122,14 @@
     <ProjectReference Include="..\DataManager\DataManager.csproj">
       <Project>{6fae3d80-8e7b-426a-8889-95413b9ae960}</Project>
       <Name>DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\General\General.csproj">
+      <Project>{dae1256f-fafe-472c-b2a0-979b51abd232}</Project>
+      <Name>General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SessionManager\SessionManager.csproj">
+      <Project>{efec3b14-5996-44eb-bd10-c8737bfd413e}</Project>
+      <Name>SessionManager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

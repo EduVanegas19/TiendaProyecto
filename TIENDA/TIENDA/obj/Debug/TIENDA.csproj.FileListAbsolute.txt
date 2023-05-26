@@ -18,4 +18,3 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\Genera
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.exe.config
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Main.resources
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.Form1.resources

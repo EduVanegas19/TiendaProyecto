@@ -40,3 +40,6 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\Gener
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.REPORTES.frmEditarReporte.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.VENTAS.frmCrearVenta.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.VENTAS.frmEditarVenta.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\DataManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\DataManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.csproj.CopyComplete
