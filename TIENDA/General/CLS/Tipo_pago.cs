@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TIENDA.CLS
+namespace General.CLS
 {
-    public class Area
+    public class Tipo_pago
     {
-        public Int64 IdArea { get; set; }
+        public Int64 IdTipoPago { get; set; }
 
         public string Nombre { get; set; }
+
+
     }
 }

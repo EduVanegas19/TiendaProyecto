@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TIENDA.CLS
+namespace General.CLS
 {
-    public class Tipo_pago
+    public class Unidad_medida
     {
-        public Int64 IdTipoPago { get; set; }
+        public Int64 IdUnidadMedida { get; set; }
 
         public string Nombre { get; set; }
 

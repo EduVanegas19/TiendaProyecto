@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TIENDA.CLS
+namespace General.CLS
 {
-    public class Unidad_medida
+    public class Area
     {
-        public Int64 IdUnidadMedida { get; set; }
+        public Int64 IdArea { get; set; }
 
         public string Nombre { get; set; }
-
-
     }
 }

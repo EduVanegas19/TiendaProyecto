@@ -46,8 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Area.cs" />
+    <Compile Include="CLS\Cliente.cs" />
+    <Compile Include="CLS\Departamento.cs" />
+    <Compile Include="CLS\Detalle_factura.cs" />
+    <Compile Include="CLS\Detalle_pedido.cs" />
+    <Compile Include="CLS\Direccion.cs" />
+    <Compile Include="CLS\Empleado.cs" />
+    <Compile Include="CLS\Factura.cs" />
+    <Compile Include="CLS\Municipio.cs" />
     <Compile Include="CLS\opciones.cs" />
+    <Compile Include="CLS\Pedido_proveedor.cs" />
+    <Compile Include="CLS\Producto.cs" />
+    <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\subopciones.cs" />
+    <Compile Include="CLS\Tipo_pago.cs" />
+    <Compile Include="CLS\Unidad_medida.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

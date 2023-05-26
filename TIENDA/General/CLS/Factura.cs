@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TIENDA.CLS
+namespace General.CLS
 {
     public class Factura
     {
@@ -12,7 +12,7 @@ namespace TIENDA.CLS
 
         public string FechaRegistro { get; set; }
 
-        public string  Descripcion { get; set; }
+        public string Descripcion { get; set; }
 
         public string NumeroDocumento { get; set; }
 
@@ -30,7 +30,7 @@ namespace TIENDA.CLS
 
         public Int64 IdCliente { get; set; }
 
-        public Int64  IdEmpleado { get; set; }
+        public Int64 IdEmpleado { get; set; }
 
         public Tipo_pago Tipo_pago { get; set; }
 
