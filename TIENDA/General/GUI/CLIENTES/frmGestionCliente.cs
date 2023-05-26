@@ -21,5 +21,23 @@ namespace General.GUI
         {
 
         }
+
+        private void frmGestionCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CLIENTES.frmEditarCliente frm = new CLIENTES.frmEditarCliente();
+            frm.TopLevel = false;
+            panel1.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }
