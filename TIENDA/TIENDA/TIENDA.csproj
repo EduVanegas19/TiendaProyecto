@@ -47,6 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLS\AppManager.cs" />
+    <Compile Include="CLS\Area.cs" />
+    <Compile Include="CLS\Cliente.cs" />
+    <Compile Include="CLS\Departamento.cs" />
+    <Compile Include="CLS\Detalle_factura.cs" />
+    <Compile Include="CLS\Detalle_pedido.cs" />
+    <Compile Include="CLS\Direccion.cs" />
+    <Compile Include="CLS\Empleado.cs" />
+    <Compile Include="CLS\Factura.cs" />
+    <Compile Include="CLS\Municipio.cs" />
+    <Compile Include="CLS\Pedido_proveedor.cs" />
+    <Compile Include="CLS\Producto.cs" />
+    <Compile Include="CLS\Proveedor.cs" />
+    <Compile Include="CLS\Tipo_pago.cs" />
+    <Compile Include="CLS\Unidad_medida.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,14 +87,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -112,19 +120,6 @@
       <Project>{6fae3d80-8e7b-426a-8889-95413b9ae960}</Project>
       <Name>DataManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\General\General.csproj">
-      <Project>{dae1256f-fafe-472c-b2a0-979b51abd232}</Project>
-      <Name>General</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SessionManager\SessionManager.csproj">
-      <Project>{efec3b14-5996-44eb-bd10-c8737bfd413e}</Project>
-      <Name>SessionManager</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Iconos\Reporte.png" />
-    <Content Include="Iconos\Usuario.png" />
-    <Content Include="Iconos\Ventas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

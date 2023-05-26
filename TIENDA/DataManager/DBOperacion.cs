@@ -29,6 +29,29 @@ namespace DataManager
             return FilasAfectadas;
         }
 
+        public Int32 EjecutarProcedimiento(String nombreProcedimiento)
+        {
+            Int32 FilasAfectadas = 0;
+            SqlCommand Comando = new SqlCommand();
+            if (base.Conectar())
+            {
+                Comando.Connection = base._CONEXION;
+                Comando.CommandType = System.Data.CommandType.StoredProcedure;
+                Comando.CommandText = nombreProcedimiento;
+
+                try
+                {
+                    FilasAfectadas = Comando.ExecuteNonQuery();
+                }
+                catch (Exception Ex)
+                {
+                    String Mensaje = Ex.Message;
+                    FilasAfectadas = -1;
+                }
+                base.Desconectar();
+            }
+            return FilasAfectadas;
+        }
         public DataTable Consultar(String pConsulta)
         {
             SqlDataAdapter Adaptador = new SqlDataAdapter();
