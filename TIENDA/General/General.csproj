@@ -60,6 +60,7 @@
     <Compile Include="CLS\Producto.cs" />
     <Compile Include="CLS\Proveedor.cs" />
     <Compile Include="CLS\subopciones.cs" />
+    <Compile Include="CLS\Ticket.cs" />
     <Compile Include="CLS\Tipo_pago.cs" />
     <Compile Include="CLS\Unidad_medida.cs" />
     <Compile Include="Form1.cs">
