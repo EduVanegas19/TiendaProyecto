@@ -13,7 +13,6 @@ namespace TIENDA.GUI
         public Main()
         {
             InitializeComponent();
-            
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -47,7 +46,7 @@ namespace TIENDA.GUI
 
             if (permisos.Contains(Ventas.AccessibleName))
             {
-                General.GUI.DETALLE_VENTA.frmGestionDetalleVenta form1 = new General.GUI.DETALLE_VENTA.frmGestionDetalleVenta();
+                General.GUI.frmGestionVenta form1 = new General.GUI.frmGestionVenta();
                 form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }
@@ -59,14 +58,12 @@ namespace TIENDA.GUI
 
         private void Reportes_Click(object sender, EventArgs e)
         {
-
             // Verificar si el usuario tiene permiso para acceder al formulario
             List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
 
             if (permisos.Contains(Reportes.AccessibleName))
             {
-                
-                Reporte.GUI.visorFactura form1 = new Reporte.GUI.visorFactura();
+                General.GUI.frmGestionReporte form1 = new General.GUI.frmGestionReporte();
                 form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }

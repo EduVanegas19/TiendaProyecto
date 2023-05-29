@@ -16,10 +16,5 @@ namespace General.GUI.PRODUCTO
         {
             InitializeComponent();
         }
-
-        private void frmGestionProducto_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

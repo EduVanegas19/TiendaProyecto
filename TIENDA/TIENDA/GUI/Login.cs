@@ -27,10 +27,22 @@ namespace TIENDA.GUI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            
+
+
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (oSesion.IniciarSesion(txtUsuario.Text, txtContraseña.Text))
             {
@@ -44,13 +56,11 @@ namespace TIENDA.GUI
                 txtContraseña.Focus();
                 txtContraseña.SelectAll();
             }
-
-
         }
 
-        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        private void pcSalir_Click(object sender, EventArgs e)
         {
-            //Application.Exit();
+            Application.Exit();
         }
     }
 }

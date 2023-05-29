@@ -23,28 +23,5 @@ namespace General.CLS
         public Producto Producto { get; set; }
 
         public Factura Factura { get; set; }
-
-        public Boolean Insertar()
-        {
-            Boolean Resultado = false;
-            String Sentencia;
-            Int32 FilasInsertadas = 0;
-            try
-            {
-                Sentencia = @"INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura) 
-                VALUES('" + PrecioUnitario + "','" + PrecioVenta + "'," + Cantidad + ",'" + IdProducto + "'," + IdFactura + ");";
-                DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
-                FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
-                if (FilasInsertadas > 0)
-                {
-                    Resultado = true;
-                }
-            }
-            catch (Exception)
-            {
-                Resultado = false;
-            }
-            return Resultado;
-        }
     }
 }

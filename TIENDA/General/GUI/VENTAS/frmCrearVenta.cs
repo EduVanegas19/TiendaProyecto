@@ -16,14 +16,5 @@ namespace General.GUI.VENTAS
         {
             InitializeComponent();
         }
-
-        private void crearTicket_Click(object sender, EventArgs e)
-        {
-            CLS.Factura f = new CLS.Factura();
-            f.Insertar();
-
-            CLS.Detalle_factura df = new CLS.Detalle_factura();
-            
-        }
     }
 }
