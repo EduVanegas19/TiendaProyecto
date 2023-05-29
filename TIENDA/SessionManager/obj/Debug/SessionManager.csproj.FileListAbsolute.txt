@@ -7,3 +7,12 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debu
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.dll
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.pdb
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.dll
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.pdb
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\bin\Debug\DataManager.dll
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\bin\Debug\DataManager.pdb
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csprojAssemblyReference.cache
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CoreCompileInputs.cache
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.dll
+C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.pdb
