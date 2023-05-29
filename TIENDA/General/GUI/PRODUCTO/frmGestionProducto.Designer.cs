@@ -38,6 +38,7 @@ namespace General.GUI.PRODUCTO
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "frmGestionProducto";
             this.Text = "Gestion de Producto";
+            this.Load += new System.EventHandler(this.frmGestionProducto_Load);
             this.ResumeLayout(false);
 
         }

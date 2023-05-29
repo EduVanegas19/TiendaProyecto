@@ -1,0 +1,5 @@
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reportes\obj\Debug\Reportes.csproj.AssemblyReference.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reportes\obj\Debug\Reportes.GUI.visorFacturas.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reportes\obj\Debug\Reportes.Properties.Resources.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reportes\obj\Debug\Reportes.csproj.GenerateResource.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reportes\obj\Debug\Reportes.csproj.CoreCompileInputs.cache
