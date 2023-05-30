@@ -39,5 +39,10 @@ namespace General.GUI
             panel1.Controls.Add(frm);
             frm.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
