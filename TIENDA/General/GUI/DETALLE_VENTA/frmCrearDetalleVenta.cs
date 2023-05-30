@@ -16,5 +16,29 @@ namespace General.GUI.DETALLE_VENTA
         {
             InitializeComponent();
         }
+
+        private void frmCrearDetalleVenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // frmCrearDetalleVenta
+            // 
+            this.ClientSize = new System.Drawing.Size(1047, 491);
+            this.Name = "frmCrearDetalleVenta";
+            this.Text = "Crear Venta";
+            this.Load += new System.EventHandler(this.frmCrearDetalleVenta_Load_1);
+            this.ResumeLayout(false);
+
+        }
+
+        private void frmCrearDetalleVenta_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

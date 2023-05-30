@@ -46,7 +46,7 @@ namespace TIENDA.GUI
 
             if (permisos.Contains(Ventas.AccessibleName))
             {
-                General.GUI.frmGestionVenta form1 = new General.GUI.frmGestionVenta();
+                General.GUI.DETALLE_VENTA.frmGestionDetalleVenta form1 = new General.GUI.DETALLE_VENTA.frmGestionDetalleVenta();
                 form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }
@@ -63,7 +63,8 @@ namespace TIENDA.GUI
 
             if (permisos.Contains(Reportes.AccessibleName))
             {
-                General.GUI.frmGestionReporte form1 = new General.GUI.frmGestionReporte();
+
+                Reporte.GUI.visorFactura form1 = new Reporte.GUI.visorFactura();
                 form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }
@@ -143,7 +144,14 @@ namespace TIENDA.GUI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Seguro que desea salir del programa?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
         }
 
         public void btnCerrarSesion_Click(object sender, EventArgs e)

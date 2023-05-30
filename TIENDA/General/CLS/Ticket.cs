@@ -25,130 +25,131 @@ namespace General.CLS
             AnchoTicket = anchoTicket;
         }
 
-        private void frmVender_Load(object sender, EventArgs e)
-        {
-            lblFecha.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
-        }
+        //        private void frmVender_Load(object sender, EventArgs e)
+        //        {
+        //            lblFecha.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
+        //        }
 
-        public void AgregarProducto(string nombre, decimal precio, int cantidad)
-        {
-            var producto = new Producto
-            {
-                Nombre = nombre,
-                Precio = precio,
-                Cantidad = cantidad
-            };
-            Productos.Add(producto);
-        }
+        //        public void AgregarProducto(string nombre, decimal precio, int cantidad)
+        //        {
+        //            var producto = new Producto
+        //            {
+        //                Nombre = nombre,
+        //                Precio = precio,
+        //                Cantidad = cantidad
+        //            };
+        //            Productos.Add(producto);
+        //        }
 
-        public void CalcularTotal()
-        {
-            Subtotal = 0;
-            foreach (var producto in Productos)
-            {
-                Subtotal += producto.Precio * producto.Cantidad;
-            }
-            Impuesto = Subtotal * 0.16m;
-            Total = Subtotal + Impuesto;
-        }
+        //        public void CalcularTotal()
+        //        {
+        //            Subtotal = 0;
+        //            foreach (var producto in Productos)
+        //            {
+        //                Subtotal += producto.Precio * producto.Cantidad;
+        //            }
+        //            Impuesto = Subtotal * 0.16m;
+        //            Total = Subtotal + Impuesto;
+        //        }
 
-        public void ImprimirTicket()
-        {
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += new PrintPageEventHandler(ImprimirTicket_PrintPage);
+        //        public void ImprimirTicket()
+        //        {
+        //            PrintDocument pd = new PrintDocument();
+        //            pd.PrintPage += new PrintPageEventHandler(ImprimirTicket_PrintPage);
 
-            // Mostrar el cuadro de diálogo de impresión para seleccionar la impresora
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = pd;
+        //            // Mostrar el cuadro de diálogo de impresión para seleccionar la impresora
+        //            PrintDialog printDialog = new PrintDialog();
+        //            printDialog.Document = pd;
 
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                pd.Print();
-            }
-        }
+        //            if (printDialog.ShowDialog() == DialogResult.OK)
+        //            {
+        //                pd.Print();
+        //            }
+        //        }
 
-        private void ImprimirTicket_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            Graphics graphics = e.Graphics;
+        //        private void ImprimirTicket_PrintPage(object sender, PrintPageEventArgs e)
+        //        {
+        //            Graphics graphics = e.Graphics;
 
-            int leftMargin = 10;
-            int topMargin = 10;
-            int lineHeight = 20;
+        //            int leftMargin = 10;
+        //            int topMargin = 10;
+        //            int lineHeight = 20;
 
-            Font font = new Font("Courier New", 10);
+        //            Font font = new Font("Courier New", 10);
 
-            string titulo = $"Ticket de compra (Ancho: {AnchoTicket} mm)";
-            graphics.DrawString(titulo, font, Brushes.Black, leftMargin, topMargin);
-            topMargin += lineHeight;
+        //            string titulo = $"Ticket de compra (Ancho: {AnchoTicket} mm)";
+        //            graphics.DrawString(titulo, font, Brushes.Black, leftMargin, topMargin);
+        //            topMargin += lineHeight;
 
-            string separador = new string('-', AnchoTicket);
-            graphics.DrawString(separador, font, Brushes.Black, leftMargin, topMargin);
-            topMargin += lineHeight;
+        //            string separador = new string('-', AnchoTicket);
+        //            graphics.DrawString(separador, font, Brushes.Black, leftMargin, topMargin);
+        //            topMargin += lineHeight;
 
-            foreach (var producto in Productos)
-            {
-                string lineaProducto = $"{producto.Nombre} - {producto.Precio:C} x {producto.Cantidad} = {producto.Precio * producto.Cantidad:C}";
-                graphics.DrawString(lineaProducto, font, Brushes.Black, leftMargin, topMargin);
-                topMargin += lineHeight;
-            }
+        //            foreach (var producto in Productos)
+        //            {
+        //                string lineaProducto = $"{producto.Nombre} - {producto.Precio:C} x {producto.Cantidad} = {producto.Precio * producto.Cantidad:C}";
+        //                graphics.DrawString(lineaProducto, font, Brushes.Black, leftMargin, topMargin);
+        //                topMargin += lineHeight;
+        //            }
 
-            graphics.DrawString(separador, font, Brushes.Black, leftMargin, topMargin);
-            topMargin += lineHeight;
+        //            graphics.DrawString(separador, font, Brushes.Black, leftMargin, topMargin);
+        //            topMargin += lineHeight;
 
-            string lineaSubtotal = $"Subtotal: {Subtotal:C}";
-            graphics.DrawString(lineaSubtotal, font, Brushes.Black, leftMargin, topMargin);
-            topMargin += lineHeight;
+        //            string lineaSubtotal = $"Subtotal: {Subtotal:C}";
+        //            graphics.DrawString(lineaSubtotal, font, Brushes.Black, leftMargin, topMargin);
+        //            topMargin += lineHeight;
 
-            string lineaImpuesto = $"Impuesto: {Impuesto:C}";
-            graphics.DrawString(lineaImpuesto, font, Brushes.Black, leftMargin, topMargin);
-            topMargin += lineHeight;
+        //            string lineaImpuesto = $"Impuesto: {Impuesto:C}";
+        //            graphics.DrawString(lineaImpuesto, font, Brushes.Black, leftMargin, topMargin);
+        //            topMargin += lineHeight;
 
-            string lineaTotal = $"Total: {Total:C}";
-            graphics.DrawString(lineaTotal, font, Brushes.Black, leftMargin, topMargin);
-            topMargin += lineHeight;
+        //            string lineaTotal = $"Total: {Total:C}";
+        //            graphics.DrawString(lineaTotal, font, Brushes.Black, leftMargin, topMargin);
+        //            topMargin += lineHeight;
 
-            // Si hay más páginas para imprimir, indicarlo
-            e.HasMorePages = false;
-        }
-    }
-}
+        //            // Si hay más páginas para imprimir, indicarlo
+        //            e.HasMorePages = false;
+        //        }
+        //    }
+        //}
 
-// Detalle ventas, click al boton de imprimir y debe traer estos datos
-public class Program
-{
-    public static void Main(string[] args)
-    {
-        int anchoTicket = 58; // Ancho del ticket en milímetros
+        //// Detalle ventas, click al boton de imprimir y debe traer estos datos
+        //public class Program
+        //{
+        //    public static void mani(string[] args)
+        //    {
+        //        int anchoTicket = 58; // Ancho del ticket en milímetros
 
-        var ticket = new Ticket(anchoTicket);
+        //        var ticket = new Ticket(anchoTicket);
 
-        // Obtener datos del DataGridView
-        DataGridView dataGridView = ObtenerDataGridView();
+        //        // Obtener datos del DataGridView
+        //        DataGridView dataGridView = ObtenerDataGridView();
 
-        foreach (DataGridViewRow row in dataGridView.Rows)
-        {
-            string nombre = row.Cells["Nombre"].Value.ToString();
-            decimal precio = Convert.ToDecimal(row.Cells["Precio"].Value);
-            int cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
+        //        foreach (DataGridViewRow row in dataGridView.Rows)
+        //        {
+        //            string nombre = row.Cells["Nombre"].Value.ToString();
+        //            decimal precio = Convert.ToDecimal(row.Cells["Precio"].Value);
+        //            int cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
 
-            ticket.AgregarProducto(nombre, precio, cantidad);
-        }
+        //            ticket.AgregarProducto(nombre, precio, cantidad);
+        //        }
 
-        ticket.CalcularTotal();
-        ticket.ImprimirTicket();
-    }
-    private static DataGridView ObtenerDataGridView()
-    {
-        // Ejemplo: Crear un DataGridView y llenarlo con datos de prueba
-        DataGridView dataGridView = new DataGridView();
-        dataGridView.Columns.Add("Nombre", "Nombre");
-        dataGridView.Columns.Add("Precio", "Precio");
-        dataGridView.Columns.Add("Cantidad", "Cantidad");
+        //        ticket.CalcularTotal();
+        //        ticket.ImprimirTicket();
+        //    }
+        //    private static DataGridView ObtenerDataGridView()
+        //    {
+        //        // Ejemplo: Crear un DataGridView y llenarlo con datos de prueba
+        //        DataGridView dataGridView = new DataGridView();
+        //        dataGridView.Columns.Add("Nombre", "Nombre");
+        //        dataGridView.Columns.Add("Precio", "Precio");
+        //        dataGridView.Columns.Add("Cantidad", "Cantidad");
 
-        dataGridView.Rows.Add("Camisa", 29.99m, 2);
-        dataGridView.Rows.Add("Pantalón", 49.99m, 1);
+        //        dataGridView.Rows.Add("Camisa", 29.99m, 2);
+        //        dataGridView.Rows.Add("Pantalón", 49.99m, 1);
 
-        return dataGridView;
+        //        return dataGridView;
+        //    }
     }
 }
 // DISENO MANUAL DEL TICKET, PUNTO POR PUNTO
