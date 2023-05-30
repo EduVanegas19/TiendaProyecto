@@ -473,4 +473,136 @@ BEGIN
 	where u.id_usuario = @id_usuario
 END
 
+--*********************************************************************
+--******* PROVEEDOR ***************************************************
+
+-- Agregar Proveedor
+CREATE PROCEDURE AgregarProveedor
+
+	@nombre VARCHAR(50),
+	@numeroDocumeto VARCHAR(50),
+	@esLaboratorio BIT
+
+AS
+BEGIN
+
+	INSERT INTO proveedores(proveedor, numero_documento, esLaboratorio)
+	VALUES (@nombre, @numeroDocumeto, @esLaboratorio)
+END
+
+-- Modificar proveedor
+CREATE PROCEDURE ModificarProveedor
+
+	@id_proveedor BIGINT,
+	@nombre VARCHAR(50),
+	@numeroDocumeto VARCHAR(50),
+	@esLaboratorio BIT
+
+AS
+BEGIN
+
+	UPDATE proveedores 
+	SET proveedor=@nombre, numero_documento=@numeroDocumeto, esLaboratorio=@esLaboratorio
+	WHERE id_proveedor = @id_proveedor;
+END
+
+-- Eliminar proveedor
+CREATE PROCEDURE EliminarProveedor
+
+	@id_proveedor BIGINT
+
+AS
+BEGIN
+
+	delete from proveedores WHERE id_proveedor=@id_proveedor
+END
+
+exec AgregarProveedor 'Lenovo', '11223344', 0;
+exec ModificarProveedor 6, 'Lenovo', numdoc12, 1;
+exec EliminarProveedor 6;
+select * from proveedores
+
+-- Listar usuario alfabeticamente
+CREATE PROCEDURE ListarUsarioAlfabeticamente
+
+AS
+BEGIN
+
+	SELECT * 
+	FROM usuarios u
+	INNER JOIN roles r ON u.id_rol =  r.id_rol
+	INNER JOIN empleados e ON u.id_empleado = e.id_empleado
+	WHERE u.estado=1
+	ORDER BY u.usuario ASC
+END
+
+-- Listar usuario no alfabeticamente
+CREATE PROCEDURE ListarUsuariosNoAlfabeticamente
+
+AS
+BEGIN
+
+	SELECT *
+	FROM usuarios u
+	INNER JOIN roles r ON u.id_rol =  r.id_rol
+	INNER JOIN empleados e ON u.id_empleado = e.id_empleado
+	WHERE u.estado=1
+	ORDER BY u.usuario DESC
+END
+
+-- Buscar usuario por ID
+CREATE PROCEDURE BuscarUsuarioID
+
+	@id_usuario BIGINT
+
+AS
+BEGIN
+
+	SELECT * FROM usuarios
+	WHERE id_usuario=@id_usuario AND estado=1n 
+END
+
+-- Buscar usuarios por nombre
+CREATE PROCEDURE BuscarUsuariosNombre
+
+	@usuario VARCHAR(50)
+
+AS
+BEGIN
+
+	SELECT * FROM usuarios
+	WHERE usuario LIKE '%' + @usuario + '%' AND estado=1
+END
+
+-- Verificar si el usuario existe
+CREATE PROCEDURE VerificarUsuario
+
+	@usuario VARCHAR(45)
+
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	IF EXISTS(SELECT * FROM usuarios WHERE usuario=@usuario)
+		SELECT 1 AS Resultado
+	ELSE
+		SELECT 0 AS Resultado
+END
+
+
+--join para saber que tipo de permiso/rol tiene cada usuario
+CREATE PROCEDURE PermisosUsuario
+
+	@id_usuario BIGINT
+
+AS
+BEGIN
+
+	Select u.usuario, r.rol, o.opcion
+	From usuarios u
+	inner join roles r on u.id_rol=r.id_rol
+	inner join permisos p on r.id_rol=p.id_rol
+	inner join opciones o on p.id_opcion=o.id_opcion
+	where u.id_usuario = @id_usuario
+END
 
