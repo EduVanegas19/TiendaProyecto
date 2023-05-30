@@ -29,7 +29,7 @@ END
 
 --MODIFICAR PRODUCTOS--
 
-CREATE PROCEDURE MODIFICARPRODUCTO
+CREATE PROCEDURE ModificarProducto
 @id_producto BIGINT,
 @codigo_barras VARCHAR(45),
 @descripcion VARCHAR(100),
@@ -129,13 +129,13 @@ END
 
 --LISTAR CLIENTES--
 
-CREATE PROCEDURE LISTARCLIENTES
+CREATE PROCEDURE ListarClientes
 AS
 BEGIN
 SELECT c.id_cliente, c.identificacion, c.nombre, c.credito,d.colonia,d.numero_casa,c.estado 
 FROM clientes c
 INNER JOIN direcciones d ON c.id_direccion = d.id_direccion
-WHERE estado=1
+WHERE c.estado = 1
 ORDER BY id_cliente DESC
 END
 
@@ -185,7 +185,7 @@ END
 
 --AGREGAR CLIENTES--
 
-CREATE PROCEDURE AGREGARCLIENTES
+CREATE PROCEDURE AgregarClientes
 --@id_cliente BIGINT,
 @identificacion VARCHAR(45),
 @nombre VARCHAR(100),
@@ -214,7 +214,7 @@ END
 
 --MODIFICAR CLIENTES--
 
-CREATE PROCEDURE MODIFICARCLIENTES
+CREATE PROCEDURE ModificarClientes
 @id_cliente BIGINT,
 @identificacion VARCHAR(45),
 @nombre VARCHAR(100),
@@ -242,7 +242,7 @@ END
 
 --ELIMINAR CLIENTES--
 
-CREATE PROCEDURE ELIMINARCLIENTES
+CREATE PROCEDURE EliminarClientes
 @id_cliente BIGINT,
 @estado BIT
 AS
@@ -262,13 +262,13 @@ END
 
 --LISTAR PEDIDOS--
 
-CREATE PROCEDURE LISTARPEDIDOS
+CREATE PROCEDURE ListarPedidos
 AS
 BEGIN
 SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
 FROM pedidos_proveedor pp
 INNER JOIN proveedor p ON pp.id_proveedor = p.id_proveedor
-WHERE estado=1
+WHERE pp.estado=1
 ORDER BY id_pedido DESC
 END
 
