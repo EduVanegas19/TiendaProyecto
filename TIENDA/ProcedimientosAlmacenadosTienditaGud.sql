@@ -33,7 +33,7 @@ CREATE PROCEDURE ModificarProducto
 @id_producto BIGINT,
 @codigo_barras VARCHAR(45),
 @descripcion VARCHAR(100),
-@precio_unidad MONEY,
+@precio_unidad MONEY,     
 @precio_venta MONEY,
 @stock INT,
 @nombre VARCHAR(100),
@@ -303,38 +303,71 @@ CREATE PROCEDURE MOSTRARPEDIDOCONDETALLES
 AS
 BEGIN
 --MUESTRA INFORMACIÓN DEL PEDIDO
-	SELECT * FROM pedidos
-	WHERE id_pedido = @id_pedido
+	SELECT p.id_pedido, p.numero_documento, strftime('%d/%m/%Y', date(p.fecha_registro))[fecha_registro], p.monto_total, p.id_proveedor,
+	d.id_detallepedido, d.cantidad, d.monto_total, d.id_producto 
+	FROM pedidos_proveedor p
+	JOIN detalle_pedido d ON p.id_pedido=d.id_pedido
+	WHERE p.id_pedido = @id_pedido AND p.estado=1;
+END
 
---MUESTRA DETALLES DEL PEDIDO
-	DECLARE @id_detallepedido BIGINT
-	DECLARE @id_producto BIGINT
-	DECLARE @cantidad INT
-	DECLARE @monto_total MONEY
+CREATE PROCEDURE AGREGARPEDIDO(
+    @numero_documento VARCHAR(12),
+    @fecha_registro DATE,
+    @sub_total MONEY,
+    @id_proveedor BIGINT,
+    @cantidad INT,
+    @monto_total MONEY,
+	@id_producto BIGINT
+)
+AS
+BEGIN
+    DECLARE @id_pedido BIGINT;
 
-	DECLARE detalles_cursor CURSOR FOR
-		SELECT id_detallepedido, id_producto, cantidad, monto_total
-		FROM detalle_pedido
-		WHERE id_pedido = @id_pedido
+    CREATE TABLE #TEMP (
+        Id BIGINT
+    );
 
-	OPEN detalles_cursor
+    INSERT INTO pedidos_proveedor (
+        numero_documento, fecha_registro, monto_total,
+        estado, id_proveedor 
+    ) VALUES (
+        @numero_documento, @fecha_registro,@sub_total,
+		1, @id_proveedor 
+    );
 
-	FETCH NEXT FROM detalles_cursor
-	INTO @id_detallepedido, @id_producto, @cantidad, @monto_total
+    SET @id_pedido = SCOPE_IDENTITY();
 
-	WHILE @@FETCH_STATUS = 0
-	BEGIN
-		PRINT 'id_detallepedido: ' + CAST(@id_detallepedido AS VARCHAR(50))
-		PRINT 'id_producto: ' + CAST(@id_producto AS VARCHAR(50))
-		PRINT 'cantidad: ' + CAST(@cantidad AS VARCHAR(50))
-		PRINT 'monto_total: ' + CAST(@monto_total AS VARCHAR(50))
+    INSERT INTO detalle_pedido (
+        id_pedido, cantidad, monto_total, estado, id_producto
+    ) VALUES (
+        @id_pedido, @cantidad, @monto_total, 1, @id_producto
+    );
 
-		FETCH NEXT FROM detalles_cursor
-		INTO @id_detallepedido, @id_producto, @cantidad, @monto_total
-	END
+    UPDATE PRODUCTO 
+    SET precio_unidad = @precio_unidad, precio_venta = @precio_venta, stock = (stock + @cantidad) 
+    WHERE id_producto = @id_producto;
 
-	CLOSE detalles_cursos
-	DEALLOCATE detalles_cursor
+    DROP TABLE #TEMP;
+END
+
+CREATE PROCEDURE RESUMENPEDIDO
+AS
+BEGIN
+--MUESTRA INFORMACIÓN DEL PEDIDO
+	SELECT p.id_pedido, p.numero_documento, strftime('%d/%m/%Y', date(p.fecha_registro))[fecha_registro], p.monto_total, p.id_proveedor,
+	d.id_detallepedido, d.cantidad, d.monto_total, d.id_producto 
+	FROM pedidos_proveedor p
+	INNER JOIN detalle_pedido d ON p.id_pedido=d.id_pedido
+	WHERE DATE(p.fecha_registro) BETWEEN DATE(@fechainicio) AND DATE(@fechafin) AND p.estado=1;
+END
+
+CREATE PROCEDURE OBTENERNUMERODOCUMENTO
+@numero_documento VARCHAR(12)
+AS
+BEGIN
+SELECT id_pedido, numero_documento, strftime('%d/%m/%Y', date(p.fecha_registro))[fecha_registro], monto_total, id_proveedor
+FROM pedidos_proveedor 
+WHERE numero_documento = @numero_documento AND estado = 1
 END
 
 ------------------------------------------------------
