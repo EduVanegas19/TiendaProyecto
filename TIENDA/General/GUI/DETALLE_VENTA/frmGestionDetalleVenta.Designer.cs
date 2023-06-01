@@ -212,7 +212,6 @@ namespace General.GUI.DETALLE_VENTA
         #endregion
 
         private System.Windows.Forms.Button btnFactura;
-        private System.Windows.Forms.NumericUpDown txtCantidad;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAgregar;
@@ -226,5 +225,6 @@ namespace General.GUI.DETALLE_VENTA
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_facutura;
+        public System.Windows.Forms.NumericUpDown txtCantidad;
     }
 }

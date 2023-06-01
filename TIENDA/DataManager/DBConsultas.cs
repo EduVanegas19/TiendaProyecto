@@ -40,7 +40,7 @@ namespace DataManager
         public static DataTable TICKET()
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"exec ObtenerUltimaFactura;";
+            String Sentencia = @"exec ObtenerUltimaFactura";
             DBOperacion Consultor = new DBOperacion();
             try
             {
@@ -136,7 +136,7 @@ namespace DataManager
         public static DataTable CLIENTES()
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"SELECT * FROM clientes;";
+            String Sentencia = @"SELECT * FROM clientes WHERE estado=1;";
             DBOperacion Consultor = new DBOperacion();
             try
             {

@@ -54,13 +54,16 @@ END
 --ELIMINAR PRODUCTOS--
 
 CREATE PROCEDURE ELIMINARPRODUCTO
-@id_producto BIGINT,
-@estado BIT
+
+	@id_producto BIGINT
+
 AS
 BEGIN
-UPDATE productos 
-SET estado=0
-WHERE id_producto=@id_producto
+
+	UPDATE productos 
+	SET estado=0
+	WHERE id_producto=@id_producto
+
 END
 
 --LISTAR PRODUCTOS ORDEN ALFABETICO--
@@ -243,18 +246,21 @@ END
 --ELIMINAR CLIENTES--
 
 CREATE PROCEDURE EliminarClientes
-@id_cliente BIGINT,
-@estado BIT
+
+	@id_cliente BIGINT
+
 AS
 BEGIN
-UPDATE clientes 
-SET estado=0
-WHERE id_cliente=@id_cliente
+	UPDATE clientes 
+	SET estado=0
+	WHERE id_cliente=@id_cliente
 
-UPDATE direcciones 
-SET estado=0
-WHERE id_direccion= (SELECT id_direccion FROM clientes WHERE id_cliente=@id_cliente)
+	UPDATE direcciones 
+	SET estado=0
+	WHERE id_direccion= (SELECT id_direccion FROM clientes WHERE id_cliente=@id_cliente)
 END
+
+SELECT * FROM clientes WHERE estado=1
 
 --***************************************************************************************************************************--
 
@@ -411,8 +417,7 @@ END
 -- Eliminar usuario
 CREATE PROCEDURE EliminarUsuario
 
-	@id_usuario BIGINT,
-	@estado BIT
+	@id_usuario BIGINT
 
 AS
 BEGIN
@@ -555,6 +560,7 @@ exec ModificarProveedor 6, 'Lenovo', numdoc12, 1;
 exec EliminarProveedor 6;
 select * from proveedores
 
+
 -- Listar usuario alfabeticamente
 CREATE PROCEDURE ListarUsarioAlfabeticamente
 
@@ -639,3 +645,720 @@ BEGIN
 	where u.id_usuario = @id_usuario
 END
 
+
+--*********************************************************************
+--******* AREAS ***************************************************
+
+-- Agregar Areas
+GO
+CREATE PROCEDURE AgregarAreas
+
+	@area VARCHAR(50)
+
+AS
+BEGIN
+
+	INSERT INTO areas(area)
+	VALUES (@area)
+END
+
+-- Modificar Areas
+GO
+CREATE PROCEDURE ModificarAreas
+
+	@id_area BIGINT,
+	@area VARCHAR(50)
+
+AS
+BEGIN
+
+	UPDATE areas 
+	SET area=@area
+	WHERE id_area = @id_area;
+END
+
+-- Eliminar Areas
+GO
+CREATE PROCEDURE EliminarAreas
+
+	@id_area BIGINT
+
+AS
+BEGIN
+
+	delete from areas WHERE id_area=@id_area
+
+END
+
+
+--*********************************************************************
+--******* DETALLE FACTURA ***************************************************
+
+-- Agregar Detalle Factura
+GO
+CREATE PROCEDURE AgregarDetalleFactura
+
+	@precioUnitario money,
+	@precioVenta money,
+	@cantidad int,
+	@idProducto bigint,
+	@idFactura bigint
+
+AS
+BEGIN
+
+	INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura)
+	VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @idFactura)
+END
+
+-- Modificar Detalle Factura
+GO
+CREATE PROCEDURE ModificarDetalleFactura
+
+	@idDetalleFactura bigint,
+	@precioUnitario money,
+	@precioVenta money,
+	@cantidad int,
+	@idProducto bigint,
+	@idFactura bigint
+
+AS
+BEGIN
+
+	UPDATE detalle_factura
+	SET precio_unitario=@precioUnitario, precio_venta=@precioVenta, cantidad=@cantidad, id_producto=@idProducto, id_factura=@idFactura
+	WHERE id_detallefactura = @idDetalleFactura;
+END
+
+---- Eliminar Detalle Factura
+--GO
+--CREATE PROCEDURE EliminarDetalleFactura
+
+--	@idDetalleFactura BIGINT
+
+--AS
+--BEGIN
+
+--	delete from detalle_factura WHERE id_area=@id_area
+
+--END
+
+--*********************************************************************
+--******* DETALLE PEDIDO ***************************************************
+
+-- Agregar Detalle Pedido
+GO
+CREATE PROCEDURE AgregarDetallePedido
+
+	@cantidad int,
+	@montoTotal money,
+	@estado bit,
+	@idPedido bigint,
+	@idProducto bigint
+
+AS
+BEGIN
+
+	INSERT INTO detalle_pedido(cantidad, monto_total, estado, id_pedido, id_producto)
+	VALUES (@cantidad, @montoTotal, @estado, @idPedido, @idProducto)
+END
+
+-- Modificar Detalle Pedido
+GO
+CREATE PROCEDURE ModificarDetallePedido
+
+	@idDetallePedido bigint,
+	@cantidad int,
+	@montoTotal money,
+	@estado bit,
+	@idProducto bigint,
+	@idPedido bigint
+
+AS
+BEGIN
+
+	UPDATE detalle_pedido
+	SET cantidad=@cantidad, monto_total=@montoTotal, estado=@estado, id_pedido=@idPedido, id_producto=@idProducto
+	WHERE id_detallepedido = @idDetallePedido;
+END
+
+--*********************************************************************
+--******* Direcciones ***************************************************
+
+-- Agregar Direcciones
+GO
+CREATE PROCEDURE AgregarDirecciones
+
+	@numeroCasa varchar(10),
+	@pasajePoligono varchar(50),
+	@calle varchar(50),
+	@colonia varchar(50),
+	@canton varchar(50),
+	@caserio varchar(50),
+	@codigoPostal varchar(10),
+	@estado bit,
+	@idMunicipio int
+
+AS
+BEGIN
+
+	INSERT INTO direcciones(numero_casa, pasaje_poligono, calle, colonia, canton, caserio, codigo_postal, estado, id_municipio)
+	VALUES (@numeroCasa, @pasajePoligono, @calle, @colonia, @canton, @caserio, @codigoPostal, @estado, @idMunicipio)
+END
+
+-- Modificar Direcciones
+GO
+CREATE PROCEDURE ModificarDirecciones
+
+	@idDireccion bigint,
+	@numeroCasa varchar(10),
+	@pasajePoligono varchar(50),
+	@calle varchar(50),
+	@colonia varchar(50),
+	@canton varchar(50),
+	@caserio varchar(50),
+	@codigoPostal varchar(10),
+	@estado bit,
+	@idMunicipio int
+
+AS
+BEGIN
+
+	UPDATE direcciones 
+	SET numero_casa=@numeroCasa, pasaje_poligono=@pasajePoligono, calle=@calle, colonia=@colonia, canton=@canton, caserio=@caserio, codigo_postal=@codigoPostal, estado=@estado, id_municipio=@idMunicipio
+	WHERE id_direccion = @idDireccion;
+END
+
+-- Eliminar Direcciones
+GO
+CREATE PROCEDURE EliminarDirecciones
+
+	@idDireccion bigint
+
+AS
+BEGIN
+
+	UPDATE direcciones
+	SET estado=0 
+	WHERE id_direccion=@idDireccion
+
+END
+
+
+--*********************************************************************
+--******* Empleados ***************************************************
+
+-- Agregar Empleados
+GO
+CREATE PROCEDURE AgregarEmpleados
+
+	@nombre varchar(50),
+	@apellido varchar(50),
+	@genero varchar(50),
+	@telefono varchar(50),
+	@correo varchar(50),
+	@DUI varchar(50),
+	@fechaNac date,
+	@estado bit,
+	@idDireccion int
+
+AS
+BEGIN
+
+	INSERT INTO empleados(nombre, apellido, genero, telefono, correo, DUI, fechanac, id_direccion, estado)
+	VALUES (@nombre, @apellido, @genero, @telefono, @correo, @DUI, @fechaNac, @idDireccion, @estado)
+END
+
+-- Modificar Empleados
+GO
+CREATE PROCEDURE ModificarEmpleados
+
+	@idEmpleado bigint,
+	@nombre varchar(50),
+	@apellido varchar(50),
+	@genero varchar(50),
+	@telefono varchar(50),
+	@correo varchar(50),
+	@DUI varchar(50),
+	@fechaNac date,
+	@estado bit,
+	@idDireccion int
+
+AS
+BEGIN
+
+	UPDATE empleados 
+	SET nombre=@nombre, apellido=@apellido, genero=@genero, telefono=@telefono, correo=@correo, DUI=@DUI, fechanac=@fechaNac, id_direccion=@idDireccion, estado=@estado
+	WHERE id_empleado = @idEmpleado;
+END
+
+-- Eliminar Empleados
+GO
+CREATE PROCEDURE EliminarEmpleados
+
+	@idEmpleado bigint
+
+AS
+BEGIN
+
+	UPDATE empleados
+	SET estado=0 
+	WHERE id_empleado=@idEmpleado
+
+END
+
+--*********************************************************************
+--******* Factura ***************************************************
+
+-- Agregar Factura
+GO
+CREATE PROCEDURE AgregarFactura
+
+	@fecha date,
+	@descripcion varchar(100),
+	@numeroDocumento varchar(12),
+	@montoTotal money,
+	@cantidadProductos int,
+	@montoCliente money,
+	@cambio money,
+	@estado bit,
+	@idTipoPago int,
+	@idEmpleado int,
+	@idCliente int
+
+AS
+BEGIN
+
+	INSERT INTO facturas(fecha, descripcion, numero_documento, monto_total, cantidad_productos, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
+	VALUES (@fecha, @descripcion, @numeroDocumento, @montoTotal, @cantidadProductos, @montoCliente, @cambio, @estado, @idTipoPago, @idEmpleado, @idCliente)
+END
+
+-- Modificar Factura
+GO
+CREATE PROCEDURE ModificarFactura
+
+	@idFactura bigint,
+	@fecha date,
+	@descripcion varchar(100),
+	@numeroDocumento varchar(12),
+	@montoTotal money,
+	@cantidadProductos int,
+	@montoCliente money,
+	@cambio money,
+	@estado bit,
+	@idTipoPago int,
+	@idEmpleado int,
+	@idCliente int
+
+AS
+BEGIN
+
+	UPDATE facturas 
+	SET fecha=@fecha, descripcion=@descripcion, numero_documento=@numeroDocumento, monto_total=@montoTotal, cantidad_productos=@cantidadProductos, monto_cliente=@montoCliente, cambio=@cambio, estado=@estado, id_tipopago=@idTipoPago, id_empleado=@idEmpleado, id_cliente=@idCliente
+	WHERE id_factura = @idFactura;
+END
+
+-- Eliminar Factura
+GO
+CREATE PROCEDURE EliminarFactura
+
+	@idFactura bigint
+
+AS
+BEGIN
+
+	UPDATE facturas
+	SET estado=0 
+	WHERE id_factura=@idFactura
+
+END
+
+--*********************************************************************
+--******* Municipio ***************************************************
+
+-- Agregar Municipio
+GO
+CREATE PROCEDURE AgregarMunicipio
+
+	@municipio varchar(50),
+	@estado bit,
+	@idDepartamento int
+
+AS
+BEGIN
+
+	INSERT INTO municipios(municipio, estado, id_departamento)
+	VALUES (@municipio, @estado, @idDepartamento)
+END
+
+-- Modificar Municipio
+GO
+CREATE PROCEDURE ModificarMunicipio
+
+	@idMunicipio bigint,
+	@municipio varchar(50),
+	@estado bit,
+	@idDepartamento int
+
+AS
+BEGIN
+
+	UPDATE municipios 
+	SET municipio=@municipio, estado=@estado, id_departamento=@idDepartamento
+	WHERE id_municipio = @idMunicipio;
+END
+
+-- Eliminar Municipio
+GO
+CREATE PROCEDURE EliminarMunicipio
+
+	@idMunicipio bigint
+
+AS
+BEGIN
+
+	UPDATE municipios
+	SET estado=0 
+	WHERE id_municipio=@idMunicipio
+
+END
+
+--*********************************************************************
+--******* Opciones ***************************************************
+
+-- Agregar Opciones
+GO
+CREATE PROCEDURE AgregarOpciones
+
+	@nombre varchar(100),
+	@estado bit
+
+AS
+BEGIN
+
+	INSERT INTO opciones(nombre, estado)
+	VALUES (@nombre, @estado)
+END
+
+-- Modificar Opciones
+GO
+CREATE PROCEDURE ModificarOpciones
+
+	@idOpciones bigint,
+	@nombre varchar(100),
+	@estado bit
+
+AS
+BEGIN
+
+	UPDATE opciones 
+	SET nombre=@nombre, estado=@estado
+	WHERE id_opcion = @idOpciones;
+END
+
+-- Eliminar Opciones
+GO
+CREATE PROCEDURE EliminarOpciones
+
+	@idOpcion bigint
+
+AS
+BEGIN
+
+	UPDATE opciones
+	SET estado=0 
+	WHERE id_opcion=@idOpcion
+
+END
+
+--*********************************************************************
+--******* Pedido Proveedor ***************************************************
+
+-- Agregar Pedido Proveedor
+GO
+CREATE PROCEDURE AgregarPedidoProveedor
+
+	@numeroDocumento varchar(12),
+	@fecha date,
+	@montoTotal money,
+	@estado bit,
+	@idProveedor bigint
+
+AS
+BEGIN
+
+	INSERT INTO pedidos_proveedor(numero_documento, fecha_registro, monto_total, estado, id_proveedor)
+	VALUES (@numeroDocumento, @fecha, @montoTotal, @estado, @idProveedor)
+END
+
+-- Modificar Pedido Proveedor
+GO
+CREATE PROCEDURE ModificarPedidoProveedor
+
+	@idPedidoProveedor bigint,
+	@numeroDocumento varchar(12),
+	@fecha date,
+	@montoTotal money,
+	@estado bit,
+	@idProveedor bigint
+
+AS
+BEGIN
+
+	UPDATE pedidos_proveedor 
+	SET numero_documento=@numeroDocumento, fecha_registro=@fecha, monto_total=@montoTotal, estado=@estado, id_proveedor=@idProveedor
+	WHERE id_pedido = @idPedidoProveedor;
+END
+
+-- Eliminar Pedido Proveedor
+GO
+CREATE PROCEDURE EliminarPedidoProveedor
+
+	@idProveedor bigint
+
+AS
+BEGIN
+
+	UPDATE pedidos_proveedor
+	SET estado=0 
+	WHERE id_pedido=@idProveedor
+
+END
+
+--*********************************************************************
+--******* Permisos ***************************************************
+
+-- Agregar Permisos
+GO
+CREATE PROCEDURE AgregarPermisos
+
+	@idRol int,
+	@idSubOpcion bigint,
+	@estado bit
+
+AS
+BEGIN
+
+	INSERT INTO permisos(id_rol, id_subopcion, estado)
+	VALUES (@idRol, @idSubOpcion, @estado)
+END
+
+-- Modificar Permisos
+GO
+CREATE PROCEDURE ModificarPermisos
+
+	@idPermiso bigint,
+	@idRol int,
+	@idSubOpcion bigint,
+	@estado bit
+
+AS
+BEGIN
+
+	UPDATE permisos 
+	SET id_rol=@idRol, id_subopcion=@idSubOpcion, estado=@estado
+	WHERE id_permiso = @idPermiso;
+END
+
+-- Eliminar Permisos
+GO
+CREATE PROCEDURE EliminarPermisos
+
+	@idPermiso bigint
+
+AS
+BEGIN
+
+	UPDATE permisos
+	SET estado=0 
+	WHERE id_permiso=@idPermiso
+
+END
+
+--*********************************************************************
+--******* Rol ***************************************************
+
+-- Agregar Rol
+GO
+CREATE PROCEDURE AgregarRol
+
+	@rol varchar(50),
+	@estado bit
+
+AS
+BEGIN
+
+	INSERT INTO roles(rol, estado)
+	VALUES (@rol, @estado)
+END
+
+-- Modificar Rol
+GO
+CREATE PROCEDURE ModificarRol
+
+	@idRol int,
+	@rol varchar(50),
+	@estado bit
+
+AS
+BEGIN
+
+	UPDATE roles 
+	SET rol=@rol, estado=@estado
+	WHERE id_rol = @idRol;
+END
+
+-- Eliminar Rol
+GO
+CREATE PROCEDURE EliminarRol
+
+	@idRol bigint
+
+AS
+BEGIN
+
+	UPDATE roles
+	SET estado=0 
+	WHERE id_rol=@idRol
+
+END
+
+--*********************************************************************
+--******* Sub Opcion ***************************************************
+
+-- Agregar Sub Opcion
+GO
+CREATE PROCEDURE AgregarSubOpcion
+
+	@idOpcion int,
+	@nombre varchar(100),
+	@nombreFormulario varchar(100),
+	@estado bit
+
+AS
+BEGIN
+
+	INSERT INTO subopciones(id_opcion, nombre, nombreFormulario, estado)
+	VALUES (@idOpcion, @nombre, @nombreFormulario, @estado)
+END
+
+-- Modificar Sub Opcion
+GO
+CREATE PROCEDURE ModificarSubOpcion
+
+	@idSubopcion bigint,
+	@idOpcion int,
+	@nombre varchar(100),
+	@nombreFormulario varchar(100),
+	@estado bit
+
+AS
+BEGIN
+
+	UPDATE subopciones 
+	SET id_opcion=@idOpcion, nombre=@nombre, nombreFormulario=@nombreFormulario, estado=@estado
+	WHERE id_subopcion = @idSubopcion;
+END
+
+-- Eliminar Sub Opcion
+GO
+CREATE PROCEDURE EliminarSubOpcion
+
+	@idSubopcion bigint
+
+AS
+BEGIN
+
+	UPDATE subopciones
+	SET estado=0 
+	WHERE id_subopcion=@idSubopcion
+
+END
+
+--*********************************************************************
+--******* Tipo Pago ***************************************************
+
+-- Agregar Tipo Pago
+GO
+CREATE PROCEDURE AgregarTipoPago
+
+	@tipoPago varchar(50)
+
+AS
+BEGIN
+
+	INSERT INTO tipo_pagos(tipo_pago)
+	VALUES (@tipoPago)
+END
+
+-- Modificar Tipo Pago
+GO
+CREATE PROCEDURE ModificarTipoPago
+
+	@idTipopago int,
+	@tipoPago varchar(50)
+
+AS
+BEGIN
+
+	UPDATE tipo_pagos 
+	SET tipo_pago=@tipoPago
+	WHERE id_tipopago = @idTipopago;
+END
+
+-- Eliminar Tipo Pago
+GO
+CREATE PROCEDURE EliminarTipoPago
+
+	@idTipopago int
+
+AS
+BEGIN
+
+	delete from tipo_pagos WHERE id_tipopago=@idTipopago
+
+END
+
+--*********************************************************************
+--******* Unidad Medida ***************************************************
+
+-- Agregar Unidad Medida
+GO
+CREATE PROCEDURE AgregarUnidadMedida
+
+	@unidadMedida varchar(45)
+
+AS
+BEGIN
+
+	INSERT INTO unidad_medida(unidad_medida)
+	VALUES (@unidadMedida)
+END
+
+-- Modificar Unidad Medida
+GO
+CREATE PROCEDURE ModificarUnidadMedida
+
+	@idUnidadmedida int,
+	@unidadMedida varchar(45)
+
+AS
+BEGIN
+
+	UPDATE unidad_medida 
+	SET unidad_medida=@unidadMedida
+	WHERE id_unidadmedida = @idUnidadmedida;
+END
+
+-- Eliminar Unidad Medida
+GO
+CREATE PROCEDURE EliminarUnidadMedida
+
+	@idUnidadmedida int
+
+AS
+BEGIN
+
+	delete from unidad_medida WHERE id_unidadmedida=@idUnidadmedida
+
+END

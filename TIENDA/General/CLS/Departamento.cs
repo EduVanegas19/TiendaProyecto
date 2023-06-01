@@ -8,8 +8,11 @@ namespace General.CLS
 {
     public class Departamento
     {
-        public Int64 IdDepartamento { get; set; }
+        String _IdDepartamento;
+        String _Nombre;
 
-        public string Nombre { get; set; }
+        public string IdDepartamento { get => _IdDepartamento; set => _IdDepartamento = value; }
+        public string Nombre { get => _Nombre; set => _Nombre = value; }
+
     }
 }

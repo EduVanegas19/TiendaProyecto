@@ -118,7 +118,7 @@ namespace General.GUI.DETALLE_VENTA
                 return;
             }
 
-            if (txtCantidad.Value > _producto.Stock)
+            if (Convert.ToInt32(txtCantidad.Value) > Convert.ToInt32(_producto.Stock))
             {
                 MessageBox.Show("La cantidad no puede ser mayor al stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;

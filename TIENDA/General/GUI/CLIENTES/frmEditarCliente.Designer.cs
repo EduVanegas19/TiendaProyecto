@@ -30,46 +30,103 @@ namespace General.GUI.CLIENTES
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarCliente));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIdentificacion = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCredito = new System.Windows.Forms.TextBox();
+            this.checkEstado = new System.Windows.Forms.CheckBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtIdentificacion
             // 
-            this.textBox1.Location = new System.Drawing.Point(224, 83);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtIdentificacion.Location = new System.Drawing.Point(290, 66);
+            this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdentificacion.Name = "txtIdentificacion";
+            this.txtIdentificacion.Size = new System.Drawing.Size(100, 22);
+            this.txtIdentificacion.TabIndex = 0;
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(224, 141);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(290, 112);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // txtCredito
+            // 
+            this.txtCredito.Location = new System.Drawing.Point(290, 160);
+            this.txtCredito.Name = "txtCredito";
+            this.txtCredito.Size = new System.Drawing.Size(100, 22);
+            this.txtCredito.TabIndex = 2;
+            this.txtCredito.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // checkEstado
+            // 
+            this.checkEstado.AutoSize = true;
+            this.checkEstado.Location = new System.Drawing.Point(290, 201);
+            this.checkEstado.Name = "checkEstado";
+            this.checkEstado.Size = new System.Drawing.Size(98, 21);
+            this.checkEstado.TabIndex = 3;
+            this.checkEstado.Text = "checkBox1";
+            this.checkEstado.UseVisualStyleBackColor = true;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(290, 243);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(100, 22);
+            this.txtDireccion.TabIndex = 4;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(290, 29);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 22);
+            this.txtId.TabIndex = 5;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(311, 302);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(77, 25);
+            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmEditarCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.checkEstado);
+            this.Controls.Add(this.txtCredito);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtIdentificacion);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEditarCliente";
             this.Text = "Editar Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmEditarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtId;
+        public System.Windows.Forms.TextBox txtIdentificacion;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtCredito;
+        public System.Windows.Forms.CheckBox checkEstado;
+        public System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

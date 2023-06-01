@@ -8,20 +8,62 @@ namespace General.CLS
 {
     public class Detalle_pedido
     {
-        public Int64 IdDetallePedido { get; set; }
+        String _IdDetallePedido;
+        String _Cantidad;
+        String _MontoTotal;
+        String _Estado;
+        String _IdPedido;
+        String _IdProducto;
 
-        public int Cantidad { get; set; }
+        public string IdDetallePedido { get => _IdDetallePedido; set => _IdDetallePedido = value; }
+        public string Cantidad { get => _Cantidad; set => _Cantidad = value; }
+        public string MontoTotal { get => _MontoTotal; set => _MontoTotal = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
+        public string IdPedido { get => _IdPedido; set => _IdPedido = value; }
+        public string IdProducto { get => _IdProducto; set => _IdProducto = value; }
 
-        public string MontoSubTotal { get; set; }
-
-        public bool Estado { get; set; }
-
-        public Int64 IdPedido { get; set; }
-
-        public Int64 IdProducto { get; set; }
-
-        public Pedido_proveedor Pedido_Proveedor { get; set; }
-
-        public Producto Producto { get; set; }
+        //CRUD
+        public Boolean Insertar()
+        {
+            Boolean Resultado = false;
+            String Sentencia;
+            Int32 FilasInsertadas = 0;
+            try
+            {
+                Sentencia = @"exec AgregarDetallePedido " + _Cantidad + "," + _MontoTotal + "," + _Estado + "," + _IdPedido + "," + _IdProducto + ";";
+                DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
+                FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
+                if (FilasInsertadas > 0)
+                {
+                    Resultado = true;
+                }
+            }
+            catch (Exception)
+            {
+                Resultado = false;
+            }
+            return Resultado;
+        }
+        public Boolean Actualizar()
+        {
+            Boolean Resultado = false;
+            String Sentencia;
+            Int32 FilasInsertadas = 0;
+            try
+            {
+                Sentencia = @"exec ModificarDetallePedido " + _IdDetallePedido + "" + _Cantidad + "," + _MontoTotal + "," + _Estado + "," + _IdPedido + "," + _IdProducto + ";";
+                DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
+                FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
+                if (FilasInsertadas > 0)
+                {
+                    Resultado = true;
+                }
+            }
+            catch (Exception)
+            {
+                Resultado = false;
+            }
+            return Resultado;
+        }
     }
 }

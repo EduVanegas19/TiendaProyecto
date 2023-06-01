@@ -69,11 +69,11 @@ namespace General.GUI.PRODUCTO
                 {
                     _Producto = new CLS.Producto()
                     {
-                        IdProducto = Convert.ToInt32(dataGridView1.Rows[index].Cells["id_producto"].Value.ToString()),
+                        IdProducto = dataGridView1.Rows[index].Cells["id_producto"].Value.ToString(),
                         Nombre = dataGridView1.Rows[index].Cells["nombre"].Value.ToString(),
                         PrecioVenta = dataGridView1.Rows[index].Cells["precio_venta"].Value.ToString(),
-                        Stock = Convert.ToInt32(dataGridView1.Rows[index].Cells["stock"].Value.ToString()),
-                        Estado = Convert.ToBoolean(dataGridView1.Rows[index].Cells["estado"].Value.ToString()),
+                        Stock = dataGridView1.Rows[index].Cells["stock"].Value.ToString(),
+                        Estado = dataGridView1.Rows[index].Cells["estado"].Value.ToString(),
                     };
                     this.DialogResult = DialogResult.OK;
                     this.Close();

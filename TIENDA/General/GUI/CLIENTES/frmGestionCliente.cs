@@ -12,6 +12,21 @@ namespace General.GUI
 {
     public partial class frmGestionCliente : Form
     {
+        BindingSource _DATOS = new BindingSource();
+
+        private void CargarDatos()
+        {
+            try
+            {
+                _DATOS.DataSource = DataManager.DBConsultas.CLIENTES();
+                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.DataSource = _DATOS;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         public frmGestionCliente()
         {
             InitializeComponent();
@@ -24,7 +39,7 @@ namespace General.GUI
 
         private void frmGestionCliente_Load(object sender, EventArgs e)
         {
-
+            CargarDatos();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -34,15 +49,49 @@ namespace General.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CLIENTES.frmEditarCliente frm = new CLIENTES.frmEditarCliente();
-            frm.TopLevel = false;
-            panel1.Controls.Add(frm);
-            frm.Show();
+            CLIENTES.frmEditarCliente f = new CLIENTES.frmEditarCliente();
+            f.ShowDialog();
+            CargarDatos();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CLS.Cliente clien = new CLS.Cliente();
+                clien.IdCliente = dataGridView1.CurrentRow.Cells["id_cliente"].Value.ToString().ToUpper(); ;
+                //Realizar la operacion de Eliminar
+                if (clien.Eliminar())
+                {
+                    MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarDatos();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue eliminado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CLIENTES.frmEditarCliente f = new CLIENTES.frmEditarCliente();
+                f.txtId.Text = dataGridView1.CurrentRow.Cells["id_cliente"].Value.ToString();
+                f.txtIdentificacion.Text = dataGridView1.CurrentRow.Cells["identificacion"].Value.ToString();
+                f.txtNombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
+                f.txtCredito.Text = dataGridView1.CurrentRow.Cells["credito"].Value.ToString();
+                f.txtDireccion.Text = dataGridView1.CurrentRow.Cells["id_direccion"].Value.ToString();
+                f.checkEstado.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells["estado"].Value.ToString());
+                f.ShowDialog();
+                CargarDatos();
+            }
         }
     }
 }
