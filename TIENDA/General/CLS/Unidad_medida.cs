@@ -10,9 +10,11 @@ namespace General.CLS
     {
         String _IdUnidadMedida;
         String _UnidadMedida;
+        String _Estado;
 
         public string IdUnidadMedida { get => _IdUnidadMedida; set => _IdUnidadMedida = value; }
         public string UnidadMedida { get => _UnidadMedida; set => _UnidadMedida = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
 
         //CRUD
         public Boolean Insertar()
@@ -22,7 +24,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarUnidadMedida '" + _UnidadMedida + "';";
+                Sentencia = @"exec AgregarUnidadMedida '" + _UnidadMedida + "', " + _Estado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -43,7 +45,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarUnidadMedida " + _IdUnidadMedida + ",'" + _UnidadMedida + ";";
+                Sentencia = @"exec ModificarUnidadMedida " + _IdUnidadMedida + ",'" + _UnidadMedida + ", " + _Estado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

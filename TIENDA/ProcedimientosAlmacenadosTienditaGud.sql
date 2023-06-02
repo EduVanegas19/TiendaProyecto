@@ -21,7 +21,7 @@ CREATE PROCEDURE AGREGARPRODUCTO
 @id_area BIGINT
 AS
 BEGIN
-INSERT INTO productos (codigo_barras,descripcion,precio_unidad,precio_venta,stock,nombre,fecha_ingreso,
+INSERT INTO productos(codigo_barras,descripcion,precio_unidad,precio_venta,stock,nombre,fecha_ingreso,
 fecha_vencimiento, medida,estado,id_unidadmedida,id_area)
 VALUES (@codigo_barras,@descripcion,@precio_unidad,@precio_venta,@stock,@nombre,@fecha_ingreso,
 @fecha_vencimiento,@medida,1,@id_unidadmedida,@id_area)
@@ -75,7 +75,7 @@ SELECT p.id_producto,p.codigo_barras,p.descripcion,p.precio_unidad,p.precio_vent
 FROM productos p
 INNER JOIN areas a ON p.id_area =  a.id_area
 INNER JOIN unidad_medida um ON p.id_unidadmedida = um.id_unidadmedida
-WHERE estado=1
+WHERE p.estado=1
 ORDER BY nombre ASC
 END
 
@@ -88,7 +88,7 @@ SELECT p.id_producto,p.codigo_barras,p.descripcion,p.precio_unidad,p.precio_vent
 FROM productos p
 INNER JOIN areas a ON p.id_area =  a.id_area
 INNER JOIN unidad_medida um ON p.id_unidadmedida = um.id_unidadmedida
-WHERE estado=1
+WHERE p.estado=1
 ORDER BY nombre DESC
 END
 
@@ -150,7 +150,7 @@ BEGIN
 SELECT c.id_cliente, c.identificacion, c.nombre, c.credito,d.colonia,d.numero_casa,c.estado 
 FROM clientes c
 INNER JOIN direcciones d ON c.id_direccion = d.id_direccion
-WHERE estado=1
+WHERE c.estado=1
 ORDER BY nombre ASC
 END
 
@@ -162,7 +162,7 @@ BEGIN
 SELECT c.id_cliente, c.identificacion, c.nombre, c.credito,d.colonia,d.numero_casa,c.estado 
 FROM clientes c
 INNER JOIN direcciones d ON c.id_direccion = d.id_direccion
-WHERE estado=1
+WHERE c.estado=1
 ORDER BY nombre DESC
 END
 
@@ -273,7 +273,7 @@ AS
 BEGIN
 SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
 FROM pedidos_proveedor pp
-INNER JOIN proveedor p ON pp.id_proveedor = p.id_proveedor
+INNER JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
 WHERE pp.estado=1
 ORDER BY id_pedido DESC
 END
@@ -285,8 +285,8 @@ AS
 BEGIN
 SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
 FROM pedidos_proveedor pp
-INNER JOIN proveedor p ON pp.id_proveedor = p.id_proveedor
-WHERE estado=1
+INNER JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
+WHERE pp.estado=1
 ORDER BY fecha_registro ASC
 END
 
@@ -297,8 +297,8 @@ AS
 BEGIN
 SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
 FROM pedidos_proveedor pp
-INNER JOIN proveedor p ON pp.id_proveedor = p.id_proveedor
-WHERE estado=1
+INNER JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
+WHERE pp.estado=1
 ORDER BY fecha_registro DESC
 END
 
@@ -519,13 +519,14 @@ CREATE PROCEDURE AgregarProveedor
 
 	@nombre VARCHAR(50),
 	@numeroDocumeto VARCHAR(50),
-	@esLaboratorio BIT
+	@esLaboratorio BIT,
+	@estado bit
 
 AS
 BEGIN
 
-	INSERT INTO proveedores(proveedor, numero_documento, esLaboratorio)
-	VALUES (@nombre, @numeroDocumeto, @esLaboratorio)
+	INSERT INTO proveedores(proveedor, numero_documento, esLaboratorio, estado)
+	VALUES (@nombre, @numeroDocumeto, @esLaboratorio, @estado)
 END
 
 -- Modificar proveedor
@@ -534,13 +535,14 @@ CREATE PROCEDURE ModificarProveedor
 	@id_proveedor BIGINT,
 	@nombre VARCHAR(50),
 	@numeroDocumeto VARCHAR(50),
-	@esLaboratorio BIT
+	@esLaboratorio BIT,
+	@estado bit
 
 AS
 BEGIN
 
 	UPDATE proveedores 
-	SET proveedor=@nombre, numero_documento=@numeroDocumeto, esLaboratorio=@esLaboratorio
+	SET proveedor=@nombre, numero_documento=@numeroDocumeto, esLaboratorio=@esLaboratorio, estado=@estado
 	WHERE id_proveedor = @id_proveedor;
 END
 
@@ -552,7 +554,9 @@ CREATE PROCEDURE EliminarProveedor
 AS
 BEGIN
 
-	delete from proveedores WHERE id_proveedor=@id_proveedor
+	UPDATE proveedores
+	SET estado=0
+	WHERE id_proveedor=@id_proveedor
 END
 
 exec AgregarProveedor 'Lenovo', '11223344', 0;
@@ -653,13 +657,14 @@ END
 GO
 CREATE PROCEDURE AgregarAreas
 
-	@area VARCHAR(50)
+	@area VARCHAR(50),
+	@estado bit
 
 AS
 BEGIN
 
-	INSERT INTO areas(area)
-	VALUES (@area)
+	INSERT INTO areas(area, estado)
+	VALUES (@area, @estado)
 END
 
 -- Modificar Areas
@@ -667,13 +672,14 @@ GO
 CREATE PROCEDURE ModificarAreas
 
 	@id_area BIGINT,
-	@area VARCHAR(50)
+	@area VARCHAR(50),
+	@estado bit
 
 AS
 BEGIN
 
 	UPDATE areas 
-	SET area=@area
+	SET area=@area, estado=@estado
 	WHERE id_area = @id_area;
 END
 
@@ -686,7 +692,9 @@ CREATE PROCEDURE EliminarAreas
 AS
 BEGIN
 
-	delete from areas WHERE id_area=@id_area
+	UPDATE areas
+	SET  estado=0 
+	WHERE id_area=@id_area
 
 END
 
@@ -702,13 +710,14 @@ CREATE PROCEDURE AgregarDetalleFactura
 	@precioVenta money,
 	@cantidad int,
 	@idProducto bigint,
-	@idFactura bigint
+	@idFactura bigint,
+	@estado bit
 
 AS
 BEGIN
 
-	INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura)
-	VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @idFactura)
+	INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura, estado)
+	VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @idFactura, @estado)
 END
 
 -- Modificar Detalle Factura
@@ -720,13 +729,14 @@ CREATE PROCEDURE ModificarDetalleFactura
 	@precioVenta money,
 	@cantidad int,
 	@idProducto bigint,
-	@idFactura bigint
+	@idFactura bigint,
+	@estado bit
 
 AS
 BEGIN
 
 	UPDATE detalle_factura
-	SET precio_unitario=@precioUnitario, precio_venta=@precioVenta, cantidad=@cantidad, id_producto=@idProducto, id_factura=@idFactura
+	SET precio_unitario=@precioUnitario, precio_venta=@precioVenta, cantidad=@cantidad, id_producto=@idProducto, id_factura=@idFactura, estado=@estado
 	WHERE id_detallefactura = @idDetalleFactura;
 END
 
@@ -1282,13 +1292,14 @@ END
 GO
 CREATE PROCEDURE AgregarTipoPago
 
-	@tipoPago varchar(50)
+	@tipoPago varchar(50),
+	@estado bit
 
 AS
 BEGIN
 
-	INSERT INTO tipo_pagos(tipo_pago)
-	VALUES (@tipoPago)
+	INSERT INTO tipo_pagos(tipo_pago, estado)
+	VALUES (@tipoPago, @estado)
 END
 
 -- Modificar Tipo Pago
@@ -1296,13 +1307,14 @@ GO
 CREATE PROCEDURE ModificarTipoPago
 
 	@idTipopago int,
-	@tipoPago varchar(50)
+	@tipoPago varchar(50),
+	@estado bit
 
 AS
 BEGIN
 
 	UPDATE tipo_pagos 
-	SET tipo_pago=@tipoPago
+	SET tipo_pago=@tipoPago, estado=@estado
 	WHERE id_tipopago = @idTipopago;
 END
 
@@ -1315,7 +1327,9 @@ CREATE PROCEDURE EliminarTipoPago
 AS
 BEGIN
 
-	delete from tipo_pagos WHERE id_tipopago=@idTipopago
+	UPDATE tipo_pagos
+	SET estado=0
+	WHERE id_tipopago=@idTipopago
 
 END
 
@@ -1326,13 +1340,14 @@ END
 GO
 CREATE PROCEDURE AgregarUnidadMedida
 
-	@unidadMedida varchar(45)
+	@unidadMedida varchar(45),
+	@estado bit
 
 AS
 BEGIN
 
-	INSERT INTO unidad_medida(unidad_medida)
-	VALUES (@unidadMedida)
+	INSERT INTO unidad_medida(unidad_medida, estado)
+	VALUES (@unidadMedida, @estado)
 END
 
 -- Modificar Unidad Medida
@@ -1340,13 +1355,14 @@ GO
 CREATE PROCEDURE ModificarUnidadMedida
 
 	@idUnidadmedida int,
-	@unidadMedida varchar(45)
+	@unidadMedida varchar(45),
+	@estado bit
 
 AS
 BEGIN
 
 	UPDATE unidad_medida 
-	SET unidad_medida=@unidadMedida
+	SET unidad_medida=@unidadMedida, estado=@estado
 	WHERE id_unidadmedida = @idUnidadmedida;
 END
 
@@ -1359,6 +1375,8 @@ CREATE PROCEDURE EliminarUnidadMedida
 AS
 BEGIN
 
-	delete from unidad_medida WHERE id_unidadmedida=@idUnidadmedida
+	UPDATE unidad_medida
+	SET estado=0
+	WHERE id_unidadmedida=@idUnidadmedida
 
 END

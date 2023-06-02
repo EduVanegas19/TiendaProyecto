@@ -107,7 +107,8 @@ create table clientes(
 
 create table tipo_pagos(
 	id_tipopago bigint identity(1,1) primary key,
-	tipo_pago varchar(50) not null
+	tipo_pago varchar(50) not null,
+	estado bit not null
 );
 
 create table facturas(
@@ -135,6 +136,7 @@ create table proveedores(
 	proveedor varchar(100) not null,
 	numero_documento varchar(12),
 	esLaboratorio bit not null,
+	estado bit not null
 
 );
 
@@ -152,12 +154,14 @@ create table pedidos_proveedor(
 create table unidad_medida(
 	id_unidadmedida bigint identity(1,1) primary key,
 	unidad_medida varchar(45) not null,
+	estado bit not null
 
 );
 
 create table areas(
 	id_area bigint identity(1,1) primary key,
 	area varchar(50) not null,
+	estado bit not null
 
 );
 
@@ -200,6 +204,7 @@ create table detalle_factura(
 	cantidad int not null,
 	id_producto bigint not null,
 	id_factura bigint not null,
+	estado bit not null,
 
 	foreign key (id_factura) references facturas(id_factura),
 	foreign key (id_producto) references productos(id_producto)
@@ -466,10 +471,10 @@ values ('010101', 'Fernando Fnernando', 10.50, 1, 1),
 	  ('050505', 'Ernesto Ernesto', 3.55, 1, 5);
 
 GO 
-INSERT INTO tipo_pagos(tipo_pago)
-values ('Tarjeta'),
-	  ('Bitcoin'),
-	  ('Efectivo');
+INSERT INTO tipo_pagos(tipo_pago, estado)
+values ('Tarjeta', 1),
+	  ('Bitcoin', 1),
+	  ('Efectivo', 1);
 
 GO
 INSERT INTO facturas(fecha, descripcion, numero_documento, monto_total, cantidad_productos, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
@@ -485,12 +490,12 @@ values ('2005-01-21', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null),
 	  ('2014-10-30', '', '', 13.50, 5, 15.00, 1.50, 1, 3, 1, null);
 
 GO
-INSERT INTO proveedores(proveedor, numero_documento, esLaboratorio)
-values ('Salud', '', 0),
-	  ('Diana', '', 0),
-	  ('Laboratorios Suizos', '', 1),
-	  ('ZonaDigital', '', 0),
-	  ('Pepsi', '', 0);
+INSERT INTO proveedores(proveedor, numero_documento, esLaboratorio, estado)
+values ('Salud', '', 0, 1),
+	  ('Diana', '', 0, 1),
+	  ('Laboratorios Suizos', '', 1, 1),
+	  ('ZonaDigital', '', 0, 1),
+	  ('Pepsi', '', 0, 1);
 
 GO
 INSERT INTO pedidos_proveedor(numero_documento, fecha_registro, monto_total, estado, id_proveedor)
@@ -502,20 +507,20 @@ values ('', '2011-01-10', 100.90, 1, 4),
 	  ('', '2015-05-18', 1500.90, 1, 5);
 
 GO
-INSERT INTO unidad_medida(unidad_medida)
-values ('Gramo'),
-	  ('Kilogramo'),
-	  ('Libra'),
-	  ('Pulgada'),
-	  ('Litro');
+INSERT INTO unidad_medida(unidad_medida, estado)
+values ('Gramo', 1),
+	  ('Kilogramo', 1),
+	  ('Libra', 1),
+	  ('Pulgada', 1),
+	  ('Litro', 1);
 
 GO
-INSERT INTO areas(area)
-values ('Medicina'),
-	  ('Electrodomesticos'),
-	  ('Comida'),
-	  ('Accesorios'),
-	  ('Ropa');
+INSERT INTO areas(area, estado)
+values ('Medicina', 1),
+	  ('Electrodomesticos', 1),
+	  ('Comida', 1),
+	  ('Accesorios', 1),
+	  ('Ropa', 1);
 
 GO
 INSERT INTO productos(codigo_barras, descripcion, precio_unidad, precio_venta, stock, nombre, fecha_ingreso, fecha_vencimiento, medida, estado, id_unidadmedida, id_area)
@@ -539,17 +544,17 @@ values (33, 15.90, 1, 1, 1),
 	  (2, 1500.90, 1, 5, 5);
 
 GO
-INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura)
-values (0.20, 0.70, 3, 1, 10),
-	  (0.20, 0.90, 3, 3, 8),
-	  (0.20, 0.30, 3, 10, 8),
-	  (0.20, 0.40, 3, 9, 8),
-	  (0.20, 0.50, 4, 8, 8),
-	  (0.20, 0.60, 7, 7, 4),
-	  (0.20, 0.70, 3, 1, 4),
-	  (0.20, 0.70, 3, 9, 5),
-	  (0.20, 1.35, 3, 8, 5),
-	  (0.20, 1.10, 3, 2, 5);
+INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura, estado)
+values (0.20, 0.70, 3, 1, 10, 1),
+	  (0.20, 0.90, 3, 3, 8, 1),
+	  (0.20, 0.30, 3, 10, 8, 1),
+	  (0.20, 0.40, 3, 9, 8, 1),
+	  (0.20, 0.50, 4, 8, 8, 1),
+	  (0.20, 0.60, 7, 7, 4, 1),
+	  (0.20, 0.70, 3, 1, 4, 1),
+	  (0.20, 0.70, 3, 9, 5, 1),
+	  (0.20, 1.35, 3, 8, 5, 1),
+	  (0.20, 1.10, 3, 2, 5, 1);
 
 
 -- //////////////////////////////////////////////////////////////////////////// --

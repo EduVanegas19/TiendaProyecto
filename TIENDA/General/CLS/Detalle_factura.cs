@@ -14,6 +14,7 @@ namespace General.CLS
         String _Cantidad;
         String _IdProducto;
         String _IdFactura;
+        String _Estado;
 
         public string IdDetalleFactura { get => _IdDetalleFactura; set => _IdDetalleFactura = value; }
         public string PrecioUnitario { get => _PrecioUnitario; set => _PrecioUnitario = value; }
@@ -21,6 +22,7 @@ namespace General.CLS
         public string Cantidad { get => _Cantidad; set => _Cantidad = value; }
         public string IdProducto { get => _IdProducto; set => _IdProducto = value; }
         public string IdFactura { get => _IdFactura; set => _IdFactura = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
 
         //CRUD
         public Boolean Insertar()
@@ -30,7 +32,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarDetalleFactura " + _PrecioUnitario + "," + _PrecioVenta + "," + _Cantidad + "," + _IdProducto + "," + _IdFactura + ";";
+                Sentencia = @"exec AgregarDetalleFactura " + _PrecioUnitario + "," + _PrecioVenta + "," + _Cantidad + "," + _IdProducto + "," + _IdFactura + ", " + _Estado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -51,7 +53,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarDetalleFactura " + _IdDetalleFactura + ", " + _PrecioUnitario + "," + _PrecioVenta + "," + _Cantidad + "," + _IdProducto + "," + _IdFactura + ";";
+                Sentencia = @"exec ModificarDetalleFactura " + _IdDetalleFactura + ", " + _PrecioUnitario + "," + _PrecioVenta + "," + _Cantidad + "," + _IdProducto + "," + _IdFactura + ", " + _Estado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

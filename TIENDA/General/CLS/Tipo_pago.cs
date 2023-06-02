@@ -10,9 +10,11 @@ namespace General.CLS
     {
         String _IdTipoPago;
         String _TipoPago;
+        String _Estado;
 
         public string IdTipoPago { get => _IdTipoPago; set => _IdTipoPago = value; }
         public string TipoPago { get => _TipoPago; set => _TipoPago = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
 
         //CRUD
         public Boolean Insertar()
@@ -22,7 +24,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarTipoPago '" + _TipoPago + "';";
+                Sentencia = @"exec AgregarTipoPago '" + _TipoPago + "', " + _Estado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -43,7 +45,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarTipoPago " + _IdTipoPago + ",'" + _TipoPago + ";";
+                Sentencia = @"exec ModificarTipoPago " + _IdTipoPago + ",'" + _TipoPago + ", " + _Estado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
