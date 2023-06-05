@@ -18,7 +18,7 @@ namespace General.GUI
         {
             try
             {
-                _DATOS.DataSource = DataManager.DBConsultas.CLIENTES();
+                _DATOS.DataSource = DataManager.DBConsultas.USUARIOS();
                 dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.DataSource = _DATOS;
             }

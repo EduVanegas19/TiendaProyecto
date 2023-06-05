@@ -12,71 +12,102 @@ namespace General.GUI.PRODUCTO
 {
     public partial class frmEditarProducto : Form
     {
-        BindingSource _DATOS = new BindingSource();
-        public CLS.Producto _Producto { get; set; }
-        private void CargarDatos()
-        {
-            try
-            {
-                _DATOS.DataSource = DataManager.DBConsultas.PRODUCTOS();
-                dataGridView1.AutoGenerateColumns = false;
-                dataGridView1.DataSource = _DATOS;
-            }
-            catch (Exception)
-            {
-
-            }
-        }
         public frmEditarProducto()
         {
             InitializeComponent();
         }
 
-
         private void frmEditarProducto_Load(object sender, EventArgs e)
         {
-            CargarDatos();
+            // Configurar los TextBox como no editables
+            txtId.ReadOnly = true;
+            txtCodigoB.ReadOnly = true;
+            txtDescripcion.ReadOnly = true;
+            txtPrecioUni.ReadOnly = true;
+            txtPrecioVenta.ReadOnly = true;
+            txtCantidad.ReadOnly = true;
+            txtNombre.ReadOnly = true;
+            txtMedida.ReadOnly = true;
+            //Combobox
+            cbbUnidadMedida.Enabled = false;
+            cbbArea.Enabled = false;
+            //DateTimePicker
+            dtpFechaIngreso.Enabled = false;
+            dtpFechaVencimiento.Enabled = false;
+            //PictureBox
+            btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
+            //ChecKbox
+            checkEstado.Enabled = false;
         }
 
-
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            //DETALLE_VENTA.frmGestionDetalleVenta f = new DETALLE_VENTA.frmGestionDetalleVenta();
-            //string id = dataGridView1.CurrentRow.Cells["id_producto"].Value.ToString();
-            //string nombre = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
-            //string precio = dataGridView1.CurrentRow.Cells["precio_venta"].Value.ToString();
-            //string estado = dataGridView1.CurrentRow.Cells["estado"].Value.ToString();
-            //f.GuardarDatosTemporales();
-
-            //// Mostrar el formulario padre si no está visible
-            //f.Show();
-
-            //// Llamar al método del formulario padre para actualizar los datos
-            //f.ActualizarDatosProducto(id, estado, nombre, precio);
-
-            //// Restaurar datos temporales del DataGridView después de que se cierre el formulario padre
-            //f.RestaurarDatosTemporales();
-
-            //this.Close();
+            // Configurar los TextBox como no editables
+            txtId.ReadOnly = false;
+            txtCodigoB.ReadOnly = false;
+            txtDescripcion.ReadOnly = false;
+            txtPrecioUni.ReadOnly = false;
+            txtPrecioVenta.ReadOnly = false;
+            txtCantidad.ReadOnly = false;
+            txtNombre.ReadOnly = false;
+            txtMedida.ReadOnly = false;
+            //Combobox
+            cbbUnidadMedida.Enabled = true;
+            cbbArea.Enabled = true;
+            //DateTimePicker
+            dtpFechaIngreso.Enabled = true;
+            dtpFechaVencimiento.Enabled = true;
+            //PictureBox
+            btnGuardar.Enabled = true;
+            btnEliminar.Enabled = true;
+            //ChecKbox
+            checkEstado.Enabled = true;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            //Creacion del objeto entidad
+            CLS.Producto prod = new CLS.Producto();
+            //Sincronizar la entidad con la interfaz
+            prod.IdProducto = txtId.Text;
+            prod.CodigoBarras = txtCodigoB.Text;
+            prod.Descripcion = txtDescripcion.Text;
+            prod.PrecioUnidad = txtPrecioUni.Text;
+            prod.PrecioVenta = txtPrecioVenta.Text;
+            prod.Stock = txtCantidad.Text;
+            prod.Nombre = txtNombre.Text;
+            prod.FechaIngreso = dtpFechaIngreso.Text;
+            prod.FechaVencimiento = dtpFechaVencimiento.Text;
+            prod.Medida = txtMedida.Text;
+            prod.Estado = checkEstado.Checked.ToString();
+            prod.IdUnidadMedida = cbbUnidadMedida.SelectedValue.ToString();
+            prod.IdArea = cbbArea.SelectedValue.ToString();
+            //Identificar la accion a realizar
+            if (txtId.TextLength > 0)
             {
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "btnSeleccionar")
+                //Realizar la operacion de actualizar
+                if (prod.Actualizar())
                 {
-                    _Producto = new CLS.Producto()
-                    {
-                        IdProducto = dataGridView1.Rows[index].Cells["id_producto"].Value.ToString(),
-                        Nombre = dataGridView1.Rows[index].Cells["nombre"].Value.ToString(),
-                        PrecioVenta = dataGridView1.Rows[index].Cells["precio_venta"].Value.ToString(),
-                        Stock = dataGridView1.Rows[index].Cells["stock"].Value.ToString(),
-                        Estado = dataGridView1.Rows[index].Cells["estado"].Value.ToString(),
-                    };
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue actualizado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                //Realizar la operacion de insertar
+                if (prod.Insertar())
+                {
+                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue insertado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

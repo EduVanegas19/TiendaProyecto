@@ -16,5 +16,10 @@ namespace General.GUI
         {
             InitializeComponent();
         }
+
+        private void frmEditarUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

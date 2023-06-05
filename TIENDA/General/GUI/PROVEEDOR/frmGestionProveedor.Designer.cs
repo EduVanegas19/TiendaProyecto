@@ -29,64 +29,252 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionProveedor));
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.PictureBox();
+            this.btnEditar = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbOrdenar = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.dtgProveedores = new System.Windows.Forms.DataGridView();
             this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedores)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // statusStrip1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_proveedor,
-            this.proveedor,
-            this.numero_documento,
-            this.esLaboratorio});
-            this.dataGridView1.Location = new System.Drawing.Point(113, 236);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(505, 169);
-            this.dataGridView1.TabIndex = 0;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUsuario,
+            this.lblRol});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 573);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.statusStrip1.Size = new System.Drawing.Size(915, 30);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // btnInsertar
+            // lblUsuario
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(113, 52);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(75, 37);
-            this.btnInsertar.TabIndex = 1;
-            this.btnInsertar.Text = "Agregar";
-            this.btnInsertar.UseVisualStyleBackColor = true;
-            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(75, 24);
+            this.lblUsuario.Text = "USUARIO";
+            // 
+            // lblRol
+            // 
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(36, 24);
+            this.lblRol.Text = "ROL";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(0, -2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(915, 67);
+            this.panel3.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(191, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(372, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "BANNER DE LOGO DE LA EMPRESA COMO EL SPLASH";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Controls.Add(this.btnAgregar);
+            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btnEliminar);
+            this.panel2.Controls.Add(this.btnSalir);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Location = new System.Drawing.Point(826, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(89, 497);
+            this.panel2.TabIndex = 6;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(13, 53);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(67, 62);
+            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(251, 52);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(13, 133);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 37);
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.Size = new System.Drawing.Size(67, 62);
+            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.TabStop = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 337);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "*REPORTE *";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(410, 52);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(13, 213);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(81, 37);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(13, 435);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(67, 58);
+            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(13, 358);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(64, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.dtgProveedores);
+            this.panel1.Controls.Add(this.cbbOrdenar);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtBuscar);
+            this.panel1.Location = new System.Drawing.Point(3, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(825, 497);
+            this.panel1.TabIndex = 5;
+            // 
+            // cbbOrdenar
+            // 
+            this.cbbOrdenar.FormattingEnabled = true;
+            this.cbbOrdenar.Location = new System.Drawing.Point(671, 21);
+            this.cbbOrdenar.Name = "cbbOrdenar";
+            this.cbbOrdenar.Size = new System.Drawing.Size(121, 24);
+            this.cbbOrdenar.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(559, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Ordenar por:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Digite aqui para buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
+            this.txtBuscar.TabIndex = 6;
+            // 
+            // dtgProveedores
+            // 
+            this.dtgProveedores.AllowUserToAddRows = false;
+            this.dtgProveedores.AllowUserToDeleteRows = false;
+            this.dtgProveedores.BackgroundColor = System.Drawing.Color.White;
+            this.dtgProveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dtgProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_proveedor,
+            this.proveedor,
+            this.numero_documento,
+            this.esLaboratorio,
+            this.estado});
+            this.dtgProveedores.Location = new System.Drawing.Point(30, 62);
+            this.dtgProveedores.MultiSelect = false;
+            this.dtgProveedores.Name = "dtgProveedores";
+            this.dtgProveedores.ReadOnly = true;
+            this.dtgProveedores.RowHeadersWidth = 51;
+            this.dtgProveedores.RowTemplate.Height = 24;
+            this.dtgProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgProveedores.Size = new System.Drawing.Size(762, 431);
+            this.dtgProveedores.TabIndex = 15;
+            this.dtgProveedores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedores_CellContentDoubleClick);
             // 
             // id_proveedor
             // 
@@ -95,7 +283,7 @@ namespace General.GUI
             this.id_proveedor.MinimumWidth = 6;
             this.id_proveedor.Name = "id_proveedor";
             this.id_proveedor.ReadOnly = true;
-            this.id_proveedor.Width = 125;
+            this.id_proveedor.Width = 142;
             // 
             // proveedor
             // 
@@ -104,7 +292,7 @@ namespace General.GUI
             this.proveedor.MinimumWidth = 6;
             this.proveedor.Name = "proveedor";
             this.proveedor.ReadOnly = true;
-            this.proveedor.Width = 125;
+            this.proveedor.Width = 142;
             // 
             // numero_documento
             // 
@@ -113,7 +301,7 @@ namespace General.GUI
             this.numero_documento.MinimumWidth = 6;
             this.numero_documento.Name = "numero_documento";
             this.numero_documento.ReadOnly = true;
-            this.numero_documento.Width = 125;
+            this.numero_documento.Width = 141;
             // 
             // esLaboratorio
             // 
@@ -122,34 +310,73 @@ namespace General.GUI
             this.esLaboratorio.MinimumWidth = 6;
             this.esLaboratorio.Name = "esLaboratorio";
             this.esLaboratorio.ReadOnly = true;
-            this.esLaboratorio.Width = 125;
+            this.esLaboratorio.Width = 142;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 142;
             // 
             // frmGestionProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnInsertar);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(915, 603);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "frmGestionProveedor";
             this.Text = "Gestion de Proveedor";
             this.Load += new System.EventHandler(this.frmGestionProveedor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedores)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
+        private System.Windows.Forms.ToolStripStatusLabel lblRol;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox btnAgregar;
+        private System.Windows.Forms.PictureBox btnEditar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox btnEliminar;
+        private System.Windows.Forms.PictureBox btnSalir;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dtgProveedores;
+        private System.Windows.Forms.ComboBox cbbOrdenar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn esLaboratorio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

@@ -19,20 +19,28 @@ namespace General.GUI.PROVEEDOR
 
         private void frmEditarProveedor_Load(object sender, EventArgs e)
         {
-
+            // Configurar los TextBox como no editables
+            txtId.ReadOnly = true;
+            txtProveedor.ReadOnly = true;
+            txtNumDoc.ReadOnly = true;
+            checkLab.Enabled = true;
+            checkEstado.Enabled = true;
+            btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             //Creacion del objeto entidad
             CLS.Proveedor prov = new CLS.Proveedor();
             //Sincronizar la entidad con la interfaz
-            prov.IdProveedor = textBox1.Text;
+            prov.IdProveedor = txtId.Text;
             prov.Nombre = txtProveedor.Text;
             prov.NumeroDocumento = txtNumDoc.Text;
             prov.EsLaboratorio = checkLab.Checked.ToString();
+            prov.Estado = checkEstado.Checked.ToString();
             //Identificar la accion a realizar
-            if (textBox1.TextLength > 0)
+            if (txtId.TextLength > 0)
             {
                 //Realizar la operacion de actualizar
                 if (prov.Actualizar())
@@ -60,44 +68,16 @@ namespace General.GUI.PROVEEDOR
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkLab_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNumDoc_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtProveedor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            // Configurar los TextBox como editables
+            txtId.ReadOnly = false;
+            txtProveedor.ReadOnly = false;
+            txtNumDoc.ReadOnly = false;
+            checkLab.Enabled = false;
+            checkEstado.Enabled = false;
+            btnGuardar.Enabled = true;
+            btnEliminar.Enabled = true;
         }
     }
 }

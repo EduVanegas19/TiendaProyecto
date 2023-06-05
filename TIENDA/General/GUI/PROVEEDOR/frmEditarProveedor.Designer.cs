@@ -29,137 +29,279 @@ namespace General.GUI.PROVEEDOR
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAgregar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarProveedor));
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.PictureBox();
+            this.btnEditar = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lblVisor = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.PictureBox();
+            this.checkEstado = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.checkLab = new System.Windows.Forms.CheckBox();
             this.txtNumDoc = new System.Windows.Forms.TextBox();
             this.txtProveedor = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.checkLab = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtIdCliente = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAgregar
+            // panel3
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(306, 230);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 37);
-            this.btnAgregar.TabIndex = 7;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.btnEliminar);
+            this.panel3.Controls.Add(this.pictureBox6);
+            this.panel3.Controls.Add(this.lblVisor);
+            this.panel3.Location = new System.Drawing.Point(13, 7);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(659, 75);
+            this.panel3.TabIndex = 15;
             // 
-            // txtNumDoc
+            // label16
             // 
-            this.txtNumDoc.Location = new System.Drawing.Point(240, 119);
-            this.txtNumDoc.Name = "txtNumDoc";
-            this.txtNumDoc.Size = new System.Drawing.Size(141, 22);
-            this.txtNumDoc.TabIndex = 5;
-            this.txtNumDoc.TextChanged += new System.EventHandler(this.txtNumDoc_TextChanged);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 17);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "*logo*";
             // 
-            // txtProveedor
+            // btnEliminar
             // 
-            this.txtProveedor.Location = new System.Drawing.Point(240, 66);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(141, 22);
-            this.txtProveedor.TabIndex = 4;
-            this.txtProveedor.TextChanged += new System.EventHandler(this.txtProveedor_TextChanged);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(487, 5);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabStop = false;
             // 
-            // checkLab
+            // btnEditar
             // 
-            this.checkLab.AutoSize = true;
-            this.checkLab.Location = new System.Drawing.Point(240, 172);
-            this.checkLab.Name = "checkLab";
-            this.checkLab.Size = new System.Drawing.Size(122, 21);
-            this.checkLab.TabIndex = 8;
-            this.checkLab.Text = "es Laboratorio";
-            this.checkLab.UseVisualStyleBackColor = true;
-            this.checkLab.CheckedChanged += new System.EventHandler(this.checkLab_CheckedChanged);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(50, 283);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(68, 60);
+            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.TabStop = false;
+            this.btnEditar.Visible = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // textBox1
+            // pictureBox6
             // 
-            this.textBox1.Location = new System.Drawing.Point(240, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(64, 22);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(571, 9);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(67, 58);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 10;
+            this.pictureBox6.TabStop = false;
+            // 
+            // lblVisor
+            // 
+            this.lblVisor.AutoSize = true;
+            this.lblVisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisor.Location = new System.Drawing.Point(100, 18);
+            this.lblVisor.Name = "lblVisor";
+            this.lblVisor.Size = new System.Drawing.Size(266, 36);
+            this.lblVisor.TabIndex = 0;
+            this.lblVisor.Text = "MODO LECTURA";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnGuardar);
+            this.panel1.Controls.Add(this.checkEstado);
+            this.panel1.Controls.Add(this.btnEditar);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtId);
+            this.panel1.Controls.Add(this.checkLab);
+            this.panel1.Controls.Add(this.txtNumDoc);
+            this.panel1.Controls.Add(this.txtProveedor);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtIdCliente);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(13, 81);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(659, 456);
+            this.panel1.TabIndex = 14;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(275, 283);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(64, 60);
+            this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // checkEstado
+            // 
+            this.checkEstado.AutoSize = true;
+            this.checkEstado.Location = new System.Drawing.Point(198, 227);
+            this.checkEstado.Name = "checkEstado";
+            this.checkEstado.Size = new System.Drawing.Size(18, 17);
+            this.checkEstado.TabIndex = 19;
+            this.checkEstado.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 29);
+            this.label1.Location = new System.Drawing.Point(47, 226);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Estado:";
             // 
-            // label2
+            // txtId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.txtId.Location = new System.Drawing.Point(198, 57);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(64, 22);
+            this.txtId.TabIndex = 17;
             // 
-            // label3
+            // checkLab
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 123);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.checkLab.AutoSize = true;
+            this.checkLab.Location = new System.Drawing.Point(198, 189);
+            this.checkLab.Name = "checkLab";
+            this.checkLab.Size = new System.Drawing.Size(18, 17);
+            this.checkLab.TabIndex = 16;
+            this.checkLab.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // txtNumDoc
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(160, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.txtNumDoc.Location = new System.Drawing.Point(198, 142);
+            this.txtNumDoc.Name = "txtNumDoc";
+            this.txtNumDoc.Size = new System.Drawing.Size(141, 22);
+            this.txtNumDoc.TabIndex = 15;
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.Location = new System.Drawing.Point(198, 99);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(141, 22);
+            this.txtProveedor.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 188);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Es Laboratorio:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(47, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Numero Documento: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(47, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 17);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Proveedor:";
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.AutoSize = true;
+            this.txtIdCliente.Location = new System.Drawing.Point(76, 60);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(0, 17);
+            this.txtIdCliente.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(47, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 17);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Id:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 17);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "PROVEEDOR:";
             // 
             // frmEditarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkLab);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtNumDoc);
-            this.Controls.Add(this.txtProveedor);
+            this.ClientSize = new System.Drawing.Size(684, 545);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Name = "frmEditarProveedor";
             this.Text = "Editar Proveedor";
             this.Load += new System.EventHandler(this.frmEditarProveedor_Load);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAgregar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox btnEliminar;
+        private System.Windows.Forms.PictureBox btnEditar;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblVisor;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TextBox txtId;
+        public System.Windows.Forms.CheckBox checkLab;
         public System.Windows.Forms.TextBox txtNumDoc;
         public System.Windows.Forms.TextBox txtProveedor;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        public System.Windows.Forms.CheckBox checkLab;
-        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtIdCliente;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.CheckBox checkEstado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox btnGuardar;
     }
 }

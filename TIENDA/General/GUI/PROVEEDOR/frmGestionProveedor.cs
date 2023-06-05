@@ -19,8 +19,8 @@ namespace General.GUI
             try
             {
                 _DATOS.DataSource = DataManager.DBConsultas.PROVEEDORES();
-                dataGridView1.AutoGenerateColumns = false;
-                dataGridView1.DataSource = _DATOS;
+                dtgProveedores.AutoGenerateColumns = false;
+                dtgProveedores.DataSource = _DATOS;
             }
             catch (Exception)
             {
@@ -37,12 +37,32 @@ namespace General.GUI
             CargarDatos();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                PROVEEDOR.frmEditarProveedor f = new PROVEEDOR.frmEditarProveedor();
+                f.txtId.Text = dtgProveedores.CurrentRow.Cells["id_proveedor"].Value.ToString();
+                f.txtProveedor.Text = dtgProveedores.CurrentRow.Cells["proveedor"].Value.ToString();
+                f.txtNumDoc.Text = dtgProveedores.CurrentRow.Cells["numero_documento"].Value.ToString();
+                f.checkLab.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["esLaboratorio"].Value.ToString());
+                f.checkEstado.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["estado"].Value.ToString());
+                f.ShowDialog();
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            PROVEEDOR.frmEditarProveedor f = new PROVEEDOR.frmEditarProveedor();
+            f.ShowDialog();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CLS.Proveedor proveedor = new CLS.Proveedor();
-                proveedor.IdProveedor = dataGridView1.CurrentRow.Cells["id_proveedor"].Value.ToString().ToUpper(); ;
+                proveedor.IdProveedor = dtgProveedores.CurrentRow.Cells["id_proveedor"].Value.ToString().ToUpper(); ;
                 //Realizar la operacion de Eliminar
                 if (proveedor.Eliminar())
                 {
@@ -56,24 +76,17 @@ namespace General.GUI
             }
         }
 
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
-            PROVEEDOR.frmEditarProveedor f = new PROVEEDOR.frmEditarProveedor();
-            f.ShowDialog();
-            CargarDatos();
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void dtgProveedores_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 PROVEEDOR.frmEditarProveedor f = new PROVEEDOR.frmEditarProveedor();
-                f.textBox1.Text = dataGridView1.CurrentRow.Cells["id_proveedor"].Value.ToString();
-                f.txtProveedor.Text = dataGridView1.CurrentRow.Cells["proveedor"].Value.ToString();
-                f.txtNumDoc.Text = dataGridView1.CurrentRow.Cells["numero_documento"].Value.ToString();
-                f.checkLab.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells["esLaboratorio"].Value.ToString());
+                f.txtId.Text = dtgProveedores.CurrentRow.Cells["id_proveedor"].Value.ToString();
+                f.txtProveedor.Text = dtgProveedores.CurrentRow.Cells["proveedor"].Value.ToString();
+                f.txtNumDoc.Text = dtgProveedores.CurrentRow.Cells["numero_documento"].Value.ToString();
+                f.checkLab.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["esLaboratorio"].Value.ToString());
+                f.checkEstado.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["estado"].Value.ToString());
                 f.ShowDialog();
-                CargarDatos();
             }
         }
     }
