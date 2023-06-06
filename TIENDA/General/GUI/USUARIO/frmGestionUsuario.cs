@@ -48,12 +48,7 @@ namespace General.GUI
             if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CLIENTES.frmEditarCliente f = new CLIENTES.frmEditarCliente();
-                f.txtId.Text = dtgvUsuario.CurrentRow.Cells["id_cliente"].Value.ToString();
-                f.txtIdentificacion.Text = dtgvUsuario.CurrentRow.Cells["identificacion"].Value.ToString();
-                f.txtNombre.Text = dtgvUsuario.CurrentRow.Cells["nombre"].Value.ToString();
-                f.txtCredito.Text = dtgvUsuario.CurrentRow.Cells["credito"].Value.ToString();
-                f.txtDireccion.Text = dtgvUsuario.CurrentRow.Cells["id_direccion"].Value.ToString();
-                f.checkEstado.Checked = Convert.ToBoolean(dtgvUsuario.CurrentRow.Cells["estado"].Value.ToString());
+                
                 f.ShowDialog();
             }
         }

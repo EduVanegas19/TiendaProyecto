@@ -23,10 +23,9 @@ namespace General.GUI.PROVEEDOR
             txtId.ReadOnly = true;
             txtProveedor.ReadOnly = true;
             txtNumDoc.ReadOnly = true;
-            checkLab.Enabled = true;
-            checkEstado.Enabled = true;
-            btnGuardar.Enabled = false;
-            btnEliminar.Enabled = false;
+            checkLab.Enabled = false;
+            btnGuardar.Visible = false;
+            btnEliminar.Visible = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -38,7 +37,6 @@ namespace General.GUI.PROVEEDOR
             prov.Nombre = txtProveedor.Text;
             prov.NumeroDocumento = txtNumDoc.Text;
             prov.EsLaboratorio = checkLab.Checked.ToString();
-            prov.Estado = checkEstado.Checked.ToString();
             //Identificar la accion a realizar
             if (txtId.TextLength > 0)
             {
@@ -74,10 +72,11 @@ namespace General.GUI.PROVEEDOR
             txtId.ReadOnly = false;
             txtProveedor.ReadOnly = false;
             txtNumDoc.ReadOnly = false;
-            checkLab.Enabled = false;
-            checkEstado.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+            checkLab.Enabled = true;
+            btnGuardar.Visible = true;
+            btnEliminar.Visible = true;
+
+            lblVisor.Text = "MODO EDICION";
         }
     }
 }

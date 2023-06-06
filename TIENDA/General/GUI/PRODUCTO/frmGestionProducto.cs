@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SessionManager;
 
 namespace General.GUI.PRODUCTO
 {
@@ -35,6 +36,8 @@ namespace General.GUI.PRODUCTO
         private void frmGestionProducto_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            lblUsuario.Text = Session.Instancia.usuario;
+            lblRol.Text = Session.Instancia.rol;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -53,7 +56,6 @@ namespace General.GUI.PRODUCTO
                 f.dtpFechaVencimiento.Text = dtgProducto.CurrentRow.Cells["fecha_vencimiento"].Value.ToString();
                 f.cbbUnidadMedida.Text = dtgProducto.CurrentRow.Cells["id_unidadmedida"].Value.ToString();
                 f.cbbArea.Text = dtgProducto.CurrentRow.Cells["id_area"].Value.ToString();
-                f.checkEstado.Checked = Convert.ToBoolean(dtgProducto.CurrentRow.Cells["estado"].Value.ToString());
                 f.ShowDialog();
             }
         }
@@ -99,7 +101,6 @@ namespace General.GUI.PRODUCTO
                 f.dtpFechaVencimiento.Text = dtgProducto.CurrentRow.Cells["fecha_vencimiento"].Value.ToString();
                 f.cbbUnidadMedida.Text = dtgProducto.CurrentRow.Cells["id_unidadmedida"].Value.ToString();
                 f.cbbArea.Text = dtgProducto.CurrentRow.Cells["id_area"].Value.ToString();
-                f.checkEstado.Checked = Convert.ToBoolean(dtgProducto.CurrentRow.Cells["estado"].Value.ToString());
                 f.ShowDialog();
             }
         }

@@ -52,6 +52,81 @@ namespace DataManager
             }
             return Resultado;
         }
+        public static DataTable ReporteClientes()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"exec ReporteClientes";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable ReporteEmpleados()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"exec ReporteEmpleados";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable ReporteProductos()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"exec ReporteProductos";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable ReporteProveedores()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"exec ReporteProveedores";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable ReporteUsuarios()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"exec ReporteUsuarios";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
 
         public static DataTable ROLES()
         {
@@ -698,7 +773,7 @@ namespace DataManager
 
         /*CONSULTAS ESPECIFICAS PARA PROVEEDORES*/
 
-        public static DataTable ListarUsarioAlfabeticamente()
+        public static DataTable ListarUsariosAlfabeticamente()
         {
             DataTable Resultado = new DataTable();
             String Sentencia = @"EXEC ListarUsarioAlfabeticamente";
@@ -713,40 +788,10 @@ namespace DataManager
             }
             return Resultado;
         }
-        public static DataTable ListarUsuariosNoAlfabeticamente()
-        {
-            DataTable Resultado = new DataTable();
-            String Sentencia = @"EXEC ListarUsuariosNoAlfabeticamente";
-            DBOperacion Consultor = new DBOperacion();
-            try
-            {
-                Resultado = Consultor.Consultar(Sentencia);
-            }
-            catch (Exception)
-            {
-                Resultado = new DataTable();
-            }
-            return Resultado;
-        }
-        public static DataTable BuscarUsuarioID(string pIdUsuario)
+        public static DataTable BuscarUsuariosID(string pIdUsuario)
         {
             DataTable Resultado = new DataTable();
             String Sentencia = @"EXEC BuscarUsuarioID" + pIdUsuario;
-            DBOperacion Consultor = new DBOperacion();
-            try
-            {
-                Resultado = Consultor.Consultar(Sentencia);
-            }
-            catch (Exception)
-            {
-                Resultado = new DataTable();
-            }
-            return Resultado;
-        }
-        public static DataTable BuscarUsuariosNombre(string pUsuario)
-        {
-            DataTable Resultado = new DataTable();
-            String Sentencia = @"EXEC BuscarUsuariosNombre" + pUsuario;
             DBOperacion Consultor = new DBOperacion();
             try
             {

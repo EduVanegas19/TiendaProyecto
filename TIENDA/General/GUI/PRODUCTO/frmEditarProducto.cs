@@ -1,4 +1,5 @@
-﻿using System;
+﻿using General.CLS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace General.GUI.PRODUCTO
 {
     public partial class frmEditarProducto : Form
     {
+        internal Producto _Producto;
+
         public frmEditarProducto()
         {
             InitializeComponent();
@@ -35,10 +38,9 @@ namespace General.GUI.PRODUCTO
             dtpFechaIngreso.Enabled = false;
             dtpFechaVencimiento.Enabled = false;
             //PictureBox
-            btnGuardar.Enabled = false;
-            btnEliminar.Enabled = false;
+            btnGuardar.Visible = false;
+            btnEliminar.Visible = false;
             //ChecKbox
-            checkEstado.Enabled = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -59,10 +61,9 @@ namespace General.GUI.PRODUCTO
             dtpFechaIngreso.Enabled = true;
             dtpFechaVencimiento.Enabled = true;
             //PictureBox
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+            btnGuardar.Visible = true;
+            btnEliminar.Visible = true;
             //ChecKbox
-            checkEstado.Enabled = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -80,7 +81,6 @@ namespace General.GUI.PRODUCTO
             prod.FechaIngreso = dtpFechaIngreso.Text;
             prod.FechaVencimiento = dtpFechaVencimiento.Text;
             prod.Medida = txtMedida.Text;
-            prod.Estado = checkEstado.Checked.ToString();
             prod.IdUnidadMedida = cbbUnidadMedida.SelectedValue.ToString();
             prod.IdArea = cbbArea.SelectedValue.ToString();
             //Identificar la accion a realizar

@@ -36,36 +36,36 @@ namespace General.GUI.DIRECCION
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.lblVisor = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCaserio = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCanton = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtColonia = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCalle = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.PictureBox();
+            this.btnGuardar = new System.Windows.Forms.PictureBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.checkEstado = new System.Windows.Forms.CheckBox();
             this.txtPasaje = new System.Windows.Forms.TextBox();
             this.txtNumCasa = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.PictureBox();
-            this.btnEditar = new System.Windows.Forms.PictureBox();
-            this.txtCalle = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtColonia = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCanton = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCaserio = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbbMunicipio = new System.Windows.Forms.ComboBox();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -122,7 +122,9 @@ namespace General.GUI.DIRECCION
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbbMunicipio);
+            this.panel1.Controls.Add(this.btnAgregar);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.txtMunicipio);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtCodigoPostal);
             this.panel1.Controls.Add(this.label10);
@@ -137,10 +139,8 @@ namespace General.GUI.DIRECCION
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.txtId);
-            this.panel1.Controls.Add(this.checkEstado);
             this.panel1.Controls.Add(this.txtPasaje);
             this.panel1.Controls.Add(this.txtNumCasa);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtIdCliente);
@@ -151,6 +151,119 @@ namespace General.GUI.DIRECCION
             this.panel1.Size = new System.Drawing.Size(659, 558);
             this.panel1.TabIndex = 16;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(50, 392);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 17);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Municipio:";
+            // 
+            // txtCodigoPostal
+            // 
+            this.txtCodigoPostal.Location = new System.Drawing.Point(182, 347);
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(141, 22);
+            this.txtCodigoPostal.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(50, 350);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 17);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Codigo postal:";
+            // 
+            // txtCaserio
+            // 
+            this.txtCaserio.Location = new System.Drawing.Point(182, 305);
+            this.txtCaserio.Name = "txtCaserio";
+            this.txtCaserio.Size = new System.Drawing.Size(141, 22);
+            this.txtCaserio.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(50, 308);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Caserio:";
+            // 
+            // txtCanton
+            // 
+            this.txtCanton.Location = new System.Drawing.Point(182, 262);
+            this.txtCanton.Name = "txtCanton";
+            this.txtCanton.Size = new System.Drawing.Size(141, 22);
+            this.txtCanton.TabIndex = 25;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(50, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 17);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Canton:";
+            // 
+            // txtColonia
+            // 
+            this.txtColonia.Location = new System.Drawing.Point(179, 220);
+            this.txtColonia.Name = "txtColonia";
+            this.txtColonia.Size = new System.Drawing.Size(141, 22);
+            this.txtColonia.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Colonia:";
+            // 
+            // txtCalle
+            // 
+            this.txtCalle.Location = new System.Drawing.Point(179, 179);
+            this.txtCalle.Name = "txtCalle";
+            this.txtCalle.Size = new System.Drawing.Size(141, 22);
+            this.txtCalle.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 182);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Calle:";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(53, 480);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(67, 62);
+            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditar.TabIndex = 19;
+            this.btnEditar.TabStop = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(259, 482);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(64, 60);
+            this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(182, 57);
@@ -158,15 +271,6 @@ namespace General.GUI.DIRECCION
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(64, 22);
             this.txtId.TabIndex = 17;
-            // 
-            // checkEstado
-            // 
-            this.checkEstado.AutoSize = true;
-            this.checkEstado.Location = new System.Drawing.Point(182, 431);
-            this.checkEstado.Name = "checkEstado";
-            this.checkEstado.Size = new System.Drawing.Size(18, 17);
-            this.checkEstado.TabIndex = 16;
-            this.checkEstado.UseVisualStyleBackColor = true;
             // 
             // txtPasaje
             // 
@@ -181,15 +285,6 @@ namespace General.GUI.DIRECCION
             this.txtNumCasa.Name = "txtNumCasa";
             this.txtNumCasa.Size = new System.Drawing.Size(141, 22);
             this.txtNumCasa.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 432);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Estado:";
             // 
             // label5
             // 
@@ -235,126 +330,30 @@ namespace General.GUI.DIRECCION
             this.label9.TabIndex = 8;
             this.label9.Text = "DIRECCION:";
             // 
-            // btnGuardar
+            // txtMunicipio
             // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(259, 482);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(64, 60);
-            this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnGuardar.TabIndex = 18;
-            this.btnGuardar.TabStop = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.txtMunicipio.Location = new System.Drawing.Point(182, 389);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.Size = new System.Drawing.Size(141, 22);
+            this.txtMunicipio.TabIndex = 31;
             // 
-            // btnEditar
+            // btnBuscar
             // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(53, 480);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(67, 62);
-            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditar.TabIndex = 19;
-            this.btnEditar.TabStop = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnBuscar.Location = new System.Drawing.Point(344, 386);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 29);
+            this.btnBuscar.TabIndex = 32;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // txtCalle
+            // btnAgregar
             // 
-            this.txtCalle.Location = new System.Drawing.Point(179, 179);
-            this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(141, 22);
-            this.txtCalle.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 182);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Calle:";
-            // 
-            // txtColonia
-            // 
-            this.txtColonia.Location = new System.Drawing.Point(179, 220);
-            this.txtColonia.Name = "txtColonia";
-            this.txtColonia.Size = new System.Drawing.Size(141, 22);
-            this.txtColonia.TabIndex = 23;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 223);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 17);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Colonia:";
-            // 
-            // txtCanton
-            // 
-            this.txtCanton.Location = new System.Drawing.Point(182, 262);
-            this.txtCanton.Name = "txtCanton";
-            this.txtCanton.Size = new System.Drawing.Size(141, 22);
-            this.txtCanton.TabIndex = 25;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 265);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Canton:";
-            // 
-            // txtCaserio
-            // 
-            this.txtCaserio.Location = new System.Drawing.Point(182, 305);
-            this.txtCaserio.Name = "txtCaserio";
-            this.txtCaserio.Size = new System.Drawing.Size(141, 22);
-            this.txtCaserio.TabIndex = 27;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 308);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Caserio:";
-            // 
-            // txtCodigoPostal
-            // 
-            this.txtCodigoPostal.Location = new System.Drawing.Point(182, 347);
-            this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(141, 22);
-            this.txtCodigoPostal.TabIndex = 29;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(50, 350);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 17);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Codigo postal:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(50, 392);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 17);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "Municipio:";
-            // 
-            // cbbMunicipio
-            // 
-            this.cbbMunicipio.FormattingEnabled = true;
-            this.cbbMunicipio.Location = new System.Drawing.Point(182, 389);
-            this.cbbMunicipio.Name = "cbbMunicipio";
-            this.cbbMunicipio.Size = new System.Drawing.Size(121, 24);
-            this.cbbMunicipio.TabIndex = 31;
+            this.btnAgregar.Location = new System.Drawing.Point(425, 386);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 29);
+            this.btnAgregar.TabIndex = 33;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // frmEditarDireccion
             // 
@@ -372,8 +371,8 @@ namespace General.GUI.DIRECCION
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,10 +386,8 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.Label lblVisor;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtId;
-        public System.Windows.Forms.CheckBox checkEstado;
         public System.Windows.Forms.TextBox txtPasaje;
         public System.Windows.Forms.TextBox txtNumCasa;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label txtIdCliente;
@@ -409,6 +406,8 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox cbbMunicipio;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.TextBox txtMunicipio;
     }
 }

@@ -29,12 +29,10 @@ namespace General.GUI.DIRECCION
             txtCaserio.ReadOnly = true;
             txtCodigoPostal.ReadOnly = true;
             //Combobox
-            cbbMunicipio.Enabled = false;
             //PictureBox
-            btnGuardar.Enabled = false;
-            btnEliminar.Enabled = false;
+            btnGuardar.Visible = false;
+            btnEliminar.Visible = false;
             //ChecKbox
-            checkEstado.Enabled = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -49,12 +47,10 @@ namespace General.GUI.DIRECCION
             txtCaserio.ReadOnly = false;
             txtCodigoPostal.ReadOnly = false;
             //Combobox
-            cbbMunicipio.Enabled = true;
             //PictureBox
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+            btnGuardar.Visible = true;
+            btnEliminar.Visible = true;
             //ChecKbox
-            checkEstado.Enabled = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -70,8 +66,7 @@ namespace General.GUI.DIRECCION
             direc.Canton = txtCanton.Text;
             direc.Caserio = txtCaserio.Text;
             direc.CodigoPostal = txtCodigoPostal.Text;
-            direc.Estado = checkEstado.Checked.ToString();
-            direc.IdMunicipio = cbbMunicipio.SelectedValue.ToString();
+            direc.IdMunicipio = txtMunicipio.Text;
             //Identificar la accion a realizar
             if (txtId.TextLength > 0)
             {

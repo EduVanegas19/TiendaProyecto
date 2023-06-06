@@ -64,7 +64,7 @@ namespace TIENDA.GUI
             if (permisos.Contains(Reportes.AccessibleName))
             {
 
-                Reporte.GUI.visorFactura form1 = new Reporte.GUI.visorFactura();
+                Reporte.GUI.visorClientes form1 = new Reporte.GUI.visorClientes();
                 form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }
@@ -166,6 +166,55 @@ namespace TIENDA.GUI
             {
 
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Productos_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(Productos.AccessibleName))
+            {
+                General.GUI.PRODUCTO.frmGestionProducto form1 = new General.GUI.PRODUCTO.frmGestionProducto();
+                form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void Direcciones_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(Direcciones.AccessibleName))
+            {
+                General.GUI.DIRECCION.frmGestionDireccion form1 = new General.GUI.DIRECCION.frmGestionDireccion();
+                form1.Show();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
 

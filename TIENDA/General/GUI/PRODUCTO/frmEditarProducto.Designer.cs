@@ -57,10 +57,8 @@ namespace General.GUI.PRODUCTO
             this.txtPrecioUni = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.checkEstado = new System.Windows.Forms.CheckBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtCodigoB = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.Label();
@@ -149,10 +147,8 @@ namespace General.GUI.PRODUCTO
             this.panel1.Controls.Add(this.txtPrecioUni);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtId);
-            this.panel1.Controls.Add(this.checkEstado);
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.txtCodigoB);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtIdCliente);
@@ -345,15 +341,6 @@ namespace General.GUI.PRODUCTO
             this.txtId.Size = new System.Drawing.Size(64, 22);
             this.txtId.TabIndex = 17;
             // 
-            // checkEstado
-            // 
-            this.checkEstado.AutoSize = true;
-            this.checkEstado.Location = new System.Drawing.Point(186, 577);
-            this.checkEstado.Name = "checkEstado";
-            this.checkEstado.Size = new System.Drawing.Size(18, 17);
-            this.checkEstado.TabIndex = 16;
-            this.checkEstado.UseVisualStyleBackColor = true;
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(186, 142);
@@ -367,15 +354,6 @@ namespace General.GUI.PRODUCTO
             this.txtCodigoB.Name = "txtCodigoB";
             this.txtCodigoB.Size = new System.Drawing.Size(141, 22);
             this.txtCodigoB.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 578);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Estado:";
             // 
             // label5
             // 
@@ -452,10 +430,8 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.Label lblVisor;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtId;
-        public System.Windows.Forms.CheckBox checkEstado;
         public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.TextBox txtCodigoB;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label txtIdCliente;

@@ -49,7 +49,8 @@ namespace General.GUI.PRODUCTO
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.id_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +60,7 @@ namespace General.GUI.PRODUCTO
             this.medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,7 +84,7 @@ namespace General.GUI.PRODUCTO
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(915, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1233, 30);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -104,7 +106,7 @@ namespace General.GUI.PRODUCTO
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(0, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(915, 67);
+            this.panel3.Size = new System.Drawing.Size(1233, 67);
             this.panel3.TabIndex = 7;
             // 
             // label1
@@ -125,7 +127,7 @@ namespace General.GUI.PRODUCTO
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
             this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Location = new System.Drawing.Point(826, 75);
+            this.panel2.Location = new System.Drawing.Point(1144, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(89, 497);
@@ -211,7 +213,7 @@ namespace General.GUI.PRODUCTO
             this.panel1.Location = new System.Drawing.Point(3, 75);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 497);
+            this.panel1.Size = new System.Drawing.Size(1143, 497);
             this.panel1.TabIndex = 5;
             // 
             // cbbOrdenar
@@ -239,7 +241,8 @@ namespace General.GUI.PRODUCTO
             this.dtgProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_cliente,
+            this.id_producto,
+            this.descripcion,
             this.codigo_barras,
             this.nombre,
             this.precio_unidad,
@@ -249,6 +252,7 @@ namespace General.GUI.PRODUCTO
             this.medida,
             this.id_unidadMedida,
             this.id_area,
+            this.stock,
             this.estado});
             this.dtgProducto.Location = new System.Drawing.Point(10, 57);
             this.dtgProducto.Margin = new System.Windows.Forms.Padding(4);
@@ -257,7 +261,7 @@ namespace General.GUI.PRODUCTO
             this.dtgProducto.ReadOnly = true;
             this.dtgProducto.RowHeadersWidth = 51;
             this.dtgProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProducto.Size = new System.Drawing.Size(805, 430);
+            this.dtgProducto.Size = new System.Drawing.Size(1123, 430);
             this.dtgProducto.TabIndex = 0;
             this.dtgProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentDoubleClick);
             // 
@@ -288,14 +292,24 @@ namespace General.GUI.PRODUCTO
             this.txtBuscar.Size = new System.Drawing.Size(156, 22);
             this.txtBuscar.TabIndex = 6;
             // 
-            // id_cliente
+            // id_producto
             // 
-            this.id_cliente.DataPropertyName = "id_cliente";
-            this.id_cliente.HeaderText = "ID";
-            this.id_cliente.MinimumWidth = 6;
-            this.id_cliente.Name = "id_cliente";
-            this.id_cliente.ReadOnly = true;
-            this.id_cliente.Width = 125;
+            this.id_producto.DataPropertyName = "id_producto";
+            this.id_producto.HeaderText = "ID";
+            this.id_producto.MinimumWidth = 6;
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            this.id_producto.Width = 125;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "DESCRIPCION";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Visible = false;
+            this.descripcion.Width = 125;
             // 
             // codigo_barras
             // 
@@ -378,6 +392,16 @@ namespace General.GUI.PRODUCTO
             this.id_area.ReadOnly = true;
             this.id_area.Width = 125;
             // 
+            // stock
+            // 
+            this.stock.DataPropertyName = "stock";
+            this.stock.HeaderText = "CANTIDAD";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            this.stock.Visible = false;
+            this.stock.Width = 125;
+            // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
@@ -391,7 +415,7 @@ namespace General.GUI.PRODUCTO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 603);
+            this.ClientSize = new System.Drawing.Size(1233, 603);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -439,7 +463,8 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_barras;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_unidad;
@@ -449,6 +474,7 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.DataGridViewTextBoxColumn medida;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_unidadMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

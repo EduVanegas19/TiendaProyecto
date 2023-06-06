@@ -48,7 +48,7 @@ namespace General.GUI.DIRECCION
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.id_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_casa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pasaje_poligono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +79,7 @@ namespace General.GUI.DIRECCION
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(915, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1193, 30);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -101,7 +101,7 @@ namespace General.GUI.DIRECCION
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(-1, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(915, 67);
+            this.panel3.Size = new System.Drawing.Size(1194, 67);
             this.panel3.TabIndex = 7;
             // 
             // label1
@@ -121,7 +121,7 @@ namespace General.GUI.DIRECCION
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(825, 75);
+            this.panel2.Location = new System.Drawing.Point(1104, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(89, 497);
@@ -196,7 +196,7 @@ namespace General.GUI.DIRECCION
             this.panel1.Location = new System.Drawing.Point(2, 75);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 497);
+            this.panel1.Size = new System.Drawing.Size(1104, 497);
             this.panel1.TabIndex = 5;
             // 
             // cbbBuscar
@@ -224,7 +224,7 @@ namespace General.GUI.DIRECCION
             this.dtgDireccion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtgDireccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDireccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_cliente,
+            this.id_direccion,
             this.numero_casa,
             this.pasaje_poligono,
             this.calle,
@@ -241,7 +241,7 @@ namespace General.GUI.DIRECCION
             this.dtgDireccion.ReadOnly = true;
             this.dtgDireccion.RowHeadersWidth = 51;
             this.dtgDireccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDireccion.Size = new System.Drawing.Size(805, 430);
+            this.dtgDireccion.Size = new System.Drawing.Size(1084, 430);
             this.dtgDireccion.TabIndex = 0;
             this.dtgDireccion.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDireccion_CellContentDoubleClick);
             // 
@@ -272,14 +272,14 @@ namespace General.GUI.DIRECCION
             this.txtBuscar.Size = new System.Drawing.Size(156, 22);
             this.txtBuscar.TabIndex = 6;
             // 
-            // id_cliente
+            // id_direccion
             // 
-            this.id_cliente.DataPropertyName = "id_cliente";
-            this.id_cliente.HeaderText = "ID";
-            this.id_cliente.MinimumWidth = 6;
-            this.id_cliente.Name = "id_cliente";
-            this.id_cliente.ReadOnly = true;
-            this.id_cliente.Width = 125;
+            this.id_direccion.DataPropertyName = "id_direccion";
+            this.id_direccion.HeaderText = "ID";
+            this.id_direccion.MinimumWidth = 6;
+            this.id_direccion.Name = "id_direccion";
+            this.id_direccion.ReadOnly = true;
+            this.id_direccion.Width = 125;
             // 
             // numero_casa
             // 
@@ -366,7 +366,7 @@ namespace General.GUI.DIRECCION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 603);
+            this.ClientSize = new System.Drawing.Size(1193, 603);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -412,7 +412,7 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_casa;
         private System.Windows.Forms.DataGridViewTextBoxColumn pasaje_poligono;
         private System.Windows.Forms.DataGridViewTextBoxColumn calle;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SessionManager;
 
 namespace General.GUI.DIRECCION
 {
@@ -35,6 +36,8 @@ namespace General.GUI.DIRECCION
         private void frmGestionDireccion_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            lblUsuario.Text = Session.Instancia.usuario;
+            lblRol.Text = Session.Instancia.rol;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -50,8 +53,7 @@ namespace General.GUI.DIRECCION
                 f.txtCanton.Text = dtgDireccion.CurrentRow.Cells["canton"].Value.ToString();
                 f.txtCaserio.Text = dtgDireccion.CurrentRow.Cells["caserio"].Value.ToString();
                 f.txtCodigoPostal.Text = dtgDireccion.CurrentRow.Cells["codigo_postal"].Value.ToString();
-                f.cbbMunicipio.Text = dtgDireccion.CurrentRow.Cells["id_municipio"].Value.ToString();
-                f.checkEstado.Checked = Convert.ToBoolean(dtgDireccion.CurrentRow.Cells["estado"].Value.ToString());
+                f.txtMunicipio.Text = dtgDireccion.CurrentRow.Cells["id_municipio"].Value.ToString();
                 f.ShowDialog();
             }
         }
@@ -94,8 +96,7 @@ namespace General.GUI.DIRECCION
                 f.txtCanton.Text = dtgDireccion.CurrentRow.Cells["canton"].Value.ToString();
                 f.txtCaserio.Text = dtgDireccion.CurrentRow.Cells["caserio"].Value.ToString();
                 f.txtCodigoPostal.Text = dtgDireccion.CurrentRow.Cells["codigo_postal"].Value.ToString();
-                f.cbbMunicipio.Text = dtgDireccion.CurrentRow.Cells["id_municipio"].Value.ToString();
-                f.checkEstado.Checked = Convert.ToBoolean(dtgDireccion.CurrentRow.Cells["estado"].Value.ToString());
+                f.txtMunicipio.Text = dtgDireccion.CurrentRow.Cells["id_municipio"].Value.ToString();
                 f.ShowDialog();
             }
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SessionManager;
 
 namespace General.GUI
 {
@@ -35,6 +36,8 @@ namespace General.GUI
         private void frmGestionProveedor_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            lblUsuario.Text = Session.Instancia.usuario;
+            lblRol.Text = Session.Instancia.rol;
         }
 
         private void btnEditar_Click_1(object sender, EventArgs e)
@@ -46,7 +49,6 @@ namespace General.GUI
                 f.txtProveedor.Text = dtgProveedores.CurrentRow.Cells["proveedor"].Value.ToString();
                 f.txtNumDoc.Text = dtgProveedores.CurrentRow.Cells["numero_documento"].Value.ToString();
                 f.checkLab.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["esLaboratorio"].Value.ToString());
-                f.checkEstado.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["estado"].Value.ToString());
                 f.ShowDialog();
             }
         }
@@ -85,7 +87,6 @@ namespace General.GUI
                 f.txtProveedor.Text = dtgProveedores.CurrentRow.Cells["proveedor"].Value.ToString();
                 f.txtNumDoc.Text = dtgProveedores.CurrentRow.Cells["numero_documento"].Value.ToString();
                 f.checkLab.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["esLaboratorio"].Value.ToString());
-                f.checkEstado.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["estado"].Value.ToString());
                 f.ShowDialog();
             }
         }

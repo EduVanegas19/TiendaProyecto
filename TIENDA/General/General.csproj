@@ -404,6 +404,10 @@
       <Project>{DD868887-2157-4A86-877A-CA3A743A276C}</Project>
       <Name>Reporte</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SessionManager\SessionManager.csproj">
+      <Project>{efec3b14-5996-44eb-bd10-c8737bfd413e}</Project>
+      <Name>SessionManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

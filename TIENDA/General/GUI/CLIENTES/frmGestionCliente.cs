@@ -18,9 +18,9 @@ namespace General.GUI
         {
             try
             {
-                _DATOS.DataSource = DataManager.DBConsultas.USUARIOS();
-                dataGridView1.AutoGenerateColumns = false;
-                dataGridView1.DataSource = _DATOS;
+                _DATOS.DataSource = DataManager.DBConsultas.CLIENTES();
+                dtgCliente.AutoGenerateColumns = false;
+                dtgCliente.DataSource = _DATOS;
             }
             catch (Exception)
             {
@@ -64,7 +64,7 @@ namespace General.GUI
             if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CLS.Cliente clien = new CLS.Cliente();
-                clien.IdCliente = dataGridView1.CurrentRow.Cells["id_cliente"].Value.ToString().ToUpper(); ;
+                clien.IdCliente = dtgCliente.CurrentRow.Cells["id_cliente"].Value.ToString().ToUpper(); ;
                 //Realizar la operacion de Eliminar
                 if (clien.Eliminar())
                 {
@@ -83,14 +83,8 @@ namespace General.GUI
             if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CLIENTES.frmEditarCliente f = new CLIENTES.frmEditarCliente();
-                f.txtId.Text = dataGridView1.CurrentRow.Cells["id_cliente"].Value.ToString();
-                f.txtIdentificacion.Text = dataGridView1.CurrentRow.Cells["identificacion"].Value.ToString();
-                f.txtNombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
-                f.txtCredito.Text = dataGridView1.CurrentRow.Cells["credito"].Value.ToString();
-                f.txtDireccion.Text = dataGridView1.CurrentRow.Cells["id_direccion"].Value.ToString();
-                f.checkEstado.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells["estado"].Value.ToString());
+                
                 f.ShowDialog();
-                CargarDatos();
             }
         }
 

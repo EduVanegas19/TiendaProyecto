@@ -34,13 +34,11 @@ namespace General.GUI.PROVEEDOR
             this.panel3 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
-            this.btnEditar = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lblVisor = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.PictureBox();
-            this.checkEstado = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.checkLab = new System.Windows.Forms.CheckBox();
             this.txtNumDoc = new System.Windows.Forms.TextBox();
@@ -53,8 +51,8 @@ namespace General.GUI.PROVEEDOR
             this.label9 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             this.SuspendLayout();
@@ -90,19 +88,6 @@ namespace General.GUI.PROVEEDOR
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.TabStop = false;
             // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(50, 283);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(68, 60);
-            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditar.TabIndex = 8;
-            this.btnEditar.TabStop = false;
-            this.btnEditar.Visible = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
@@ -118,18 +103,28 @@ namespace General.GUI.PROVEEDOR
             // 
             this.lblVisor.AutoSize = true;
             this.lblVisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisor.Location = new System.Drawing.Point(100, 18);
+            this.lblVisor.Location = new System.Drawing.Point(138, 18);
             this.lblVisor.Name = "lblVisor";
             this.lblVisor.Size = new System.Drawing.Size(266, 36);
             this.lblVisor.TabIndex = 0;
             this.lblVisor.Text = "MODO LECTURA";
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(50, 283);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(68, 60);
+            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.TabStop = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnGuardar);
-            this.panel1.Controls.Add(this.checkEstado);
             this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.checkLab);
             this.panel1.Controls.Add(this.txtNumDoc);
@@ -156,24 +151,6 @@ namespace General.GUI.PROVEEDOR
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.TabStop = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // checkEstado
-            // 
-            this.checkEstado.AutoSize = true;
-            this.checkEstado.Location = new System.Drawing.Point(198, 227);
-            this.checkEstado.Name = "checkEstado";
-            this.checkEstado.Size = new System.Drawing.Size(18, 17);
-            this.checkEstado.TabIndex = 19;
-            this.checkEstado.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 226);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Estado:";
             // 
             // txtId
             // 
@@ -272,8 +249,8 @@ namespace General.GUI.PROVEEDOR
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
@@ -300,8 +277,6 @@ namespace General.GUI.PROVEEDOR
         private System.Windows.Forms.Label txtIdCliente;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.CheckBox checkEstado;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnGuardar;
     }
 }

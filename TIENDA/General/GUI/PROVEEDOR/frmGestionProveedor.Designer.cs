@@ -43,17 +43,17 @@ namespace General.GUI
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbOrdenar = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dtgProveedores = new System.Windows.Forms.DataGridView();
             this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbbOrdenar = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -208,50 +208,6 @@ namespace General.GUI
             this.panel1.Size = new System.Drawing.Size(825, 497);
             this.panel1.TabIndex = 5;
             // 
-            // cbbOrdenar
-            // 
-            this.cbbOrdenar.FormattingEnabled = true;
-            this.cbbOrdenar.Location = new System.Drawing.Point(671, 21);
-            this.cbbOrdenar.Name = "cbbOrdenar";
-            this.cbbOrdenar.Size = new System.Drawing.Size(121, 24);
-            this.cbbOrdenar.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Ordenar por:";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Digite aqui para buscar:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
-            this.txtBuscar.TabIndex = 6;
-            // 
             // dtgProveedores
             // 
             this.dtgProveedores.AllowUserToAddRows = false;
@@ -320,6 +276,50 @@ namespace General.GUI
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             this.estado.Width = 142;
+            // 
+            // cbbOrdenar
+            // 
+            this.cbbOrdenar.FormattingEnabled = true;
+            this.cbbOrdenar.Location = new System.Drawing.Point(671, 21);
+            this.cbbOrdenar.Name = "cbbOrdenar";
+            this.cbbOrdenar.Size = new System.Drawing.Size(121, 24);
+            this.cbbOrdenar.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(559, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Ordenar por:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Digite aqui para buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
+            this.txtBuscar.TabIndex = 6;
             // 
             // frmGestionProveedor
             // 

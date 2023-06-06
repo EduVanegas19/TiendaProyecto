@@ -51,6 +51,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAT\Clientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\Empleados.cs">
+      <DependentUpon>Empleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\Empleados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\Productos.cs">
+      <DependentUpon>Productos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\Productos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Productos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\Proveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proveedores.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\Ticket.cs">
       <DependentUpon>Ticket.xsd</DependentUpon>
     </Compile>
@@ -59,30 +85,174 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ticket.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\Usuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Usuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\visorClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\visorClientes.Designer.cs">
+      <DependentUpon>visorClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\visorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\visorEmpleado.Designer.cs">
+      <DependentUpon>visorEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\visorFactura.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\visorFactura.Designer.cs">
       <DependentUpon>visorFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\visorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\visorProducto.Designer.cs">
+      <DependentUpon>visorProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\visorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\visorProveedor.Designer.cs">
+      <DependentUpon>visorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\visorUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\visorUsuario.Designer.cs">
+      <DependentUpon>visorUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REP\Clientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP\Empleados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP\Productos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Productos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP\Proveedores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proveedores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REP\Ticket.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ticket.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REP\Usuarios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Usuarios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\visorClientes.resx">
+      <DependentUpon>visorClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\visorEmpleado.resx">
+      <DependentUpon>visorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\visorFactura.resx">
       <DependentUpon>visorFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\visorProducto.resx">
+      <DependentUpon>visorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\visorProveedor.resx">
+      <DependentUpon>visorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\visorUsuario.resx">
+      <DependentUpon>visorUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Clientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Clientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Empleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Empleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Productos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Productos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Proveedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Proveedores.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\Ticket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Ticket.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REP\Usuarios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Usuarios.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DAT\Clientes.xsc">
+      <DependentUpon>Clientes.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Clientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Clientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\Clientes.xss">
+      <DependentUpon>Clientes.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Empleados.xsc">
+      <DependentUpon>Empleados.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Empleados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Empleados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\Empleados.xss">
+      <DependentUpon>Empleados.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Productos.xsc">
+      <DependentUpon>Productos.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Productos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Productos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\Productos.xss">
+      <DependentUpon>Productos.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Proveedores.xsc">
+      <DependentUpon>Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Proveedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Proveedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\Proveedores.xss">
+      <DependentUpon>Proveedores.xsd</DependentUpon>
+    </None>
     <None Include="DAT\Ticket.xsc">
       <DependentUpon>Ticket.xsd</DependentUpon>
     </None>
@@ -93,6 +263,17 @@
     </None>
     <None Include="DAT\Ticket.xss">
       <DependentUpon>Ticket.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Usuarios.xsc">
+      <DependentUpon>Usuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\Usuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Usuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\Usuarios.xss">
+      <DependentUpon>Usuarios.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
