@@ -356,5 +356,407 @@ namespace DataManager
             }
             return Resultado;
         }
+
+        /*CONSULTAS ESPECIFICAS PARA LA TABLA DE PRODUCTO*/
+        public static DataTable LISTARPRODUCTOSALFABETICAMENTE()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARPRODUCTOALFABETICAMENTE";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable LISTARPRODUCTOALFABETICAMENTEINVERSO()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARPRODUCTOALFABETICAMENTEINVERSO";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BUSCARPRODUCTOSXID(string pIdProducto)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BUSCARPRODUCTOSXID" + pIdProducto;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BUSCARPRODUCTOSXNOMBRE(string pNombre)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BUSCARPRODUCTOSXNOMBRE" + pNombre;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable VERIFICARPRODUCTOREGISTRADO(string pCodigoBarras)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC VERIFICARPRODUCTOREGISTRADO" + pCodigoBarras;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        /*CONSULTAS ESPECIFICAS PARA LA TABLA DE CLIENTES*/
+        public static DataTable LISTARCLIENTES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARCLIENTES";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable LISTARCLIENTESALFABETICAMENTE()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARCLIENTESALFABETICAMENTE";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable LISTARCLIENTESALFABETICAMENTEINVERSO()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARCLIENTESALFABETICAMENTEINVERSO";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BUSCARCLIENTESXIDENTIFICACION(string pIdentificacion)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BUSCARCLIENTESXIDENTIFICACION" + pIdentificacion;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BUSCARCLIENTESXNOMBRE(string pNombre)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BUSCARCLIENTESXNOMBRE" + pNombre;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        /*CONSULTAS ESPECIFICAS PARA LA TABLA PEDIDOS*/
+        public static DataTable LISTARPEDIDOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARPEDIDOS";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable LISTARPEDIDOSXANTIGUEDAD()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARPEDIDOSXANTIGUEDAD";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable LISTARPEDIDOSMÁSRECIENTES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC LISTARPEDIDOSMÁSRECIENTES";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable MOSTRARPEDIDOCONDETALLES(string pIdPedido)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC MOSTRARPEDIDOCONDETALLES" + pIdPedido;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable RESUMENPEDIDO()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC RESUMENPEDIDO";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable OBTENERNUMERODOCUMENTO(string pNumeroDocumento)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC OBTENERNUMERODOCUMENTO" + pNumeroDocumento;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        /*CONSULTAS ESPECIFICAS PARA USUARIOS*/
+
+        public static DataTable ListarUsarioAlfabeticamente()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC ListarUsarioAlfabeticamente";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable ListarUsuariosNoAlfabeticamente()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC ListarUsuariosNoAlfabeticamente";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BuscarUsuarioID(string pIdUsuario)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BuscarUsuarioID" + pIdUsuario;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BuscarUsuariosNombre(string pUsuario)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BuscarUsuariosNombre" + pUsuario;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable VerificarUsuario(string pUsuario)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC VerificarUsuario" + pUsuario;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable PermisosUsuario(string pIdUsuario)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC PermisosUsuario" + pIdUsuario;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        /*CONSULTAS ESPECIFICAS PARA PROVEEDORES*/
+
+        public static DataTable ListarUsarioAlfabeticamente()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC ListarUsarioAlfabeticamente";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable ListarUsuariosNoAlfabeticamente()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC ListarUsuariosNoAlfabeticamente";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BuscarUsuarioID(string pIdUsuario)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BuscarUsuarioID" + pIdUsuario;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable BuscarUsuariosNombre(string pUsuario)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC BuscarUsuariosNombre" + pUsuario;
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }

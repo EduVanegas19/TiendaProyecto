@@ -76,7 +76,17 @@ namespace General.GUI
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox2);
+<<<<<<< Updated upstream
             this.panel1.Location = new System.Drawing.Point(3, 76);
+=======
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(16, 15);
+>>>>>>> Stashed changes
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(825, 497);
@@ -90,20 +100,61 @@ namespace General.GUI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 17);
             this.label2.TabIndex = 9;
+<<<<<<< Updated upstream
             this.label2.Text = "Digite aqui para buscar:";
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(194, 23);
+=======
+            this.label2.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "label1";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(435, 294);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(132, 22);
+            this.textBox3.TabIndex = 7;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(435, 217);
+>>>>>>> Stashed changes
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(156, 22);
             this.textBox2.TabIndex = 6;
             // 
+<<<<<<< Updated upstream
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(13, 435);
+=======
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(435, 148);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.TabIndex = 5;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(17, 406);
+>>>>>>> Stashed changes
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(67, 58);
@@ -114,7 +165,11 @@ namespace General.GUI
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+<<<<<<< Updated upstream
             this.pictureBox4.Location = new System.Drawing.Point(13, 358);
+=======
+            this.pictureBox4.Location = new System.Drawing.Point(553, 406);
+>>>>>>> Stashed changes
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(64, 60);
@@ -125,7 +180,11 @@ namespace General.GUI
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+<<<<<<< Updated upstream
             this.pictureBox3.Location = new System.Drawing.Point(13, 213);
+=======
+            this.pictureBox3.Location = new System.Drawing.Point(211, 20);
+>>>>>>> Stashed changes
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(67, 62);
@@ -137,7 +196,11 @@ namespace General.GUI
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+<<<<<<< Updated upstream
             this.pictureBox2.Location = new System.Drawing.Point(13, 133);
+=======
+            this.pictureBox2.Location = new System.Drawing.Point(115, 20);
+>>>>>>> Stashed changes
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 62);
@@ -149,7 +212,11 @@ namespace General.GUI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+<<<<<<< Updated upstream
             this.pictureBox1.Location = new System.Drawing.Point(13, 53);
+=======
+            this.pictureBox1.Location = new System.Drawing.Point(17, 20);
+>>>>>>> Stashed changes
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 62);
@@ -160,6 +227,7 @@ namespace General.GUI
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+<<<<<<< Updated upstream
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label4);
@@ -167,6 +235,10 @@ namespace General.GUI
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Location = new System.Drawing.Point(826, 76);
+=======
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(697, 15);
+>>>>>>> Stashed changes
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(89, 497);
@@ -184,7 +256,11 @@ namespace General.GUI
             this.credito,
             this.estado,
             this.id_direccion});
+<<<<<<< Updated upstream
             this.dataGridView1.Location = new System.Drawing.Point(10, 57);
+=======
+            this.dataGridView1.Location = new System.Drawing.Point(17, 20);
+>>>>>>> Stashed changes
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;

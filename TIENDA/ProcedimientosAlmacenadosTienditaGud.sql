@@ -380,6 +380,53 @@ END
 ------------------------------------------------------
 --PARTE DE EDÚ - APLICADO A EL ENTORNO DE USUARIOS 
 
+---- Agregar Usuario
+--CREATE PROCEDURE AgregarUsuario
+
+--	@usuario VARCHAR(50),
+--	@clave VARCHAR(50),
+--	@estado BIT,
+--	@id_rol BIGINT,
+--	@id_empleado BIGINT
+
+--AS
+--BEGIN
+
+--	INSERT INTO usuarios(usuario, clave, estado, id_rol, id_empleado)
+--	VALUES (@usuario, @clave, @estado, @id_rol, @id_empleado)
+--END
+
+---- Modificar usuario
+--CREATE PROCEDURE ModificarUsuario
+
+--	@id_usuario BIGINT,
+--	@usuario VARCHAR(50),
+--	@clave VARCHAR(50),
+--	@estado BIT,
+--	@id_rol BIGINT,
+--	@id_empleado BIGINT
+
+--AS
+--BEGIN
+
+--	UPDATE usuarios 
+--	SET usuario=@usuario, clave=@clave, estado=@estado, id_rol=@id_rol, id_empleado=@id_empleado
+--	WHERE id_usuario=@id_usuario
+--END
+
+---- Eliminar usuario
+--CREATE PROCEDURE EliminarUsuario
+
+--	@id_usuario BIGINT
+
+--AS
+--BEGIN
+
+--	UPDATE usuarios 
+--	SET estado=0
+--	WHERE id_usuario=@id_usuario
+--END
+
 -- Agregar Usuario
 CREATE PROCEDURE AgregarUsuario
 
@@ -393,7 +440,7 @@ AS
 BEGIN
 
 	INSERT INTO usuarios(usuario, clave, estado, id_rol, id_empleado)
-	VALUES (@usuario, @clave, @estado, @id_rol, @id_empleado)
+	VALUES (@usuario, @clave, 1, @id_rol, @id_empleado)
 END
 
 -- Modificar usuario
@@ -410,7 +457,7 @@ AS
 BEGIN
 
 	UPDATE usuarios 
-	SET usuario=@usuario, clave=@clave, estado=@estado, id_rol=@id_rol, id_empleado=@id_empleado
+	SET usuario=@usuario, clave=@clave, estado=1, id_rol=@id_rol, id_empleado=@id_empleado
 	WHERE id_usuario=@id_usuario
 END
 
@@ -426,7 +473,6 @@ BEGIN
 	SET estado=0
 	WHERE id_usuario=@id_usuario
 END
-
 -- Listar usuario alfabeticamente
 CREATE PROCEDURE ListarUsarioAlfabeticamente
 
@@ -703,7 +749,7 @@ END
 --******* DETALLE FACTURA ***************************************************
 
 -- Agregar Detalle Factura
-GO
+/*GO
 CREATE PROCEDURE AgregarDetalleFactura
 
 	@precioUnitario money,
@@ -751,13 +797,13 @@ END
 
 --	delete from detalle_factura WHERE id_area=@id_area
 
---END
+--END*/
 
 --*********************************************************************
 --******* DETALLE PEDIDO ***************************************************
 
 -- Agregar Detalle Pedido
-GO
+/*GO
 CREATE PROCEDURE AgregarDetallePedido
 
 	@cantidad int,
@@ -791,12 +837,12 @@ BEGIN
 	SET cantidad=@cantidad, monto_total=@montoTotal, estado=@estado, id_pedido=@idPedido, id_producto=@idProducto
 	WHERE id_detallepedido = @idDetallePedido;
 END
-
+*/
 --*********************************************************************
 --******* Direcciones ***************************************************
 
 -- Agregar Direcciones
-GO
+/*GO
 CREATE PROCEDURE AgregarDirecciones
 
 	@numeroCasa varchar(10),
@@ -853,13 +899,13 @@ BEGIN
 	WHERE id_direccion=@idDireccion
 
 END
-
+*/
 
 --*********************************************************************
 --******* Empleados ***************************************************
 
 -- Agregar Empleados
-GO
+/*GO
 CREATE PROCEDURE AgregarEmpleados
 
 	@nombre varchar(50),
@@ -915,6 +961,90 @@ BEGIN
 	SET estado=0 
 	WHERE id_empleado=@idEmpleado
 
+END*/
+
+--AGREGAR CLIENTES--
+
+CREATE PROCEDURE AgregarEmpleados
+
+	@nombre varchar(50),
+	@apellido varchar(50),
+	@genero varchar(50),
+	@telefono varchar(50),
+	@correo varchar(50),
+	@DUI varchar(50),
+	@fechaNac date,
+	@estado bit,
+	@numero_casa VARCHAR(10),
+	@pasaje_poligono VARCHAR(50),
+	@calle VARCHAR(50),
+	@colonia VARCHAR(50),
+	@canton VARCHAR(50),
+	@caserio VARCHAR(50),
+	@codigo_postal VARCHAR(10),
+	@id_municipio BIGINT
+AS
+BEGIN
+SET NOCOUNT ON
+DECLARE @id_direccion BIGINT
+INSERT INTO direcciones(numero_casa,pasaje_poligono,calle,colonia,canton,caserio,codigo_postal,id_municipio)
+VALUES (@numero_casa,@pasaje_poligono,@calle,@colonia,@canton,@caserio,@codigo_postal,@id_municipio)
+
+SET @id_direccion = SCOPE_IDENTITY()
+
+INSERT INTO empleados(nombre, apellido, genero, telefono, correo, DUI, fechanac, id_direccion, estado)
+	VALUES (@nombre, @apellido, @genero, @telefono, @correo, @DUI, @fechaNac, @idDireccion, @estado)
+END
+
+--MODIFICAR CLIENTES--
+
+CREATE PROCEDURE ModificarEmpleados
+	@idEmpleado bigint,
+	@nombre varchar(50),
+	@apellido varchar(50),
+	@genero varchar(50),
+	@telefono varchar(50),
+	@correo varchar(50),
+	@DUI varchar(50),
+	@fechaNac date,
+	@estado bit,
+	@numero_casa VARCHAR(10),
+	@pasaje_poligono VARCHAR(50),
+	@calle VARCHAR(50),
+	@colonia VARCHAR(50),
+	@canton VARCHAR(50),
+	@caserio VARCHAR(50),
+	@codigo_postal VARCHAR(10),
+	@id_municipio BIGINT,
+	@idDireccion BIGINT
+AS
+BEGIN
+UPDATE empleados 
+	SET nombre=@nombre, apellido=@apellido, genero=@genero, telefono=@telefono, correo=@correo, DUI=@DUI, fechanac=@fechaNac, id_direccion=@idDireccion, estado=@estado
+	WHERE id_empleado = @idEmpleado;
+
+UPDATE direcciones
+SET numero_casa=@numero_casa,pasaje_poligono=@pasaje_poligono,calle=@calle,colonia=@colonia,canton=@canton,caserio=@caserio,codigo_postal=@codigo_postal,id_municipio=@id_municipio
+WHERE id_direccion = (SELECT id_direccion FROM empleados WHERE id_empleado=@idEmpleado)
+
+END
+
+--ELIMINAR CLIENTES--
+
+CREATE PROCEDURE EliminarEmpleados
+
+	@idEmpleado BIGINT,
+	@idDireccion BIGINT
+
+AS
+BEGIN
+	UPDATE empleados 
+	SET estado=0
+	WHERE id_empleado = @idEmpleado;
+
+	UPDATE direcciones 
+	SET estado=0
+	WHERE id_direccion= (SELECT id_direccion FROM empleados WHERE id_empleado=@idEmpleado)
 END
 
 --*********************************************************************
@@ -922,6 +1052,7 @@ END
 
 -- Agregar Factura
 GO
+
 CREATE PROCEDURE AgregarFactura
 
 	@fecha date,
@@ -934,13 +1065,50 @@ CREATE PROCEDURE AgregarFactura
 	@estado bit,
 	@idTipoPago int,
 	@idEmpleado int,
-	@idCliente int
+	@idCliente int,
+
+	@precioUnitario money,
+	@precioVenta money,
+	@cantidad int,
+	@idProducto bigint
 
 AS
 BEGIN
+	
 
-	INSERT INTO facturas(fecha, descripcion, numero_documento, monto_total, cantidad_productos, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
-	VALUES (@fecha, @descripcion, @numeroDocumento, @montoTotal, @cantidadProductos, @montoCliente, @cambio, @estado, @idTipoPago, @idEmpleado, @idCliente)
+	BEGIN TRY
+        DECLARE @id_Factura BIGINT;
+
+        INSERT INTO facturas(fecha, descripcion, numero_documento, monto_total, cantidad_productos, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
+		VALUES (@fecha, @descripcion, @numeroDocumento, @montoTotal, @cantidadProductos, @montoCliente, @cambio, @estado, @idTipoPago, @idEmpleado, @idCliente)
+
+		INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura, estado)
+		VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @idFactura, 1)
+	
+        UPDATE PRODUCTO 
+        SET stock = (stock - @cantidad) 
+        WHERE id_producto = @id_producto;
+
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        -- Use RAISERROR inside the CATCH block to return 
+        -- error information about the original error that 
+        -- caused execution to jump to the CATCH block.
+        RAISERROR (@ErrorMessage, -- Message text.
+                   @ErrorSeverity, -- Severity.
+                   @ErrorState -- State.
+                   );
+    END CATCH
+	
 END
 
 -- Modificar Factura
@@ -958,7 +1126,13 @@ CREATE PROCEDURE ModificarFactura
 	@estado bit,
 	@idTipoPago int,
 	@idEmpleado int,
-	@idCliente int
+	@idCliente int,
+
+	@precioUnitario money,
+	@precioVenta money,
+	@cantidad int,
+	@idProducto bigint,
+	@id_detallefactura bigint
 
 AS
 BEGIN
@@ -966,20 +1140,33 @@ BEGIN
 	UPDATE facturas 
 	SET fecha=@fecha, descripcion=@descripcion, numero_documento=@numeroDocumento, monto_total=@montoTotal, cantidad_productos=@cantidadProductos, monto_cliente=@montoCliente, cambio=@cambio, estado=@estado, id_tipopago=@idTipoPago, id_empleado=@idEmpleado, id_cliente=@idCliente
 	WHERE id_factura = @idFactura;
+
+	UPDATE detalle_factura
+	SET precio_unitario=@precioUnitario, precio_venta=@precioVenta, cantidad=@cantidad, id_producto=@idProducto, id_factura=@idFactura, estado=1
+	WHERE id_detallefactura = @id_detallefactura;
+
+	UPDATE PRODUCTO 
+        SET stock = (stock - @cantidad) 
+        WHERE id_producto = @id_producto;
 END
 
 -- Eliminar Factura
 GO
 CREATE PROCEDURE EliminarFactura
 
-	@idFactura bigint
+	@idFactura bigint,
+	@id_detallefactura bigint
 
 AS
 BEGIN
 
 	UPDATE facturas
 	SET estado=0 
-	WHERE id_factura=@idFactura
+	WHERE id_factura=@idFactura;
+
+	UPDATE detalle_factura
+	SET estado=0
+	WHERE id_detallefactura = @id_detallefactura;
 
 END
 
@@ -1085,7 +1272,7 @@ END
 --******* Pedido Proveedor ***************************************************
 
 -- Agregar Pedido Proveedor
-GO
+/*GO
 CREATE PROCEDURE AgregarPedidoProveedor
 
 	@numeroDocumento varchar(12),
@@ -1133,6 +1320,159 @@ BEGIN
 	SET estado=0 
 	WHERE id_pedido=@idProveedor
 
+END*/
+
+CREATE PROCEDURE AGREGARPEDIDO(
+    @numero_documento VARCHAR(12),
+    @fecha_registro DATE,
+    @sub_total MONEY,
+    @id_proveedor BIGINT,
+    @cantidad INT,
+    @monto_total MONEY,
+	@id_producto BIGINT,
+	@precio_unidad MONEY, 
+	@precio_venta MONEY
+)
+AS
+BEGIN
+    BEGIN TRY
+        DECLARE @id_pedido BIGINT;
+
+        INSERT INTO pedidos_proveedor (
+            numero_documento, fecha_registro, monto_total,
+            estado, id_proveedor 
+        ) VALUES (
+            @numero_documento, @fecha_registro, @monto_total,
+            1, @id_proveedor 
+        );
+
+        SET @id_pedido = SCOPE_IDENTITY();
+
+        INSERT INTO detalle_pedido (
+            id_pedido, cantidad, monto_total, estado, id_producto
+        ) VALUES (
+            @id_pedido, @cantidad, @sub_total, 1, @id_producto
+        );
+
+        UPDATE PRODUCTO 
+        SET precio_unidad = @precio_unidad, precio_venta = @precio_venta, stock = (stock + @cantidad) 
+        WHERE id_producto = @id_producto;
+
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        -- Use RAISERROR inside the CATCH block to return 
+        -- error information about the original error that 
+        -- caused execution to jump to the CATCH block.
+        RAISERROR (@ErrorMessage, -- Message text.
+                   @ErrorSeverity, -- Severity.
+                   @ErrorState -- State.
+                   );
+    END CATCH
+END
+
+--MODIFICAR PEDIDOS--
+
+CREATE PROCEDURE MODIFICARPEDIDO(
+	@id_pedido BIGINT,
+    @numero_documento VARCHAR(12),
+    @fecha_registro DATE,
+    @sub_total MONEY,
+    @id_proveedor BIGINT,
+	@id_detalleproveedor BIGINT,
+    @cantidad INT,
+    @monto_total MONEY,
+	@id_producto BIGINT,
+	@precio_unidad MONEY, 
+	@precio_venta MONEY,
+	@id_detallepedido BIGINT
+)
+AS
+BEGIN
+    BEGIN TRY
+        --DECLARE @id_pedido BIGINT;
+
+        UPDATE pedidos_proveedor 
+		SET numero_documento = @numero_documento, fecha_registro = @fecha_registro, monto_total = monto_total,
+		estado = 1, id_proveedor = @id_proveedor
+		WHERE id_pedido = @id_pedido;
+
+        UPDATE detalle_pedido (
+        SET id_pedido = @id_pedido, cantidad = @cantidad, monto_total = @sub_total, estado = 1, 
+		id_producto = @id_producto
+		WHERE id_detallepedido = @id_detallepedido;
+        
+        UPDATE PRODUCTO 
+        SET precio_unidad = @precio_unidad, precio_venta = @precio_venta, stock = (stock + @cantidad) 
+        WHERE id_producto = @id_producto;
+
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        -- Use RAISERROR inside the CATCH block to return 
+        -- error information about the original error that 
+        -- caused execution to jump to the CATCH block.
+        RAISERROR (@ErrorMessage, -- Message text.
+                   @ErrorSeverity, -- Severity.
+                   @ErrorState -- State.
+                   );
+    END CATCH
+END
+
+--ELIMINAR PEDIDOS--
+
+CREATE PROCEDURE ELIMINARPEDIDO(
+	@id_pedido BIGINT,
+    @id_detallepedido BIGINT
+)
+AS
+BEGIN
+    BEGIN TRY
+        --DECLARE @id_pedido BIGINT;
+
+        UPDATE pedidos_proveedor 
+		SET estado = 0
+		WHERE id_pedido = @id_pedido;
+
+        UPDATE detalle_pedido
+        SET estado = 0
+		WHERE id_detallepedido = @id_detallepedido;
+
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        -- Use RAISERROR inside the CATCH block to return 
+        -- error information about the original error that 
+        -- caused execution to jump to the CATCH block.
+        RAISERROR (@ErrorMessage, -- Message text.
+                   @ErrorSeverity, -- Severity.
+                   @ErrorState -- State.
+                   );
+    END CATCH
 END
 
 --*********************************************************************
@@ -1379,4 +1719,69 @@ BEGIN
 	SET estado=0
 	WHERE id_unidadmedida=@idUnidadmedida
 
+END
+
+/*SE ANADEN NUEVAS CONSULTAS CON RESPECTO A PROVEEDORES*/
+
+--LISTAR PROVEEDORES--
+
+CREATE PROCEDURE ListarProveedores
+AS
+BEGIN
+SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio,c.estado 
+FROM proveedores c                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+WHERE c.estado = 1
+ORDER BY c.id_proveedor DESC
+END
+
+--LISTAR PROVEEDORES ALFABETICAMENTE--
+
+CREATE PROCEDURE LISTARPROVEEDORALFABETICAMENTE
+AS
+BEGIN
+SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio,c.estado 
+FROM proveedores c
+WHERE c.estado=1
+ORDER BY c.proveedor ASC
+END
+
+--LISTAR PROVEEDORES ALFABETICAMENTE INVERSO--
+
+CREATE PROCEDURE LISTARPROVEEDORALFABETICAMENTEINVERSO
+AS
+BEGIN
+SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio,c.estado 
+FROM proveedores c
+WHERE c.estado=1
+ORDER BY c.proveedor DESC
+END
+
+--BUSCAR PROVEEDORES X IDENTIFICACION--
+
+CREATE PROCEDURE BUSCARPROVEEDORXIDENTIFICACION
+@id_proveedor VARCHAR(45)
+AS
+BEGIN
+SELECT * FROM proveedor
+WHERE id_proveedor LIKE '%' + @id_proveedor + '%' AND estado=1
+END
+
+--BUSCAR PROVEEDORES X NOMBRE--
+
+CREATE PROCEDURE BUSCARPROVEEDORXNOMBRE
+@nombre VARCHAR(45)
+AS
+BEGIN
+SELECT * FROM proveedor
+WHERE proveedor LIKE '%' + @nombre + '%' AND estado=1
+END
+
+---BUSCAR PROVEEDORES POR NUMERO DOCUMENTO
+
+CREATE PROCEDURE BUSCARPROVEEDORXNOMBRE
+@numero_documento VARCHAR(45)
+AS
+BEGIN
+SELECT * FROM proveedor
+WHERE numero_documento LIKE '%' + @numero_documento + '%' AND estado=1
 END
