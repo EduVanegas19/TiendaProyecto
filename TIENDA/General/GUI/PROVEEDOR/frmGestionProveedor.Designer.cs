@@ -290,7 +290,7 @@ namespace General.GUI
             this.cbbOrdenar.Name = "cbbOrdenar";
             this.cbbOrdenar.Size = new System.Drawing.Size(154, 24);
             this.cbbOrdenar.TabIndex = 14;
-//            this.cbbOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbbOrdenar_SelectedIndexChanged);
+            this.cbbOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbbOrdenar_SelectedIndexChanged);
             this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
             // label3

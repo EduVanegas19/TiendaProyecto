@@ -152,6 +152,12 @@
     <Compile Include="GUI\EMPLEADO\frmEditarEmpleado.Designer.cs">
       <DependentUpon>frmEditarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MUNICIPIO\frmVisorMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MUNICIPIO\frmVisorMunicipio.Designer.cs">
+      <DependentUpon>frmVisorMunicipio.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\PEDIDO_PROVEEDOR\frmCrearPedidoProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EMPLEADO\frmGestionEmpleado.resx">
       <DependentUpon>frmGestionEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MUNICIPIO\frmVisorMunicipio.resx">
+      <DependentUpon>frmVisorMunicipio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PEDIDO_PROVEEDOR\frmCrearPedidoProveedor.resx">
       <DependentUpon>frmCrearPedidoProveedor.cs</DependentUpon>

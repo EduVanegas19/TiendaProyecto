@@ -33,7 +33,6 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\Gener
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PRODUCTO.frmCrearProducto.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PRODUCTO.frmEditarProducto.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PRODUCTO.frmGestionProducto.resources
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PROVEEDOR.frmCrearProveedor.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PROVEEDOR.frmEditarProveedor.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionProveedor.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.REPORTES.frmCrearReporte.resources
@@ -105,3 +104,5 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\stdol
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\Reporte.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\SessionManager.dll
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\SessionManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.MUNICIPIO.frmVisorMunicipio.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PROVEEDOR.frmVisorProveedor.resources

@@ -176,5 +176,10 @@ namespace General.GUI
         {
             this.Close();
         }
+
+        private void cbbOrdenar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,6 +36,10 @@ namespace General.GUI.DIRECCION
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.lblVisor = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkControl = new System.Windows.Forms.CheckBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -57,9 +61,6 @@ namespace General.GUI.DIRECCION
             this.txtIdCliente = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtMunicipio = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -109,6 +110,7 @@ namespace General.GUI.DIRECCION
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 10;
             this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblVisor
             // 
@@ -122,6 +124,7 @@ namespace General.GUI.DIRECCION
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkControl);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.txtMunicipio);
@@ -150,6 +153,42 @@ namespace General.GUI.DIRECCION
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(659, 558);
             this.panel1.TabIndex = 16;
+            // 
+            // checkControl
+            // 
+            this.checkControl.AutoSize = true;
+            this.checkControl.Location = new System.Drawing.Point(571, 36);
+            this.checkControl.Name = "checkControl";
+            this.checkControl.Size = new System.Drawing.Size(18, 17);
+            this.checkControl.TabIndex = 34;
+            this.checkControl.UseVisualStyleBackColor = true;
+            this.checkControl.Visible = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(425, 386);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 29);
+            this.btnAgregar.TabIndex = 33;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(344, 386);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 29);
+            this.btnBuscar.TabIndex = 32;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtMunicipio
+            // 
+            this.txtMunicipio.Location = new System.Drawing.Point(182, 389);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.Size = new System.Drawing.Size(141, 22);
+            this.txtMunicipio.TabIndex = 31;
             // 
             // label11
             // 
@@ -330,31 +369,6 @@ namespace General.GUI.DIRECCION
             this.label9.TabIndex = 8;
             this.label9.Text = "DIRECCION:";
             // 
-            // txtMunicipio
-            // 
-            this.txtMunicipio.Location = new System.Drawing.Point(182, 389);
-            this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(141, 22);
-            this.txtMunicipio.TabIndex = 31;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(344, 386);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 29);
-            this.btnBuscar.TabIndex = 32;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(425, 386);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 29);
-            this.btnAgregar.TabIndex = 33;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
             // frmEditarDireccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,6 +378,7 @@ namespace General.GUI.DIRECCION
             this.Controls.Add(this.panel1);
             this.Name = "frmEditarDireccion";
             this.Text = "Editar Direccion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditarDireccion_FormClosed);
             this.Load += new System.EventHandler(this.frmEditarDireccion_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -409,5 +424,6 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscar;
         public System.Windows.Forms.TextBox txtMunicipio;
+        public System.Windows.Forms.CheckBox checkControl;
     }
 }

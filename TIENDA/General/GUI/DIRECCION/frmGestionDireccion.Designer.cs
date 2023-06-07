@@ -42,7 +42,7 @@ namespace General.GUI.DIRECCION
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbBuscar = new System.Windows.Forms.ComboBox();
+            this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgDireccion = new System.Windows.Forms.DataGridView();
             this.id_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +54,9 @@ namespace General.GUI.DIRECCION
             this.caserio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
@@ -79,7 +80,7 @@ namespace General.GUI.DIRECCION
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1193, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1210, 30);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -101,7 +102,7 @@ namespace General.GUI.DIRECCION
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(-1, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1194, 67);
+            this.panel3.Size = new System.Drawing.Size(1211, 67);
             this.panel3.TabIndex = 7;
             // 
             // label1
@@ -124,7 +125,7 @@ namespace General.GUI.DIRECCION
             this.panel2.Location = new System.Drawing.Point(1104, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(89, 497);
+            this.panel2.Size = new System.Drawing.Size(106, 497);
             this.panel2.TabIndex = 6;
             // 
             // btnAgregar
@@ -183,14 +184,14 @@ namespace General.GUI.DIRECCION
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 4;
             this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.cbbBuscar);
+            this.panel1.Controls.Add(this.cbbOrdenar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtgDireccion);
-            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Location = new System.Drawing.Point(2, 75);
@@ -199,18 +200,24 @@ namespace General.GUI.DIRECCION
             this.panel1.Size = new System.Drawing.Size(1104, 497);
             this.panel1.TabIndex = 5;
             // 
-            // cbbBuscar
+            // cbbOrdenar
             // 
-            this.cbbBuscar.FormattingEnabled = true;
-            this.cbbBuscar.Location = new System.Drawing.Point(671, 21);
-            this.cbbBuscar.Name = "cbbBuscar";
-            this.cbbBuscar.Size = new System.Drawing.Size(121, 24);
-            this.cbbBuscar.TabIndex = 14;
+            this.cbbOrdenar.FormattingEnabled = true;
+            this.cbbOrdenar.Items.AddRange(new object[] {
+            "Ultimo Agreado",
+            "Primero Agregado",
+            "0 - 9 Postal",
+            "9 - 0 Postal"});
+            this.cbbOrdenar.Location = new System.Drawing.Point(891, 23);
+            this.cbbOrdenar.Name = "cbbOrdenar";
+            this.cbbOrdenar.Size = new System.Drawing.Size(171, 24);
+            this.cbbOrdenar.TabIndex = 14;
+            this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 25);
+            this.label3.Location = new System.Drawing.Point(795, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 13;
@@ -233,6 +240,8 @@ namespace General.GUI.DIRECCION
             this.caserio,
             this.codigo_postal,
             this.id_municipio,
+            this.municipio,
+            this.departamento,
             this.estado});
             this.dtgDireccion.Location = new System.Drawing.Point(10, 57);
             this.dtgDireccion.Margin = new System.Windows.Forms.Padding(4);
@@ -320,11 +329,30 @@ namespace General.GUI.DIRECCION
             // id_municipio
             // 
             this.id_municipio.DataPropertyName = "id_municipio";
-            this.id_municipio.HeaderText = "MUNICIPIO";
+            this.id_municipio.HeaderText = "idMunicipio";
             this.id_municipio.MinimumWidth = 6;
             this.id_municipio.Name = "id_municipio";
             this.id_municipio.ReadOnly = true;
+            this.id_municipio.Visible = false;
             this.id_municipio.Width = 125;
+            // 
+            // municipio
+            // 
+            this.municipio.DataPropertyName = "municipio";
+            this.municipio.HeaderText = "MUNICIPIO";
+            this.municipio.MinimumWidth = 6;
+            this.municipio.Name = "municipio";
+            this.municipio.ReadOnly = true;
+            this.municipio.Width = 125;
+            // 
+            // departamento
+            // 
+            this.departamento.DataPropertyName = "departamento";
+            this.departamento.HeaderText = "DEPARTAMENTO";
+            this.departamento.MinimumWidth = 6;
+            this.departamento.Name = "departamento";
+            this.departamento.ReadOnly = true;
+            this.departamento.Width = 125;
             // 
             // estado
             // 
@@ -333,21 +361,13 @@ namespace General.GUI.DIRECCION
             this.estado.MinimumWidth = 6;
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
+            this.estado.Visible = false;
             this.estado.Width = 125;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 20);
+            this.label2.Location = new System.Drawing.Point(27, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 17);
@@ -356,7 +376,7 @@ namespace General.GUI.DIRECCION
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
+            this.txtBuscar.Location = new System.Drawing.Point(194, 26);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(156, 22);
@@ -367,7 +387,7 @@ namespace General.GUI.DIRECCION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 603);
+            this.ClientSize = new System.Drawing.Size(1210, 603);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -407,10 +427,9 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbbBuscar;
+        private System.Windows.Forms.ComboBox cbbOrdenar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtgDireccion;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_direccion;
@@ -422,6 +441,8 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.DataGridViewTextBoxColumn caserio;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_postal;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_municipio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn municipio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

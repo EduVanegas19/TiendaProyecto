@@ -1785,3 +1785,110 @@ BEGIN
 SELECT * FROM proveedor
 WHERE numero_documento LIKE '%' + @numero_documento + '%' AND estado=1
 END
+
+-- LISTAR PROVEEDORES
+GO
+CREATE PROCEDURE LISTARPROVEEDORESOPCION
+@opcion INT
+AS
+BEGIN
+    IF @opcion = 1
+    BEGIN
+        --ListarProveedores
+        SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio
+        FROM proveedores c
+        WHERE c.estado = 1
+        ORDER BY c.id_proveedor DESC
+    END
+    ELSE IF @opcion = 2
+    BEGIN
+        --ListarProveedores
+        SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio
+        FROM proveedores c
+        WHERE c.estado = 1
+        ORDER BY c.id_proveedor ASC
+    END
+    ELSE IF @opcion = 3
+    BEGIN
+        --ListarProveedores
+        SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio
+        FROM proveedores c
+        WHERE c.estado = 1
+        ORDER BY c.proveedor ASC
+    END
+    ELSE IF @opcion = 4
+    BEGIN
+        --ListarProveedores
+        SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio
+        FROM proveedores c
+        WHERE c.estado = 1
+        ORDER BY c.proveedor DESC
+    END
+    ELSE IF @opcion = 5
+    BEGIN
+        --ListarProveedores
+        SELECT c.id_proveedor, c.proveedor, c.numero_documento, c.esLaboratorio
+        FROM proveedores c
+        WHERE c.estado = 1 AND c.esLaboratorio = 1
+        ORDER BY c.id_proveedor DESC
+    END
+END 
+
+
+-- LISTAR DIRECCIONES
+GO
+CREATE PROCEDURE LISTARDIRECCIONOPCION
+	@opcion INT
+AS
+BEGIN
+    IF @opcion = 1
+    BEGIN
+        --ListarDirecciones
+        SELECT d.*,
+			   m.municipio,
+			   dep.departamento
+        FROM direcciones d
+		INNER JOIN municipios m ON d.id_municipio=m.id_municipio
+		INNER JOIN departamentos dep ON m.id_departamento=dep.id_departamento
+        WHERE d.estado = 1
+        ORDER BY d.id_direccion DESC
+    END
+    ELSE IF @opcion = 2
+    BEGIN
+        --ListarDirecciones
+        SELECT d.*,
+			   m.municipio,
+			   dep.departamento
+        FROM direcciones d
+		INNER JOIN municipios m ON d.id_municipio=m.id_municipio
+		INNER JOIN departamentos dep ON m.id_departamento=dep.id_departamento
+        WHERE d.estado = 1
+        ORDER BY d.id_direccion ASC
+    END
+    ELSE IF @opcion = 3
+    BEGIN
+        --ListarDirecciones
+        SELECT d.*,
+			   m.municipio,
+			   dep.departamento
+        FROM direcciones d
+		INNER JOIN municipios m ON d.id_municipio=m.id_municipio
+		INNER JOIN departamentos dep ON m.id_departamento=dep.id_departamento
+        WHERE d.estado = 1
+        ORDER BY d.codigo_postal ASC
+    END
+    ELSE IF @opcion = 4
+    BEGIN
+        --ListarDirecciones
+        SELECT d.*,
+			   m.municipio,
+			   dep.departamento
+        FROM direcciones d
+		INNER JOIN municipios m ON d.id_municipio=m.id_municipio
+		INNER JOIN departamentos dep ON m.id_departamento=dep.id_departamento
+        WHERE d.estado = 1
+        ORDER BY d.codigo_postal DESC
+    END
+END 
+
+exec LISTARDIRECCIONOPCION 2

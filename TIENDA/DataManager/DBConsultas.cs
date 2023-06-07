@@ -51,6 +51,22 @@ namespace DataManager
 
             return Resultado;
         }
+        public static DataTable LISTARDIRECCIONOPCION(int pIdOrden)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"exec LISTARDIRECCIONOPCION " + pIdOrden + ";";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+
+            return Resultado;
+        }
 
         //DATOS QUE SE MOSTRARAN AL TICKET
         public static DataTable TICKET()
