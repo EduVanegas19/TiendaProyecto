@@ -18,6 +18,25 @@ namespace General.CLS
         String _FechaNac;
         String _IdDireccion;
         String _Estado;
+        String _NumeroCasa;
+        String _PasajePoligono;
+        String _Calle;
+        String _Colonia;
+        String _Canton;
+        String _Caserio;
+        String _CodigoPostal;
+        String _IdMunicipio;
+
+        public string IdDireccion { get => _IdDireccion; set => _IdDireccion = value; }
+        public string NumeroCasa { get => _NumeroCasa; set => _NumeroCasa = value; }
+        public string PasajePoligono { get => _PasajePoligono; set => _PasajePoligono = value; }
+        public string Calle { get => _Calle; set => _Calle = value; }
+        public string Colonia { get => _Colonia; set => _Colonia = value; }
+        public string Canton { get => _Canton; set => _Canton = value; }
+        public string Caserio { get => _Caserio; set => _Caserio = value; }
+        public string CodigoPostal { get => _CodigoPostal; set => _CodigoPostal = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
+        public string IdMunicipio { get => _IdMunicipio; set => _IdMunicipio = value; }
 
         public string IdEmpleado { get => _IdEmpleado; set => _IdEmpleado = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
@@ -27,9 +46,7 @@ namespace General.CLS
         public string Correo { get => _Correo; set => _Correo = value; }
         public string DUI { get => _DUI; set => _DUI = value; }
         public string FechaNac { get => _FechaNac; set => _FechaNac = value; }
-        public string IdDireccion { get => _IdDireccion; set => _IdDireccion = value; }
-        public string Estado { get => _Estado; set => _Estado = value; }
-
+        
         //CRUD
         public Boolean Insertar()
         {
@@ -38,7 +55,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarEmpleados '" + _Nombre + "','" + _Apellido + "','" + _Genero + "','" + _Telefono + "','" + _Correo + "','" + _DUI + "','" + _FechaNac + "'," + _IdDireccion + "," + _Estado + ";";
+                Sentencia = @"exec AgregarEmpleados '" + _Nombre + "','" + _Apellido + "','" + _Genero + "','" + _Telefono + "','" + _Correo + "','" + _DUI + "','" + _FechaNac + "'," + _IdDireccion + "," + _Estado + "','" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "','" + _IdMunicipio + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -59,7 +76,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarEmpleados " + _IdEmpleado + ",'" + _Nombre + "','" + _Apellido + "','" + _Genero + "','" + _Telefono + "','" + _Correo + "','" + _DUI + "','" + _FechaNac + "'," + _IdDireccion + "," + _Estado + ";";
+                Sentencia = @"exec ModificarEmpleados " + _IdEmpleado + ",'" + _Nombre + "','" + _Apellido + "','" + _Genero + "','" + _Telefono + "','" + _Correo + "','" + _DUI + "','" + _FechaNac + "'," + _IdDireccion + "," + _Estado + "','" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "','" + _IdMunicipio + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
