@@ -51,7 +51,6 @@ namespace General.GUI
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
@@ -76,7 +75,7 @@ namespace General.GUI
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(915, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(925, 30);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -98,7 +97,7 @@ namespace General.GUI
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(0, -2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(915, 67);
+            this.panel3.Size = new System.Drawing.Size(925, 67);
             this.panel3.TabIndex = 7;
             // 
             // label1
@@ -122,13 +121,13 @@ namespace General.GUI
             this.panel2.Location = new System.Drawing.Point(826, 72);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(89, 497);
+            this.panel2.Size = new System.Drawing.Size(99, 497);
             this.panel2.TabIndex = 6;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(13, 53);
+            this.btnAgregar.Location = new System.Drawing.Point(8, 51);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(67, 62);
@@ -140,7 +139,7 @@ namespace General.GUI
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(13, 133);
+            this.btnEditar.Location = new System.Drawing.Point(8, 133);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(67, 62);
@@ -162,7 +161,7 @@ namespace General.GUI
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(13, 213);
+            this.btnEliminar.Location = new System.Drawing.Point(8, 213);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(67, 62);
@@ -174,24 +173,26 @@ namespace General.GUI
             // btnSalir
             // 
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(13, 435);
+            this.btnSalir.Location = new System.Drawing.Point(10, 435);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(67, 58);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 4;
             this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(13, 358);
+            this.pictureBox4.Location = new System.Drawing.Point(8, 358);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(64, 60);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panel1
             // 
@@ -199,7 +200,6 @@ namespace General.GUI
             this.panel1.Controls.Add(this.dtgProveedores);
             this.panel1.Controls.Add(this.cbbOrdenar);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Location = new System.Drawing.Point(3, 72);
@@ -280,28 +280,27 @@ namespace General.GUI
             // cbbOrdenar
             // 
             this.cbbOrdenar.FormattingEnabled = true;
-            this.cbbOrdenar.Location = new System.Drawing.Point(671, 21);
+            this.cbbOrdenar.Items.AddRange(new object[] {
+            "Ultimo Agregado",
+            "Primero Agregado",
+            "A - Z",
+            "Z - A",
+            "Laboratorios"});
+            this.cbbOrdenar.Location = new System.Drawing.Point(638, 21);
             this.cbbOrdenar.Name = "cbbOrdenar";
-            this.cbbOrdenar.Size = new System.Drawing.Size(121, 24);
+            this.cbbOrdenar.Size = new System.Drawing.Size(154, 24);
             this.cbbOrdenar.TabIndex = 14;
+//            this.cbbOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbbOrdenar_SelectedIndexChanged);
+            this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 25);
+            this.label3.Location = new System.Drawing.Point(542, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ordenar por:";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -315,17 +314,18 @@ namespace General.GUI
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
+            this.txtBuscar.Location = new System.Drawing.Point(191, 17);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(156, 22);
             this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // frmGestionProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 603);
+            this.ClientSize = new System.Drawing.Size(925, 603);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -370,7 +370,6 @@ namespace General.GUI
         private System.Windows.Forms.DataGridView dtgProveedores;
         private System.Windows.Forms.ComboBox cbbOrdenar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_proveedor;

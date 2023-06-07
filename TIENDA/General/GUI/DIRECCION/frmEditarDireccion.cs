@@ -50,7 +50,8 @@ namespace General.GUI.DIRECCION
             //PictureBox
             btnGuardar.Visible = true;
             btnEliminar.Visible = true;
-            //ChecKbox
+
+            lblVisor.Text = "MODO EDICION";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

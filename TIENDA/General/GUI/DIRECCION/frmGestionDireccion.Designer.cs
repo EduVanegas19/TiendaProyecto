@@ -45,9 +45,6 @@ namespace General.GUI.DIRECCION
             this.cbbBuscar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgDireccion = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.id_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_casa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pasaje_poligono = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +55,9 @@ namespace General.GUI.DIRECCION
             this.codigo_postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -245,33 +245,6 @@ namespace General.GUI.DIRECCION
             this.dtgDireccion.TabIndex = 0;
             this.dtgDireccion.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDireccion_CellContentDoubleClick);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Digite aqui para buscar:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
-            this.txtBuscar.TabIndex = 6;
-            // 
             // id_direccion
             // 
             this.id_direccion.DataPropertyName = "id_direccion";
@@ -361,6 +334,34 @@ namespace General.GUI.DIRECCION
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             this.estado.Width = 125;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Digite aqui para buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
+            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // frmGestionDireccion
             // 

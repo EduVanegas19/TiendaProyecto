@@ -59,3 +59,7 @@ C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\Reporte\obj\Debug\Repor
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\Reporte\obj\Debug\Reporte.dll
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\Reporte\obj\Debug\Reporte.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reporte\obj\Debug\Reporte.GUI.visorClientes.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reporte\obj\Debug\Reporte.GUI.visorEmpleado.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reporte\obj\Debug\Reporte.GUI.visorProducto.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reporte\obj\Debug\Reporte.GUI.visorProveedor.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\Reporte\obj\Debug\Reporte.GUI.visorUsuario.resources

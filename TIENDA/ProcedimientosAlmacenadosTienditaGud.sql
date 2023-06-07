@@ -1354,7 +1354,7 @@ BEGIN
             @id_pedido, @cantidad, @sub_total, 1, @id_producto
         );
 
-        UPDATE PRODUCTO 
+        UPDATE productos 
         SET precio_unidad = @precio_unidad, precio_venta = @precio_venta, stock = (stock + @cantidad) 
         WHERE id_producto = @id_producto;
 

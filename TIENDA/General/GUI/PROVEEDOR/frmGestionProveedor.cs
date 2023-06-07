@@ -13,15 +13,37 @@ namespace General.GUI
 {
     public partial class frmGestionProveedor : Form
     {
-        BindingSource _DATOS = new BindingSource();
+        //Le decimos que cargue datos despues de cerrar el frmEditor
+        private void FormEditor_DataUpdated(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
 
         private void CargarDatos()
         {
+            DataTable proveedores = new DataTable();
+            int pId = 2;
             try
             {
-                _DATOS.DataSource = DataManager.DBConsultas.PROVEEDORES();
+                proveedores = DataManager.DBConsultas.LISTARPROVEEDORESOPCION(pId);
                 dtgProveedores.AutoGenerateColumns = false;
-                dtgProveedores.DataSource = _DATOS;
+                dtgProveedores.DataSource = proveedores;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private void CargarOrden()
+        {
+            DataTable proveedores = new DataTable();
+            //le digo que dependiendo de la opcion que se seleccione se muestre en orden correspondiente
+            int pId = cbbOrdenar.SelectedIndex+1;
+            try
+            {
+                proveedores = DataManager.DBConsultas.LISTARPROVEEDORESOPCION(pId);
+                dtgProveedores.AutoGenerateColumns = false;
+                dtgProveedores.DataSource = proveedores;
             }
             catch (Exception)
             {
@@ -36,6 +58,7 @@ namespace General.GUI
         private void frmGestionProveedor_Load(object sender, EventArgs e)
         {
             CargarDatos();
+
             lblUsuario.Text = Session.Instancia.usuario;
             lblRol.Text = Session.Instancia.rol;
         }
@@ -49,6 +72,10 @@ namespace General.GUI
                 f.txtProveedor.Text = dtgProveedores.CurrentRow.Cells["proveedor"].Value.ToString();
                 f.txtNumDoc.Text = dtgProveedores.CurrentRow.Cells["numero_documento"].Value.ToString();
                 f.checkLab.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["esLaboratorio"].Value.ToString());
+                //establecemos el tipo de check para saber que opciones mostrar
+                f.checkControl.Checked = false;
+                //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+                f.DataUpdated += FormEditor_DataUpdated;
                 f.ShowDialog();
             }
         }
@@ -56,7 +83,12 @@ namespace General.GUI
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             PROVEEDOR.frmEditarProveedor f = new PROVEEDOR.frmEditarProveedor();
+            //establecemos el tipo de check para saber que opciones mostrar
+            f.checkControl.Checked = true;
+            //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+            f.DataUpdated += FormEditor_DataUpdated;
             f.ShowDialog();
+            
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
@@ -87,8 +119,62 @@ namespace General.GUI
                 f.txtProveedor.Text = dtgProveedores.CurrentRow.Cells["proveedor"].Value.ToString();
                 f.txtNumDoc.Text = dtgProveedores.CurrentRow.Cells["numero_documento"].Value.ToString();
                 f.checkLab.Checked = Convert.ToBoolean(dtgProveedores.CurrentRow.Cells["esLaboratorio"].Value.ToString());
+                //establecemos el tipo de check para saber que opciones mostrar
+                f.checkControl.Checked = false;
+                //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+                f.DataUpdated += FormEditor_DataUpdated;
                 f.ShowDialog();
+                
             }
+        }
+
+        private void cbbOrdenar_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CargarOrden();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtBuscar.Text.ToLower();
+
+            // Deshabilitar el administrador de divisas
+            dtgProveedores.BindingContext[dtgProveedores.DataSource].SuspendBinding();
+
+            // Filtra los datos en la columna 'nombre' de manera flexible
+            foreach (DataGridViewRow row in dtgProveedores.Rows)
+            {
+                bool isVisible = false;
+
+                DataGridViewCell nameCell = row.Cells["proveedor"]; // Ajusta el nombre de la columna según tu caso
+                DataGridViewCell codeCell = row.Cells["id_proveedor"]; // Ajusta el nombre de la columna según tu caso
+
+                if (nameCell != null && nameCell.Value != null && codeCell != null && codeCell.Value != null)
+                {
+                    string nameCellValue = nameCell.Value.ToString().ToLower();
+                    string codeCellValue = codeCell.Value.ToString().ToLower();
+
+                    if (nameCellValue.Contains(searchText) || codeCellValue.Contains(searchText))
+                    {
+                        isVisible = true;
+                    }
+                }
+
+                row.Visible = isVisible;
+            }
+
+            // Habilitar el administrador de divisas
+            dtgProveedores.BindingContext[dtgProveedores.DataSource].ResumeBinding();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Reporte.GUI.visorProveedor form1 = new Reporte.GUI.visorProveedor();
+            form1.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -49,6 +49,8 @@ namespace General.GUI.PROVEEDOR
             this.txtIdCliente = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.control = new System.Windows.Forms.Label();
+            this.checkControl = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -98,6 +100,7 @@ namespace General.GUI.PROVEEDOR
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // lblVisor
             // 
@@ -123,6 +126,8 @@ namespace General.GUI.PROVEEDOR
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkControl);
+            this.panel1.Controls.Add(this.control);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.txtId);
@@ -235,6 +240,26 @@ namespace General.GUI.PROVEEDOR
             this.label9.Size = new System.Drawing.Size(100, 17);
             this.label9.TabIndex = 8;
             this.label9.Text = "PROVEEDOR:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // control
+            // 
+            this.control.AutoSize = true;
+            this.control.Location = new System.Drawing.Point(507, 35);
+            this.control.Name = "control";
+            this.control.Size = new System.Drawing.Size(0, 17);
+            this.control.TabIndex = 21;
+            this.control.Visible = false;
+            // 
+            // checkControl
+            // 
+            this.checkControl.AutoSize = true;
+            this.checkControl.Location = new System.Drawing.Point(510, 35);
+            this.checkControl.Name = "checkControl";
+            this.checkControl.Size = new System.Drawing.Size(18, 17);
+            this.checkControl.TabIndex = 22;
+            this.checkControl.UseVisualStyleBackColor = true;
+            this.checkControl.Visible = false;
             // 
             // frmEditarProveedor
             // 
@@ -245,6 +270,7 @@ namespace General.GUI.PROVEEDOR
             this.Controls.Add(this.panel1);
             this.Name = "frmEditarProveedor";
             this.Text = "Editar Proveedor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditarProveedor_FormClosed);
             this.Load += new System.EventHandler(this.frmEditarProveedor_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -278,5 +304,7 @@ namespace General.GUI.PROVEEDOR
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox btnGuardar;
+        public System.Windows.Forms.Label control;
+        public System.Windows.Forms.CheckBox checkControl;
     }
 }

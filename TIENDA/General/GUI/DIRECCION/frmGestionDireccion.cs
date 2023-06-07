@@ -100,5 +100,38 @@ namespace General.GUI.DIRECCION
                 f.ShowDialog();
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtBuscar.Text.ToLower();
+
+            // Deshabilitar el administrador de divisas
+            dtgDireccion.BindingContext[dtgDireccion.DataSource].SuspendBinding();
+
+            // Filtra los datos en la columna 'nombre' de manera flexible
+            foreach (DataGridViewRow row in dtgDireccion.Rows)
+            {
+                bool isVisible = false;
+
+                DataGridViewCell canton = row.Cells["canton"]; // Ajusta el nombre de la columna según tu caso
+                DataGridViewCell colonia = row.Cells["colonia"]; // Ajusta el nombre de la columna según tu caso
+
+                if (canton != null && canton.Value != null && colonia != null && colonia.Value != null)
+                {
+                    string nameCellValue = canton.Value.ToString().ToLower();
+                    string codeCellValue = colonia.Value.ToString().ToLower();
+
+                    if (nameCellValue.Contains(searchText) || codeCellValue.Contains(searchText))
+                    {
+                        isVisible = true;
+                    }
+                }
+
+                row.Visible = isVisible;
+            }
+
+            // Habilitar el administrador de divisas
+            dtgDireccion.BindingContext[dtgDireccion.DataSource].ResumeBinding();
+        }
     }
 }

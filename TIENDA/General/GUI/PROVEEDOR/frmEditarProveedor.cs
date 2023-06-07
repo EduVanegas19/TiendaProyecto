@@ -12,6 +12,8 @@ namespace General.GUI.PROVEEDOR
 {
     public partial class frmEditarProveedor : Form
     {
+        //Evento que se activara cuando se cierre el formulario y se actualicen los datos de datagrid gestion
+        public event EventHandler DataUpdated;
         public frmEditarProveedor()
         {
             InitializeComponent();
@@ -19,13 +21,28 @@ namespace General.GUI.PROVEEDOR
 
         private void frmEditarProveedor_Load(object sender, EventArgs e)
         {
-            // Configurar los TextBox como no editables
-            txtId.ReadOnly = true;
-            txtProveedor.ReadOnly = true;
-            txtNumDoc.ReadOnly = true;
-            checkLab.Enabled = false;
-            btnGuardar.Visible = false;
-            btnEliminar.Visible = false;
+            //Le digo que si el checked es flase, se muestre como nuevo proveedor
+            if (checkControl.Checked != false)
+            {
+                txtProveedor.ReadOnly = false;
+                txtNumDoc.ReadOnly = false;
+                checkLab.Enabled = true;
+                btnGuardar.Visible = true;
+                btnEliminar.Visible = false;
+                btnEditar.Visible = false;
+
+                lblVisor.Text = "NUEVO PROVEEDOR";
+            }
+            // Y si el checked es true, entonces que se muestre como visor de lectura
+            else
+            {
+                txtProveedor.ReadOnly = true;
+                txtNumDoc.ReadOnly = true;
+                checkLab.Enabled = false;
+                btnGuardar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -33,10 +50,12 @@ namespace General.GUI.PROVEEDOR
             //Creacion del objeto entidad
             CLS.Proveedor prov = new CLS.Proveedor();
             //Sincronizar la entidad con la interfaz
+            int estado = 1;
             prov.IdProveedor = txtId.Text;
             prov.Nombre = txtProveedor.Text;
             prov.NumeroDocumento = txtNumDoc.Text;
             prov.EsLaboratorio = checkLab.Checked.ToString();
+            prov.Estado = estado.ToString();
             //Identificar la accion a realizar
             if (txtId.TextLength > 0)
             {
@@ -45,6 +64,7 @@ namespace General.GUI.PROVEEDOR
                 {
                     MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
+                    
                 }
                 else
                 {
@@ -69,7 +89,6 @@ namespace General.GUI.PROVEEDOR
         private void btnEditar_Click(object sender, EventArgs e)
         {
             // Configurar los TextBox como editables
-            txtId.ReadOnly = false;
             txtProveedor.ReadOnly = false;
             txtNumDoc.ReadOnly = false;
             checkLab.Enabled = true;
@@ -77,6 +96,22 @@ namespace General.GUI.PROVEEDOR
             btnEliminar.Visible = true;
 
             lblVisor.Text = "MODO EDICION";
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmEditarProveedor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Se activa el evento declarado al principio y le notifica al frmGestion que se han actualizado los datos
+            DataUpdated?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

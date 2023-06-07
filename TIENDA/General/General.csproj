@@ -182,17 +182,17 @@
     <Compile Include="GUI\PRODUCTO\frmGestionProducto.Designer.cs">
       <DependentUpon>frmGestionProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PROVEEDOR\frmCrearProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\PROVEEDOR\frmCrearProveedor.Designer.cs">
-      <DependentUpon>frmCrearProveedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\PROVEEDOR\frmEditarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\PROVEEDOR\frmEditarProveedor.Designer.cs">
       <DependentUpon>frmEditarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PROVEEDOR\frmVisorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PROVEEDOR\frmVisorProveedor.Designer.cs">
+      <DependentUpon>frmVisorProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\REPORTES\frmCrearReporte.cs">
       <SubType>Form</SubType>
@@ -334,14 +334,14 @@
     <EmbeddedResource Include="GUI\PRODUCTO\frmGestionProducto.resx">
       <DependentUpon>frmGestionProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PROVEEDOR\frmCrearProveedor.resx">
-      <DependentUpon>frmCrearProveedor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\PROVEEDOR\frmEditarProveedor.resx">
       <DependentUpon>frmEditarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PROVEEDOR\frmGestionProveedor.resx">
       <DependentUpon>frmGestionProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PROVEEDOR\frmVisorProveedor.resx">
+      <DependentUpon>frmVisorProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\REPORTES\frmCrearReporte.resx">
       <DependentUpon>frmCrearReporte.cs</DependentUpon>

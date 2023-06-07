@@ -52,6 +52,7 @@ namespace Reporte.GUI
             this.Controls.Add(this.crvVisor);
             this.Name = "visorProveedor";
             this.Text = "visorProveedor";
+            this.Load += new System.EventHandler(this.visorProveedor_Load);
             this.ResumeLayout(false);
 
         }
