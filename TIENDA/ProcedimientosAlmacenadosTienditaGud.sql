@@ -132,38 +132,60 @@ END
 
 --LISTAR CLIENTES--
 
-CREATE PROCEDURE ListarClientes
+-- LISTAR CLIENTE
+GO
+CREATE PROCEDURE LISTARCLIENTEOPCION
+@opcion INT
 AS
 BEGIN
-SELECT c.id_cliente, c.identificacion, c.nombre, c.credito,d.colonia,d.numero_casa,c.estado 
-FROM clientes c
-INNER JOIN direcciones d ON c.id_direccion = d.id_direccion
-WHERE c.estado = 1
-ORDER BY id_cliente DESC
-END
-
---LISTAR CLIENTES ALFABETICAMENTE--
-
-CREATE PROCEDURE LISTARCLIENTESALFABETICAMENTE
-AS
-BEGIN
-SELECT c.id_cliente, c.identificacion, c.nombre, c.credito,d.colonia,d.numero_casa,c.estado 
-FROM clientes c
-INNER JOIN direcciones d ON c.id_direccion = d.id_direccion
-WHERE c.estado=1
-ORDER BY nombre ASC
-END
-
---LISTAR CLIENTES ALFABETICAMENTE INVERSO--
-
-CREATE PROCEDURE LISTARCLIENTESALFABETICAMENTEINVERSO
-AS
-BEGIN
-SELECT c.id_cliente, c.identificacion, c.nombre, c.credito,d.colonia,d.numero_casa,c.estado 
-FROM clientes c
-INNER JOIN direcciones d ON c.id_direccion = d.id_direccion
-WHERE c.estado=1
-ORDER BY nombre DESC
+    IF @opcion = 1
+    BEGIN
+        --ListarCliente ultimo agregado
+        SELECT c.*,
+			   d.*,
+			   m.*
+		FROM clientes c
+		LEFT JOIN direcciones d ON c.id_direccion = d.id_direccion
+		LEFT JOIN municipios m ON d.id_municipio = m.id_municipio
+		WHERE c.estado = 1
+		ORDER BY id_cliente DESC
+    END
+    ELSE IF @opcion = 2
+    BEGIN
+        --ListarCliente primero agregado
+        SELECT c.*,
+			   d.*,
+			   m.*
+		FROM clientes c
+		LEFT JOIN direcciones d ON c.id_direccion = d.id_direccion
+		LEFT JOIN municipios m ON d.id_municipio = m.id_municipio
+		WHERE c.estado = 1
+		ORDER BY id_cliente ASC
+    END
+    ELSE IF @opcion = 3
+    BEGIN
+        --Listar clientes a-z
+        SELECT c.*,
+			   d.*,
+			   m.*
+		FROM clientes c
+		LEFT JOIN direcciones d ON c.id_direccion = d.id_direccion
+		LEFT JOIN municipios m ON d.id_municipio = m.id_municipio
+		WHERE c.estado=1
+		ORDER BY nombre ASC
+    END
+    ELSE IF @opcion = 4
+    BEGIN
+        --Listar clientes z-a
+        SELECT c.*,
+			   d.*,
+			   m.*
+		FROM clientes c
+		LEFT JOIN direcciones d ON c.id_direccion = d.id_direccion
+		LEFT JOIN municipios m ON d.id_municipio = m.id_municipio
+		WHERE c.estado=1
+		ORDER BY nombre DESC
+    END
 END
 
 --BUSCAR CLIENTES X IDENTIFICACION--

@@ -42,10 +42,16 @@ namespace General.GUI
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbBuscar = new System.Windows.Forms.ComboBox();
+            this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgCliente = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.id_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_casa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pasaje_poligono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +60,9 @@ namespace General.GUI
             this.caserio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,7 +84,7 @@ namespace General.GUI
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(915, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1210, 30);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -101,7 +106,7 @@ namespace General.GUI
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(0, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(915, 67);
+            this.panel3.Size = new System.Drawing.Size(1210, 67);
             this.panel3.TabIndex = 10;
             // 
             // label1
@@ -121,10 +126,10 @@ namespace General.GUI
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(826, 75);
+            this.panel2.Location = new System.Drawing.Point(1108, 72);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(89, 497);
+            this.panel2.Size = new System.Drawing.Size(102, 497);
             this.panel2.TabIndex = 9;
             // 
             // btnAgregar
@@ -148,6 +153,7 @@ namespace General.GUI
             this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEditar.TabIndex = 1;
             this.btnEditar.TabStop = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // label4
             // 
@@ -169,6 +175,7 @@ namespace General.GUI
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.TabStop = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -184,30 +191,36 @@ namespace General.GUI
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.cbbBuscar);
+            this.panel1.Controls.Add(this.cbbOrdenar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtgCliente);
-            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(3, 75);
+            this.panel1.Location = new System.Drawing.Point(3, 72);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 497);
+            this.panel1.Size = new System.Drawing.Size(1107, 500);
             this.panel1.TabIndex = 8;
             // 
-            // cbbBuscar
+            // cbbOrdenar
             // 
-            this.cbbBuscar.FormattingEnabled = true;
-            this.cbbBuscar.Location = new System.Drawing.Point(671, 21);
-            this.cbbBuscar.Name = "cbbBuscar";
-            this.cbbBuscar.Size = new System.Drawing.Size(121, 24);
-            this.cbbBuscar.TabIndex = 14;
+            this.cbbOrdenar.FormattingEnabled = true;
+            this.cbbOrdenar.Items.AddRange(new object[] {
+            "Ultimo Agregado",
+            "Primero Agregado",
+            "A - Z",
+            "Z - A"});
+            this.cbbOrdenar.Location = new System.Drawing.Point(963, 21);
+            this.cbbOrdenar.Name = "cbbOrdenar";
+            this.cbbOrdenar.Size = new System.Drawing.Size(121, 24);
+            this.cbbOrdenar.TabIndex = 14;
+            this.cbbOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbbBuscar_SelectedIndexChanged);
+            this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbBuscar_SelectedValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 25);
+            this.label3.Location = new System.Drawing.Point(867, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 13;
@@ -222,6 +235,10 @@ namespace General.GUI
             this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_cliente,
+            this.identificacion,
+            this.nombre,
+            this.credito,
+            this.id_direccion,
             this.numero_casa,
             this.pasaje_poligono,
             this.calle,
@@ -230,6 +247,8 @@ namespace General.GUI
             this.caserio,
             this.codigo_postal,
             this.id_municipio,
+            this.municipio,
+            this.id_departamento,
             this.estado});
             this.dtgCliente.Location = new System.Drawing.Point(10, 57);
             this.dtgCliente.Margin = new System.Windows.Forms.Padding(4);
@@ -238,107 +257,8 @@ namespace General.GUI
             this.dtgCliente.ReadOnly = true;
             this.dtgCliente.RowHeadersWidth = 51;
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(805, 430);
+            this.dtgCliente.Size = new System.Drawing.Size(1087, 430);
             this.dtgCliente.TabIndex = 0;
-            // 
-            // id_cliente
-            // 
-            this.id_cliente.DataPropertyName = "id_cliente";
-            this.id_cliente.HeaderText = "ID";
-            this.id_cliente.MinimumWidth = 6;
-            this.id_cliente.Name = "id_cliente";
-            this.id_cliente.ReadOnly = true;
-            this.id_cliente.Width = 125;
-            // 
-            // numero_casa
-            // 
-            this.numero_casa.DataPropertyName = "numero_casa";
-            this.numero_casa.HeaderText = "Numero Casa";
-            this.numero_casa.MinimumWidth = 6;
-            this.numero_casa.Name = "numero_casa";
-            this.numero_casa.ReadOnly = true;
-            this.numero_casa.Width = 125;
-            // 
-            // pasaje_poligono
-            // 
-            this.pasaje_poligono.DataPropertyName = "pasaje_poligono";
-            this.pasaje_poligono.HeaderText = "PASAJE/POLIGONO";
-            this.pasaje_poligono.MinimumWidth = 6;
-            this.pasaje_poligono.Name = "pasaje_poligono";
-            this.pasaje_poligono.ReadOnly = true;
-            this.pasaje_poligono.Width = 125;
-            // 
-            // calle
-            // 
-            this.calle.DataPropertyName = "calle";
-            this.calle.HeaderText = "CALLE";
-            this.calle.MinimumWidth = 6;
-            this.calle.Name = "calle";
-            this.calle.ReadOnly = true;
-            this.calle.Width = 125;
-            // 
-            // colonia
-            // 
-            this.colonia.DataPropertyName = "colonia";
-            this.colonia.HeaderText = "COLONIA";
-            this.colonia.MinimumWidth = 6;
-            this.colonia.Name = "colonia";
-            this.colonia.ReadOnly = true;
-            this.colonia.Width = 125;
-            // 
-            // canton
-            // 
-            this.canton.DataPropertyName = "canton";
-            this.canton.HeaderText = "CANTON";
-            this.canton.MinimumWidth = 6;
-            this.canton.Name = "canton";
-            this.canton.ReadOnly = true;
-            this.canton.Width = 125;
-            // 
-            // caserio
-            // 
-            this.caserio.DataPropertyName = "caserio";
-            this.caserio.HeaderText = "CASERIO";
-            this.caserio.MinimumWidth = 6;
-            this.caserio.Name = "caserio";
-            this.caserio.ReadOnly = true;
-            this.caserio.Width = 125;
-            // 
-            // codigo_postal
-            // 
-            this.codigo_postal.DataPropertyName = "codigo_postal";
-            this.codigo_postal.HeaderText = "CODIGO POSTAL";
-            this.codigo_postal.MinimumWidth = 6;
-            this.codigo_postal.Name = "codigo_postal";
-            this.codigo_postal.ReadOnly = true;
-            this.codigo_postal.Width = 125;
-            // 
-            // id_municipio
-            // 
-            this.id_municipio.DataPropertyName = "id_municipio";
-            this.id_municipio.HeaderText = "MUNICIPIO";
-            this.id_municipio.MinimumWidth = 6;
-            this.id_municipio.Name = "id_municipio";
-            this.id_municipio.ReadOnly = true;
-            this.id_municipio.Width = 125;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "ESTADO";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Width = 125;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -357,13 +277,167 @@ namespace General.GUI
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(156, 22);
             this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // id_cliente
+            // 
+            this.id_cliente.DataPropertyName = "id_cliente";
+            this.id_cliente.HeaderText = "ID";
+            this.id_cliente.MinimumWidth = 6;
+            this.id_cliente.Name = "id_cliente";
+            this.id_cliente.ReadOnly = true;
+            this.id_cliente.Width = 125;
+            // 
+            // identificacion
+            // 
+            this.identificacion.DataPropertyName = "identificacion";
+            this.identificacion.HeaderText = "Identificacion";
+            this.identificacion.MinimumWidth = 6;
+            this.identificacion.Name = "identificacion";
+            this.identificacion.ReadOnly = true;
+            this.identificacion.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 125;
+            // 
+            // credito
+            // 
+            this.credito.DataPropertyName = "credito";
+            this.credito.HeaderText = "Credito";
+            this.credito.MinimumWidth = 6;
+            this.credito.Name = "credito";
+            this.credito.ReadOnly = true;
+            this.credito.Width = 125;
+            // 
+            // id_direccion
+            // 
+            this.id_direccion.DataPropertyName = "id_direccion";
+            this.id_direccion.HeaderText = "IdDireccion";
+            this.id_direccion.MinimumWidth = 6;
+            this.id_direccion.Name = "id_direccion";
+            this.id_direccion.ReadOnly = true;
+            this.id_direccion.Visible = false;
+            this.id_direccion.Width = 125;
+            // 
+            // numero_casa
+            // 
+            this.numero_casa.DataPropertyName = "numero_casa";
+            this.numero_casa.HeaderText = "Numero Casa";
+            this.numero_casa.MinimumWidth = 6;
+            this.numero_casa.Name = "numero_casa";
+            this.numero_casa.ReadOnly = true;
+            this.numero_casa.Width = 125;
+            // 
+            // pasaje_poligono
+            // 
+            this.pasaje_poligono.DataPropertyName = "pasaje_poligono";
+            this.pasaje_poligono.HeaderText = "PASAJE/POLIGONO";
+            this.pasaje_poligono.MinimumWidth = 6;
+            this.pasaje_poligono.Name = "pasaje_poligono";
+            this.pasaje_poligono.ReadOnly = true;
+            this.pasaje_poligono.Visible = false;
+            this.pasaje_poligono.Width = 125;
+            // 
+            // calle
+            // 
+            this.calle.DataPropertyName = "calle";
+            this.calle.HeaderText = "CALLE";
+            this.calle.MinimumWidth = 6;
+            this.calle.Name = "calle";
+            this.calle.ReadOnly = true;
+            this.calle.Visible = false;
+            this.calle.Width = 125;
+            // 
+            // colonia
+            // 
+            this.colonia.DataPropertyName = "colonia";
+            this.colonia.HeaderText = "COLONIA";
+            this.colonia.MinimumWidth = 6;
+            this.colonia.Name = "colonia";
+            this.colonia.ReadOnly = true;
+            this.colonia.Visible = false;
+            this.colonia.Width = 125;
+            // 
+            // canton
+            // 
+            this.canton.DataPropertyName = "canton";
+            this.canton.HeaderText = "CANTON";
+            this.canton.MinimumWidth = 6;
+            this.canton.Name = "canton";
+            this.canton.ReadOnly = true;
+            this.canton.Visible = false;
+            this.canton.Width = 125;
+            // 
+            // caserio
+            // 
+            this.caserio.DataPropertyName = "caserio";
+            this.caserio.HeaderText = "CASERIO";
+            this.caserio.MinimumWidth = 6;
+            this.caserio.Name = "caserio";
+            this.caserio.ReadOnly = true;
+            this.caserio.Visible = false;
+            this.caserio.Width = 125;
+            // 
+            // codigo_postal
+            // 
+            this.codigo_postal.DataPropertyName = "codigo_postal";
+            this.codigo_postal.HeaderText = "CODIGO POSTAL";
+            this.codigo_postal.MinimumWidth = 6;
+            this.codigo_postal.Name = "codigo_postal";
+            this.codigo_postal.ReadOnly = true;
+            this.codigo_postal.Visible = false;
+            this.codigo_postal.Width = 125;
+            // 
+            // id_municipio
+            // 
+            this.id_municipio.DataPropertyName = "id_municipio";
+            this.id_municipio.HeaderText = "MUNICIPIO";
+            this.id_municipio.MinimumWidth = 6;
+            this.id_municipio.Name = "id_municipio";
+            this.id_municipio.ReadOnly = true;
+            this.id_municipio.Visible = false;
+            this.id_municipio.Width = 125;
+            // 
+            // municipio
+            // 
+            this.municipio.DataPropertyName = "municipio";
+            this.municipio.HeaderText = "Municipio";
+            this.municipio.MinimumWidth = 6;
+            this.municipio.Name = "municipio";
+            this.municipio.ReadOnly = true;
+            this.municipio.Width = 125;
+            // 
+            // id_departamento
+            // 
+            this.id_departamento.DataPropertyName = "id_departamento";
+            this.id_departamento.HeaderText = "IdDepartamento";
+            this.id_departamento.MinimumWidth = 6;
+            this.id_departamento.Name = "id_departamento";
+            this.id_departamento.ReadOnly = true;
+            this.id_departamento.Visible = false;
+            this.id_departamento.Width = 125;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "ESTADO";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 125;
             // 
             // frmGestionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(915, 603);
+            this.ClientSize = new System.Drawing.Size(1210, 603);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -371,7 +445,6 @@ namespace General.GUI
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGestionCliente";
             this.Text = "Gestion de Cliente";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmGestionCliente_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -404,10 +477,16 @@ namespace General.GUI
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbbBuscar;
+        private System.Windows.Forms.ComboBox cbbOrdenar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtgCliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn identificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn credito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_casa;
         private System.Windows.Forms.DataGridViewTextBoxColumn pasaje_poligono;
         private System.Windows.Forms.DataGridViewTextBoxColumn calle;
@@ -416,9 +495,8 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn caserio;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_postal;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_municipio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn municipio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

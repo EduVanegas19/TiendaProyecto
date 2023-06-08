@@ -36,6 +36,7 @@ namespace General.GUI.DETALLE_VENTA
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTotalProductos = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.txtCambio = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@ namespace General.GUI.DETALLE_VENTA
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.txtCodigoB = new System.Windows.Forms.TextBox();
             this.dtgVenta = new System.Windows.Forms.DataGridView();
-            this.txtTotalProductos = new System.Windows.Forms.TextBox();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +98,7 @@ namespace General.GUI.DETALLE_VENTA
             this.statusStrip1.Size = new System.Drawing.Size(819, 30);
             this.statusStrip1.TabIndex = 24;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // lblUsuario
             // 
@@ -119,6 +120,7 @@ namespace General.GUI.DETALLE_VENTA
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(821, 59);
             this.panel3.TabIndex = 23;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label1
             // 
@@ -150,6 +152,16 @@ namespace General.GUI.DETALLE_VENTA
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 622);
             this.panel1.TabIndex = 21;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtTotalProductos
+            // 
+            this.txtTotalProductos.Location = new System.Drawing.Point(271, 569);
+            this.txtTotalProductos.Name = "txtTotalProductos";
+            this.txtTotalProductos.ReadOnly = true;
+            this.txtTotalProductos.Size = new System.Drawing.Size(100, 22);
+            this.txtTotalProductos.TabIndex = 51;
+            this.txtTotalProductos.Visible = false;
             // 
             // btnSalir
             // 
@@ -479,15 +491,6 @@ namespace General.GUI.DETALLE_VENTA
             this.dtgVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgVenta.Size = new System.Drawing.Size(790, 253);
             this.dtgVenta.TabIndex = 15;
-            // 
-            // txtTotalProductos
-            // 
-            this.txtTotalProductos.Location = new System.Drawing.Point(271, 569);
-            this.txtTotalProductos.Name = "txtTotalProductos";
-            this.txtTotalProductos.ReadOnly = true;
-            this.txtTotalProductos.Size = new System.Drawing.Size(100, 22);
-            this.txtTotalProductos.TabIndex = 51;
-            this.txtTotalProductos.Visible = false;
             // 
             // id_producto
             // 

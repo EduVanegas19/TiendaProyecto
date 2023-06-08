@@ -58,7 +58,7 @@ namespace General.GUI.PROVEEDOR
             this.dtgProveedores.RowHeadersWidth = 51;
             this.dtgProveedores.RowTemplate.Height = 24;
             this.dtgProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProveedores.Size = new System.Drawing.Size(479, 284);
+            this.dtgProveedores.Size = new System.Drawing.Size(589, 284);
             this.dtgProveedores.TabIndex = 16;
             // 
             // id_proveedor
@@ -112,7 +112,7 @@ namespace General.GUI.PROVEEDOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 303);
+            this.ClientSize = new System.Drawing.Size(620, 303);
             this.Controls.Add(this.dtgProveedores);
             this.Name = "frmVisorProveedor";
             this.Text = "frmVisorProveedor";

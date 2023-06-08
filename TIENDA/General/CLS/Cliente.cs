@@ -13,7 +13,6 @@ namespace General.CLS
         String _Nombre;
         String _Credito;
         String _Estado;
-        String _IdDireccion;
         String _NumeroCasa;
         String _PasajePoligono;
         String _Calle;
@@ -23,7 +22,6 @@ namespace General.CLS
         String _CodigoPostal;
         String _IdMunicipio;
 
-        public string IdDireccion { get => _IdDireccion; set => _IdDireccion = value; }
         public string NumeroCasa { get => _NumeroCasa; set => _NumeroCasa = value; }
         public string PasajePoligono { get => _PasajePoligono; set => _PasajePoligono = value; }
         public string Calle { get => _Calle; set => _Calle = value; }
@@ -46,7 +44,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarClientes '" + _Identificacion + "', '" + _Nombre + "', " + _Credito + ", " + _Estado + ", " + _IdDireccion + "','" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "','" + _IdMunicipio + ";";
+                Sentencia = @"exec AgregarClientes '" + _Identificacion + "', '" + _Nombre + "', " + _Credito + ", " + _Estado + ",'" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "','" + _IdMunicipio + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -67,7 +65,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarClientes " + _IdCliente + ", '" + _Identificacion + "', '" + _Nombre + "', " + _Credito + ", " + _Estado + ", " + _IdDireccion + "','" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "','" + _IdMunicipio + ";";
+                Sentencia = @"exec ModificarClientes " + _IdCliente + ", '" + _Identificacion + "', '" + _Nombre + "', " + _Credito + ", " + _Estado + ",'" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "','" + _IdMunicipio + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

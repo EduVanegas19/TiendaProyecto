@@ -56,7 +56,7 @@ namespace General.GUI.CLIENTES
             this.dtgCliente.RowHeadersWidth = 51;
             this.dtgCliente.RowTemplate.Height = 24;
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(492, 175);
+            this.dtgCliente.Size = new System.Drawing.Size(608, 230);
             this.dtgCliente.TabIndex = 18;
             this.dtgCliente.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentDoubleClick);
             // 
@@ -101,7 +101,7 @@ namespace General.GUI.CLIENTES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 209);
+            this.ClientSize = new System.Drawing.Size(632, 254);
             this.Controls.Add(this.dtgCliente);
             this.Name = "frmVisorCliente";
             this.Text = "frmVisorCliente";
