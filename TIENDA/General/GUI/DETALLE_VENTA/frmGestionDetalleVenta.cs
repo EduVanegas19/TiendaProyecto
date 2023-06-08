@@ -8,19 +8,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SessionManager;
 
 namespace General.GUI.DETALLE_VENTA
 {
     public partial class frmGestionDetalleVenta : Form
     {
         private static CLS.Producto _producto = null;
+        private static CLS.Cliente _cliente = null;
+        private void CargarTipoPagos()
+        {
+            DataTable pagos = new DataTable();
+            try
+            {
+                pagos = DataManager.DBConsultas.TIPO_PAGOS();
+                cbbPagos.DataSource = pagos;
+                cbbPagos.DisplayMember = "tipo_pago";
+                cbbPagos.ValueMember = "id_tipopago";
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         void limpiar()
         {
             txtCodigoB.Text = "";
             txtCantidad.Text = "";
-            txtEstado.Text = "";
-            txtNombre.Text = "";
+            txtNombreProducto.Text = "";
             txtPrecio.Text = "";
+            txtIdProducto.Text = "";
+            txtPrecioUnidad.Text = "";
+            txtStock.Text = "";
         }
         public frmGestionDetalleVenta()
         {
@@ -32,13 +51,55 @@ namespace General.GUI.DETALLE_VENTA
 
         }
 
+        private void frmGestionDetalleVenta_Load(object sender, EventArgs e)
+        {
+            CargarTipoPagos();
 
+            lblUsuario.Text = Session.Instancia.usuario;
+            lblRol.Text = Session.Instancia.rol;
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnFactura_Click_1(object sender, EventArgs e)
+        {
+            frmGestionVenta f = new frmGestionVenta();
+            f.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            using (var Iform = new PRODUCTO.frmVisorProducto())
+            {
+                var result = Iform.ShowDialog();
+                decimal valor;
+                if (result == DialogResult.OK)
+                {
+                    _producto = Iform._producto;
+                    txtCodigoB.BackColor = Color.Honeydew;
+                    txtIdProducto.Text = _producto.IdProducto;
+                    txtCodigoB.Text = _producto.CodigoBarras;
+                    txtNombreProducto.Text = _producto.Nombre;
+                    valor = Convert.ToDecimal(_producto.PrecioVenta);
+                    txtPrecio.Text = valor.ToString("0.00");
+                    txtPrecioUnidad.Text = _producto.PrecioUnidad;
+                    txtStock.Text = _producto.Stock;
+                }
+                else
+                {
+                    btnBuscar.Select();
+                }
+            }
+        }
         private bool producto_agregado()
         {
             bool respuesta = false;
-            if (dataGridView1.Rows.Count > 0)
+            if (dtgVenta.Rows.Count > 0)
             {
-                foreach (DataGridViewRow fila in dataGridView1.Rows)
+                foreach (DataGridViewRow fila in dtgVenta.Rows)
                 {
                     if (fila.Cells["id_producto"].Value.ToString() == _producto.IdProducto.ToString())
                     {
@@ -50,61 +111,7 @@ namespace General.GUI.DETALLE_VENTA
 
             return respuesta;
         }
-
-        //public List<Producto> CrearListaDeProductos(DataGridView dataGridView)
-        //{
-        //    List<Producto> productos = new List<Producto>();
-
-        //    foreach (DataGridViewRow row in dataGridView.Rows)
-        //    {
-        //        // Obtener los valores de cada columna
-        //        string nombre = row.Cells["producto"].Value.ToString();
-        //        decimal cantidad = Convert.ToDecimal(row.Cells["cantidad"].Value);
-        //        float cantidad = Convert.ToInt32(row.Cells["precio_venta"].Value);
-
-        //        // Crear un objeto Producto y agregarlo a la lista
-        //        Producto producto = new Producto
-        //        {
-        //            Nombre = nombre,
-        //            Precio = precio,
-        //            Cantidad = cantidad
-        //        };
-
-        //        productos.Add(producto);
-        //    }
-
-        //    return productos;
-        //}
-
-        private void frmGestionDetalleVenta_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btnBuscar_Click_1(object sender, EventArgs e)
-        {
-            using (var Iform = new PRODUCTO.frmEditarProducto())
-            {
-                var result = Iform.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    _producto = Iform._Producto;
-                    txtCodigoB.BackColor = Color.Honeydew;
-                    txtCodigoB.Text = _producto.IdProducto.ToString();
-                    txtNombre.Text = _producto.Nombre;
-                    txtEstado.Text = _producto.Estado.ToString();
-                    txtPrecio.Text = _producto.PrecioVenta;
-                    txtCantidad.Select();
-                }
-                else
-                {
-                    txtCodigoB.Select();
-                }
-            }
-        }
-
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (_producto == null)
             {
@@ -132,54 +139,177 @@ namespace General.GUI.DETALLE_VENTA
                 MessageBox.Show("Error al convertir internamente el tipo de moneda - Precio Venta\nEjemplo Formato ##.##", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            string mensaje = string.Empty;
 
-            // esto se agrega al dtgv
-            dataGridView1.Rows.Add(new object[] {
-                    _producto.IdProducto.ToString(),
-                    _producto.Nombre,
-                    txtCantidad.Value.ToString(),
-                    precioventa.ToString("0.00"),
+            // Obtén el valor del TextBox
+            string idproducto = txtIdProducto.Text;
+            string nombre = txtNombreProducto.Text;
+            string codBarras = txtCodigoB.Text;
+            string precioVenta = txtPrecio.Text;
+            string cantidad = txtCantidad.Text;
+            string precioUnidad = txtPrecioUnidad.Text;
 
-                });
-            //int operaciones = CLS.Producto.Instancia.reducirStock(_producto.IdProducto, Convert.ToInt32(txtcantidad.Value.ToString()), out mensaje);
+            // Crea una nueva fila y agrega las celdas con los datos
+            DataGridViewRow fila = new DataGridViewRow();
+            fila.CreateCells(dtgVenta);
+            fila.Cells[0].Value = idproducto; // Asigna el valor del TextBox a la primera celda de la fila
+            fila.Cells[1].Value = nombre;
+            fila.Cells[2].Value = precioVenta;
+            fila.Cells[3].Value = codBarras;
+            fila.Cells[4].Value = cantidad;
+            fila.Cells[5].Value = precioUnidad;
 
-            //if (operaciones > 0)
-            //{
-            //    subtotal = Convert.ToDecimal(txtcantidad.Value.ToString()) * precioventa;
+            // Agrega la fila al DataGridView
+            dtgVenta.Rows.Add(fila);
 
-            //    dataGridView1.Rows.Add(new object[] {
-            //        _producto.IdProducto.ToString(),
-            //        _producto.Nombre,
-            //        _producto.Descripcion,
-            //        _producto.IdArea,
-            //        _producto.Medida,
-            //        txtCantidad.Value.ToString(),
-            //        precioventa.ToString("0.00"),
-            //        subtotal.ToString("0.00")
-            //    });
+            // Limpia el TextBox después de agregar los datos
+            txtCodigoB.Text = string.Empty;
 
-            //    calcularTotal();
-
-            //    _producto = null;
-            //    txtcodproducto.Text = "";
-            //    txtcodproducto.BackColor = Color.White;
-            //    txtproducto.Text = "";
-            //    txtstock.Text = "";
-            //    txtprecioventa.Text = "";
-            //    txtcantidad.Value = 1;
-            //    txtcodproducto.Select();
-            //}
-            //else
-            //{
-            //    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            calcularTotal();
+            limpiar();
+            calcularTotalProductos();
+        }
+        private void calcularTotal()
+        {
+            decimal total = 0;
+            if (dtgVenta.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dtgVenta.Rows)
+                {
+                    total += Convert.ToDecimal((Convert.ToDecimal(row.Cells["precio_venta"].Value.ToString())*Convert.ToInt32(row.Cells["cantidad"].Value.ToString())));
+                }
+            }
+            txtTotalPagar.Text = total.ToString("0.00");
+        }
+        private void calcularTotalProductos()
+        {
+            int total = 0;
+            if (dtgVenta.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dtgVenta.Rows)
+                {
+                    total += Convert.ToInt32(row.Cells["cantidad"].Value.ToString());
+                }
+            }
+            txtTotalProductos.Text = total.ToString();
         }
 
-        private void btnFactura_Click_1(object sender, EventArgs e)
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            frmGestionVenta f = new frmGestionVenta();
-            f.ShowDialog();
+            using (var Iform = new CLIENTES.frmVisorCliente())
+            {
+                var result = Iform.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    _cliente = Iform._cliente;
+                    txtIdCliente.BackColor = Color.Honeydew;
+                    txtIdCliente.Text = _cliente.IdCliente.ToString();
+                    txtNombreClient.Text = _cliente.Nombre.ToString();
+                }
+                else
+                {
+                    btnBuscarCliente.Select();
+                }
+            }
+        }
+
+        private void txtPagoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.' && e.KeyChar != ',')
+            {
+                e.Handled = true; // Cancela el evento para evitar que se muestre la tecla en el TextBox
+            }
+            else if ((e.KeyChar == '.' || e.KeyChar == ',') && ((TextBox)sender).Text.Contains(".") && !((TextBox)sender).SelectedText.Contains("."))
+            {
+                e.Handled = true; // Cancela el evento si ya existe un punto decimal en el TextBox
+            }
+        }
+        private void CalcularCambio()
+        {
+            if (decimal.TryParse(txtPagoCliente.Text, out decimal valor1) && decimal.TryParse(txtTotalPagar.Text, out decimal valor2))
+            {
+                decimal resultado = valor1 - valor2;
+                txtCambio.Text = resultado.ToString();
+            }
+        }
+
+        private void txtCambio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalPagar_TextChanged(object sender, EventArgs e)
+        {
+            CalcularCambio();
+        }
+
+        private void txtPagoCliente_TextChanged(object sender, EventArgs e)
+        {
+            CalcularCambio();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCrearVenta_Click(object sender, EventArgs e)
+        {
+            int estado = 1;
+            string numdoc = "1122";
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            //Creacion del objeto entidad
+            CLS.Factura fac = new CLS.Factura();
+            //Sincronizar la entidad con la interfaz
+            fac.NumeroDocumento = numdoc.ToString();
+            fac.Descripcion = "gracias por preferirnos";
+            fac.Fecha = fecha.ToString();
+            fac.MontoTotal = txtTotalPagar.Text;
+            fac.CantidadProductos = txtTotalProductos.Text;
+            fac.MontoCliente = txtPagoCliente.Text;
+            fac.Cambio = txtCambio.Text;
+            fac.Estado = estado.ToString();
+            fac.IdTipoPago = cbbPagos.SelectedIndex.ToString();
+            fac.IdEmpleado = Session.Instancia.id_empleado.ToString();
+            fac.IdCliente = txtIdCliente.Text;
+            //Realizar la operacion de insertar factura
+            if (fac.Insertar())
+            {
+                int rowIndex = 0;
+                while (rowIndex < dtgVenta.Rows.Count && dtgVenta.Rows[rowIndex].Cells[0].Value != null)
+                {
+                    DataGridViewRow fila = dtgVenta.Rows[rowIndex];
+
+                    CLS.Detalle_factura factura = new CLS.Detalle_factura();
+                    factura.PrecioUnitario = fila.Cells["precio_unitario"].Value.ToString();
+                    factura.PrecioVenta = fila.Cells["precio_venta"].Value.ToString();
+                    factura.Cantidad = fila.Cells["cantidad"].Value.ToString();
+                    factura.IdProducto = fila.Cells["id_producto"].Value.ToString();
+                    factura.Estado = estado.ToString();
+                    // Asigna los valores de las demás propiedades según las columnas del DataGridView
+                    factura.Insertar();
+
+                    rowIndex++;
+                }
+                Reporte.GUI.visorFactura f = new Reporte.GUI.visorFactura();
+                this.Close();
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("¡El registro no fue insertado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //DETALLE_VENTA.frmEditarDetalleVenta f = new DETALLE_VENTA.frmEditarDetalleVenta();
+            //f.txtFecha.Text = fecha;
+            //f.txtDescripcion.Text = "Gracias por preferirnos";
+            //f.txtNumDoc.Text = numdoc;
+            //f.txtMontoTotal.Text = txtTotalPagar.Text;
+            //f.txtCantidad.Text = txtTotalProductos.Text;
+            //f.txtPago.Text = txtPagoCliente.Text;
+            //f.txt.Text = dtgDireccion.CurrentRow.Cells["caserio"].Value.ToString();
+            //f.txtCodigoPostal.Text = dtgDireccion.CurrentRow.Cells["codigo_postal"].Value.ToString();
+            //f.txtMunicipio.Text = dtgDireccion.CurrentRow.Cells["id_municipio"].Value.ToString();
+            //f.ShowDialog();
+
         }
     }
 }

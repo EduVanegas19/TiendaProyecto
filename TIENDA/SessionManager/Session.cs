@@ -17,6 +17,7 @@ namespace SessionManager
         String _id_usuario;
         String _rol;
         String _id_rol;
+        String _id_empleado;
 
 
 
@@ -43,6 +44,7 @@ namespace SessionManager
         public string id_usuario { get => _id_usuario; }
         public string rol { get => _rol; }
         public string id_rol { get => _id_rol; }
+        public string id_empleado { get => _id_empleado; }
 
 
         //Metodos
@@ -64,6 +66,7 @@ namespace SessionManager
                     _usuario = Resultado.Rows[0]["usuario"].ToString();
                     _id_rol = Resultado.Rows[0]["id_rol"].ToString();
                     _rol = Resultado.Rows[0]["rol"].ToString();
+                    _id_empleado = Resultado.Rows[0]["id_empleado"].ToString();
                     result = true;
                 }
                 else

@@ -20,10 +20,7 @@ namespace General.CLS
         String _IdTipoPago;
         String _IdEmpleado;
         String _IdCliente;
-        String _precioUnitario;
-        String _precioVenta;
-        String _cantidad;
-        String _idProduct;
+
         public string IdFactura { get => _IdFactura; set => _IdFactura = value; }
         public string Fecha { get => _Fecha; set => _Fecha = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
@@ -45,7 +42,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarFactura '" + _Fecha + "','" + _Descripcion + "','" + _NumeroDocumento + "'," + _MontoTotal + "," + _CantidadProductos + "," + _MontoCliente + "," + _Cambio + "," + _Estado + "," + _IdTipoPago + "," + _IdEmpleado + "," + _IdCliente + "," + _precioUnitario + "," + _precioVenta + "," + _cantidad + "," + _idProduct + ";";
+                Sentencia = @"exec AgregarFactura '" + _Fecha + "','" + _Descripcion + "','" + _NumeroDocumento + "'," + _MontoTotal + "," + _CantidadProductos + "," + _MontoCliente + "," + _Cambio + "," + _Estado + "," + _IdTipoPago + "," + _IdEmpleado + "," + _IdCliente + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -66,7 +63,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarFactura " + _IdFactura + ",'" + _Fecha + "','" + _Descripcion + "','" + _NumeroDocumento + "'," + _MontoTotal + "," + _CantidadProductos + "," + _MontoCliente + "," + _Cambio + "," + _Estado + "," + _IdTipoPago + "," + _IdEmpleado + "," + _IdCliente + "," + _precioUnitario + "," + _precioVenta + "," + _cantidad + "," + _idProduct + ";";
+                Sentencia = @"exec ModificarFactura " + _IdFactura + ",'" + _Fecha + "','" + _Descripcion + "','" + _NumeroDocumento + "'," + _MontoTotal + "," + _CantidadProductos + "," + _MontoCliente + "," + _Cambio + "," + _Estado + "," + _IdTipoPago + "," + _IdEmpleado + "," + _IdCliente + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

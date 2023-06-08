@@ -86,6 +86,12 @@
     <Compile Include="GUI\CLIENTES\frmEditarCliente.Designer.cs">
       <DependentUpon>frmEditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\CLIENTES\frmVisorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CLIENTES\frmVisorCliente.Designer.cs">
+      <DependentUpon>frmVisorCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DETALLE_PEDIDO\frmCrearDetallePedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,12 @@
     <Compile Include="GUI\PRODUCTO\frmGestionProducto.Designer.cs">
       <DependentUpon>frmGestionProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PRODUCTO\frmVisorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PRODUCTO\frmVisorProducto.Designer.cs">
+      <DependentUpon>frmVisorProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\PROVEEDOR\frmEditarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +298,9 @@
     <EmbeddedResource Include="GUI\CLIENTES\frmEditarCliente.resx">
       <DependentUpon>frmEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CLIENTES\frmVisorCliente.resx">
+      <DependentUpon>frmVisorCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DETALLE_PEDIDO\frmCrearDetallePedido.resx">
       <DependentUpon>frmCrearDetallePedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PRODUCTO\frmGestionProducto.resx">
       <DependentUpon>frmGestionProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PRODUCTO\frmVisorProducto.resx">
+      <DependentUpon>frmVisorProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PROVEEDOR\frmEditarProveedor.resx">
       <DependentUpon>frmEditarProveedor.cs</DependentUpon>

@@ -749,21 +749,28 @@ END
 --******* DETALLE FACTURA ***************************************************
 
 -- Agregar Detalle Factura
-/*GO
+GO
 CREATE PROCEDURE AgregarDetalleFactura
 
 	@precioUnitario money,
 	@precioVenta money,
 	@cantidad int,
 	@idProducto bigint,
-	@idFactura bigint,
 	@estado bit
 
 AS
 BEGIN
+	DECLARE @IdFactura INT
+
+    -- Obtener el último ID de la tabla "facturas"
+    SELECT @IdFactura = MAX(id_factura) FROM facturas
 
 	INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura, estado)
-	VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @idFactura, @estado)
+	VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @IdFactura, @estado)
+
+	UPDATE productos 
+    SET stock = (stock - @cantidad) 
+    WHERE id_producto = @idProducto;
 END
 
 -- Modificar Detalle Factura
@@ -1080,14 +1087,15 @@ BEGIN
         DECLARE @id_Factura BIGINT;
 
         INSERT INTO facturas(fecha, descripcion, numero_documento, monto_total, cantidad_productos, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
-		VALUES (@fecha, @descripcion, @numeroDocumento, @montoTotal, @cantidadProductos, @montoCliente, @cambio, @estado, @idTipoPago, @idEmpleado, @idCliente)
+		VALUES (@fecha, @descripcion, @numeroDocumento, @montoTotal, @cantidadProductos, @montoCliente, @cambio, 1, @idTipoPago, @idEmpleado, @idCliente)
 
+		SELECT @id_Factura = MAX(id_factura) FROM facturas
 		INSERT INTO detalle_factura(precio_unitario, precio_venta, cantidad, id_producto, id_factura, estado)
-		VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @idFactura, 1)
+		VALUES (@precioUnitario, @precioVenta, @cantidad, @idProducto, @id_Factura, 1)
 	
-        UPDATE PRODUCTO 
+        UPDATE productos 
         SET stock = (stock - @cantidad) 
-        WHERE id_producto = @id_producto;
+        WHERE id_producto = @idProducto;
 
     END TRY
     BEGIN CATCH
@@ -1109,6 +1117,30 @@ BEGIN
                    );
     END CATCH
 	
+END
+
+----------------------------------------------------
+GO
+CREATE PROCEDURE AgregarFactura
+
+	@fecha date,
+	@descripcion varchar(100),
+	@numeroDocumento varchar(12),
+	@montoTotal money,
+	@cantidadProductos int,
+	@montoCliente money,
+	@cambio money,
+	@estado bit,
+	@idTipoPago int,
+	@idEmpleado int,
+	@idCliente int
+
+AS
+BEGIN
+
+        INSERT INTO facturas(fecha, descripcion, numero_documento, monto_total, cantidad_productos, monto_cliente, cambio, estado, id_tipopago, id_empleado, id_cliente)
+		VALUES (@fecha, @descripcion, @numeroDocumento, @montoTotal, @cantidadProductos, @montoCliente, @cambio, 1, @idTipoPago, @idEmpleado, @idCliente)
+
 END
 
 -- Modificar Factura
@@ -1145,9 +1177,9 @@ BEGIN
 	SET precio_unitario=@precioUnitario, precio_venta=@precioVenta, cantidad=@cantidad, id_producto=@idProducto, id_factura=@idFactura, estado=1
 	WHERE id_detallefactura = @id_detallefactura;
 
-	UPDATE PRODUCTO 
+	UPDATE productos 
         SET stock = (stock - @cantidad) 
-        WHERE id_producto = @id_producto;
+        WHERE id_producto = @idProducto;
 END
 
 -- Eliminar Factura

@@ -106,3 +106,5 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\Sessi
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\SessionManager.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.MUNICIPIO.frmVisorMunicipio.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PROVEEDOR.frmVisorProveedor.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PRODUCTO.frmVisorProducto.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.CLIENTES.frmVisorCliente.resources

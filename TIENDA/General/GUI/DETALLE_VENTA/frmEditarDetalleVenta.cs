@@ -16,5 +16,35 @@ namespace General.GUI.DETALLE_VENTA
         {
             InitializeComponent();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigoPostal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMunicipio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmEditarDetalleVenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
