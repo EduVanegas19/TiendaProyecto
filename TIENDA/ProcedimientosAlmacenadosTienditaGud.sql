@@ -1379,19 +1379,12 @@ END*/
 CREATE PROCEDURE AGREGARPEDIDO(
     @numero_documento VARCHAR(12),
     @fecha_registro DATE,
-    @sub_total MONEY,
-    @id_proveedor BIGINT,
-    @cantidad INT,
     @monto_total MONEY,
-	@id_producto BIGINT,
-	@precio_unidad MONEY, 
-	@precio_venta MONEY
+    @id_proveedor BIGINT
 )
 AS
 BEGIN
     BEGIN TRY
-        DECLARE @id_pedido BIGINT;
-
         INSERT INTO pedidos_proveedor (
             numero_documento, fecha_registro, monto_total,
             estado, id_proveedor 
@@ -1399,18 +1392,6 @@ BEGIN
             @numero_documento, @fecha_registro, @monto_total,
             1, @id_proveedor 
         );
-
-        SET @id_pedido = SCOPE_IDENTITY();
-
-        INSERT INTO detalle_pedido (
-            id_pedido, cantidad, monto_total, estado, id_producto
-        ) VALUES (
-            @id_pedido, @cantidad, @sub_total, 1, @id_producto
-        );
-
-        UPDATE productos 
-        SET precio_unidad = @precio_unidad, precio_venta = @precio_venta, stock = (stock + @cantidad) 
-        WHERE id_producto = @id_producto;
 
     END TRY
     BEGIN CATCH
@@ -1441,13 +1422,7 @@ CREATE PROCEDURE MODIFICARPEDIDO(
     @fecha_registro DATE,
     @sub_total MONEY,
     @id_proveedor BIGINT,
-	@id_detalleproveedor BIGINT,
-    @cantidad INT,
-    @monto_total MONEY,
-	@id_producto BIGINT,
-	@precio_unidad MONEY, 
-	@precio_venta MONEY,
-	@id_detallepedido BIGINT
+	
 )
 AS
 BEGIN
@@ -1458,15 +1433,6 @@ BEGIN
 		SET numero_documento = @numero_documento, fecha_registro = @fecha_registro, monto_total = monto_total,
 		estado = 1, id_proveedor = @id_proveedor
 		WHERE id_pedido = @id_pedido;
-
-        UPDATE detalle_pedido (
-        SET id_pedido = @id_pedido, cantidad = @cantidad, monto_total = @sub_total, estado = 1, 
-		id_producto = @id_producto
-		WHERE id_detallepedido = @id_detallepedido;
-        
-        UPDATE PRODUCTO 
-        SET precio_unidad = @precio_unidad, precio_venta = @precio_venta, stock = (stock + @cantidad) 
-        WHERE id_producto = @id_producto;
 
     END TRY
     BEGIN CATCH
@@ -1493,7 +1459,6 @@ END
 
 CREATE PROCEDURE ELIMINARPEDIDO(
 	@id_pedido BIGINT,
-    @id_detallepedido BIGINT
 )
 AS
 BEGIN
@@ -1504,9 +1469,79 @@ BEGIN
 		SET estado = 0
 		WHERE id_pedido = @id_pedido;
 
-        UPDATE detalle_pedido
-        SET estado = 0
+
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        -- Use RAISERROR inside the CATCH block to return 
+        -- error information about the original error that 
+        -- caused execution to jump to the CATCH block.
+        RAISERROR (@ErrorMessage, -- Message text.
+                   @ErrorSeverity, -- Severity.
+                   @ErrorState -- State.
+                   );
+    END CATCH
+END
+
+--*********************************************************************
+--******* DETALLE PEDIDO ***************************************************
+
+-- Agregar Detalle Pedido
+GO
+CREATE PROCEDURE AgregarDetallePedido
+
+	@cantidad int,
+	@subTotal money,
+	@idPedido bigint,
+	@idProducto bigint
+
+AS
+BEGIN
+
+	INSERT INTO detalle_pedido(cantidad, monto_total, estado, id_pedido, id_producto)
+	VALUES (@cantidad, @subTotal, 1, @idPedido, @idProducto)
+END
+
+-- Modificar Detalle Pedido
+GO
+CREATE PROCEDURE ModificarDetallePedido
+
+	@idDetallePedido bigint,
+	@cantidad int,
+	@montoTotal money,
+	@idProducto bigint,
+	@idPedido bigint
+
+AS
+BEGIN
+
+	UPDATE detalle_pedido
+	SET cantidad=@cantidad, monto_total=@montoTotal, estado=1, id_pedido=@idPedido, id_producto=@idProducto
+	WHERE id_detallepedido = @idDetallePedido;
+END
+
+--ELIMINAR PEDIDOS--
+
+CREATE PROCEDURE EliminarDetallePedido(
+	@id_detallepedido BIGINT,
+)
+AS
+BEGIN
+    BEGIN TRY
+        --DECLARE @id_pedido BIGINT;
+
+        UPDATE detalle_pedido 
+		SET estado = 0
 		WHERE id_detallepedido = @id_detallepedido;
+
 
     END TRY
     BEGIN CATCH

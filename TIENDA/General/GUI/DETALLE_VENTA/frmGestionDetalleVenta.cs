@@ -64,12 +64,6 @@ namespace General.GUI.DETALLE_VENTA
             
         }
 
-        private void btnFactura_Click_1(object sender, EventArgs e)
-        {
-            frmGestionVenta f = new frmGestionVenta();
-            f.ShowDialog();
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             using (var Iform = new PRODUCTO.frmVisorProducto())
@@ -323,6 +317,11 @@ namespace General.GUI.DETALLE_VENTA
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void dtgVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -491,6 +491,7 @@ namespace General.GUI.DETALLE_VENTA
             this.dtgVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgVenta.Size = new System.Drawing.Size(790, 253);
             this.dtgVenta.TabIndex = 15;
+            this.dtgVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgVenta_CellContentClick);
             // 
             // id_producto
             // 
