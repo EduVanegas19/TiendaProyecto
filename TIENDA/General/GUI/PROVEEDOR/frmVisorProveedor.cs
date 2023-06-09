@@ -36,8 +36,9 @@ namespace General.GUI.PROVEEDOR
         {
             CargarDatos();
         }
+
         public CLS.Proveedor _proveedor { get; set; }
-        private void dtgProducto_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgProveedores_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             if (index >= 0)
@@ -50,7 +51,7 @@ namespace General.GUI.PROVEEDOR
                         Nombre = dtgProveedores.Rows[index].Cells["proveedor"].Value.ToString(),
                         NumeroDocumento = dtgProveedores.Rows[index].Cells["numero_documento"].Value.ToString(),
                         EsLaboratorio = dtgProveedores.Rows[index].Cells["esLaboratorio"].Value.ToString()
-                        
+
                     };
                     this.DialogResult = DialogResult.OK;
                     this.Close();

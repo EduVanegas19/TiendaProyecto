@@ -48,7 +48,7 @@ namespace General.GUI.DETALLE_PEDIDO
                     txtIdProducto.Text = _producto.IdProducto;
                     txtCodigoB.Text = _producto.CodigoBarras;
                     txtNombreProducto.Text = _producto.Nombre;
-                    valor = Convert.ToDecimal(_producto.PrecioVenta);
+                    valor = Convert.ToDecimal(_producto.PrecioUnidad);
                     txtPrecio.Text = valor.ToString("0.00");
                     txtPrecioUnidad.Text = _producto.PrecioUnidad;
                     txtStock.Text = _producto.Stock;
@@ -78,59 +78,40 @@ namespace General.GUI.DETALLE_PEDIDO
 
         private void btnCrearPedido_Click(object sender, EventArgs e)
         {
-            if (_producto == null)
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            //Creacion del objeto entidad
+            CLS.Pedido_proveedor PedidoProv = new CLS.Pedido_proveedor();
+            //Sincronizar la entidad con la interfaz
+            PedidoProv.FechaRegistro = fecha.ToString();
+            PedidoProv.MontoTotal = txtTotalPagar.Text;
+            PedidoProv.IdProveedor = txtIdProveedor.Text;
+            //Realizar la operacion de insertar factura
+            if (PedidoProv.Insertar())
             {
-                MessageBox.Show("Debe ingresar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                int rowIndex = 0;
+                while (rowIndex < dtgCompra.Rows.Count && dtgCompra.Rows[rowIndex].Cells[0].Value != null)
+                {
+                    DataGridViewRow fila = dtgCompra.Rows[rowIndex];
 
-            if (producto_agregado())
+                    CLS.Detalle_pedido pedido = new CLS.Detalle_pedido();
+                    decimal subtotal = Convert.ToDecimal(fila.Cells["precio_unidad"].Value) * Convert.ToDecimal(fila.Cells["cantidad"].Value);
+
+                    pedido.IdProducto = fila.Cells["id_producto"].Value.ToString();
+                    pedido.SubTotal = subtotal.ToString("0.00");
+                    pedido.Cantidad = fila.Cells["cantidad"].Value.ToString();
+                    // Asigna los valores de las demás propiedades según las columnas del DataGridView
+                    pedido.Insertar();
+
+                    rowIndex++;
+                }
+                //Reporte.GUI.visorFactura f = new Reporte.GUI.visorFactura();
+                this.Close();
+                //f.ShowDialog();
+            }
+            else
             {
-                MessageBox.Show("El producto ya está agregado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                MessageBox.Show("¡El registro no fue insertado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            if (Convert.ToInt32(txtCantidad.Value) > Convert.ToInt32(_producto.Stock))
-            {
-                MessageBox.Show("La cantidad no puede ser mayor al stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            decimal precioventa = 0;
-            decimal subtotal = 0;
-            if (!decimal.TryParse(_producto.PrecioVenta, out precioventa))
-            {
-                MessageBox.Show("Error al convertir internamente el tipo de moneda - Precio Venta\nEjemplo Formato ##.##", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            // Obtén el valor del TextBox
-            string idproducto = txtIdProducto.Text;
-            string nombre = txtNombreProducto.Text;
-            string codBarras = txtCodigoB.Text;
-            string precioVenta = txtPrecio.Text;
-            string cantidad = txtCantidad.Text;
-            string precioUnidad = txtPrecioUnidad.Text;
-
-            // Crea una nueva fila y agrega las celdas con los datos
-            DataGridViewRow fila = new DataGridViewRow();
-            fila.CreateCells(dtgCompra);
-            fila.Cells[0].Value = idproducto; // Asigna el valor del TextBox a la primera celda de la fila
-            fila.Cells[1].Value = nombre;
-            fila.Cells[2].Value = precioVenta;
-            fila.Cells[3].Value = codBarras;
-            fila.Cells[4].Value = cantidad;
-            fila.Cells[5].Value = precioUnidad;
-
-            // Agrega la fila al DataGridView
-            dtgCompra.Rows.Add(fila);
-
-            // Limpia el TextBox después de agregar los datos
-            txtCodigoB.Text = string.Empty;
-
-            calcularTotal();
-            limpiar();
-            calcularTotalProductos();
         }
         private void calcularTotal()
         {
@@ -139,7 +120,7 @@ namespace General.GUI.DETALLE_PEDIDO
             {
                 foreach (DataGridViewRow row in dtgCompra.Rows)
                 {
-                    total += Convert.ToDecimal((Convert.ToDecimal(row.Cells["precio_venta"].Value.ToString()) * Convert.ToInt32(row.Cells["cantidad"].Value.ToString())));
+                    total += Convert.ToDecimal((Convert.ToDecimal(row.Cells["precio_unidad"].Value.ToString()) * Convert.ToInt32(row.Cells["cantidad"].Value.ToString())));
                 }
             }
             txtTotalPagar.Text = total.ToString("0.00");
@@ -168,12 +149,72 @@ namespace General.GUI.DETALLE_PEDIDO
                     txtIdProveedor.BackColor = Color.Honeydew;
                     txtIdProveedor.Text = _proveedor.IdProveedor.ToString();
                     txtNombreProveedor.Text = _proveedor.Nombre.ToString();
+                    txtNumDocumento.Text = _proveedor.NumeroDocumento.ToString();
                 }
                 else
                 {
                     btnBuscarProveedor.Select();
                 }
             }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAgregarPedido_Click(object sender, EventArgs e)
+        {
+            if (_producto == null)
+            {
+                MessageBox.Show("Debe ingresar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (producto_agregado())
+            {
+                MessageBox.Show("El producto ya está agregado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            decimal precioventa = 0;
+            decimal subtotal = 0;
+            if (!decimal.TryParse(_producto.PrecioUnidad, out precioventa))
+            {
+                MessageBox.Show("Error al convertir internamente el tipo de moneda - Precio Venta\nEjemplo Formato ##.##", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Obtén el valor del TextBox
+            string idproducto = txtIdProducto.Text;
+            string nombre = txtNombreProducto.Text;
+            string codBarras = txtCodigoB.Text;
+            string precioVenta = txtPrecio.Text;
+            string cantidad = txtCantidad.Text;
+
+            // Crea una nueva fila y agrega las celdas con los datos
+            DataGridViewRow fila = new DataGridViewRow();
+            fila.CreateCells(dtgCompra);
+            fila.Cells[0].Value = idproducto; // Asigna el valor del TextBox a la primera celda de la fila
+            fila.Cells[1].Value = nombre;
+            fila.Cells[2].Value = precioVenta;
+            fila.Cells[3].Value = codBarras;
+            fila.Cells[4].Value = cantidad;
+
+            // Agrega la fila al DataGridView
+            dtgCompra.Rows.Add(fila);
+
+            // Limpia el TextBox después de agregar los datos
+            txtCodigoB.Text = string.Empty;
+
+            calcularTotal();
+            limpiar();
+            calcularTotalProductos();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

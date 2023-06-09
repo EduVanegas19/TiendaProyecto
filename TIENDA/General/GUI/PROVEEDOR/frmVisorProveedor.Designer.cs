@@ -31,6 +31,7 @@ namespace General.GUI.PROVEEDOR
         {
             this.dtgProveedores = new System.Windows.Forms.DataGridView();
             this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esLaboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,7 @@ namespace General.GUI.PROVEEDOR
             this.dtgProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_proveedor,
+            this.btnSeleccionar,
             this.proveedor,
             this.numero_documento,
             this.esLaboratorio,
@@ -60,6 +62,7 @@ namespace General.GUI.PROVEEDOR
             this.dtgProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgProveedores.Size = new System.Drawing.Size(589, 284);
             this.dtgProveedores.TabIndex = 16;
+            this.dtgProveedores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedores_CellContentDoubleClick);
             // 
             // id_proveedor
             // 
@@ -70,6 +73,15 @@ namespace General.GUI.PROVEEDOR
             this.id_proveedor.ReadOnly = true;
             this.id_proveedor.Visible = false;
             this.id_proveedor.Width = 142;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.MinimumWidth = 6;
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnSeleccionar.Width = 35;
             // 
             // proveedor
             // 
@@ -126,6 +138,7 @@ namespace General.GUI.PROVEEDOR
 
         private System.Windows.Forms.DataGridView dtgProveedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_proveedor;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn esLaboratorio;

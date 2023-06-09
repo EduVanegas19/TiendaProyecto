@@ -11,15 +11,11 @@ namespace General.CLS
         String _IdDetallePedido;
         String _Cantidad;
         String _SubTotal;
-        String _Estado;
-        String _IdPedido;
         String _IdProducto;
 
         public string IdDetallePedido { get => _IdDetallePedido; set => _IdDetallePedido = value; }
         public string Cantidad { get => _Cantidad; set => _Cantidad = value; }
         public string SubTotal { get => _SubTotal; set => _SubTotal = value; }
-        public string Estado { get => _Estado; set => _Estado = value; }
-        public string IdPedido { get => _IdPedido; set => _IdPedido = value; }
         public string IdProducto { get => _IdProducto; set => _IdProducto = value; }
 
         //CRUD
@@ -30,7 +26,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarDetallePedido " + _Cantidad + "," + _SubTotal + "," + _Estado + "," + _IdPedido + "," + _IdProducto + ";";
+                Sentencia = @"exec AgregarDetallePedido " + _Cantidad + "," + _SubTotal + "," + _IdProducto + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -51,7 +47,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarDetallePedido " + _IdDetallePedido + "" + _Cantidad + "," + _SubTotal + "," + _Estado + "," + _IdPedido + "," + _IdProducto + ";";
+                Sentencia = @"exec ModificarDetallePedido " + _IdDetallePedido + "" + _Cantidad + "," + _SubTotal + "," + _IdProducto + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

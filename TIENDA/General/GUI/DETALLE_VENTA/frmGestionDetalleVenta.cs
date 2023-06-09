@@ -125,15 +125,6 @@ namespace General.GUI.DETALLE_VENTA
                 return;
             }
 
-
-            decimal precioventa = 0;
-            decimal subtotal = 0;
-            if (!decimal.TryParse(_producto.PrecioVenta, out precioventa))
-            {
-                MessageBox.Show("Error al convertir internamente el tipo de moneda - Precio Venta\nEjemplo Formato ##.##", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
             // Obtén el valor del TextBox
             string idproducto = txtIdProducto.Text;
             string nombre = txtNombreProducto.Text;

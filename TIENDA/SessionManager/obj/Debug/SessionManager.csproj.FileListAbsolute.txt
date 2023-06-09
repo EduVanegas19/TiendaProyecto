@@ -1,12 +1,3 @@
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.dll
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.pdb
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\DataManager.dll
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\DataManager.pdb
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.AssemblyReference.cache
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CoreCompileInputs.cache
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.dll
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.pdb
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.dll
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.pdb
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\SessionManager\bin\Debug\DataManager.dll
@@ -25,3 +16,12 @@ C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\SessionManager\obj\Debug\
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\SessionManager\obj\Debug\SessionManager.dll
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\SessionManager\obj\Debug\SessionManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\SessionManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\DataManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\bin\Debug\DataManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.AssemblyReference.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CoreCompileInputs.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.pdb

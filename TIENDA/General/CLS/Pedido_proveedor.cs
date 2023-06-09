@@ -9,13 +9,11 @@ namespace General.CLS
     public class Pedido_proveedor
     {
         String _IdPedido;
-        String _NumeroDocumento;
         String _FechaRegistro;
         String _MontoTotal;
         String _IdProveedor;
 
         public string IdPedido { get => _IdPedido; set => _IdPedido = value; }
-        public string NumeroDocumento { get => _NumeroDocumento; set => _NumeroDocumento = value; }
         public string FechaRegistro { get => _FechaRegistro; set => _FechaRegistro = value; }
         public string MontoTotal { get => _MontoTotal; set => _MontoTotal = value; }
         public string IdProveedor { get => _IdProveedor; set => _IdProveedor = value; }
@@ -28,7 +26,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarPedidoProveedor '" + _NumeroDocumento + "','" + _FechaRegistro + "'," + _MontoTotal + "," + _IdProveedor + ";";
+                Sentencia = @"exec AgregarPedidoProveedor '" + _FechaRegistro + "', " + _MontoTotal + ", " + _IdProveedor + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -49,7 +47,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarPedidoProveedor " + _IdPedido + ",'" + _NumeroDocumento + "','" + _FechaRegistro + "'," + _MontoTotal + ","  + _IdProveedor + ";";
+                Sentencia = @"exec ModificarPedidoProveedor " + _IdPedido + ",'" + _FechaRegistro + "'," + _MontoTotal + ","  + _IdProveedor + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

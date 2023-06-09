@@ -1376,43 +1376,20 @@ BEGIN
 
 END*/
 
-CREATE PROCEDURE AGREGARPEDIDO(
-    @numero_documento VARCHAR(12),
+CREATE PROCEDURE AgregarPedidoProveedor(
+
     @fecha_registro DATE,
     @monto_total MONEY,
     @id_proveedor BIGINT
 )
 AS
 BEGIN
-    BEGIN TRY
-        INSERT INTO pedidos_proveedor (
-            numero_documento, fecha_registro, monto_total,
-            estado, id_proveedor 
-        ) VALUES (
-            @numero_documento, @fecha_registro, @monto_total,
-            1, @id_proveedor 
-        );
+        INSERT INTO pedidos_proveedor (numero_documento, fecha_registro, monto_total, estado, id_proveedor ) 
+		VALUES ('numdoc12', @fecha_registro, @monto_total, 1, @id_proveedor );
 
-    END TRY
-    BEGIN CATCH
-        DECLARE @ErrorMessage NVARCHAR(4000);
-        DECLARE @ErrorSeverity INT;
-        DECLARE @ErrorState INT;
-
-        SELECT 
-            @ErrorMessage = ERROR_MESSAGE(),
-            @ErrorSeverity = ERROR_SEVERITY(),
-            @ErrorState = ERROR_STATE();
-
-        -- Use RAISERROR inside the CATCH block to return 
-        -- error information about the original error that 
-        -- caused execution to jump to the CATCH block.
-        RAISERROR (@ErrorMessage, -- Message text.
-                   @ErrorSeverity, -- Severity.
-                   @ErrorState -- State.
-                   );
-    END CATCH
 END
+
+exec AgregarPedidoProveedor '2023-06-09', 6.99, 1;
 
 --MODIFICAR PEDIDOS--
 
@@ -1421,7 +1398,7 @@ CREATE PROCEDURE MODIFICARPEDIDO(
     @numero_documento VARCHAR(12),
     @fecha_registro DATE,
     @sub_total MONEY,
-    @id_proveedor BIGINT,
+    @id_proveedor BIGINT
 	
 )
 AS
@@ -1458,7 +1435,7 @@ END
 --ELIMINAR PEDIDOS--
 
 CREATE PROCEDURE ELIMINARPEDIDO(
-	@id_pedido BIGINT,
+	@id_pedido BIGINT
 )
 AS
 BEGIN
@@ -1500,14 +1477,21 @@ CREATE PROCEDURE AgregarDetallePedido
 
 	@cantidad int,
 	@subTotal money,
-	@idPedido bigint,
 	@idProducto bigint
 
 AS
 BEGIN
+	DECLARE @IdPedido INT
+
+    -- Obtener el último ID de la tabla "facturas"
+    SELECT @IdPedido = MAX(id_pedido) FROM pedidos_proveedor
 
 	INSERT INTO detalle_pedido(cantidad, monto_total, estado, id_pedido, id_producto)
-	VALUES (@cantidad, @subTotal, 1, @idPedido, @idProducto)
+	VALUES (@cantidad, @subTotal, 1, @IdPedido, @idProducto)
+
+	UPDATE productos 
+    SET stock = (stock + @cantidad) 
+    WHERE id_producto = @idProducto;
 END
 
 -- Modificar Detalle Pedido
@@ -1531,7 +1515,7 @@ END
 --ELIMINAR PEDIDOS--
 
 CREATE PROCEDURE EliminarDetallePedido(
-	@id_detallepedido BIGINT,
+	@id_detallepedido BIGINT
 )
 AS
 BEGIN

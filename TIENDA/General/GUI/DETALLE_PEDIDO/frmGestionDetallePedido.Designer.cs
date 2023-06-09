@@ -70,10 +70,9 @@ namespace General.GUI.DETALLE_PEDIDO
             this.dtgCompra = new System.Windows.Forms.DataGridView();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -117,6 +116,7 @@ namespace General.GUI.DETALLE_PEDIDO
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(821, 59);
             this.panel3.TabIndex = 26;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label1
             // 
@@ -162,6 +162,7 @@ namespace General.GUI.DETALLE_PEDIDO
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 50;
             this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtTotalPagar
             // 
@@ -182,7 +183,7 @@ namespace General.GUI.DETALLE_PEDIDO
             // 
             // btnCrearPedido
             // 
-            this.btnCrearPedido.Location = new System.Drawing.Point(9, 535);
+            this.btnCrearPedido.Location = new System.Drawing.Point(10, 540);
             this.btnCrearPedido.Name = "btnCrearPedido";
             this.btnCrearPedido.Size = new System.Drawing.Size(73, 51);
             this.btnCrearPedido.TabIndex = 41;
@@ -352,6 +353,7 @@ namespace General.GUI.DETALLE_PEDIDO
             this.btnAgregarPedido.TabIndex = 42;
             this.btnAgregarPedido.Text = "Agregar pedido";
             this.btnAgregarPedido.UseVisualStyleBackColor = true;
+            this.btnAgregarPedido.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // label3
             // 
@@ -449,10 +451,9 @@ namespace General.GUI.DETALLE_PEDIDO
             this.dtgCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
             this.nombre,
-            this.precio_venta,
+            this.precio_unidad,
             this.codigo_barras,
-            this.cantidad,
-            this.precio_unitario});
+            this.cantidad});
             this.dtgCompra.Location = new System.Drawing.Point(9, 252);
             this.dtgCompra.MultiSelect = false;
             this.dtgCompra.Name = "dtgCompra";
@@ -481,14 +482,14 @@ namespace General.GUI.DETALLE_PEDIDO
             this.nombre.ReadOnly = true;
             this.nombre.Width = 125;
             // 
-            // precio_venta
+            // precio_unidad
             // 
-            this.precio_venta.DataPropertyName = "precio_venta";
-            this.precio_venta.HeaderText = "PrecioUnidad";
-            this.precio_venta.MinimumWidth = 6;
-            this.precio_venta.Name = "precio_venta";
-            this.precio_venta.ReadOnly = true;
-            this.precio_venta.Width = 125;
+            this.precio_unidad.DataPropertyName = "precio_unidad";
+            this.precio_unidad.HeaderText = "PrecioUnidad";
+            this.precio_unidad.MinimumWidth = 6;
+            this.precio_unidad.Name = "precio_unidad";
+            this.precio_unidad.ReadOnly = true;
+            this.precio_unidad.Width = 125;
             // 
             // codigo_barras
             // 
@@ -507,16 +508,6 @@ namespace General.GUI.DETALLE_PEDIDO
             this.cantidad.Name = "cantidad";
             this.cantidad.ReadOnly = true;
             this.cantidad.Width = 125;
-            // 
-            // precio_unitario
-            // 
-            this.precio_unitario.DataPropertyName = "precio_unitario";
-            this.precio_unitario.HeaderText = "precioUnitario";
-            this.precio_unitario.MinimumWidth = 6;
-            this.precio_unitario.Name = "precio_unitario";
-            this.precio_unitario.ReadOnly = true;
-            this.precio_unitario.Visible = false;
-            this.precio_unitario.Width = 125;
             // 
             // frmGestionDetallePedido
             // 
@@ -579,17 +570,16 @@ namespace General.GUI.DETALLE_PEDIDO
         public System.Windows.Forms.TextBox txtNombreProducto;
         public System.Windows.Forms.TextBox txtCodigoB;
         private System.Windows.Forms.DataGridView dtgCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_barras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtNumDocumento;
         private System.Windows.Forms.Button btnNuevoProveedor;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.TextBox txtTotalProductos;
         private System.Windows.Forms.PictureBox btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_barras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
     }
 }
