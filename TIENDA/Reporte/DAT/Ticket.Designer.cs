@@ -299,6 +299,8 @@ namespace Reporte.DAT {
             
             private global::System.Data.DataColumn columncantidad;
             
+            private global::System.Data.DataColumn columnprecio_unitario;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TicketDataTable() {
@@ -414,6 +416,14 @@ namespace Reporte.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn precio_unitarioColumn {
+                get {
+                    return this.columnprecio_unitario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +459,7 @@ namespace Reporte.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TicketRow AddTicketRow(string fecha, string descripcion, string monto_total, string cantidad_productos, string monto_cliente, string cambio, string tipo_pago, string nombre, string precio_venta, string cantidad) {
+            public TicketRow AddTicketRow(string fecha, string descripcion, string monto_total, string cantidad_productos, string monto_cliente, string cambio, string tipo_pago, string nombre, string precio_venta, string cantidad, string precio_unitario) {
                 TicketRow rowTicketRow = ((TicketRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fecha,
@@ -461,7 +471,8 @@ namespace Reporte.DAT {
                         tipo_pago,
                         nombre,
                         precio_venta,
-                        cantidad};
+                        cantidad,
+                        precio_unitario};
                 rowTicketRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTicketRow);
                 return rowTicketRow;
@@ -494,6 +505,7 @@ namespace Reporte.DAT {
                 this.columnnombre = base.Columns["nombre"];
                 this.columnprecio_venta = base.Columns["precio_venta"];
                 this.columncantidad = base.Columns["cantidad"];
+                this.columnprecio_unitario = base.Columns["precio_unitario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -519,6 +531,8 @@ namespace Reporte.DAT {
                 base.Columns.Add(this.columnprecio_venta);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad);
+                this.columnprecio_unitario = new global::System.Data.DataColumn("precio_unitario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecio_unitario);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Ticket");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Ticket");
             }
@@ -823,6 +837,22 @@ namespace Reporte.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string precio_unitario {
+                get {
+                    try {
+                        return ((string)(this[this.tableTicket.precio_unitarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precio_unitario\' de la tabla \'Ticket\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTicket.precio_unitarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsfechaNull() {
                 return this.IsNull(this.tableTicket.fechaColumn);
             }
@@ -939,6 +969,18 @@ namespace Reporte.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcantidadNull() {
                 this[this.tableTicket.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isprecio_unitarioNull() {
+                return this.IsNull(this.tableTicket.precio_unitarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setprecio_unitarioNull() {
+                this[this.tableTicket.precio_unitarioColumn] = global::System.Convert.DBNull;
             }
         }
         

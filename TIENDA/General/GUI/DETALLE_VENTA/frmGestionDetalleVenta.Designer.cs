@@ -30,6 +30,8 @@ namespace General.GUI.DETALLE_VENTA
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionDetalleVenta));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -514,6 +516,9 @@ namespace General.GUI.DETALLE_VENTA
             // precio_venta
             // 
             this.precio_venta.DataPropertyName = "precio_venta";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.precio_venta.DefaultCellStyle = dataGridViewCellStyle1;
             this.precio_venta.HeaderText = "PrecioUnidad";
             this.precio_venta.MinimumWidth = 6;
             this.precio_venta.Name = "precio_venta";
@@ -541,6 +546,9 @@ namespace General.GUI.DETALLE_VENTA
             // precio_unitario
             // 
             this.precio_unitario.DataPropertyName = "precio_unitario";
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.precio_unitario.DefaultCellStyle = dataGridViewCellStyle2;
             this.precio_unitario.HeaderText = "precioUnitario";
             this.precio_unitario.MinimumWidth = 6;
             this.precio_unitario.Name = "precio_unitario";

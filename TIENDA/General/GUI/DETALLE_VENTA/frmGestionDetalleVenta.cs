@@ -160,7 +160,7 @@ namespace General.GUI.DETALLE_VENTA
             {
                 foreach (DataGridViewRow row in dtgVenta.Rows)
                 {
-                    total += Convert.ToDecimal((Convert.ToDecimal(row.Cells["precio_venta"].Value.ToString())*Convert.ToInt32(row.Cells["cantidad"].Value.ToString())));
+                    total += Convert.ToDecimal(Convert.ToDecimal(row.Cells["precio_venta"].Value.ToString())*Convert.ToInt32(row.Cells["cantidad"].Value.ToString()));
                 }
             }
             txtTotalPagar.Text = total.ToString("0.00");
@@ -213,7 +213,7 @@ namespace General.GUI.DETALLE_VENTA
             if (decimal.TryParse(txtPagoCliente.Text, out decimal valor1) && decimal.TryParse(txtTotalPagar.Text, out decimal valor2))
             {
                 decimal resultado = valor1 - valor2;
-                txtCambio.Text = resultado.ToString();
+                txtCambio.Text = resultado.ToString("0.00");
             }
         }
 
@@ -239,23 +239,33 @@ namespace General.GUI.DETALLE_VENTA
 
         private void btnCrearVenta_Click(object sender, EventArgs e)
         {
+            // Crear variables para los textbox
             int estado = 1;
             string numdoc = "1122";
             string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            decimal totalpagar = Convert.ToDecimal(txtTotalPagar.Text);
+            decimal montocliente = Convert.ToDecimal(txtPagoCliente.Text);
+            decimal cambio = Convert.ToDecimal(txtCambio.Text);
             //Creacion del objeto entidad
             CLS.Factura fac = new CLS.Factura();
             //Sincronizar la entidad con la interfaz
             fac.NumeroDocumento = numdoc.ToString();
             fac.Descripcion = "gracias por preferirnos";
             fac.Fecha = fecha.ToString();
-            fac.MontoTotal = txtTotalPagar.Text;
+            fac.MontoTotal = totalpagar.ToString("0.00");
             fac.CantidadProductos = txtTotalProductos.Text;
-            fac.MontoCliente = txtPagoCliente.Text;
-            fac.Cambio = txtCambio.Text;
-            fac.Estado = estado.ToString();
+            fac.MontoCliente = montocliente.ToString("0.00");
+            fac.Cambio = cambio.ToString("0.00");
             fac.IdTipoPago = cbbPagos.SelectedIndex.ToString();
             fac.IdEmpleado = Session.Instancia.id_empleado.ToString();
-            fac.IdCliente = txtIdCliente.Text;
+            if (txtIdCliente.Text.Length > 0)
+            {
+                fac.IdCliente = txtIdCliente.Text;
+            }
+            else
+            {
+                fac.IdCliente = "NULL";
+            }
             //Realizar la operacion de insertar factura
             if (fac.Insertar())
             {
@@ -265,8 +275,11 @@ namespace General.GUI.DETALLE_VENTA
                     DataGridViewRow fila = dtgVenta.Rows[rowIndex];
 
                     CLS.Detalle_factura factura = new CLS.Detalle_factura();
-                    factura.PrecioUnitario = fila.Cells["precio_unitario"].Value.ToString();
-                    factura.PrecioVenta = fila.Cells["precio_venta"].Value.ToString();
+
+                    string precioventa = Convert.ToString(Convert.ToDecimal(fila.Cells["precio_venta"].Value.ToString()) * Convert.ToInt32(fila.Cells["cantidad"].Value.ToString()));
+
+                    factura.PrecioUnitario = fila.Cells["precio_venta"].Value.ToString();
+                    factura.PrecioVenta = precioventa.ToString();
                     factura.Cantidad = fila.Cells["cantidad"].Value.ToString();
                     factura.IdProducto = fila.Cells["id_producto"].Value.ToString();
                     factura.Estado = estado.ToString();
@@ -283,17 +296,6 @@ namespace General.GUI.DETALLE_VENTA
             {
                 MessageBox.Show("¡El registro no fue insertado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            //DETALLE_VENTA.frmEditarDetalleVenta f = new DETALLE_VENTA.frmEditarDetalleVenta();
-            //f.txtFecha.Text = fecha;
-            //f.txtDescripcion.Text = "Gracias por preferirnos";
-            //f.txtNumDoc.Text = numdoc;
-            //f.txtMontoTotal.Text = txtTotalPagar.Text;
-            //f.txtCantidad.Text = txtTotalProductos.Text;
-            //f.txtPago.Text = txtPagoCliente.Text;
-            //f.txt.Text = dtgDireccion.CurrentRow.Cells["caserio"].Value.ToString();
-            //f.txtCodigoPostal.Text = dtgDireccion.CurrentRow.Cells["codigo_postal"].Value.ToString();
-            //f.txtMunicipio.Text = dtgDireccion.CurrentRow.Cells["id_municipio"].Value.ToString();
-            //f.ShowDialog();
 
         }
 
