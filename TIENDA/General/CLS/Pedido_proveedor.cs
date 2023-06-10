@@ -12,11 +12,13 @@ namespace General.CLS
         String _FechaRegistro;
         String _MontoTotal;
         String _IdProveedor;
+        String _NumDocumento;
 
         public string IdPedido { get => _IdPedido; set => _IdPedido = value; }
         public string FechaRegistro { get => _FechaRegistro; set => _FechaRegistro = value; }
         public string MontoTotal { get => _MontoTotal; set => _MontoTotal = value; }
         public string IdProveedor { get => _IdProveedor; set => _IdProveedor = value; }
+        public string NumDocumento { get => _NumDocumento; set => _NumDocumento = value; }
 
         //CRUD
         public Boolean Insertar()
@@ -26,7 +28,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarPedidoProveedor '" + _FechaRegistro + "', " + _MontoTotal + ", " + _IdProveedor + ";";
+                Sentencia = @"exec AgregarPedidoProveedor '"+ _NumDocumento +"','" + _FechaRegistro + "', " + _MontoTotal + ", " + _IdProveedor + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

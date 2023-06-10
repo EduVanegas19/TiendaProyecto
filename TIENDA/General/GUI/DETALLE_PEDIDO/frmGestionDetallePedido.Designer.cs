@@ -30,6 +30,7 @@ namespace General.GUI.DETALLE_PEDIDO
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionDetallePedido));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -247,6 +248,7 @@ namespace General.GUI.DETALLE_PEDIDO
             this.btnNuevoProveedor.TabIndex = 54;
             this.btnNuevoProveedor.Text = "Nuevo";
             this.btnNuevoProveedor.UseVisualStyleBackColor = true;
+            this.btnNuevoProveedor.Click += new System.EventHandler(this.btnNuevoProveedor_Click);
             // 
             // btnAgregarProducto
             // 
@@ -256,6 +258,7 @@ namespace General.GUI.DETALLE_PEDIDO
             this.btnAgregarProducto.TabIndex = 53;
             this.btnAgregarProducto.Text = "Nuevo";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // txtPrecioUnidad
             // 
@@ -485,6 +488,9 @@ namespace General.GUI.DETALLE_PEDIDO
             // precio_unidad
             // 
             this.precio_unidad.DataPropertyName = "precio_unidad";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.precio_unidad.DefaultCellStyle = dataGridViewCellStyle1;
             this.precio_unidad.HeaderText = "PrecioUnidad";
             this.precio_unidad.MinimumWidth = 6;
             this.precio_unidad.Name = "precio_unidad";

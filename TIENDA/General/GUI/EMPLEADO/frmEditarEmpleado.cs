@@ -16,5 +16,10 @@ namespace General.GUI.EMPLEADO
         {
             InitializeComponent();
         }
+
+        private void frmEditarEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

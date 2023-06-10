@@ -47,7 +47,8 @@ namespace General.GUI.MUNICIPIO
                 {
                     _Municipio = new CLS.Municipio()
                     {
-                        IdMunicipio = dtgMunicipio.Rows[index].Cells["id_municipio"].Value.ToString()
+                        IdMunicipio = dtgMunicipio.Rows[index].Cells["id_municipio"].Value.ToString(),
+                        Nombre = dtgMunicipio.Rows[index].Cells["municipio"].Value.ToString()
                     };
                     this.DialogResult = DialogResult.OK;
                     this.Close();

@@ -64,6 +64,7 @@ namespace General.GUI.PRODUCTO
             this.txtIdCliente = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.checkControl = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -102,6 +103,7 @@ namespace General.GUI.PRODUCTO
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.TabStop = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -113,6 +115,7 @@ namespace General.GUI.PRODUCTO
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 10;
             this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblVisor
             // 
@@ -126,6 +129,7 @@ namespace General.GUI.PRODUCTO
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkControl);
             this.panel1.Controls.Add(this.cbbUnidadMedida);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.btnEditar);
@@ -399,6 +403,16 @@ namespace General.GUI.PRODUCTO
             this.label9.TabIndex = 8;
             this.label9.Text = "CLIENTES";
             // 
+            // checkControl
+            // 
+            this.checkControl.AutoSize = true;
+            this.checkControl.Location = new System.Drawing.Point(558, 57);
+            this.checkControl.Name = "checkControl";
+            this.checkControl.Size = new System.Drawing.Size(18, 17);
+            this.checkControl.TabIndex = 41;
+            this.checkControl.UseVisualStyleBackColor = true;
+            this.checkControl.Visible = false;
+            // 
             // frmEditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -457,5 +471,6 @@ namespace General.GUI.PRODUCTO
         public System.Windows.Forms.ComboBox cbbArea;
         public System.Windows.Forms.DateTimePicker dtpFechaVencimiento;
         public System.Windows.Forms.ComboBox cbbUnidadMedida;
+        public System.Windows.Forms.CheckBox checkControl;
     }
 }

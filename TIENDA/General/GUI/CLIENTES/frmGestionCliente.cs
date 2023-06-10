@@ -55,10 +55,6 @@ namespace General.GUI
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void frmGestionCliente_Load(object sender, EventArgs e)
         {
@@ -68,38 +64,12 @@ namespace General.GUI
             lblRol.Text = Session.Instancia.rol;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CLS.Cliente clien = new CLS.Cliente();
-                clien.IdCliente = dtgCliente.CurrentRow.Cells["id_proveedor"].Value.ToString().ToUpper(); ;
+                clien.IdCliente = dtgCliente.CurrentRow.Cells["id_cliente"].Value.ToString().ToUpper(); ;
                 //Realizar la operacion de Eliminar
                 if (clien.Eliminar())
                 {
@@ -154,6 +124,71 @@ namespace General.GUI
         private void cbbBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtgCliente_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CLIENTES.frmEditarCliente f = new CLIENTES.frmEditarCliente();
+                f.txtIdClient.Text = dtgCliente.CurrentRow.Cells["id_cliente"].Value.ToString();
+                f.txtIdenficacion.Text = dtgCliente.CurrentRow.Cells["identificacion"].Value.ToString();
+                f.txtNombre.Text = dtgCliente.CurrentRow.Cells["nombre"].Value.ToString();
+                f.txtCredito.Text = dtgCliente.CurrentRow.Cells["credito"].Value.ToString();
+                f.txtIdDirec.Text = dtgCliente.CurrentRow.Cells["id_direccion"].Value.ToString();
+                f.txtNumCasa.Text = dtgCliente.CurrentRow.Cells["numero_casa"].Value.ToString();
+                f.txtPasaje.Text = dtgCliente.CurrentRow.Cells["pasaje_poligono"].Value.ToString();
+                f.txtCalle.Text = dtgCliente.CurrentRow.Cells["calle"].Value.ToString();
+                f.txtColonia.Text = dtgCliente.CurrentRow.Cells["colonia"].Value.ToString();
+                f.txtCanton.Text = dtgCliente.CurrentRow.Cells["canton"].Value.ToString();
+                f.txtCaserio.Text = dtgCliente.CurrentRow.Cells["caserio"].Value.ToString();
+                f.txtCodigoPostal.Text = dtgCliente.CurrentRow.Cells["codigo_postal"].Value.ToString();
+                f.txtIdMunicipio.Text = dtgCliente.CurrentRow.Cells["id_municipio"].Value.ToString();
+                f.txtMunicipio.Text = dtgCliente.CurrentRow.Cells["municipio"].Value.ToString();
+                f.checkControl.Checked = false;
+                //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+                f.DataUpdated += FormEditor_DataUpdated;
+                f.ShowDialog();
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            CLIENTES.frmEditarCliente f = new CLIENTES.frmEditarCliente();
+            f.checkControl.Checked = true;
+            //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+            f.DataUpdated += FormEditor_DataUpdated;
+            f.ShowDialog();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CLIENTES.frmEditarCliente f = new CLIENTES.frmEditarCliente();
+                f.txtIdClient.Text = dtgCliente.CurrentRow.Cells["id_cliente"].Value.ToString();
+                f.txtIdenficacion.Text = dtgCliente.CurrentRow.Cells["identificacion"].Value.ToString();
+                f.txtNombre.Text = dtgCliente.CurrentRow.Cells["nombre"].Value.ToString();
+                f.txtCredito.Text = dtgCliente.CurrentRow.Cells["credito"].Value.ToString();
+                f.txtIdDirec.Text = dtgCliente.CurrentRow.Cells["id_direccion"].Value.ToString();
+                f.txtNumCasa.Text = dtgCliente.CurrentRow.Cells["numero_casa"].Value.ToString();
+                f.txtPasaje.Text = dtgCliente.CurrentRow.Cells["pasaje_poligono"].Value.ToString();
+                f.txtCalle.Text = dtgCliente.CurrentRow.Cells["calle"].Value.ToString();
+                f.txtColonia.Text = dtgCliente.CurrentRow.Cells["colonia"].Value.ToString();
+                f.txtCanton.Text = dtgCliente.CurrentRow.Cells["canton"].Value.ToString();
+                f.txtCaserio.Text = dtgCliente.CurrentRow.Cells["caserio"].Value.ToString();
+                f.txtIdMunicipio.Text = dtgCliente.CurrentRow.Cells["id_municipio"].Value.ToString();
+                f.txtMunicipio.Text = dtgCliente.CurrentRow.Cells["municipio"].Value.ToString(); 
+                f.checkControl.Checked = false;
+                //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+                f.DataUpdated += FormEditor_DataUpdated;
+                f.ShowDialog();
+            }
         }
     }
 }

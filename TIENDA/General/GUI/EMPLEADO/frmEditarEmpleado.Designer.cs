@@ -443,6 +443,7 @@ namespace General.GUI.EMPLEADO
             this.Controls.Add(this.panel1);
             this.Name = "frmEditarEmpleado";
             this.Text = "Editar Empleado";
+            this.Load += new System.EventHandler(this.frmEditarEmpleado_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

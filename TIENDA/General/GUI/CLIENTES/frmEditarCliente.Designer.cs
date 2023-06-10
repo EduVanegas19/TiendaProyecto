@@ -31,10 +31,12 @@ namespace General.GUI.CLIENTES
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarCliente));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.PictureBox();
+            this.txtIdClient = new System.Windows.Forms.TextBox();
+            this.checkControl = new System.Windows.Forms.CheckBox();
+            this.txtCredito = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtIdenficacion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,21 +44,20 @@ namespace General.GUI.CLIENTES
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtIdDirec = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkEstadoDireccion = new System.Windows.Forms.CheckBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
+            this.txtCaserio = new System.Windows.Forms.TextBox();
+            this.txtCanton = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtIdDireccion = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtColonia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCalle = new System.Windows.Forms.TextBox();
+            this.txtNumCasa = new System.Windows.Forms.TextBox();
+            this.txtPasaje = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,24 +65,31 @@ namespace General.GUI.CLIENTES
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.PictureBox();
+            this.btnEditar = new System.Windows.Forms.PictureBox();
+            this.btSalir = new System.Windows.Forms.PictureBox();
             this.lblVisor = new System.Windows.Forms.Label();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
+            this.txtIdMunicipio = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtIdMunicipio);
+            this.panel1.Controls.Add(this.btnGuardar);
+            this.panel1.Controls.Add(this.txtIdClient);
+            this.panel1.Controls.Add(this.checkControl);
+            this.panel1.Controls.Add(this.txtCredito);
+            this.panel1.Controls.Add(this.txtNombre);
+            this.panel1.Controls.Add(this.txtIdenficacion);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -93,36 +101,56 @@ namespace General.GUI.CLIENTES
             this.panel1.Size = new System.Drawing.Size(445, 456);
             this.panel1.TabIndex = 0;
             // 
-            // checkBox1
+            // btnGuardar
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(148, 225);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(93, 21);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.Text = "Habilitado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(355, 376);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(64, 60);
+            this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGuardar.TabIndex = 40;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
-            // textBox3
+            // txtIdClient
             // 
-            this.textBox3.Location = new System.Drawing.Point(148, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 17;
+            this.txtIdClient.Location = new System.Drawing.Point(148, 60);
+            this.txtIdClient.Name = "txtIdClient";
+            this.txtIdClient.ReadOnly = true;
+            this.txtIdClient.Size = new System.Drawing.Size(55, 22);
+            this.txtIdClient.TabIndex = 38;
             // 
-            // textBox2
+            // checkControl
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 142);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 16;
+            this.checkControl.AutoSize = true;
+            this.checkControl.Location = new System.Drawing.Point(383, 225);
+            this.checkControl.Name = "checkControl";
+            this.checkControl.Size = new System.Drawing.Size(18, 17);
+            this.checkControl.TabIndex = 37;
+            this.checkControl.UseVisualStyleBackColor = true;
+            this.checkControl.Visible = false;
             // 
-            // textBox1
+            // txtCredito
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 15;
+            this.txtCredito.Location = new System.Drawing.Point(148, 185);
+            this.txtCredito.Name = "txtCredito";
+            this.txtCredito.Size = new System.Drawing.Size(100, 22);
+            this.txtCredito.TabIndex = 17;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(148, 142);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.TabIndex = 16;
+            // 
+            // txtIdenficacion
+            // 
+            this.txtIdenficacion.Location = new System.Drawing.Point(148, 102);
+            this.txtIdenficacion.Name = "txtIdenficacion";
+            this.txtIdenficacion.Size = new System.Drawing.Size(100, 22);
+            this.txtIdenficacion.TabIndex = 15;
             // 
             // label6
             // 
@@ -179,21 +207,22 @@ namespace General.GUI.CLIENTES
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.btnBuscar);
+            this.panel2.Controls.Add(this.txtMunicipio);
+            this.panel2.Controls.Add(this.txtIdDirec);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.checkEstadoDireccion);
-            this.panel2.Controls.Add(this.textBox9);
-            this.panel2.Controls.Add(this.textBox10);
-            this.panel2.Controls.Add(this.textBox11);
+            this.panel2.Controls.Add(this.txtCodigoPostal);
+            this.panel2.Controls.Add(this.txtCaserio);
+            this.panel2.Controls.Add(this.txtCanton);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.txtIdDireccion);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.txtColonia);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.txtCalle);
+            this.panel2.Controls.Add(this.txtNumCasa);
+            this.panel2.Controls.Add(this.txtPasaje);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label8);
@@ -204,53 +233,43 @@ namespace General.GUI.CLIENTES
             this.panel2.Size = new System.Drawing.Size(429, 456);
             this.panel2.TabIndex = 1;
             // 
-            // comboBox1
+            // txtIdDirec
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(193, 408);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 37;
+            this.txtIdDirec.Location = new System.Drawing.Point(193, 57);
+            this.txtIdDirec.Name = "txtIdDirec";
+            this.txtIdDirec.ReadOnly = true;
+            this.txtIdDirec.Size = new System.Drawing.Size(55, 22);
+            this.txtIdDirec.TabIndex = 39;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(69, 408);
+            this.label7.Location = new System.Drawing.Point(69, 376);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 17);
             this.label7.TabIndex = 36;
             this.label7.Text = "Municipio: ";
             // 
-            // checkEstadoDireccion
+            // txtCodigoPostal
             // 
-            this.checkEstadoDireccion.AutoSize = true;
-            this.checkEstadoDireccion.Location = new System.Drawing.Point(193, 376);
-            this.checkEstadoDireccion.Name = "checkEstadoDireccion";
-            this.checkEstadoDireccion.Size = new System.Drawing.Size(93, 21);
-            this.checkEstadoDireccion.TabIndex = 35;
-            this.checkEstadoDireccion.Text = "Habilitado";
-            this.checkEstadoDireccion.UseVisualStyleBackColor = true;
+            this.txtCodigoPostal.Location = new System.Drawing.Point(193, 339);
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(100, 22);
+            this.txtCodigoPostal.TabIndex = 34;
             // 
-            // textBox9
+            // txtCaserio
             // 
-            this.textBox9.Location = new System.Drawing.Point(193, 339);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 34;
+            this.txtCaserio.Location = new System.Drawing.Point(193, 300);
+            this.txtCaserio.Name = "txtCaserio";
+            this.txtCaserio.Size = new System.Drawing.Size(100, 22);
+            this.txtCaserio.TabIndex = 33;
             // 
-            // textBox10
+            // txtCanton
             // 
-            this.textBox10.Location = new System.Drawing.Point(193, 300);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 33;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(193, 259);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 32;
+            this.txtCanton.Location = new System.Drawing.Point(193, 259);
+            this.txtCanton.Name = "txtCanton";
+            this.txtCanton.Size = new System.Drawing.Size(100, 22);
+            this.txtCanton.TabIndex = 32;
             // 
             // label13
             // 
@@ -287,12 +306,12 @@ namespace General.GUI.CLIENTES
             this.txtIdDireccion.Size = new System.Drawing.Size(0, 17);
             this.txtIdDireccion.TabIndex = 28;
             // 
-            // textBox5
+            // txtColonia
             // 
-            this.textBox5.Location = new System.Drawing.Point(193, 222);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 27;
+            this.txtColonia.Location = new System.Drawing.Point(193, 222);
+            this.txtColonia.Name = "txtColonia";
+            this.txtColonia.Size = new System.Drawing.Size(100, 22);
+            this.txtColonia.TabIndex = 27;
             // 
             // label2
             // 
@@ -303,26 +322,26 @@ namespace General.GUI.CLIENTES
             this.label2.TabIndex = 9;
             this.label2.Text = "DIRECCION";
             // 
-            // textBox6
+            // txtCalle
             // 
-            this.textBox6.Location = new System.Drawing.Point(193, 183);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 26;
+            this.txtCalle.Location = new System.Drawing.Point(193, 183);
+            this.txtCalle.Name = "txtCalle";
+            this.txtCalle.Size = new System.Drawing.Size(100, 22);
+            this.txtCalle.TabIndex = 26;
             // 
-            // textBox8
+            // txtNumCasa
             // 
-            this.textBox8.Location = new System.Drawing.Point(193, 102);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 24;
+            this.txtNumCasa.Location = new System.Drawing.Point(193, 102);
+            this.txtNumCasa.Name = "txtNumCasa";
+            this.txtNumCasa.Size = new System.Drawing.Size(100, 22);
+            this.txtNumCasa.TabIndex = 24;
             // 
-            // textBox7
+            // txtPasaje
             // 
-            this.textBox7.Location = new System.Drawing.Point(193, 142);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 25;
+            this.txtPasaje.Location = new System.Drawing.Point(193, 142);
+            this.txtPasaje.Name = "txtPasaje";
+            this.txtPasaje.Size = new System.Drawing.Size(100, 22);
+            this.txtPasaje.TabIndex = 25;
             // 
             // label12
             // 
@@ -372,9 +391,9 @@ namespace General.GUI.CLIENTES
             // panel3
             // 
             this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pictureBox6);
+            this.panel3.Controls.Add(this.btnEliminar);
+            this.panel3.Controls.Add(this.btnEditar);
+            this.panel3.Controls.Add(this.btSalir);
             this.panel3.Controls.Add(this.lblVisor);
             this.panel3.Location = new System.Drawing.Point(13, 3);
             this.panel3.Name = "panel3";
@@ -390,38 +409,41 @@ namespace General.GUI.CLIENTES
             this.label16.TabIndex = 11;
             this.label16.Text = "*logo*";
             // 
-            // pictureBox3
+            // btnEliminar
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(682, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(682, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // pictureBox2
+            // btnEditar
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(584, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(584, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(67, 62);
+            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.TabStop = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // pictureBox6
+            // btSalir
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(774, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(67, 58);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 10;
-            this.pictureBox6.TabStop = false;
+            this.btSalir.Image = ((System.Drawing.Image)(resources.GetObject("btSalir.Image")));
+            this.btSalir.Location = new System.Drawing.Point(774, 4);
+            this.btSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btSalir.Name = "btSalir";
+            this.btSalir.Size = new System.Drawing.Size(67, 58);
+            this.btSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btSalir.TabIndex = 10;
+            this.btSalir.TabStop = false;
+            this.btSalir.Click += new System.EventHandler(this.btSalir_Click);
             // 
             // lblVisor
             // 
@@ -432,6 +454,33 @@ namespace General.GUI.CLIENTES
             this.lblVisor.Size = new System.Drawing.Size(266, 36);
             this.lblVisor.TabIndex = 0;
             this.lblVisor.Text = "MODO LECTURA";
+            // 
+            // txtMunicipio
+            // 
+            this.txtMunicipio.Location = new System.Drawing.Point(193, 373);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.ReadOnly = true;
+            this.txtMunicipio.Size = new System.Drawing.Size(100, 22);
+            this.txtMunicipio.TabIndex = 40;
+            // 
+            // txtIdMunicipio
+            // 
+            this.txtIdMunicipio.Location = new System.Drawing.Point(338, 262);
+            this.txtIdMunicipio.Name = "txtIdMunicipio";
+            this.txtIdMunicipio.ReadOnly = true;
+            this.txtIdMunicipio.Size = new System.Drawing.Size(100, 22);
+            this.txtIdMunicipio.TabIndex = 41;
+            this.txtIdMunicipio.Visible = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(299, 373);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 41;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frmEditarCliente
             // 
@@ -446,16 +495,18 @@ namespace General.GUI.CLIENTES
             this.Name = "frmEditarCliente";
             this.Text = "Editar Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditarCliente_FormClosed);
             this.Load += new System.EventHandler(this.frmEditarCliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -464,41 +515,45 @@ namespace General.GUI.CLIENTES
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtIdCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkEstadoDireccion;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label txtIdDireccion;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox btnEliminar;
+        private System.Windows.Forms.PictureBox btnEditar;
+        private System.Windows.Forms.PictureBox btSalir;
         private System.Windows.Forms.Label lblVisor;
         private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.CheckBox checkControl;
+        public System.Windows.Forms.TextBox txtIdClient;
+        public System.Windows.Forms.TextBox txtIdenficacion;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtCredito;
+        private System.Windows.Forms.PictureBox btnGuardar;
+        public System.Windows.Forms.TextBox txtIdDirec;
+        public System.Windows.Forms.TextBox txtNumCasa;
+        public System.Windows.Forms.TextBox txtPasaje;
+        public System.Windows.Forms.TextBox txtCalle;
+        public System.Windows.Forms.TextBox txtColonia;
+        public System.Windows.Forms.TextBox txtCanton;
+        public System.Windows.Forms.TextBox txtCaserio;
+        public System.Windows.Forms.TextBox txtCodigoPostal;
+        public System.Windows.Forms.TextBox txtIdMunicipio;
+        private System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.TextBox txtMunicipio;
     }
 }

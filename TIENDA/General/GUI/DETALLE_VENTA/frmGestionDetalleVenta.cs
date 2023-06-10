@@ -256,7 +256,7 @@ namespace General.GUI.DETALLE_VENTA
             fac.CantidadProductos = txtTotalProductos.Text;
             fac.MontoCliente = montocliente.ToString("0.00");
             fac.Cambio = cambio.ToString("0.00");
-            fac.IdTipoPago = cbbPagos.SelectedIndex.ToString();
+            fac.IdTipoPago = cbbPagos.SelectedIndex.ToString()+1;
             fac.IdEmpleado = Session.Instancia.id_empleado.ToString();
             if (txtIdCliente.Text.Length > 0)
             {

@@ -50,7 +50,6 @@ namespace General.GUI.DETALLE_PEDIDO
                     txtNombreProducto.Text = _producto.Nombre;
                     valor = Convert.ToDecimal(_producto.PrecioUnidad);
                     txtPrecio.Text = valor.ToString("0.00");
-                    txtPrecioUnidad.Text = _producto.PrecioUnidad;
                     txtStock.Text = _producto.Stock;
                 }
                 else
@@ -81,10 +80,19 @@ namespace General.GUI.DETALLE_PEDIDO
             string fecha = DateTime.Now.ToString("yyyy-MM-dd");
             //Creacion del objeto entidad
             CLS.Pedido_proveedor PedidoProv = new CLS.Pedido_proveedor();
+            decimal montototal = Convert.ToDecimal(txtTotalPagar.Text);
             //Sincronizar la entidad con la interfaz
             PedidoProv.FechaRegistro = fecha.ToString();
-            PedidoProv.MontoTotal = txtTotalPagar.Text;
+            PedidoProv.MontoTotal = montototal.ToString("0.00");
             PedidoProv.IdProveedor = txtIdProveedor.Text;
+            if (txtNumDocumento.Text.Length > 0)
+            {
+                PedidoProv.NumDocumento = txtNumDocumento.Text;
+            }
+            else
+            {
+                PedidoProv.NumDocumento = "NULL";
+            }
             //Realizar la operacion de insertar factura
             if (PedidoProv.Insertar())
             {
@@ -94,10 +102,11 @@ namespace General.GUI.DETALLE_PEDIDO
                     DataGridViewRow fila = dtgCompra.Rows[rowIndex];
 
                     CLS.Detalle_pedido pedido = new CLS.Detalle_pedido();
-                    decimal subtotal = Convert.ToDecimal(fila.Cells["precio_unidad"].Value) * Convert.ToDecimal(fila.Cells["cantidad"].Value);
+
+                    String subtotal = Convert.ToString(Convert.ToDecimal(fila.Cells["precio_unidad"].Value.ToString()) * Convert.ToInt32(fila.Cells["cantidad"].Value.ToString()));
 
                     pedido.IdProducto = fila.Cells["id_producto"].Value.ToString();
-                    pedido.SubTotal = subtotal.ToString("0.00");
+                    pedido.SubTotal = subtotal.ToString();
                     pedido.Cantidad = fila.Cells["cantidad"].Value.ToString();
                     // Asigna los valores de las demás propiedades según las columnas del DataGridView
                     pedido.Insertar();
@@ -189,7 +198,7 @@ namespace General.GUI.DETALLE_PEDIDO
             string idproducto = txtIdProducto.Text;
             string nombre = txtNombreProducto.Text;
             string codBarras = txtCodigoB.Text;
-            string precioVenta = txtPrecio.Text;
+            string preciounidad = txtPrecio.Text;
             string cantidad = txtCantidad.Text;
 
             // Crea una nueva fila y agrega las celdas con los datos
@@ -197,7 +206,7 @@ namespace General.GUI.DETALLE_PEDIDO
             fila.CreateCells(dtgCompra);
             fila.Cells[0].Value = idproducto; // Asigna el valor del TextBox a la primera celda de la fila
             fila.Cells[1].Value = nombre;
-            fila.Cells[2].Value = precioVenta;
+            fila.Cells[2].Value = preciounidad;
             fila.Cells[3].Value = codBarras;
             fila.Cells[4].Value = cantidad;
 
@@ -215,6 +224,20 @@ namespace General.GUI.DETALLE_PEDIDO
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            PRODUCTO.frmEditarProducto f = new PRODUCTO.frmEditarProducto();
+            f.checkControl.Checked = true;
+            f.ShowDialog();
+        }
+
+        private void btnNuevoProveedor_Click(object sender, EventArgs e)
+        {
+            PROVEEDOR.frmEditarProveedor f = new PROVEEDOR.frmEditarProveedor();
+            f.checkControl.Checked = true;
+            f.ShowDialog();
         }
     }
 }

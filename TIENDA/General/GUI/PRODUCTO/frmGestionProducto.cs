@@ -56,6 +56,7 @@ namespace General.GUI.PRODUCTO
                 f.dtpFechaVencimiento.Text = dtgProducto.CurrentRow.Cells["fecha_vencimiento"].Value.ToString();
                 f.cbbUnidadMedida.Text = dtgProducto.CurrentRow.Cells["id_unidadmedida"].Value.ToString();
                 f.cbbArea.Text = dtgProducto.CurrentRow.Cells["id_area"].Value.ToString();
+                f.checkControl.Checked = false;
                 f.ShowDialog();
             }
         }
@@ -82,6 +83,7 @@ namespace General.GUI.PRODUCTO
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             PRODUCTO.frmEditarProducto f = new PRODUCTO.frmEditarProducto();
+            f.checkControl.Checked = true;
             f.ShowDialog();
         }
 
@@ -101,6 +103,7 @@ namespace General.GUI.PRODUCTO
                 f.dtpFechaVencimiento.Text = dtgProducto.CurrentRow.Cells["fecha_vencimiento"].Value.ToString();
                 f.cbbUnidadMedida.Text = dtgProducto.CurrentRow.Cells["id_unidadmedida"].Value.ToString();
                 f.cbbArea.Text = dtgProducto.CurrentRow.Cells["id_area"].Value.ToString();
+                f.checkControl.Checked = false;
                 f.ShowDialog();
             }
         }
