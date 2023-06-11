@@ -46,6 +46,8 @@ namespace General.GUI.PRODUCTO
             this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgProducto = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,14 +56,14 @@ namespace General.GUI.PRODUCTO
             this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidad_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -189,6 +191,7 @@ namespace General.GUI.PRODUCTO
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 4;
             this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnReporte
             // 
@@ -208,7 +211,6 @@ namespace General.GUI.PRODUCTO
             this.panel1.Controls.Add(this.cbbOrdenar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtgProducto);
-            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Location = new System.Drawing.Point(3, 75);
@@ -220,16 +222,21 @@ namespace General.GUI.PRODUCTO
             // cbbOrdenar
             // 
             this.cbbOrdenar.FormattingEnabled = true;
-            this.cbbOrdenar.Location = new System.Drawing.Point(671, 21);
+            this.cbbOrdenar.Items.AddRange(new object[] {
+            "Ultimo Agregado",
+            "Primero Agregado",
+            "A - Z",
+            "Z - A"});
+            this.cbbOrdenar.Location = new System.Drawing.Point(971, 22);
             this.cbbOrdenar.Name = "cbbOrdenar";
             this.cbbOrdenar.Size = new System.Drawing.Size(121, 24);
             this.cbbOrdenar.TabIndex = 14;
-            this.cbbOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbbOrdenar_SelectedIndexChanged);
+            this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 25);
+            this.label3.Location = new System.Drawing.Point(875, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 13;
@@ -251,10 +258,13 @@ namespace General.GUI.PRODUCTO
             this.precio_venta,
             this.fecha_ingreso,
             this.fecha_vencimiento,
-            this.medida,
+            this.unidad_medida,
             this.id_unidadMedida,
             this.id_area,
+            this.area,
             this.stock,
+            this.id_proveedor,
+            this.proveedor,
             this.estado});
             this.dtgProducto.Location = new System.Drawing.Point(10, 57);
             this.dtgProducto.Margin = new System.Windows.Forms.Padding(4);
@@ -267,10 +277,29 @@ namespace General.GUI.PRODUCTO
             this.dtgProducto.TabIndex = 0;
             this.dtgProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentDoubleClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Digite aqui para buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(217, 22);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
+            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
             // id_producto
             // 
             this.id_producto.DataPropertyName = "id_producto";
-            this.id_producto.HeaderText = "ID";
+            this.id_producto.HeaderText = "Id";
             this.id_producto.MinimumWidth = 6;
             this.id_producto.Name = "id_producto";
             this.id_producto.ReadOnly = true;
@@ -279,7 +308,7 @@ namespace General.GUI.PRODUCTO
             // descripcion
             // 
             this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "DESCRIPCION";
+            this.descripcion.HeaderText = "Descripcion";
             this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
@@ -289,7 +318,7 @@ namespace General.GUI.PRODUCTO
             // codigo_barras
             // 
             this.codigo_barras.DataPropertyName = "codigo_barras";
-            this.codigo_barras.HeaderText = "CODIGO BARRA";
+            this.codigo_barras.HeaderText = "Codigo Barra";
             this.codigo_barras.MinimumWidth = 6;
             this.codigo_barras.Name = "codigo_barras";
             this.codigo_barras.ReadOnly = true;
@@ -298,7 +327,7 @@ namespace General.GUI.PRODUCTO
             // nombre
             // 
             this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.HeaderText = "Nombre";
             this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
@@ -307,7 +336,7 @@ namespace General.GUI.PRODUCTO
             // precio_unidad
             // 
             this.precio_unidad.DataPropertyName = "precio_unidad";
-            this.precio_unidad.HeaderText = "PRECIO UNIDAD";
+            this.precio_unidad.HeaderText = "Precio Unidad";
             this.precio_unidad.MinimumWidth = 6;
             this.precio_unidad.Name = "precio_unidad";
             this.precio_unidad.ReadOnly = true;
@@ -316,7 +345,7 @@ namespace General.GUI.PRODUCTO
             // precio_venta
             // 
             this.precio_venta.DataPropertyName = "precio_venta";
-            this.precio_venta.HeaderText = "PRECIO VENTA";
+            this.precio_venta.HeaderText = "Precio Venta";
             this.precio_venta.MinimumWidth = 6;
             this.precio_venta.Name = "precio_venta";
             this.precio_venta.ReadOnly = true;
@@ -325,7 +354,7 @@ namespace General.GUI.PRODUCTO
             // fecha_ingreso
             // 
             this.fecha_ingreso.DataPropertyName = "fecha_ingreso";
-            this.fecha_ingreso.HeaderText = "FECHA INGRESO";
+            this.fecha_ingreso.HeaderText = "Fecha Ingreso";
             this.fecha_ingreso.MinimumWidth = 6;
             this.fecha_ingreso.Name = "fecha_ingreso";
             this.fecha_ingreso.ReadOnly = true;
@@ -334,84 +363,87 @@ namespace General.GUI.PRODUCTO
             // fecha_vencimiento
             // 
             this.fecha_vencimiento.DataPropertyName = "fecha_vencimiento";
-            this.fecha_vencimiento.HeaderText = "FECHA VENCIMIENTO";
+            this.fecha_vencimiento.HeaderText = "Fecha Vencimiento";
             this.fecha_vencimiento.MinimumWidth = 6;
             this.fecha_vencimiento.Name = "fecha_vencimiento";
             this.fecha_vencimiento.ReadOnly = true;
             this.fecha_vencimiento.Width = 125;
             // 
-            // medida
+            // unidad_medida
             // 
-            this.medida.DataPropertyName = "medida";
-            this.medida.HeaderText = "MEDIDA";
-            this.medida.MinimumWidth = 6;
-            this.medida.Name = "medida";
-            this.medida.ReadOnly = true;
-            this.medida.Width = 125;
+            this.unidad_medida.DataPropertyName = "unidad_medida";
+            this.unidad_medida.HeaderText = "Medida";
+            this.unidad_medida.MinimumWidth = 6;
+            this.unidad_medida.Name = "unidad_medida";
+            this.unidad_medida.ReadOnly = true;
+            this.unidad_medida.Width = 125;
             // 
             // id_unidadMedida
             // 
-            this.id_unidadMedida.DataPropertyName = "id_unidadMedida";
-            this.id_unidadMedida.HeaderText = "UNIDAD MEDIDA";
+            this.id_unidadMedida.DataPropertyName = "id_unidadmedida";
+            this.id_unidadMedida.HeaderText = "idUnidadMedida";
             this.id_unidadMedida.MinimumWidth = 6;
             this.id_unidadMedida.Name = "id_unidadMedida";
             this.id_unidadMedida.ReadOnly = true;
+            this.id_unidadMedida.Visible = false;
             this.id_unidadMedida.Width = 125;
             // 
             // id_area
             // 
             this.id_area.DataPropertyName = "id_area";
-            this.id_area.HeaderText = "AREA";
+            this.id_area.HeaderText = "idArea";
             this.id_area.MinimumWidth = 6;
             this.id_area.Name = "id_area";
             this.id_area.ReadOnly = true;
+            this.id_area.Visible = false;
             this.id_area.Width = 125;
+            // 
+            // area
+            // 
+            this.area.DataPropertyName = "area";
+            this.area.HeaderText = "Area";
+            this.area.MinimumWidth = 6;
+            this.area.Name = "area";
+            this.area.ReadOnly = true;
+            this.area.Width = 125;
             // 
             // stock
             // 
             this.stock.DataPropertyName = "stock";
-            this.stock.HeaderText = "CANTIDAD";
+            this.stock.HeaderText = "Cantidad";
             this.stock.MinimumWidth = 6;
             this.stock.Name = "stock";
             this.stock.ReadOnly = true;
             this.stock.Visible = false;
             this.stock.Width = 125;
             // 
+            // id_proveedor
+            // 
+            this.id_proveedor.DataPropertyName = "id_proveedor";
+            this.id_proveedor.HeaderText = "idProveedor";
+            this.id_proveedor.MinimumWidth = 6;
+            this.id_proveedor.Name = "id_proveedor";
+            this.id_proveedor.ReadOnly = true;
+            this.id_proveedor.Width = 125;
+            // 
+            // proveedor
+            // 
+            this.proveedor.DataPropertyName = "proveedor";
+            this.proveedor.HeaderText = "Proveedor";
+            this.proveedor.MinimumWidth = 6;
+            this.proveedor.Name = "proveedor";
+            this.proveedor.ReadOnly = true;
+            this.proveedor.Width = 125;
+            // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "ESTADO";
+            this.estado.HeaderText = "Estado";
             this.estado.MinimumWidth = 6;
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
+            this.estado.Visible = false;
             this.estado.Width = 125;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(370, 20);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 25);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Digite aqui para buscar:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(194, 23);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
-            this.txtBuscar.TabIndex = 6;
             // 
             // frmGestionProducto
             // 
@@ -462,7 +494,6 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.ComboBox cbbOrdenar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtgProducto;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
@@ -473,10 +504,13 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_ingreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_vencimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidad_medida;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_unidadMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn area;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

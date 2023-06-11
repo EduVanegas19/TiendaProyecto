@@ -117,6 +117,7 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\DataM
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\Reporte.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\bin\Debug\SessionManager.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.csproj.AssemblyReference.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.AREA.frmVisorArea.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.CLIENTES.frmCrearCliente.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.CLIENTES.frmEditarCliente.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.CLIENTES.frmVisorCliente.resources
@@ -132,6 +133,7 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\Gener
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.EMPLEADO.frmCrearEmpleado.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.EMPLEADO.frmEditarEmpleado.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionEmpleado.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.EMPLEADO.frmVisorEmpleado.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.MUNICIPIO.frmVisorMunicipio.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PEDIDO_PROVEEDOR.frmCrearPedidoProveedor.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PEDIDO_PROVEEDOR.frmEditarPedidoProveedor.resources
@@ -143,12 +145,11 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\Gener
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PROVEEDOR.frmEditarProveedor.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionProveedor.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.PROVEEDOR.frmVisorProveedor.resources
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.REPORTES.frmCrearReporte.resources
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.REPORTES.frmEditarReporte.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.ROLES.frmVisorRol.resources
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.UNIDAD_MEDIDA.frmVisorUnidadMedida.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmCrearUsuario.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmEditarUsuario.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionCliente.resources
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionReporte.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.frmGestionUsuario.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.VENTAS.frmCrearVenta.resources
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.VENTAS.frmEditarVenta.resources
@@ -159,5 +160,3 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\Gener
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.csproj.CopyComplete
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.pdb
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.EMPLEADO.frmVisorEmpleado.resources
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\General\obj\Debug\General.GUI.ROLES.frmVisorRol.resources

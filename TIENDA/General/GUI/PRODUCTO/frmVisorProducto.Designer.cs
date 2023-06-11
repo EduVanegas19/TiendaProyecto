@@ -64,7 +64,7 @@ namespace General.GUI.PRODUCTO
             this.dtgProducto.RowHeadersWidth = 51;
             this.dtgProducto.RowTemplate.Height = 24;
             this.dtgProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProducto.Size = new System.Drawing.Size(918, 284);
+            this.dtgProducto.Size = new System.Drawing.Size(1004, 313);
             this.dtgProducto.TabIndex = 17;
             this.dtgProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentDoubleClick);
             // 
@@ -146,7 +146,7 @@ namespace General.GUI.PRODUCTO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 316);
+            this.ClientSize = new System.Drawing.Size(1028, 337);
             this.Controls.Add(this.dtgProducto);
             this.Name = "frmVisorProducto";
             this.Text = "frmVisorProducto";

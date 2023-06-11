@@ -36,12 +36,11 @@ namespace General.GUI.PRODUCTO
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.lblVisor = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbUnidadMedida = new System.Windows.Forms.ComboBox();
+            this.checkControl = new System.Windows.Forms.CheckBox();
             this.btnGuardar = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.PictureBox();
             this.dtpFechaVencimiento = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
-            this.cbbArea = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtMedida = new System.Windows.Forms.TextBox();
@@ -64,7 +63,12 @@ namespace General.GUI.PRODUCTO
             this.txtIdCliente = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkControl = new System.Windows.Forms.CheckBox();
+            this.txtUnidadMedida = new System.Windows.Forms.TextBox();
+            this.txtAarea = new System.Windows.Forms.TextBox();
+            this.txtIdUnidad = new System.Windows.Forms.TextBox();
+            this.txtIdArea = new System.Windows.Forms.TextBox();
+            this.btnBuscarUnidad = new System.Windows.Forms.Button();
+            this.btnBuscarArea = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -129,13 +133,17 @@ namespace General.GUI.PRODUCTO
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBuscarArea);
+            this.panel1.Controls.Add(this.btnBuscarUnidad);
+            this.panel1.Controls.Add(this.txtIdArea);
+            this.panel1.Controls.Add(this.txtIdUnidad);
+            this.panel1.Controls.Add(this.txtAarea);
+            this.panel1.Controls.Add(this.txtUnidadMedida);
             this.panel1.Controls.Add(this.checkControl);
-            this.panel1.Controls.Add(this.cbbUnidadMedida);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.dtpFechaVencimiento);
             this.panel1.Controls.Add(this.dtpFechaIngreso);
-            this.panel1.Controls.Add(this.cbbArea);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.txtMedida);
@@ -163,13 +171,15 @@ namespace General.GUI.PRODUCTO
             this.panel1.Size = new System.Drawing.Size(659, 706);
             this.panel1.TabIndex = 16;
             // 
-            // cbbUnidadMedida
+            // checkControl
             // 
-            this.cbbUnidadMedida.FormattingEnabled = true;
-            this.cbbUnidadMedida.Location = new System.Drawing.Point(186, 480);
-            this.cbbUnidadMedida.Name = "cbbUnidadMedida";
-            this.cbbUnidadMedida.Size = new System.Drawing.Size(121, 24);
-            this.cbbUnidadMedida.TabIndex = 40;
+            this.checkControl.AutoSize = true;
+            this.checkControl.Location = new System.Drawing.Point(558, 57);
+            this.checkControl.Name = "checkControl";
+            this.checkControl.Size = new System.Drawing.Size(18, 17);
+            this.checkControl.TabIndex = 41;
+            this.checkControl.UseVisualStyleBackColor = true;
+            this.checkControl.Visible = false;
             // 
             // btnGuardar
             // 
@@ -213,14 +223,6 @@ namespace General.GUI.PRODUCTO
             this.dtpFechaIngreso.Size = new System.Drawing.Size(141, 22);
             this.dtpFechaIngreso.TabIndex = 36;
             // 
-            // cbbArea
-            // 
-            this.cbbArea.FormattingEnabled = true;
-            this.cbbArea.Location = new System.Drawing.Point(186, 529);
-            this.cbbArea.Name = "cbbArea";
-            this.cbbArea.Size = new System.Drawing.Size(121, 24);
-            this.cbbArea.TabIndex = 35;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -243,7 +245,7 @@ namespace General.GUI.PRODUCTO
             // 
             this.txtMedida.Location = new System.Drawing.Point(186, 436);
             this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(141, 22);
+            this.txtMedida.Size = new System.Drawing.Size(84, 22);
             this.txtMedida.TabIndex = 31;
             // 
             // label12
@@ -293,7 +295,7 @@ namespace General.GUI.PRODUCTO
             // 
             this.txtCantidad.Location = new System.Drawing.Point(186, 266);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(141, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(84, 22);
             this.txtCantidad.TabIndex = 23;
             // 
             // label3
@@ -309,7 +311,7 @@ namespace General.GUI.PRODUCTO
             // 
             this.txtPrecioVenta.Location = new System.Drawing.Point(186, 223);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(141, 22);
+            this.txtPrecioVenta.Size = new System.Drawing.Size(84, 22);
             this.txtPrecioVenta.TabIndex = 21;
             // 
             // label2
@@ -325,7 +327,7 @@ namespace General.GUI.PRODUCTO
             // 
             this.txtPrecioUni.Location = new System.Drawing.Point(186, 181);
             this.txtPrecioUni.Name = "txtPrecioUni";
-            this.txtPrecioUni.Size = new System.Drawing.Size(141, 22);
+            this.txtPrecioUni.Size = new System.Drawing.Size(84, 22);
             this.txtPrecioUni.TabIndex = 19;
             // 
             // label1
@@ -403,15 +405,59 @@ namespace General.GUI.PRODUCTO
             this.label9.TabIndex = 8;
             this.label9.Text = "CLIENTES";
             // 
-            // checkControl
+            // txtUnidadMedida
             // 
-            this.checkControl.AutoSize = true;
-            this.checkControl.Location = new System.Drawing.Point(558, 57);
-            this.checkControl.Name = "checkControl";
-            this.checkControl.Size = new System.Drawing.Size(18, 17);
-            this.checkControl.TabIndex = 41;
-            this.checkControl.UseVisualStyleBackColor = true;
-            this.checkControl.Visible = false;
+            this.txtUnidadMedida.Location = new System.Drawing.Point(186, 480);
+            this.txtUnidadMedida.Name = "txtUnidadMedida";
+            this.txtUnidadMedida.ReadOnly = true;
+            this.txtUnidadMedida.Size = new System.Drawing.Size(141, 22);
+            this.txtUnidadMedida.TabIndex = 42;
+            // 
+            // txtAarea
+            // 
+            this.txtAarea.Location = new System.Drawing.Point(186, 529);
+            this.txtAarea.Name = "txtAarea";
+            this.txtAarea.ReadOnly = true;
+            this.txtAarea.Size = new System.Drawing.Size(141, 22);
+            this.txtAarea.TabIndex = 43;
+            // 
+            // txtIdUnidad
+            // 
+            this.txtIdUnidad.Location = new System.Drawing.Point(186, 557);
+            this.txtIdUnidad.Name = "txtIdUnidad";
+            this.txtIdUnidad.ReadOnly = true;
+            this.txtIdUnidad.Size = new System.Drawing.Size(37, 22);
+            this.txtIdUnidad.TabIndex = 44;
+            this.txtIdUnidad.Visible = false;
+            // 
+            // txtIdArea
+            // 
+            this.txtIdArea.Location = new System.Drawing.Point(229, 557);
+            this.txtIdArea.Name = "txtIdArea";
+            this.txtIdArea.ReadOnly = true;
+            this.txtIdArea.Size = new System.Drawing.Size(37, 22);
+            this.txtIdArea.TabIndex = 45;
+            this.txtIdArea.Visible = false;
+            // 
+            // btnBuscarUnidad
+            // 
+            this.btnBuscarUnidad.Location = new System.Drawing.Point(346, 480);
+            this.btnBuscarUnidad.Name = "btnBuscarUnidad";
+            this.btnBuscarUnidad.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarUnidad.TabIndex = 46;
+            this.btnBuscarUnidad.Text = "Buscar";
+            this.btnBuscarUnidad.UseVisualStyleBackColor = true;
+            this.btnBuscarUnidad.Click += new System.EventHandler(this.btnBuscarUnidad_Click);
+            // 
+            // btnBuscarArea
+            // 
+            this.btnBuscarArea.Location = new System.Drawing.Point(346, 529);
+            this.btnBuscarArea.Name = "btnBuscarArea";
+            this.btnBuscarArea.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarArea.TabIndex = 47;
+            this.btnBuscarArea.Text = "Buscar";
+            this.btnBuscarArea.UseVisualStyleBackColor = true;
+            this.btnBuscarArea.Click += new System.EventHandler(this.btnBuscarArea_Click);
             // 
             // frmEditarProducto
             // 
@@ -422,6 +468,7 @@ namespace General.GUI.PRODUCTO
             this.Controls.Add(this.panel1);
             this.Name = "frmEditarProducto";
             this.Text = "Editar Producto";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditarProducto_FormClosed);
             this.Load += new System.EventHandler(this.frmEditarProducto_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -468,9 +515,13 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.PictureBox btnEditar;
         public System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.PictureBox btnGuardar;
-        public System.Windows.Forms.ComboBox cbbArea;
         public System.Windows.Forms.DateTimePicker dtpFechaVencimiento;
-        public System.Windows.Forms.ComboBox cbbUnidadMedida;
         public System.Windows.Forms.CheckBox checkControl;
+        public System.Windows.Forms.TextBox txtIdArea;
+        public System.Windows.Forms.TextBox txtIdUnidad;
+        public System.Windows.Forms.TextBox txtAarea;
+        public System.Windows.Forms.TextBox txtUnidadMedida;
+        private System.Windows.Forms.Button btnBuscarArea;
+        private System.Windows.Forms.Button btnBuscarUnidad;
     }
 }
