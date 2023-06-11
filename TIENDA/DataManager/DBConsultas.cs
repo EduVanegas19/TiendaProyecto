@@ -83,7 +83,22 @@ namespace DataManager
 
             return Resultado;
         }
+        public static DataTable LISTARUSUARIOSOPCION(int pIdOrden)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"exec LISTARUSUARIOSOPCION " + pIdOrden + ";";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
 
+            return Resultado;
+        }
         public static DataTable LISTAREMPLEADOOPCION(int pIdOrden)
         {
             DataTable Resultado = new DataTable();

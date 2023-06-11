@@ -63,6 +63,7 @@
     <Compile Include="CLS\Pedido_proveedor.cs" />
     <Compile Include="CLS\Producto.cs" />
     <Compile Include="CLS\Proveedor.cs" />
+    <Compile Include="CLS\Roles.cs" />
     <Compile Include="CLS\subopciones.cs" />
     <Compile Include="CLS\Ticket.cs" />
     <Compile Include="CLS\Tipo_pago.cs" />
@@ -158,6 +159,12 @@
     <Compile Include="GUI\EMPLEADO\frmEditarEmpleado.Designer.cs">
       <DependentUpon>frmEditarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EMPLEADO\frmVisorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EMPLEADO\frmVisorEmpleado.Designer.cs">
+      <DependentUpon>frmVisorEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MUNICIPIO\frmVisorMunicipio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +230,12 @@
     </Compile>
     <Compile Include="GUI\REPORTES\frmEditarReporte.Designer.cs">
       <DependentUpon>frmEditarReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ROLES\frmVisorRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ROLES\frmVisorRol.Designer.cs">
+      <DependentUpon>frmVisorRol.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\USUARIO\frmCrearUsuario.cs">
       <SubType>Form</SubType>
@@ -337,6 +350,9 @@
     <EmbeddedResource Include="GUI\EMPLEADO\frmGestionEmpleado.resx">
       <DependentUpon>frmGestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EMPLEADO\frmVisorEmpleado.resx">
+      <DependentUpon>frmVisorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MUNICIPIO\frmVisorMunicipio.resx">
       <DependentUpon>frmVisorMunicipio.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\REPORTES\frmEditarReporte.resx">
       <DependentUpon>frmEditarReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ROLES\frmVisorRol.resx">
+      <DependentUpon>frmVisorRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\USUARIO\frmCrearUsuario.resx">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>

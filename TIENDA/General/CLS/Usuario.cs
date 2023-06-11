@@ -11,14 +11,12 @@ namespace General.CLS
         String _IdUsuario;
         String _Nombre;
         String _Clave;
-        String _Estado;
         String _IdRol;
         String _IdEmpleado;
 
         public string IdUsuario { get => _IdUsuario; set => _IdUsuario = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
         public string Clave { get => _Clave; set => _Clave = value; }
-        public string Estado { get => _Estado; set => _Estado = value; }
         public string IdRol { get => _IdRol; set => _IdRol = value; }
         public string IdEmpleado { get => _IdEmpleado; set => _IdEmpleado = value; }
 
@@ -30,7 +28,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarUsuario '" + _Nombre + "', '" + _Clave + "', " + _Estado + ", " + _IdRol + ", " + _IdEmpleado + ";";
+                Sentencia = @"exec AgregarUsuario '" + _Nombre + "', '" + _Clave + "', " + _IdRol + ", " + _IdEmpleado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -51,7 +49,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarUsuario " + _IdUsuario + ", '" + _Nombre + "', '" + _Clave + "', " + _Estado + ", " + _IdRol + ", " + _IdEmpleado + ";";
+                Sentencia = @"exec ModificarUsuario " + _IdUsuario + ", '" + _Nombre + "', '" + _Clave + "', " + _IdRol + ", " + _IdEmpleado + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
