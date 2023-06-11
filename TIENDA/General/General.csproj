@@ -75,17 +75,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AREA\frmEditarArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AREA\frmEditarArea.Designer.cs">
+      <DependentUpon>frmEditarArea.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\AREA\frmVisorArea.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\AREA\frmVisorArea.Designer.cs">
       <DependentUpon>frmVisorArea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\CLIENTES\frmCrearCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\CLIENTES\frmCrearCliente.Designer.cs">
-      <DependentUpon>frmCrearCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CLIENTES\frmEditarCliente.cs">
       <SubType>Form</SubType>
@@ -99,12 +99,6 @@
     <Compile Include="GUI\CLIENTES\frmVisorCliente.Designer.cs">
       <DependentUpon>frmVisorCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DETALLE_PEDIDO\frmCrearDetallePedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DETALLE_PEDIDO\frmCrearDetallePedido.Designer.cs">
-      <DependentUpon>frmCrearDetallePedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\DETALLE_PEDIDO\frmEditarDetallePedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,12 +110,6 @@
     </Compile>
     <Compile Include="GUI\DETALLE_PEDIDO\frmGestionDetallePedido.Designer.cs">
       <DependentUpon>frmGestionDetallePedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\DETALLE_VENTA\frmCrearDetalleVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DETALLE_VENTA\frmCrearDetalleVenta.Designer.cs">
-      <DependentUpon>frmCrearDetalleVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DETALLE_VENTA\frmEditarDetalleVenta.cs">
       <SubType>Form</SubType>
@@ -135,12 +123,6 @@
     <Compile Include="GUI\DETALLE_VENTA\frmGestionDetalleVenta.Designer.cs">
       <DependentUpon>frmGestionDetalleVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DIRECCION\frmCrearDireccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DIRECCION\frmCrearDireccion.Designer.cs">
-      <DependentUpon>frmCrearDireccion.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\DIRECCION\frmEditarDireccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,12 +134,6 @@
     </Compile>
     <Compile Include="GUI\DIRECCION\frmGestionDireccion.Designer.cs">
       <DependentUpon>frmGestionDireccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\EMPLEADO\frmCrearEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\EMPLEADO\frmCrearEmpleado.Designer.cs">
-      <DependentUpon>frmCrearEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\EMPLEADO\frmEditarEmpleado.cs">
       <SubType>Form</SubType>
@@ -188,12 +164,6 @@
     </Compile>
     <Compile Include="GUI\PEDIDO_PROVEEDOR\frmEditarPedidoProveedor.Designer.cs">
       <DependentUpon>frmEditarPedidoProveedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\PRODUCTO\frmCrearProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\PRODUCTO\frmCrearProducto.Designer.cs">
-      <DependentUpon>frmCrearProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\PRODUCTO\frmEditarProducto.cs">
       <SubType>Form</SubType>
@@ -231,17 +201,17 @@
     <Compile Include="GUI\ROLES\frmVisorRol.Designer.cs">
       <DependentUpon>frmVisorRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UNIDAD_MEDIDA\frmEditarUnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UNIDAD_MEDIDA\frmEditarUnidadMedida.Designer.cs">
+      <DependentUpon>frmEditarUnidadMedida.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UNIDAD_MEDIDA\frmVisorUnidadMedida.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\UNIDAD_MEDIDA\frmVisorUnidadMedida.Designer.cs">
       <DependentUpon>frmVisorUnidadMedida.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\USUARIO\frmCrearUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\USUARIO\frmCrearUsuario.Designer.cs">
-      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\USUARIO\frmEditarUsuario.cs">
       <SubType>Form</SubType>
@@ -299,11 +269,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AREA\frmEditarArea.resx">
+      <DependentUpon>frmEditarArea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AREA\frmVisorArea.resx">
       <DependentUpon>frmVisorArea.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\CLIENTES\frmCrearCliente.resx">
-      <DependentUpon>frmCrearCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CLIENTES\frmEditarCliente.resx">
       <DependentUpon>frmEditarCliente.cs</DependentUpon>
@@ -311,17 +281,11 @@
     <EmbeddedResource Include="GUI\CLIENTES\frmVisorCliente.resx">
       <DependentUpon>frmVisorCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DETALLE_PEDIDO\frmCrearDetallePedido.resx">
-      <DependentUpon>frmCrearDetallePedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DETALLE_PEDIDO\frmEditarDetallePedido.resx">
       <DependentUpon>frmEditarDetallePedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DETALLE_PEDIDO\frmGestionDetallePedido.resx">
       <DependentUpon>frmGestionDetallePedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DETALLE_VENTA\frmCrearDetalleVenta.resx">
-      <DependentUpon>frmCrearDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DETALLE_VENTA\frmEditarDetalleVenta.resx">
       <DependentUpon>frmEditarDetalleVenta.cs</DependentUpon>
@@ -329,17 +293,11 @@
     <EmbeddedResource Include="GUI\DETALLE_VENTA\frmGestionDetalleVenta.resx">
       <DependentUpon>frmGestionDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DIRECCION\frmCrearDireccion.resx">
-      <DependentUpon>frmCrearDireccion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DIRECCION\frmEditarDireccion.resx">
       <DependentUpon>frmEditarDireccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DIRECCION\frmGestionDireccion.resx">
       <DependentUpon>frmGestionDireccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EMPLEADO\frmCrearEmpleado.resx">
-      <DependentUpon>frmCrearEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EMPLEADO\frmEditarEmpleado.resx">
       <DependentUpon>frmEditarEmpleado.cs</DependentUpon>
@@ -362,9 +320,6 @@
     <EmbeddedResource Include="GUI\PEDIDO_PROVEEDOR\frmGestionPedidoProveedor.resx">
       <DependentUpon>frmGestionPedidoProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PRODUCTO\frmCrearProducto.resx">
-      <DependentUpon>frmCrearProducto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\PRODUCTO\frmEditarProducto.resx">
       <DependentUpon>frmEditarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,11 +341,11 @@
     <EmbeddedResource Include="GUI\ROLES\frmVisorRol.resx">
       <DependentUpon>frmVisorRol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UNIDAD_MEDIDA\frmEditarUnidadMedida.resx">
+      <DependentUpon>frmEditarUnidadMedida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UNIDAD_MEDIDA\frmVisorUnidadMedida.resx">
       <DependentUpon>frmVisorUnidadMedida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\USUARIO\frmCrearUsuario.resx">
-      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\USUARIO\frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>

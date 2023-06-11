@@ -12,15 +12,21 @@ namespace General.GUI.AREA
 {
     public partial class frmVisorArea : Form
     {
-        BindingSource _DATOS = new BindingSource();
+        //Le decimos que cargue datos despues de cerrar el frmEditor
+        private void FormEditor_DataUpdated(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
 
         private void CargarDatos()
         {
+            DataTable area = new DataTable();
             try
             {
-                _DATOS.DataSource = DataManager.DBConsultas.AREAS();
+                area = DataManager.DBConsultas.AREAS();
                 dtgArea.AutoGenerateColumns = false;
-                dtgArea.DataSource = _DATOS;
+                dtgArea.DataSource = area;
             }
             catch (Exception)
             {
@@ -53,8 +59,34 @@ namespace General.GUI.AREA
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
+                else if (dtgArea.Columns[e.ColumnIndex].Name == "btnEliminar")
+                {
+                    if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        CLS.Area area = new CLS.Area();
+                        area.IdArea = dtgArea.CurrentRow.Cells["id_area"].Value.ToString().ToUpper(); ;
+                        //Realizar la operacion de Eliminar
+                        if (area.Eliminar())
+                        {
+                            MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no fue eliminado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
 
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmEditarArea f = new frmEditarArea();
+            //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+            f.DataUpdated += FormEditor_DataUpdated;
+            f.ShowDialog();
         }
     }
 }

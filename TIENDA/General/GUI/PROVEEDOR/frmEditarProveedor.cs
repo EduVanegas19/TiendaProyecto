@@ -112,5 +112,24 @@ namespace General.GUI.PROVEEDOR
         {
             this.Close();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CLS.Proveedor proveedor = new CLS.Proveedor();
+                proveedor.IdProveedor = txtId.Text ;
+                //Realizar la operacion de Eliminar
+                if (proveedor.Eliminar())
+                {
+                    MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue eliminado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
     }
 }

@@ -307,7 +307,7 @@ namespace DataManager
         public static DataTable AREAS()
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"SELECT * FROM  areas;";
+            String Sentencia = @"SELECT * FROM  areas WHERE estado=1";
             DBOperacion Consultor = new DBOperacion();
             try
             {
@@ -531,7 +531,7 @@ namespace DataManager
         public static DataTable UNIDAD_MEDIDA()
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"SELECT * FROM unidad_medida;";
+            String Sentencia = @"SELECT * FROM unidad_medida WHERE estado=1;";
             DBOperacion Consultor = new DBOperacion();
             try
             {

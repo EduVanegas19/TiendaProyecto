@@ -66,6 +66,7 @@ C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.c
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.exe
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.exe.config
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.pdb
@@ -105,5 +106,4 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.GenerateResource.cache
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CoreCompileInputs.cache
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.pdb

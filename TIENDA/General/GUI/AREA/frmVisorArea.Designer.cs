@@ -29,11 +29,15 @@ namespace General.GUI.AREA
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVisorArea));
             this.dtgArea = new System.Windows.Forms.DataGridView();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAgregar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgArea
@@ -46,7 +50,8 @@ namespace General.GUI.AREA
             this.dtgArea.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
             this.id_area,
-            this.area});
+            this.area,
+            this.btnEliminar});
             this.dtgArea.Location = new System.Drawing.Point(12, 12);
             this.dtgArea.MultiSelect = false;
             this.dtgArea.Name = "dtgArea";
@@ -85,16 +90,38 @@ namespace General.GUI.AREA
             this.area.ReadOnly = true;
             this.area.Width = 142;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "Eliminar";
+            this.btnEliminar.MinimumWidth = 6;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Width = 75;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(13, 306);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(52, 40);
+            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgregar.TabIndex = 19;
+            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // frmVisorArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 321);
+            this.ClientSize = new System.Drawing.Size(712, 351);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dtgArea);
             this.Name = "frmVisorArea";
             this.Text = "frmVisorArea";
             this.Load += new System.EventHandler(this.frmVisorArea_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -105,5 +132,7 @@ namespace General.GUI.AREA
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_area;
         private System.Windows.Forms.DataGridViewTextBoxColumn area;
+        private System.Windows.Forms.DataGridViewImageColumn btnEliminar;
+        private System.Windows.Forms.PictureBox btnAgregar;
     }
 }

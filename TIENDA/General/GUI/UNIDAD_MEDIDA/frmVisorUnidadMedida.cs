@@ -12,6 +12,12 @@ namespace General.GUI.UNIDAD_MEDIDA
 {
     public partial class frmVisorUnidadMedida : Form
     {
+        //Le decimos que cargue datos despues de cerrar el frmEditor
+        private void FormEditor_DataUpdated(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
         BindingSource _DATOS = new BindingSource();
 
         private void CargarDatos()
@@ -48,6 +54,25 @@ namespace General.GUI.UNIDAD_MEDIDA
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
+                else if (dtgUnidadMedida.Columns[e.ColumnIndex].Name == "btnEliminar")
+                {
+                    if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        CLS.Unidad_medida unidad = new CLS.Unidad_medida();
+                        unidad.IdUnidadMedida = dtgUnidadMedida.CurrentRow.Cells["id_unidadmedida"].Value.ToString().ToUpper(); ;
+                        //Realizar la operacion de Eliminar
+                        if (unidad.Eliminar())
+                        {
+                            MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no fue eliminado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+                
 
             }
         }
@@ -55,6 +80,14 @@ namespace General.GUI.UNIDAD_MEDIDA
         private void frmVisorUnidadMedida_Load(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmEditarUnidadMedida f = new frmEditarUnidadMedida();
+            //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
+            f.DataUpdated += FormEditor_DataUpdated;
+            f.ShowDialog();
         }
     }
 }
