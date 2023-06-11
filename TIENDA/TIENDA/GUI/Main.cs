@@ -46,7 +46,7 @@ namespace TIENDA.GUI
 
             if (permisos.Contains(Ventas.AccessibleName))
             {
-                General.GUI.DETALLE_VENTA.frmGestionDetalleVenta form1 = new General.GUI.DETALLE_VENTA.frmGestionDetalleVenta();
+                General.GUI.frmGestionVenta form1 = new General.GUI.frmGestionVenta();
                 form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }
@@ -132,7 +132,7 @@ namespace TIENDA.GUI
 
             if (permisos.Contains(PedidosProveedores.AccessibleName))
             {
-                General.GUI.DETALLE_PEDIDO.frmGestionDetallePedido form1 = new General.GUI.DETALLE_PEDIDO.frmGestionDetallePedido();
+                General.GUI.frmGestionPedidoProveedor form1 = new General.GUI.frmGestionPedidoProveedor();
                 form1.Show();
                 // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
             }

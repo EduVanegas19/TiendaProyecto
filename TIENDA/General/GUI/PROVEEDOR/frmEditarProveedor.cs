@@ -55,7 +55,6 @@ namespace General.GUI.PROVEEDOR
             prov.Nombre = txtProveedor.Text;
             prov.NumeroDocumento = txtNumDoc.Text;
             prov.EsLaboratorio = checkLab.Checked.ToString();
-            prov.Estado = estado.ToString();
             //Identificar la accion a realizar
             if (txtId.TextLength > 0)
             {

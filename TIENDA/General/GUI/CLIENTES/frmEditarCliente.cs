@@ -120,6 +120,7 @@ namespace General.GUI.CLIENTES
             cli.Caserio = txtCaserio.Text;
             cli.CodigoPostal = txtCodigoPostal.Text;
             cli.IdMunicipio = txtIdMunicipio.Text;
+            cli.IdDireccion = txtIdDirec.Text;
             //Identificar la accion a realizar
             if (txtIdClient.TextLength > 0)
             {

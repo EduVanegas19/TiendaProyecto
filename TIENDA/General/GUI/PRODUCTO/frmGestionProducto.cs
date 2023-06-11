@@ -107,5 +107,10 @@ namespace General.GUI.PRODUCTO
                 f.ShowDialog();
             }
         }
+
+        private void cbbOrdenar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

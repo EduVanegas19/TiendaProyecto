@@ -215,7 +215,6 @@ CREATE PROCEDURE AgregarClientes
 @identificacion VARCHAR(45),
 @nombre VARCHAR(100),
 @credito FLOAT,
-@estado BIT,
 @numero_casa VARCHAR(10),
 @pasaje_poligono VARCHAR(50),
 @calle VARCHAR(50),
@@ -226,10 +225,9 @@ CREATE PROCEDURE AgregarClientes
 @id_municipio BIGINT
 AS
 BEGIN
-SET NOCOUNT ON
 DECLARE @id_direccion BIGINT
-INSERT INTO direcciones(numero_casa,pasaje_poligono,calle,colonia,canton,caserio,codigo_postal,id_municipio)
-VALUES (@numero_casa,@pasaje_poligono,@calle,@colonia,@canton,@caserio,@codigo_postal,@id_municipio)
+INSERT INTO direcciones(numero_casa,pasaje_poligono,calle,colonia,canton,caserio,codigo_postal,estado,id_municipio)
+VALUES (@numero_casa,@pasaje_poligono,@calle,@colonia,@canton,@caserio,@codigo_postal,1,@id_municipio)
 
 SET @id_direccion = SCOPE_IDENTITY()
 
@@ -239,12 +237,11 @@ END
 
 --MODIFICAR CLIENTES--
 
-CREATE PROCEDURE ModificarClientes
+ALTER PROCEDURE ModificarClientes
 @id_cliente BIGINT,
 @identificacion VARCHAR(45),
 @nombre VARCHAR(100),
 @credito FLOAT,
-@estado BIT,
 @numero_casa VARCHAR(10),
 @pasaje_poligono VARCHAR(50),
 @calle VARCHAR(50),
@@ -252,15 +249,16 @@ CREATE PROCEDURE ModificarClientes
 @canton VARCHAR(50),
 @caserio VARCHAR(50),
 @codigo_postal VARCHAR(10),
-@id_municipio BIGINT
+@id_municipio BIGINT,
+@id_direcccion BIGINT
 AS
 BEGIN
 UPDATE clientes
-SET identificacion=@identificacion,nombre=@nombre,credito=@credito,estado=1
+SET identificacion=@identificacion,nombre=@nombre,credito=@credito,estado=1,id_direccion=@id_direcccion
 WHERE id_cliente=@id_cliente
 
 UPDATE direcciones
-SET numero_casa=@numero_casa,pasaje_poligono=@pasaje_poligono,calle=@calle,colonia=@colonia,canton=@canton,caserio=@caserio,codigo_postal=@codigo_postal,id_municipio=@id_municipio
+SET numero_casa=@numero_casa,pasaje_poligono=@pasaje_poligono,calle=@calle,colonia=@colonia,canton=@canton,caserio=@caserio,codigo_postal=@codigo_postal,estado=1,id_municipio=@id_municipio
 WHERE id_direccion = (SELECT id_direccion FROM clientes WHERE id_cliente=@id_cliente)
 
 END
@@ -398,6 +396,49 @@ FROM pedidos_proveedor
 WHERE numero_documento = @numero_documento AND estado = 1
 END
 
+-- LISTAR PEDIDO
+GO
+CREATE PROCEDURE LISTARPEDIDOOPCION
+@opcion INT
+AS
+BEGIN
+    IF @opcion = 1
+    BEGIN
+        --ListarPEDIDO ultimo agregado
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+		FROM pedidos_proveedor pp
+		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
+		WHERE pp.estado=1
+		ORDER BY id_pedido DESC
+    END
+    ELSE IF @opcion = 2
+    BEGIN
+        --ListarPEDIDO primero agregado
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+		FROM pedidos_proveedor pp
+		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
+		WHERE pp.estado=1
+		ORDER BY id_pedido ASC
+    END
+    ELSE IF @opcion = 3
+    BEGIN
+        --Listar PEDIDO a-z
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+		FROM pedidos_proveedor pp
+		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
+		WHERE pp.estado=1
+		ORDER BY pp.id_proveedor ASC
+    END
+    ELSE IF @opcion = 4
+    BEGIN
+        --Listar PEDIDO z-a
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+		FROM pedidos_proveedor pp
+		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
+		WHERE pp.estado=1
+		ORDER BY pp.id_proveedor DESC
+    END
+END
 ------------------------------------------------------
 ------------------------------------------------------
 --PARTE DE EDÚ - APLICADO A EL ENTORNO DE USUARIOS 
@@ -1014,7 +1055,6 @@ CREATE PROCEDURE AgregarEmpleados
 	@id_municipio BIGINT
 AS
 BEGIN
-SET NOCOUNT ON
 DECLARE @id_direccion BIGINT
 INSERT INTO direcciones(numero_casa,pasaje_poligono,calle,colonia,canton,caserio,codigo_postal,id_municipio)
 VALUES (@numero_casa,@pasaje_poligono,@calle,@colonia,@canton,@caserio,@codigo_postal,@id_municipio)

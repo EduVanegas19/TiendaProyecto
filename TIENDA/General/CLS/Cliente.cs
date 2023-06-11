@@ -20,6 +20,7 @@ namespace General.CLS
         String _Caserio;
         String _CodigoPostal;
         String _IdMunicipio;
+        String _IdDireccion;
 
         public string NumeroCasa { get => _NumeroCasa; set => _NumeroCasa = value; }
         public string PasajePoligono { get => _PasajePoligono; set => _PasajePoligono = value; }
@@ -33,6 +34,7 @@ namespace General.CLS
         public string Identificacion { get => _Identificacion; set => _Identificacion = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
         public string Credito { get => _Credito; set => _Credito = value; }
+        public string IdDireccion { get => _IdDireccion; set => _IdDireccion = value; }
 
         //CRUD
         public Boolean Insertar()
@@ -63,7 +65,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarClientes " + _IdCliente + ", '" + _Identificacion + "', '" + _Nombre + "', " + _Credito + ",'" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "'," + _IdMunicipio + ";";
+                Sentencia = @"exec ModificarClientes " + _IdCliente + ", '" + _Identificacion + "', '" + _Nombre + "', " + _Credito + ",'" + _NumeroCasa + "','" + _PasajePoligono + "','" + _Calle + "','" + _Colonia + "','" + _Canton + "','" + _Caserio + "','" + _CodigoPostal + "'," + _IdMunicipio + "," + _IdDireccion + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)

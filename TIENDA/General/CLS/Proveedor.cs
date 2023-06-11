@@ -12,13 +12,11 @@ namespace General.CLS
         String _Nombre;
         String _NumeroDocumento;
         String _EsLaboratorio;
-        String _Estado;
 
         public string IdProveedor { get => _IdProveedor; set => _IdProveedor = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
         public string NumeroDocumento { get => _NumeroDocumento; set => _NumeroDocumento = value; }
         public string EsLaboratorio { get => _EsLaboratorio; set => _EsLaboratorio = value; }
-        public string Estado { get => _Estado; set => _Estado = value; }
 
         //CRUD
         public Boolean Insertar()
@@ -28,7 +26,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec AgregarProveedor '" + _Nombre + "', '" + _NumeroDocumento + "', " + _EsLaboratorio + ", " + _Estado + ";";
+                Sentencia = @"exec AgregarProveedor '" + _Nombre + "', '" + _NumeroDocumento + "', " + _EsLaboratorio + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
@@ -49,7 +47,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"exec ModificarProveedor " + _IdProveedor + ", '" + _Nombre + "', '" + _NumeroDocumento + "', " + _EsLaboratorio + ", " + _Estado + ";";
+                Sentencia = @"exec ModificarProveedor " + _IdProveedor + ", '" + _Nombre + "', '" + _NumeroDocumento + "', " + _EsLaboratorio + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
