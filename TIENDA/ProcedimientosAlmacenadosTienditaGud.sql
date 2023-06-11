@@ -1183,6 +1183,61 @@ BEGIN
 	
 END
 
+-- LISTAR VENTA
+GO
+CREATE PROCEDURE LISTARVENTAOPCION
+@opcion INT
+AS
+BEGIN
+    IF @opcion = 1
+    BEGIN
+        --ListarPEDIDO ultimo agregado
+        SELECT pp.id_factura, pp.fecha, pp.descripcion, pp.numero_documento, pp.monto_total, pp.cantidad_productos,
+        pp.monto_cliente, pp.cambio, s.tipo_pago, CONCAT(p.nombre, ' ', p.apellido) AS NombreCompleto, c.nombre
+        FROM facturas pp
+        LEFT JOIN empleados p ON pp.id_empleado = p.id_empleado
+        LEFT JOIN tipo_pagos s ON pp.id_tipopago = s.id_tipopago
+        LEFT JOIN clientes c ON pp.id_cliente = c.id_cliente
+        WHERE pp.estado=1
+        ORDER BY pp.id_factura DESC
+    END
+    ELSE IF @opcion = 2
+    BEGIN
+        SELECT pp.id_factura, pp.fecha, pp.descripcion, pp.numero_documento, pp.monto_total, pp.cantidad_productos,
+        pp.monto_cliente, pp.cambio, s.tipo_pago, CONCAT(p.nombre, ' ', p.apellido) AS NombreCompleto, c.nombre
+        FROM facturas pp
+        LEFT JOIN empleados p ON pp.id_empleado = p.id_empleado
+        LEFT JOIN tipo_pagos s ON pp.id_tipopago = s.id_tipopago
+        LEFT JOIN clientes c ON pp.id_cliente = c.id_cliente
+        WHERE pp.estado=1
+        ORDER BY pp.id_factura ASC
+    END
+    ELSE IF @opcion = 3
+    BEGIN
+        SELECT pp.id_factura, pp.fecha, pp.descripcion, pp.numero_documento, pp.monto_total, pp.cantidad_productos,
+        pp.monto_cliente, pp.cambio, s.tipo_pago, CONCAT(p.nombre, ' ', p.apellido) AS NombreCompleto, c.nombre
+        FROM facturas pp
+        LEFT JOIN empleados p ON pp.id_empleado = p.id_empleado
+        LEFT JOIN tipo_pagos s ON pp.id_tipopago = s.id_tipopago
+        LEFT JOIN clientes c ON pp.id_cliente = c.id_cliente
+        WHERE pp.estado=1
+        ORDER BY pp.fecha DESC
+    END
+    ELSE IF @opcion = 4
+    BEGIN
+        --Listar PEDIDO z-a
+        SELECT pp.id_factura, pp.fecha, pp.descripcion, pp.numero_documento, pp.monto_total, pp.cantidad_productos,
+        pp.monto_cliente, pp.cambio, s.tipo_pago, CONCAT(p.nombre, ' ', p.apellido) AS NombreCompleto, c.nombre
+        FROM facturas pp
+        LEFT JOIN empleados p ON pp.id_empleado = p.id_empleado
+        LEFT JOIN tipo_pagos s ON pp.id_tipopago = s.id_tipopago
+        LEFT JOIN clientes c ON pp.id_cliente = c.id_cliente
+        WHERE pp.estado=1
+        ORDER BY pp.fecha ASC
+    END
+END
+
+EXEC LISTARVENTAOPCION 1
 ----------------------------------------------------
 GO
 CREATE PROCEDURE AgregarFactura
