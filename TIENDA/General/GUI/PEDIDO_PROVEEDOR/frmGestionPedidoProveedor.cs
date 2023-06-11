@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SessionManager;
 
 namespace General.GUI
 {
     public partial class frmGestionPedidoProveedor : Form
     {
+        //Le decimos que cargue datos despues de cerrar el frmEditor
+        private void FormEditor_DataUpdated(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
         public frmGestionPedidoProveedor()
         {
             InitializeComponent();
@@ -19,13 +25,29 @@ namespace General.GUI
 
         private void CargarDatos()
         {
-            DataTable direcciones = new DataTable();
+            DataTable pedido_proveedor = new DataTable();
             int pId = 2;
             try
             {
-                direcciones = DataManager.DBConsultas.LISTARDIRECCIONOPCION(pId);
-                dtgDireccion.AutoGenerateColumns = false;
-                dtgDireccion.DataSource = direcciones;
+                pedido_proveedor = DataManager.DBConsultas.LISTARPEDIDOOPCION(pId);
+                dtgPedidoProveedor.AutoGenerateColumns = false;
+                dtgPedidoProveedor.DataSource = pedido_proveedor;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private void CargarOrden()
+        {
+            DataTable pedido_proveedor = new DataTable();
+            //le digo que dependiendo de la opcion que se seleccione se muestre en orden correspondiente
+            int pId = cbbOrdenar.SelectedIndex + 1;
+            try
+            {
+                pedido_proveedor = DataManager.DBConsultas.LISTARPEDIDOOPCION(pId);
+                dtgPedidoProveedor.AutoGenerateColumns = false;
+                dtgPedidoProveedor.DataSource = pedido_proveedor;
             }
             catch (Exception)
             {
@@ -34,7 +56,9 @@ namespace General.GUI
         }
         private void frmGestionPedidoProveedor_Load(object sender, EventArgs e)
         {
-
+            CargarDatos();
+            lblUsuario.Text = Session.Instancia.usuario;
+            lblRol.Text = Session.Instancia.rol;
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -59,13 +83,15 @@ namespace General.GUI
             {
                 bool isVisible = false;
 
-                DataGridViewCell nameCell = row.Cells["numero_documento"]; // Ajusta el nombre de la columna según tu caso
+                DataGridViewCell nameCell = row.Cells["proveedor"]; // Ajusta el nombre de la columna según tu caso
+                DataGridViewCell codeCell = row.Cells["numero_documento"]; // Ajusta el nombre de la columna según tu caso
 
-                if (nameCell != null && nameCell.Value != null)
+                if (nameCell != null && nameCell.Value != null && codeCell != null && codeCell.Value != null)
                 {
                     string nameCellValue = nameCell.Value.ToString().ToLower();
+                    string codeCellValue = codeCell.Value.ToString().ToLower();
 
-                    if (nameCellValue.Contains(searchText) )
+                    if (nameCellValue.Contains(searchText) || codeCellValue.Contains(searchText))
                     {
                         isVisible = true;
                     }
@@ -78,14 +104,23 @@ namespace General.GUI
             dtgPedidoProveedor.BindingContext[dtgPedidoProveedor.DataSource].ResumeBinding();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void cbbOrdenar_SelectedValueChanged(object sender, EventArgs e)
         {
-
+            CargarOrden();
         }
-
         private void cbbOrdenar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            DETALLE_PEDIDO.frmGestionDetallePedido detalle_pedido = new DETALLE_PEDIDO.frmGestionDetallePedido();
+            detalle_pedido.ShowDialog();
         }
     }
 }

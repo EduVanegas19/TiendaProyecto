@@ -398,47 +398,49 @@ END
 
 -- LISTAR PEDIDO
 GO
-CREATE PROCEDURE LISTARPEDIDOOPCION
+ALTER PROCEDURE LISTARPEDIDOOPCION
 @opcion INT
 AS
 BEGIN
     IF @opcion = 1
     BEGIN
         --ListarPEDIDO ultimo agregado
-        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total, p.proveedor
 		FROM pedidos_proveedor pp
 		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
 		WHERE pp.estado=1
-		ORDER BY id_pedido DESC
+		ORDER BY pp.id_pedido DESC
     END
     ELSE IF @opcion = 2
     BEGIN
         --ListarPEDIDO primero agregado
-        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total, p.proveedor
 		FROM pedidos_proveedor pp
 		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
 		WHERE pp.estado=1
-		ORDER BY id_pedido ASC
+		ORDER BY pp.id_pedido ASC
     END
     ELSE IF @opcion = 3
     BEGIN
         --Listar PEDIDO a-z
-        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total, p.proveedor
 		FROM pedidos_proveedor pp
 		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
 		WHERE pp.estado=1
-		ORDER BY pp.id_proveedor ASC
+		ORDER BY p.proveedor ASC
     END
     ELSE IF @opcion = 4
     BEGIN
         --Listar PEDIDO z-a
-        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total
+        SELECT pp.id_pedido, pp.numero_documento, pp.fecha_registro, pp.monto_total, p.proveedor
 		FROM pedidos_proveedor pp
 		LEFT JOIN proveedores p ON pp.id_proveedor = p.id_proveedor
 		WHERE pp.estado=1
-		ORDER BY pp.id_proveedor DESC
+		ORDER BY p.proveedor DESC
     END
 END
+
+EXEC LISTARPEDIDOOPCION 4
 ------------------------------------------------------
 ------------------------------------------------------
 --PARTE DE EDÚ - APLICADO A EL ENTORNO DE USUARIOS 

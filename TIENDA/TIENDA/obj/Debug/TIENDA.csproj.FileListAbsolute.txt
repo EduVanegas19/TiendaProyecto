@@ -80,6 +80,7 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.pdb
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Main.resources
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\bin\Debug\TIENDA.exe.config
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\bin\Debug\TIENDA.exe
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\bin\Debug\TIENDA.pdb
@@ -99,7 +100,6 @@ C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\bin\Debug\Reporte.
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\bin\Debug\SessionManager.pdb
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.AssemblyReference.cache
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Login.resources
-C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Main.resources
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Splash.resources
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.Properties.Resources.resources
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.GenerateResource.cache
