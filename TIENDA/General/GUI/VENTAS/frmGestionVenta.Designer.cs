@@ -36,11 +36,6 @@ namespace General.GUI
             this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgPedidoProveedor = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,6 +46,17 @@ namespace General.GUI
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedidoProveedor)).BeginInit();
@@ -124,63 +130,24 @@ namespace General.GUI
             this.dtgPedidoProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.numero_documento,
-            this.proveedor,
+            this.fecha_registro,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dtgPedidoProveedor.Location = new System.Drawing.Point(10, 57);
+            this.monto_total,
+            this.cantidad_productos,
+            this.monto_cliente,
+            this.Cambio,
+            this.tipo_pago,
+            this.empleado,
+            this.cliente});
+            this.dtgPedidoProveedor.Location = new System.Drawing.Point(30, 53);
             this.dtgPedidoProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.dtgPedidoProveedor.MultiSelect = false;
             this.dtgPedidoProveedor.Name = "dtgPedidoProveedor";
             this.dtgPedidoProveedor.ReadOnly = true;
             this.dtgPedidoProveedor.RowHeadersWidth = 51;
             this.dtgPedidoProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgPedidoProveedor.Size = new System.Drawing.Size(1039, 430);
+            this.dtgPedidoProveedor.Size = new System.Drawing.Size(1039, 433);
             this.dtgPedidoProveedor.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_pedido";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 175;
-            // 
-            // numero_documento
-            // 
-            this.numero_documento.DataPropertyName = "numero_documento";
-            this.numero_documento.HeaderText = "N° Documento";
-            this.numero_documento.MinimumWidth = 6;
-            this.numero_documento.Name = "numero_documento";
-            this.numero_documento.ReadOnly = true;
-            this.numero_documento.Width = 200;
-            // 
-            // proveedor
-            // 
-            this.proveedor.DataPropertyName = "proveedor";
-            this.proveedor.HeaderText = "Proveedor";
-            this.proveedor.MinimumWidth = 6;
-            this.proveedor.Name = "proveedor";
-            this.proveedor.ReadOnly = true;
-            this.proveedor.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "fecha_registro";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha Registro";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "monto_total";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Monto Total";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 200;
             // 
             // label2
             // 
@@ -283,6 +250,99 @@ namespace General.GUI
             this.lblRol.Size = new System.Drawing.Size(36, 24);
             this.lblRol.Text = "ROL";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_venta";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 175;
+            // 
+            // numero_documento
+            // 
+            this.numero_documento.DataPropertyName = "numero_documento";
+            this.numero_documento.HeaderText = "N° Documento";
+            this.numero_documento.MinimumWidth = 6;
+            this.numero_documento.Name = "numero_documento";
+            this.numero_documento.ReadOnly = true;
+            this.numero_documento.Width = 200;
+            // 
+            // fecha_registro
+            // 
+            this.fecha_registro.DataPropertyName = "fecha_registro";
+            this.fecha_registro.HeaderText = "Fecha de Registro";
+            this.fecha_registro.MinimumWidth = 6;
+            this.fecha_registro.Name = "fecha_registro";
+            this.fecha_registro.ReadOnly = true;
+            this.fecha_registro.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "descripcion";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // monto_total
+            // 
+            this.monto_total.DataPropertyName = "monto_total";
+            this.monto_total.HeaderText = "Monto Total";
+            this.monto_total.MinimumWidth = 6;
+            this.monto_total.Name = "monto_total";
+            this.monto_total.ReadOnly = true;
+            this.monto_total.Width = 200;
+            // 
+            // cantidad_productos
+            // 
+            this.cantidad_productos.HeaderText = "Cantidad";
+            this.cantidad_productos.MinimumWidth = 6;
+            this.cantidad_productos.Name = "cantidad_productos";
+            this.cantidad_productos.ReadOnly = true;
+            this.cantidad_productos.Width = 125;
+            // 
+            // monto_cliente
+            // 
+            this.monto_cliente.HeaderText = "Monto Recibido";
+            this.monto_cliente.MinimumWidth = 6;
+            this.monto_cliente.Name = "monto_cliente";
+            this.monto_cliente.ReadOnly = true;
+            this.monto_cliente.Width = 125;
+            // 
+            // Cambio
+            // 
+            this.Cambio.HeaderText = "Cambio";
+            this.Cambio.MinimumWidth = 6;
+            this.Cambio.Name = "Cambio";
+            this.Cambio.ReadOnly = true;
+            this.Cambio.Width = 125;
+            // 
+            // tipo_pago
+            // 
+            this.tipo_pago.HeaderText = "Tipo de Pago";
+            this.tipo_pago.MinimumWidth = 6;
+            this.tipo_pago.Name = "tipo_pago";
+            this.tipo_pago.ReadOnly = true;
+            this.tipo_pago.Width = 125;
+            // 
+            // empleado
+            // 
+            this.empleado.HeaderText = "Empleado";
+            this.empleado.MinimumWidth = 6;
+            this.empleado.Name = "empleado";
+            this.empleado.ReadOnly = true;
+            this.empleado.Width = 125;
+            // 
+            // cliente
+            // 
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.MinimumWidth = 6;
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            this.cliente.Width = 125;
+            // 
             // frmGestionVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,11 +379,6 @@ namespace General.GUI
         private System.Windows.Forms.ComboBox cbbOrdenar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtgPedidoProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero_documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Panel panel2;
@@ -334,5 +389,16 @@ namespace General.GUI
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero_documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_registro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_productos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cambio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_pago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
     }
 }
