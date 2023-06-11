@@ -7,14 +7,6 @@ C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\DataManager\obj\Debug\D
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.csproj.CopyComplete
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.dll
 C:\Users\LUIS\Documents\UNI\GITHUB\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.pdb
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\DataManager.dll
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\DataManager.pdb
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\System.Data.Common.dll
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\System.Data.SqlClient.dll
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.csproj.CoreCompileInputs.cache
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.csproj.CopyComplete
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.dll
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.pdb
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\bin\Debug\DataManager.dll
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\bin\Debug\DataManager.pdb
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\bin\Debug\System.Data.Common.dll
@@ -24,3 +16,12 @@ C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\Dat
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\DataManager.csproj.CopyComplete
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\DataManager.dll
 C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\DataManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\DataManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\DataManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\System.Data.Common.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\bin\Debug\System.Data.SqlClient.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.csproj.AssemblyReference.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.csproj.CoreCompileInputs.cache
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.csproj.CopyComplete
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\DataManager\obj\Debug\DataManager.pdb

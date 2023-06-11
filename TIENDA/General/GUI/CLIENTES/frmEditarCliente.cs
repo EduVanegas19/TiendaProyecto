@@ -52,11 +52,6 @@ namespace General.GUI.CLIENTES
 
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

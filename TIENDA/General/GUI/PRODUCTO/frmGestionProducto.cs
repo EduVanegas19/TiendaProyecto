@@ -112,5 +112,12 @@ namespace General.GUI.PRODUCTO
         {
 
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            Reporte.GUI.visorProducto f = new Reporte.GUI.visorProducto();
+            this.Close();
+            f.ShowDialog();
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace General.GUI.PRODUCTO
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnReporte = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@ namespace General.GUI.PRODUCTO
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +126,7 @@ namespace General.GUI.PRODUCTO
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.btnReporte);
             this.panel2.Location = new System.Drawing.Point(1144, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
@@ -190,16 +190,17 @@ namespace General.GUI.PRODUCTO
             this.btnSalir.TabIndex = 4;
             this.btnSalir.TabStop = false;
             // 
-            // pictureBox4
+            // btnReporte
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(13, 358);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(64, 60);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
+            this.btnReporte.Location = new System.Drawing.Point(13, 358);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(64, 60);
+            this.btnReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnReporte.TabIndex = 3;
+            this.btnReporte.TabStop = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // panel1
             // 
@@ -434,7 +435,7 @@ namespace General.GUI.PRODUCTO
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).EndInit();
@@ -456,7 +457,7 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox btnReporte;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbbOrdenar;
         private System.Windows.Forms.Label label3;
