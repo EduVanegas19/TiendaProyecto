@@ -31,148 +31,111 @@ namespace TIENDA.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Usuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.Ventas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Reportes = new System.Windows.Forms.ToolStripMenuItem();
-            this.Clientes = new System.Windows.Forms.ToolStripMenuItem();
-            this.Empleados = new System.Windows.Forms.ToolStripMenuItem();
-            this.Proveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.PedidosProveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.Productos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Direcciones = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPedidos = new System.Windows.Forms.Panel();
+            this.frmGestionReporte = new System.Windows.Forms.PictureBox();
+            this.frmGestionDetallePedido = new System.Windows.Forms.PictureBox();
+            this.frmGestionProveedor = new System.Windows.Forms.PictureBox();
+            this.frmGestionEmpleado = new System.Windows.Forms.PictureBox();
+            this.frmGestionCliente = new System.Windows.Forms.PictureBox();
+            this.btnVentas = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnVentas = new System.Windows.Forms.PictureBox();
-            this.btnClientes = new System.Windows.Forms.PictureBox();
-            this.btnEmpleados = new System.Windows.Forms.PictureBox();
-            this.btnProveedores = new System.Windows.Forms.PictureBox();
-            this.Pedidos = new System.Windows.Forms.PictureBox();
-            this.btnReportes = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPedidos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionDetallePedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVentas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pedidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReportes)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // btnPedidos
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Usuario,
-            this.Ventas,
-            this.Reportes,
-            this.Clientes,
-            this.Empleados,
-            this.Proveedores,
-            this.PedidosProveedores,
-            this.Productos,
-            this.Direcciones,
-            this.btnCerrarSesion,
-            this.btnSalir});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(901, 48);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.btnPedidos.BackColor = System.Drawing.Color.White;
+            this.btnPedidos.Controls.Add(this.frmGestionReporte);
+            this.btnPedidos.Controls.Add(this.frmGestionDetallePedido);
+            this.btnPedidos.Controls.Add(this.frmGestionProveedor);
+            this.btnPedidos.Controls.Add(this.frmGestionEmpleado);
+            this.btnPedidos.Controls.Add(this.frmGestionCliente);
+            this.btnPedidos.Controls.Add(this.btnVentas);
+            this.btnPedidos.Location = new System.Drawing.Point(0, 92);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(1228, 570);
+            this.btnPedidos.TabIndex = 13;
             // 
-            // Usuario
+            // frmGestionReporte
             // 
-            this.Usuario.AccessibleName = "frmGestionUsuario";
-            this.Usuario.Image = ((System.Drawing.Image)(resources.GetObject("Usuario.Image")));
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(73, 44);
-            this.Usuario.Text = "Usuario";
-            this.Usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Usuario.Click += new System.EventHandler(this.frmCrearUsuario_Click);
+            this.frmGestionReporte.Image = ((System.Drawing.Image)(resources.GetObject("frmGestionReporte.Image")));
+            this.frmGestionReporte.Location = new System.Drawing.Point(455, 275);
+            this.frmGestionReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.frmGestionReporte.Name = "frmGestionReporte";
+            this.frmGestionReporte.Size = new System.Drawing.Size(133, 123);
+            this.frmGestionReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmGestionReporte.TabIndex = 16;
+            this.frmGestionReporte.TabStop = false;
+            this.frmGestionReporte.Click += new System.EventHandler(this.frmGestionReporte_Click);
             // 
-            // Ventas
+            // frmGestionDetallePedido
             // 
-            this.Ventas.AccessibleName = "frmGestionVenta";
-            this.Ventas.Name = "Ventas";
-            this.Ventas.Size = new System.Drawing.Size(66, 44);
-            this.Ventas.Text = "Ventas";
-            this.Ventas.Click += new System.EventHandler(this.Ventas_Click);
+            this.frmGestionDetallePedido.Image = ((System.Drawing.Image)(resources.GetObject("frmGestionDetallePedido.Image")));
+            this.frmGestionDetallePedido.Location = new System.Drawing.Point(163, 275);
+            this.frmGestionDetallePedido.Margin = new System.Windows.Forms.Padding(4);
+            this.frmGestionDetallePedido.Name = "frmGestionDetallePedido";
+            this.frmGestionDetallePedido.Size = new System.Drawing.Size(133, 123);
+            this.frmGestionDetallePedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmGestionDetallePedido.TabIndex = 15;
+            this.frmGestionDetallePedido.TabStop = false;
+            this.frmGestionDetallePedido.Click += new System.EventHandler(this.frmGestionDetallePedido_Click);
             // 
-            // Reportes
+            // frmGestionProveedor
             // 
-            this.Reportes.AccessibleName = "frmGestionReporte";
-            this.Reportes.Name = "Reportes";
-            this.Reportes.Size = new System.Drawing.Size(82, 44);
-            this.Reportes.Text = "Reportes";
-            this.Reportes.Click += new System.EventHandler(this.Reportes_Click);
+            this.frmGestionProveedor.Image = ((System.Drawing.Image)(resources.GetObject("frmGestionProveedor.Image")));
+            this.frmGestionProveedor.Location = new System.Drawing.Point(751, 53);
+            this.frmGestionProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.frmGestionProveedor.Name = "frmGestionProveedor";
+            this.frmGestionProveedor.Size = new System.Drawing.Size(133, 123);
+            this.frmGestionProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmGestionProveedor.TabIndex = 14;
+            this.frmGestionProveedor.TabStop = false;
+            this.frmGestionProveedor.Click += new System.EventHandler(this.frmGestionProveedor_Click);
             // 
-            // Clientes
+            // frmGestionEmpleado
             // 
-            this.Clientes.AccessibleName = "frmGestionCliente";
-            this.Clientes.Name = "Clientes";
-            this.Clientes.Size = new System.Drawing.Size(75, 44);
-            this.Clientes.Text = "Clientes";
-            this.Clientes.Click += new System.EventHandler(this.Clientes_Click);
+            this.frmGestionEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("frmGestionEmpleado.Image")));
+            this.frmGestionEmpleado.Location = new System.Drawing.Point(455, 53);
+            this.frmGestionEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.frmGestionEmpleado.Name = "frmGestionEmpleado";
+            this.frmGestionEmpleado.Size = new System.Drawing.Size(133, 123);
+            this.frmGestionEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmGestionEmpleado.TabIndex = 13;
+            this.frmGestionEmpleado.TabStop = false;
+            this.frmGestionEmpleado.Click += new System.EventHandler(this.frmGestionEmpleado_Click);
             // 
-            // Empleados
+            // frmGestionCliente
             // 
-            this.Empleados.AccessibleName = "frmGestionEmpleado";
-            this.Empleados.Name = "Empleados";
-            this.Empleados.Size = new System.Drawing.Size(97, 44);
-            this.Empleados.Text = "Empleados";
-            this.Empleados.Click += new System.EventHandler(this.Empleados_Click);
+            this.frmGestionCliente.Image = ((System.Drawing.Image)(resources.GetObject("frmGestionCliente.Image")));
+            this.frmGestionCliente.Location = new System.Drawing.Point(163, 53);
+            this.frmGestionCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.frmGestionCliente.Name = "frmGestionCliente";
+            this.frmGestionCliente.Size = new System.Drawing.Size(133, 123);
+            this.frmGestionCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmGestionCliente.TabIndex = 12;
+            this.frmGestionCliente.TabStop = false;
+            this.frmGestionCliente.Click += new System.EventHandler(this.btnClientes_Click_1);
             // 
-            // Proveedores
+            // btnVentas
             // 
-            this.Proveedores.AccessibleName = "frmGestionProveedor";
-            this.Proveedores.Name = "Proveedores";
-            this.Proveedores.Size = new System.Drawing.Size(105, 44);
-            this.Proveedores.Text = "Proveedores";
-            this.Proveedores.Click += new System.EventHandler(this.Proveedores_Click);
-            // 
-            // PedidosProveedores
-            // 
-            this.PedidosProveedores.AccessibleName = "frmGestionPedidoProveedor";
-            this.PedidosProveedores.Name = "PedidosProveedores";
-            this.PedidosProveedores.Size = new System.Drawing.Size(161, 44);
-            this.PedidosProveedores.Text = "Pedidos Proveedores";
-            this.PedidosProveedores.Click += new System.EventHandler(this.PedidosProveedores_Click);
-            // 
-            // Productos
-            // 
-            this.Productos.AccessibleName = "frmGestionProducto";
-            this.Productos.Name = "Productos";
-            this.Productos.Size = new System.Drawing.Size(83, 44);
-            this.Productos.Text = "Producto";
-            this.Productos.Click += new System.EventHandler(this.Productos_Click);
-            // 
-            // Direcciones
-            // 
-            this.Direcciones.AccessibleName = "frmGestionDireccion";
-            this.Direcciones.Name = "Direcciones";
-            this.Direcciones.Size = new System.Drawing.Size(100, 44);
-            this.Direcciones.Text = "Direcciones";
-            this.Direcciones.Click += new System.EventHandler(this.Direcciones_Click);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(110, 44);
-            this.btnCerrarSesion.Text = "Cerrar Sesión";
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.AccessibleName = "btnSalir";
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(61, 44);
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
+            this.btnVentas.Location = new System.Drawing.Point(-137, -78);
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(133, 123);
+            this.btnVentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnVentas.TabIndex = 11;
+            this.btnVentas.TabStop = false;
             // 
             // statusStrip1
             // 
@@ -180,14 +143,13 @@ namespace TIENDA.GUI
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUsuario,
             this.lblRol});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 528);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 665);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(901, 30);
-            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Size = new System.Drawing.Size(1228, 30);
+            this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // lblUsuario
             // 
@@ -202,72 +164,13 @@ namespace TIENDA.GUI
             this.lblRol.Size = new System.Drawing.Size(36, 24);
             this.lblRol.Text = "ROL";
             // 
-            // btnVentas
+            // panel1
             // 
-            this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
-            this.btnVentas.Location = new System.Drawing.Point(60, 102);
-            this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(133, 123);
-            this.btnVentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVentas.TabIndex = 5;
-            this.btnVentas.TabStop = false;
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.Location = new System.Drawing.Point(245, 102);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(133, 123);
-            this.btnClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClientes.TabIndex = 6;
-            this.btnClientes.TabStop = false;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
-            this.btnEmpleados.Location = new System.Drawing.Point(436, 102);
-            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(133, 123);
-            this.btnEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEmpleados.TabIndex = 7;
-            this.btnEmpleados.TabStop = false;
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
-            this.btnProveedores.Location = new System.Drawing.Point(621, 102);
-            this.btnProveedores.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(133, 123);
-            this.btnProveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnProveedores.TabIndex = 8;
-            this.btnProveedores.TabStop = false;
-            // 
-            // Pedidos
-            // 
-            this.Pedidos.Image = ((System.Drawing.Image)(resources.GetObject("Pedidos.Image")));
-            this.Pedidos.Location = new System.Drawing.Point(171, 332);
-            this.Pedidos.Margin = new System.Windows.Forms.Padding(4);
-            this.Pedidos.Name = "Pedidos";
-            this.Pedidos.Size = new System.Drawing.Size(133, 123);
-            this.Pedidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Pedidos.TabIndex = 9;
-            this.Pedidos.TabStop = false;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
-            this.btnReportes.Location = new System.Drawing.Point(545, 332);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(133, 123);
-            this.btnReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReportes.TabIndex = 10;
-            this.btnReportes.TabStop = false;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1228, 95);
+            this.panel1.TabIndex = 15;
             // 
             // Main
             // 
@@ -277,35 +180,29 @@ namespace TIENDA.GUI
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(901, 558);
-            this.Controls.Add(this.btnReportes);
-            this.Controls.Add(this.Pedidos);
-            this.Controls.Add(this.btnProveedores);
-            this.Controls.Add(this.btnEmpleados);
-            this.Controls.Add(this.btnClientes);
-            this.Controls.Add(this.btnVentas);
+            this.ClientSize = new System.Drawing.Size(1228, 695);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.btnPedidos);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.btnPedidos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionDetallePedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmGestionCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVentas)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVentas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,26 +211,16 @@ namespace TIENDA.GUI
         #endregion
 
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem Usuario;
-        private System.Windows.Forms.ToolStripMenuItem Ventas;
-        private System.Windows.Forms.ToolStripMenuItem Reportes;
+        private System.Windows.Forms.Panel btnPedidos;
+        private System.Windows.Forms.PictureBox frmGestionReporte;
+        private System.Windows.Forms.PictureBox frmGestionDetallePedido;
+        private System.Windows.Forms.PictureBox frmGestionProveedor;
+        private System.Windows.Forms.PictureBox frmGestionEmpleado;
+        private System.Windows.Forms.PictureBox frmGestionCliente;
+        private System.Windows.Forms.PictureBox btnVentas;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
-        private System.Windows.Forms.ToolStripMenuItem Clientes;
-        private System.Windows.Forms.ToolStripMenuItem Empleados;
-        private System.Windows.Forms.ToolStripMenuItem Proveedores;
-        private System.Windows.Forms.ToolStripMenuItem PedidosProveedores;
-        private System.Windows.Forms.ToolStripMenuItem btnSalir;
-        private System.Windows.Forms.ToolStripMenuItem btnCerrarSesion;
-        private System.Windows.Forms.PictureBox btnVentas;
-        private System.Windows.Forms.PictureBox btnClientes;
-        private System.Windows.Forms.PictureBox btnEmpleados;
-        private System.Windows.Forms.PictureBox btnProveedores;
-        private System.Windows.Forms.PictureBox Pedidos;
-        private System.Windows.Forms.PictureBox btnReportes;
-        private System.Windows.Forms.ToolStripMenuItem Productos;
-        private System.Windows.Forms.ToolStripMenuItem Direcciones;
+        private System.Windows.Forms.Panel panel1;
     }
 }
