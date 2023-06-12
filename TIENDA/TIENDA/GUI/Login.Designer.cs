@@ -45,12 +45,11 @@ namespace TIENDA.GUI
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsuario.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuario.Location = new System.Drawing.Point(94, 109);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(125, 134);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(59, 18);
+            this.lblUsuario.Size = new System.Drawing.Size(74, 20);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Usuario";
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
@@ -59,12 +58,11 @@ namespace TIENDA.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(93, 206);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(124, 254);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 18);
+            this.label2.Size = new System.Drawing.Size(105, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña";
             // 
@@ -72,20 +70,20 @@ namespace TIENDA.GUI
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.White;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(97, 150);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsuario.Location = new System.Drawing.Point(129, 185);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(168, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(223, 26);
             this.txtUsuario.TabIndex = 4;
             // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.White;
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(96, 245);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContraseña.Location = new System.Drawing.Point(128, 302);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(168, 22);
+            this.txtContraseña.Size = new System.Drawing.Size(223, 26);
             this.txtContraseña.TabIndex = 5;
             // 
             // lblMensaje
@@ -93,12 +91,11 @@ namespace TIENDA.GUI
             this.lblMensaje.BackColor = System.Drawing.Color.Transparent;
             this.lblMensaje.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMensaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblMensaje.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Black;
-            this.lblMensaje.Location = new System.Drawing.Point(97, 40);
-            this.lblMensaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMensaje.Location = new System.Drawing.Point(129, 49);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(167, 41);
+            this.lblMensaje.Size = new System.Drawing.Size(223, 50);
             this.lblMensaje.TabIndex = 6;
             this.lblMensaje.Text = "Ingrese sus datos ";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,9 +105,10 @@ namespace TIENDA.GUI
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(200, 309);
+            this.pictureBox1.Location = new System.Drawing.Point(267, 380);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(87, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -120,9 +118,10 @@ namespace TIENDA.GUI
             // 
             this.pcSalir.BackColor = System.Drawing.Color.Transparent;
             this.pcSalir.Image = ((System.Drawing.Image)(resources.GetObject("pcSalir.Image")));
-            this.pcSalir.Location = new System.Drawing.Point(31, 449);
+            this.pcSalir.Location = new System.Drawing.Point(41, 553);
+            this.pcSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcSalir.Name = "pcSalir";
-            this.pcSalir.Size = new System.Drawing.Size(85, 33);
+            this.pcSalir.Size = new System.Drawing.Size(113, 41);
             this.pcSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcSalir.TabIndex = 12;
             this.pcSalir.TabStop = false;
@@ -130,12 +129,12 @@ namespace TIENDA.GUI
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(376, 519);
+            this.ClientSize = new System.Drawing.Size(501, 639);
             this.Controls.Add(this.pcSalir);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblMensaje);
@@ -144,7 +143,7 @@ namespace TIENDA.GUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesión";

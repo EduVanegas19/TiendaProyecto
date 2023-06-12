@@ -79,11 +79,11 @@ namespace General.GUI
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUsuario,
             this.lblRol});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 466);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 573);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(908, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1211, 30);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -91,22 +91,22 @@ namespace General.GUI
             // 
             this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(60, 19);
+            this.lblUsuario.Size = new System.Drawing.Size(75, 24);
             this.lblUsuario.Text = "USUARIO";
             // 
             // lblRol
             // 
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(29, 19);
+            this.lblRol.Size = new System.Drawing.Size(36, 24);
             this.lblRol.Text = "ROL";
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.Location = new System.Drawing.Point(0, 1);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(908, 54);
+            this.panel3.Size = new System.Drawing.Size(1211, 66);
             this.panel3.TabIndex = 10;
             // 
             // panel2
@@ -118,17 +118,19 @@ namespace General.GUI
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(831, 58);
+            this.panel2.Location = new System.Drawing.Point(1108, 71);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(76, 404);
+            this.panel2.Size = new System.Drawing.Size(101, 500);
             this.panel2.TabIndex = 9;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 246);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 328);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -136,9 +138,10 @@ namespace General.GUI
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(11, 17);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 21);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(50, 50);
+            this.btnAgregar.Size = new System.Drawing.Size(67, 62);
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.TabStop = false;
@@ -147,9 +150,10 @@ namespace General.GUI
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(11, 97);
+            this.btnEditar.Location = new System.Drawing.Point(15, 119);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(50, 50);
+            this.btnEditar.Size = new System.Drawing.Size(67, 62);
             this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEditar.TabIndex = 1;
             this.btnEditar.TabStop = false;
@@ -158,9 +162,10 @@ namespace General.GUI
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(11, 169);
+            this.btnEliminar.Location = new System.Drawing.Point(15, 208);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
+            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.TabStop = false;
@@ -169,9 +174,10 @@ namespace General.GUI
             // btnSalir
             // 
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(15, 323);
+            this.btnSalir.Location = new System.Drawing.Point(20, 398);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(50, 47);
+            this.btnSalir.Size = new System.Drawing.Size(67, 58);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 4;
             this.btnSalir.TabStop = false;
@@ -186,9 +192,10 @@ namespace General.GUI
             this.panel1.Controls.Add(this.dtgCliente);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(2, 58);
+            this.panel1.Location = new System.Drawing.Point(3, 71);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(830, 406);
+            this.panel1.Size = new System.Drawing.Size(1107, 500);
             this.panel1.TabIndex = 8;
             // 
             // cbbOrdenar
@@ -199,10 +206,10 @@ namespace General.GUI
             "Primero Agregado",
             "A - Z",
             "Z - A"});
-            this.cbbOrdenar.Location = new System.Drawing.Point(710, 17);
-            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbOrdenar.Location = new System.Drawing.Point(947, 21);
+            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbOrdenar.Name = "cbbOrdenar";
-            this.cbbOrdenar.Size = new System.Drawing.Size(92, 21);
+            this.cbbOrdenar.Size = new System.Drawing.Size(121, 24);
             this.cbbOrdenar.TabIndex = 14;
             this.cbbOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbbBuscar_SelectedIndexChanged);
             this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbBuscar_SelectedValueChanged);
@@ -211,11 +218,10 @@ namespace General.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(615, 17);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(820, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 18);
+            this.label3.Size = new System.Drawing.Size(116, 20);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ordenar por:";
             // 
@@ -243,13 +249,14 @@ namespace General.GUI
             this.municipio,
             this.id_departamento,
             this.estado});
-            this.dtgCliente.Location = new System.Drawing.Point(8, 46);
+            this.dtgCliente.Location = new System.Drawing.Point(11, 57);
+            this.dtgCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgCliente.MultiSelect = false;
             this.dtgCliente.Name = "dtgCliente";
             this.dtgCliente.ReadOnly = true;
             this.dtgCliente.RowHeadersWidth = 51;
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(815, 349);
+            this.dtgCliente.Size = new System.Drawing.Size(1087, 430);
             this.dtgCliente.TabIndex = 0;
             this.dtgCliente.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellContentDoubleClick);
             // 
@@ -410,33 +417,37 @@ namespace General.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 17);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 18);
+            this.label2.Size = new System.Drawing.Size(385, 20);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Digite aqui para buscar:";
+            this.label2.Text = "Digite aqui para buscar Nombre o Municipio:";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(174, 15);
+            this.txtBuscar.Location = new System.Drawing.Point(403, 21);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(118, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
             this.txtBuscar.TabIndex = 6;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // frmGestionCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(908, 490);
+            this.ClientSize = new System.Drawing.Size(1211, 603);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGestionCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Cliente";
             this.Load += new System.EventHandler(this.frmGestionCliente_Load);
             this.statusStrip1.ResumeLayout(false);

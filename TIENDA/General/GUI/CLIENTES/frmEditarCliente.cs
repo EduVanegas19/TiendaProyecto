@@ -28,7 +28,7 @@ namespace General.GUI.CLIENTES
                 btnEditar.Visible = false;
                 btnEliminar.Visible = false;
 
-                lblVisor.Text = "NUEVO PRODUCTO";
+                lblVisor.Text = "NUEVO CLIENTE";
             }
             else
             {
@@ -95,7 +95,7 @@ namespace General.GUI.CLIENTES
             btnGuardar.Visible = true;
             //ChecKbox
 
-            lblVisor.Text = "EDICION PRODUCTO";
+            lblVisor.Text = "MODO EDICION";
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
