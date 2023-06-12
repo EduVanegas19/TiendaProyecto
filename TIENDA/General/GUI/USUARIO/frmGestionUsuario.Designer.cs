@@ -34,13 +34,14 @@ namespace General.GUI
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.frmCrearReporte = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
-            this.btnReporte = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtgvUsuario = new System.Windows.Forms.DataGridView();
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,21 +52,17 @@ namespace General.GUI
             this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbOrdenar = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmCrearReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUsuario)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -84,6 +81,7 @@ namespace General.GUI
             // 
             // lblUsuario
             // 
+            this.lblUsuario.BackColor = System.Drawing.Color.White;
             this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(75, 24);
@@ -91,29 +89,43 @@ namespace General.GUI
             // 
             // lblRol
             // 
+            this.lblRol.BackColor = System.Drawing.Color.White;
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(36, 24);
             this.lblRol.Text = "ROL";
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel2.Controls.Add(this.frmCrearReporte);
             this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Controls.Add(this.btnReporte);
             this.panel2.Location = new System.Drawing.Point(1121, 68);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(89, 501);
+            this.panel2.Size = new System.Drawing.Size(89, 506);
             this.panel2.TabIndex = 6;
+            // 
+            // frmCrearReporte
+            // 
+            this.frmCrearReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.frmCrearReporte.Image = ((System.Drawing.Image)(resources.GetObject("frmCrearReporte.Image")));
+            this.frmCrearReporte.Location = new System.Drawing.Point(4, 355);
+            this.frmCrearReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.frmCrearReporte.Name = "frmCrearReporte";
+            this.frmCrearReporte.Size = new System.Drawing.Size(67, 62);
+            this.frmCrearReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmCrearReporte.TabIndex = 12;
+            this.frmCrearReporte.TabStop = false;
+            this.frmCrearReporte.Click += new System.EventHandler(this.frmCrearReporte_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(13, 53);
+            this.btnAgregar.Location = new System.Drawing.Point(4, 53);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(67, 62);
@@ -124,8 +136,9 @@ namespace General.GUI
             // 
             // btnEditar
             // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(13, 133);
+            this.btnEditar.Location = new System.Drawing.Point(4, 134);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(67, 62);
@@ -134,20 +147,11 @@ namespace General.GUI
             this.btnEditar.TabStop = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 337);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "*REPORTE *";
-            // 
             // btnEliminar
             // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(13, 213);
+            this.btnEliminar.Location = new System.Drawing.Point(4, 213);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(67, 62);
@@ -158,8 +162,9 @@ namespace General.GUI
             // 
             // btnSalir
             // 
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(13, 435);
+            this.btnSalir.Location = new System.Drawing.Point(4, 435);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(67, 58);
@@ -168,31 +173,41 @@ namespace General.GUI
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnReporte
-            // 
-            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
-            this.btnReporte.Location = new System.Drawing.Point(13, 358);
-            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(64, 60);
-            this.btnReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReporte.TabIndex = 3;
-            this.btnReporte.TabStop = false;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
-            // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtgvUsuario);
             this.panel1.Controls.Add(this.cbbOrdenar);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(3, 68);
+            this.panel1.Location = new System.Drawing.Point(0, 68);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1120, 501);
+            this.panel1.Size = new System.Drawing.Size(1123, 510);
             this.panel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(818, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 17);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Ordenar por:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Digite aqui para buscar:";
             // 
             // dtgvUsuario
             // 
@@ -233,7 +248,7 @@ namespace General.GUI
             // usuario
             // 
             this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "USUARIO";
+            this.usuario.HeaderText = "Usuario";
             this.usuario.MinimumWidth = 6;
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
@@ -242,16 +257,17 @@ namespace General.GUI
             // clave
             // 
             this.clave.DataPropertyName = "clave";
-            this.clave.HeaderText = "CLAVE";
+            this.clave.HeaderText = "Clave";
             this.clave.MinimumWidth = 6;
             this.clave.Name = "clave";
             this.clave.ReadOnly = true;
+            this.clave.Visible = false;
             this.clave.Width = 125;
             // 
             // rol
             // 
             this.rol.DataPropertyName = "rol";
-            this.rol.HeaderText = "ROL";
+            this.rol.HeaderText = "Rol";
             this.rol.MinimumWidth = 6;
             this.rol.Name = "rol";
             this.rol.ReadOnly = true;
@@ -260,7 +276,7 @@ namespace General.GUI
             // nombre
             // 
             this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.HeaderText = "Nombre";
             this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
@@ -269,7 +285,7 @@ namespace General.GUI
             // apellido
             // 
             this.apellido.DataPropertyName = "apellido";
-            this.apellido.HeaderText = "APELLIDO";
+            this.apellido.HeaderText = "Apellido";
             this.apellido.MinimumWidth = 6;
             this.apellido.Name = "apellido";
             this.apellido.ReadOnly = true;
@@ -309,25 +325,6 @@ namespace General.GUI
             this.cbbOrdenar.TabIndex = 14;
             this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(841, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Ordenar por:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Digite aqui para buscar:";
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(242, 25);
@@ -339,47 +336,40 @@ namespace General.GUI
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(0, -1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1210, 62);
-            this.panel3.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BANNER DE LOGO DE LA EMPRESA COMO EL SPLASH";
+            this.panel3.Size = new System.Drawing.Size(1210, 63);
+            this.panel3.TabIndex = 9;
             // 
             // frmGestionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1210, 603);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmGestionUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Usuario";
             this.Load += new System.EventHandler(this.frmGestionUsuario_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmCrearReporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUsuario)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,18 +383,16 @@ namespace General.GUI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox btnAgregar;
         private System.Windows.Forms.PictureBox btnEditar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.PictureBox btnReporte;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbbOrdenar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgvUsuario;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox frmCrearReporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn clave;

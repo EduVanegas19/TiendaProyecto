@@ -58,15 +58,15 @@ namespace General.GUI.PRODUCTO
             this.precio_unidad,
             this.precio_venta,
             this.fecha_ingreso});
-            this.dtgProducto.Location = new System.Drawing.Point(9, 10);
-            this.dtgProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgProducto.Location = new System.Drawing.Point(12, 12);
+            this.dtgProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgProducto.MultiSelect = false;
             this.dtgProducto.Name = "dtgProducto";
             this.dtgProducto.ReadOnly = true;
             this.dtgProducto.RowHeadersWidth = 51;
             this.dtgProducto.RowTemplate.Height = 24;
             this.dtgProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProducto.Size = new System.Drawing.Size(753, 254);
+            this.dtgProducto.Size = new System.Drawing.Size(1004, 313);
             this.dtgProducto.TabIndex = 17;
             this.dtgProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentDoubleClick);
             // 
@@ -146,14 +146,16 @@ namespace General.GUI.PRODUCTO
             // 
             // frmVisorProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(771, 274);
+            this.ClientSize = new System.Drawing.Size(1028, 337);
             this.Controls.Add(this.dtgProducto);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmVisorProducto";
-            this.Text = "frmVisorProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visor Producto";
             this.Load += new System.EventHandler(this.frmVisorProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).EndInit();
             this.ResumeLayout(false);

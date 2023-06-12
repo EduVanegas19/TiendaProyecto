@@ -58,7 +58,7 @@ namespace General.GUI.MUNICIPIO
             this.dtgMunicipio.RowHeadersWidth = 51;
             this.dtgMunicipio.RowTemplate.Height = 24;
             this.dtgMunicipio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgMunicipio.Size = new System.Drawing.Size(679, 284);
+            this.dtgMunicipio.Size = new System.Drawing.Size(718, 284);
             this.dtgMunicipio.TabIndex = 17;
             this.dtgMunicipio.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDireccion_CellContentDoubleClick);
             // 
@@ -112,10 +112,13 @@ namespace General.GUI.MUNICIPIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 305);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(742, 305);
             this.Controls.Add(this.dtgMunicipio);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmVisorMunicipio";
-            this.Text = "frmVisorMunicipio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visor Municipio";
             this.Load += new System.EventHandler(this.frmVisorMunicipio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgMunicipio)).EndInit();
             this.ResumeLayout(false);

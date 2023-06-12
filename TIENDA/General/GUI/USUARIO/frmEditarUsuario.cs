@@ -160,5 +160,27 @@ namespace General.GUI
                 }
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnVer.Checked != false)
+            {
+                txtClave.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtClave.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

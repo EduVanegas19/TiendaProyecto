@@ -122,5 +122,11 @@ namespace General.GUI
             DETALLE_PEDIDO.frmGestionDetallePedido detalle_pedido = new DETALLE_PEDIDO.frmGestionDetallePedido();
             detalle_pedido.ShowDialog();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

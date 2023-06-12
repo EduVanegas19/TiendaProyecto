@@ -109,5 +109,17 @@ namespace General.GUI
         {
             CargarOrden();
         }
+
+        private void frmCrearReporte_Click(object sender, EventArgs e)
+        {
+            Reporte.GUI.visorUsuario f = new Reporte.GUI.visorUsuario();
+            this.Close();
+            f.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

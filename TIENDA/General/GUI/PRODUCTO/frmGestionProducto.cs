@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataManager;
 using SessionManager;
 
 namespace General.GUI.PRODUCTO
@@ -140,13 +141,6 @@ namespace General.GUI.PRODUCTO
             }
         }
 
-        private void btnReporte_Click(object sender, EventArgs e)
-        {
-            Reporte.GUI.visorProducto f = new Reporte.GUI.visorProducto();
-            this.Close();
-            f.ShowDialog();
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -192,6 +186,25 @@ namespace General.GUI.PRODUCTO
 
             // Habilitar el administrador de divisas
             dtgProducto.BindingContext[dtgProducto.DataSource].ResumeBinding();
+        }
+
+        private void frmCrearReporte_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(frmCrearReporte.Name))
+            {
+                Reporte.GUI.visorProducto f = new Reporte.GUI.visorProducto();
+                this.Close();
+                f.ShowDialog();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
+            }
+            
         }
     }
 }

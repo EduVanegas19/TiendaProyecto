@@ -104,7 +104,7 @@ namespace General.GUI.EMPLEADO
             btnGuardar.Visible = true;
             //ChecKbox
 
-            lblVisor.Text = "EDICION EMPLEADO";
+            lblVisor.Text = "MODO EDICION";
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

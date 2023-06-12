@@ -56,7 +56,7 @@ namespace General.GUI.CLIENTES
             this.dtgCliente.RowHeadersWidth = 51;
             this.dtgCliente.RowTemplate.Height = 24;
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(608, 230);
+            this.dtgCliente.Size = new System.Drawing.Size(629, 238);
             this.dtgCliente.TabIndex = 18;
             this.dtgCliente.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentDoubleClick);
             // 
@@ -101,10 +101,13 @@ namespace General.GUI.CLIENTES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 254);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(653, 262);
             this.Controls.Add(this.dtgCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmVisorCliente";
-            this.Text = "frmVisorCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visor Cliente";
             this.Load += new System.EventHandler(this.frmVisorCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
             this.ResumeLayout(false);

@@ -48,15 +48,15 @@ namespace General.GUI.ROLES
             this.btnSeleccionar,
             this.id_rol,
             this.rol});
-            this.dtgRoles.Location = new System.Drawing.Point(9, 10);
-            this.dtgRoles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgRoles.Location = new System.Drawing.Point(12, 12);
+            this.dtgRoles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgRoles.MultiSelect = false;
             this.dtgRoles.Name = "dtgRoles";
             this.dtgRoles.ReadOnly = true;
             this.dtgRoles.RowHeadersWidth = 51;
             this.dtgRoles.RowTemplate.Height = 24;
             this.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgRoles.Size = new System.Drawing.Size(509, 231);
+            this.dtgRoles.Size = new System.Drawing.Size(679, 284);
             this.dtgRoles.TabIndex = 18;
             this.dtgRoles.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgMunicipio_CellContentDoubleClick);
             // 
@@ -89,14 +89,16 @@ namespace General.GUI.ROLES
             // 
             // frmVisorRol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(536, 258);
+            this.ClientSize = new System.Drawing.Size(715, 318);
             this.Controls.Add(this.dtgRoles);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmVisorRol";
-            this.Text = "frmVisorRol";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visor Rol";
             this.Load += new System.EventHandler(this.frmVisorRol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoles)).EndInit();
             this.ResumeLayout(false);

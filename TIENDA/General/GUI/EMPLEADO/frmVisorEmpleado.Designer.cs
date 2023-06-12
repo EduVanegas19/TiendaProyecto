@@ -56,7 +56,7 @@ namespace General.GUI.EMPLEADO
             this.dtgEmpleado.RowHeadersWidth = 51;
             this.dtgEmpleado.RowTemplate.Height = 24;
             this.dtgEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgEmpleado.Size = new System.Drawing.Size(679, 284);
+            this.dtgEmpleado.Size = new System.Drawing.Size(719, 284);
             this.dtgEmpleado.TabIndex = 19;
             this.dtgEmpleado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEmpleado_CellContentDoubleClick);
             // 
@@ -100,10 +100,13 @@ namespace General.GUI.EMPLEADO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 314);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(743, 314);
             this.Controls.Add(this.dtgEmpleado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmVisorEmpleado";
-            this.Text = "frmVisorEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visor Empleado";
             this.Load += new System.EventHandler(this.frmVisorEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).EndInit();
             this.ResumeLayout(false);

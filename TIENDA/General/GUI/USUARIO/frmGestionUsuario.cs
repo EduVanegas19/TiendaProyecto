@@ -162,12 +162,6 @@ namespace General.GUI
             f.ShowDialog();
         }
 
-        private void btnReporte_Click(object sender, EventArgs e)
-        {
-            Reporte.GUI.visorUsuario f = new Reporte.GUI.visorUsuario();
-            this.Close();
-            f.ShowDialog();
-        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -190,6 +184,13 @@ namespace General.GUI
                 f.DataUpdated += FormEditor_DataUpdated;
                 f.ShowDialog();
             }
+        }
+
+        private void frmCrearReporte_Click(object sender, EventArgs e)
+        {
+            Reporte.GUI.visorUsuario f = new Reporte.GUI.visorUsuario();
+            this.Close();
+            f.ShowDialog();
         }
     }
 }

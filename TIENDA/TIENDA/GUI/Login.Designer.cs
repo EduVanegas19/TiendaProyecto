@@ -85,6 +85,7 @@ namespace TIENDA.GUI
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(223, 26);
             this.txtContraseña.TabIndex = 5;
+            this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // lblMensaje
             // 
@@ -106,7 +107,7 @@ namespace TIENDA.GUI
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(267, 380);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(87, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +120,7 @@ namespace TIENDA.GUI
             this.pcSalir.BackColor = System.Drawing.Color.Transparent;
             this.pcSalir.Image = ((System.Drawing.Image)(resources.GetObject("pcSalir.Image")));
             this.pcSalir.Location = new System.Drawing.Point(41, 553);
-            this.pcSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcSalir.Margin = new System.Windows.Forms.Padding(4);
             this.pcSalir.Name = "pcSalir";
             this.pcSalir.Size = new System.Drawing.Size(113, 41);
             this.pcSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

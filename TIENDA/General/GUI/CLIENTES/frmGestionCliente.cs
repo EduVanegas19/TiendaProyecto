@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataManager;
 using SessionManager;
 
 namespace General.GUI
@@ -188,6 +189,24 @@ namespace General.GUI
                 //establecer la suscripción al evento 'DataUpdated' del frmEditor con actualizacion de datos
                 f.DataUpdated += FormEditor_DataUpdated;
                 f.ShowDialog();
+            }
+        }
+
+        private void frmCrearReporte_Click(object sender, EventArgs e)
+        {
+            // Verificar si el usuario tiene permiso para acceder al formulario
+            List<string> permisos = DBConsultas.ObtenerPermisosUsuario(Session.Instancia.id_usuario);
+
+            if (permisos.Contains(frmCrearReporte.Name))
+            {
+                Reporte.GUI.visorClientes f = new Reporte.GUI.visorClientes();
+                this.Close();
+                f.ShowDialog();
+                // Agrega más condiciones para cada formulario que desees abrir según los permisos del usuario
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos para acceder a este formulario.");
             }
         }
     }

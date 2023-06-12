@@ -1,5 +1,3 @@
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\DataManager.pdb
-C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.exe.config
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\TIENDA.pdb
@@ -26,6 +24,8 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\AxShoc
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\stdole.dll
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\DataManager.pdb
+C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\General.exe.config
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\Reporte.pdb
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\bin\Debug\SessionManager.pdb

@@ -187,5 +187,6 @@ namespace General.GUI.DIRECCION
         {
             this.Close();
         }
+
     }
 }

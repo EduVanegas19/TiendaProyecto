@@ -49,31 +49,31 @@ namespace General.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.frmCrearReporte = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgfactura)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmCrearReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(2, 2);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(3, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(858, 54);
+            this.panel3.Size = new System.Drawing.Size(1144, 66);
             this.panel3.TabIndex = 12;
             // 
             // panel1
@@ -85,35 +85,35 @@ namespace General.GUI
             this.panel1.Controls.Add(this.dtgfactura);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(2, 58);
+            this.panel1.Location = new System.Drawing.Point(3, 71);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(787, 406);
+            this.panel1.Size = new System.Drawing.Size(1049, 500);
             this.panel1.TabIndex = 13;
             // 
             // cbbOrdenar
             // 
-            this.cbbOrdenar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbOrdenar.FormattingEnabled = true;
             this.cbbOrdenar.Items.AddRange(new object[] {
             "Ultimo Agregado",
             "Primero Agregado",
             "A - Z",
             "Z - A"});
-            this.cbbOrdenar.Location = new System.Drawing.Point(689, 16);
-            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbOrdenar.Location = new System.Drawing.Point(891, 20);
+            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbOrdenar.Name = "cbbOrdenar";
-            this.cbbOrdenar.Size = new System.Drawing.Size(92, 23);
+            this.cbbOrdenar.Size = new System.Drawing.Size(121, 25);
             this.cbbOrdenar.TabIndex = 14;
             this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(599, 19);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(783, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 15);
+            this.label3.Size = new System.Drawing.Size(102, 17);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ordenar por:";
             // 
@@ -136,13 +136,14 @@ namespace General.GUI
             this.tipo_pago,
             this.NombreCompleto,
             this.cliente});
-            this.dtgfactura.Location = new System.Drawing.Point(22, 43);
+            this.dtgfactura.Location = new System.Drawing.Point(29, 53);
+            this.dtgfactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgfactura.MultiSelect = false;
             this.dtgfactura.Name = "dtgfactura";
             this.dtgfactura.ReadOnly = true;
             this.dtgfactura.RowHeadersWidth = 51;
             this.dtgfactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgfactura.Size = new System.Drawing.Size(760, 352);
+            this.dtgfactura.Size = new System.Drawing.Size(1013, 433);
             this.dtgfactura.TabIndex = 0;
             // 
             // id_factura
@@ -247,19 +248,21 @@ namespace General.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 16);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(27, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 15);
+            this.label2.Size = new System.Drawing.Size(183, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Digite aqui para buscar:";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(169, 16);
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(225, 20);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(118, 21);
+            this.txtBuscar.Size = new System.Drawing.Size(156, 23);
             this.txtBuscar.TabIndex = 6;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -267,22 +270,37 @@ namespace General.GUI
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.frmCrearReporte);
             this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(790, 58);
+            this.panel2.Location = new System.Drawing.Point(1053, 71);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(70, 404);
+            this.panel2.Size = new System.Drawing.Size(93, 497);
             this.panel2.TabIndex = 14;
+            // 
+            // frmCrearReporte
+            // 
+            this.frmCrearReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.frmCrearReporte.Image = ((System.Drawing.Image)(resources.GetObject("frmCrearReporte.Image")));
+            this.frmCrearReporte.Location = new System.Drawing.Point(12, 341);
+            this.frmCrearReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frmCrearReporte.Name = "frmCrearReporte";
+            this.frmCrearReporte.Size = new System.Drawing.Size(67, 62);
+            this.frmCrearReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmCrearReporte.TabIndex = 12;
+            this.frmCrearReporte.TabStop = false;
+            this.frmCrearReporte.Click += new System.EventHandler(this.frmCrearReporte_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(10, 43);
+            this.btnAgregar.Location = new System.Drawing.Point(13, 53);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(50, 50);
+            this.btnAgregar.Size = new System.Drawing.Size(67, 62);
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.TabStop = false;
@@ -292,20 +310,24 @@ namespace General.GUI
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(9, 108);
+            this.btnEliminar.Location = new System.Drawing.Point(12, 133);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
+            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.TabStop = false;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(10, 349);
+            this.btnSalir.Location = new System.Drawing.Point(13, 428);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(50, 47);
+            this.btnSalir.Size = new System.Drawing.Size(67, 58);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 4;
             this.btnSalir.TabStop = false;
@@ -317,11 +339,11 @@ namespace General.GUI
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUsuario,
             this.lblRol});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 457);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 562);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(861, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1148, 30);
             this.statusStrip1.TabIndex = 15;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -329,50 +351,41 @@ namespace General.GUI
             // 
             this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(60, 19);
+            this.lblUsuario.Size = new System.Drawing.Size(75, 24);
             this.lblUsuario.Text = "USUARIO";
             // 
             // lblRol
             // 
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(29, 19);
+            this.lblRol.Size = new System.Drawing.Size(36, 24);
             this.lblRol.Text = "ROL";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 177);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // frmGestionVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(861, 481);
+            this.ClientSize = new System.Drawing.Size(1148, 592);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGestionVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Ventas";
             this.Load += new System.EventHandler(this.frmGestionVenta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgfactura)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.frmCrearReporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,6 +418,6 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox frmCrearReporte;
     }
 }

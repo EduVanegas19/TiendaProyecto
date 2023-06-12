@@ -40,7 +40,7 @@ namespace Reporte.GUI
             this.crvVisor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvVisor.Location = new System.Drawing.Point(0, 0);
             this.crvVisor.Name = "crvVisor";
-            this.crvVisor.Size = new System.Drawing.Size(800, 450);
+            this.crvVisor.Size = new System.Drawing.Size(1211, 603);
             this.crvVisor.TabIndex = 0;
             this.crvVisor.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -48,7 +48,7 @@ namespace Reporte.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1211, 603);
             this.Controls.Add(this.crvVisor);
             this.Name = "visorFactura";
             this.Text = "visorFactura";

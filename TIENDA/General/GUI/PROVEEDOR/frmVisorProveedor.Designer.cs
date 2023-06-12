@@ -54,15 +54,15 @@ namespace General.GUI.PROVEEDOR
             this.numero_documento,
             this.esLaboratorio,
             this.estado});
-            this.dtgProveedores.Location = new System.Drawing.Point(14, 8);
-            this.dtgProveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgProveedores.Location = new System.Drawing.Point(19, 10);
+            this.dtgProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgProveedores.MultiSelect = false;
             this.dtgProveedores.Name = "dtgProveedores";
             this.dtgProveedores.ReadOnly = true;
             this.dtgProveedores.RowHeadersWidth = 51;
             this.dtgProveedores.RowTemplate.Height = 24;
             this.dtgProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProveedores.Size = new System.Drawing.Size(442, 231);
+            this.dtgProveedores.Size = new System.Drawing.Size(667, 284);
             this.dtgProveedores.TabIndex = 16;
             this.dtgProveedores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedores_CellContentDoubleClick);
             // 
@@ -124,14 +124,16 @@ namespace General.GUI.PROVEEDOR
             // 
             // frmVisorProveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(465, 246);
+            this.ClientSize = new System.Drawing.Size(698, 303);
             this.Controls.Add(this.dtgProveedores);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmVisorProveedor";
-            this.Text = "frmVisorProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visor Proveedor";
             this.Load += new System.EventHandler(this.frmVisorProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedores)).EndInit();
             this.ResumeLayout(false);
