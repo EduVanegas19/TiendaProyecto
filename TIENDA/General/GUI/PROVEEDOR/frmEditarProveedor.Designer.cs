@@ -32,7 +32,6 @@ namespace General.GUI.PROVEEDOR
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarProveedor));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lblVisor = new System.Windows.Forms.Label();
@@ -61,31 +60,24 @@ namespace General.GUI.PROVEEDOR
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label16);
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.Controls.Add(this.btnEliminar);
             this.panel3.Controls.Add(this.pictureBox6);
             this.panel3.Controls.Add(this.lblVisor);
-            this.panel3.Location = new System.Drawing.Point(13, 7);
+            this.panel3.Location = new System.Drawing.Point(10, 6);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(659, 75);
+            this.panel3.Size = new System.Drawing.Size(494, 61);
             this.panel3.TabIndex = 15;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 34);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 17);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "*logo*";
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(487, 5);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(365, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
+            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.TabStop = false;
@@ -93,11 +85,12 @@ namespace General.GUI.PROVEEDOR
             // 
             // pictureBox6
             // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(571, 9);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Location = new System.Drawing.Point(428, 7);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(67, 58);
+            this.pictureBox6.Size = new System.Drawing.Size(50, 47);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
@@ -106,20 +99,23 @@ namespace General.GUI.PROVEEDOR
             // lblVisor
             // 
             this.lblVisor.AutoSize = true;
-            this.lblVisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisor.Location = new System.Drawing.Point(138, 18);
+            this.lblVisor.BackColor = System.Drawing.Color.Transparent;
+            this.lblVisor.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisor.Location = new System.Drawing.Point(104, 15);
+            this.lblVisor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVisor.Name = "lblVisor";
-            this.lblVisor.Size = new System.Drawing.Size(266, 36);
+            this.lblVisor.Size = new System.Drawing.Size(223, 33);
             this.lblVisor.TabIndex = 0;
             this.lblVisor.Text = "MODO LECTURA";
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(50, 283);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(38, 230);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(68, 60);
+            this.btnEditar.Size = new System.Drawing.Size(51, 49);
             this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEditar.TabIndex = 8;
             this.btnEditar.TabStop = false;
@@ -127,6 +123,7 @@ namespace General.GUI.PROVEEDOR
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.checkControl);
             this.panel1.Controls.Add(this.control);
             this.panel1.Controls.Add(this.btnGuardar);
@@ -141,17 +138,19 @@ namespace General.GUI.PROVEEDOR
             this.panel1.Controls.Add(this.txtIdCliente);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(13, 81);
+            this.panel1.Location = new System.Drawing.Point(10, 66);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(659, 456);
+            this.panel1.Size = new System.Drawing.Size(494, 370);
             this.panel1.TabIndex = 14;
             // 
             // checkControl
             // 
             this.checkControl.AutoSize = true;
-            this.checkControl.Location = new System.Drawing.Point(510, 35);
+            this.checkControl.Location = new System.Drawing.Point(382, 28);
+            this.checkControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkControl.Name = "checkControl";
-            this.checkControl.Size = new System.Drawing.Size(18, 17);
+            this.checkControl.Size = new System.Drawing.Size(15, 14);
             this.checkControl.TabIndex = 22;
             this.checkControl.UseVisualStyleBackColor = true;
             this.checkControl.Visible = false;
@@ -159,19 +158,21 @@ namespace General.GUI.PROVEEDOR
             // control
             // 
             this.control.AutoSize = true;
-            this.control.Location = new System.Drawing.Point(507, 35);
+            this.control.Location = new System.Drawing.Point(380, 28);
+            this.control.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.control.Name = "control";
-            this.control.Size = new System.Drawing.Size(0, 17);
+            this.control.Size = new System.Drawing.Size(0, 13);
             this.control.TabIndex = 21;
             this.control.Visible = false;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(275, 283);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(206, 230);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(64, 60);
+            this.btnGuardar.Size = new System.Drawing.Size(48, 49);
             this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.TabStop = false;
@@ -179,96 +180,118 @@ namespace General.GUI.PROVEEDOR
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(198, 57);
+            this.txtId.Location = new System.Drawing.Point(190, 49);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(64, 22);
+            this.txtId.Size = new System.Drawing.Size(49, 20);
             this.txtId.TabIndex = 17;
             // 
             // checkLab
             // 
             this.checkLab.AutoSize = true;
-            this.checkLab.Location = new System.Drawing.Point(198, 189);
+            this.checkLab.Location = new System.Drawing.Point(190, 157);
+            this.checkLab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkLab.Name = "checkLab";
-            this.checkLab.Size = new System.Drawing.Size(18, 17);
+            this.checkLab.Size = new System.Drawing.Size(15, 14);
             this.checkLab.TabIndex = 16;
             this.checkLab.UseVisualStyleBackColor = true;
             // 
             // txtNumDoc
             // 
-            this.txtNumDoc.Location = new System.Drawing.Point(198, 142);
+            this.txtNumDoc.Location = new System.Drawing.Point(190, 118);
+            this.txtNumDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNumDoc.Name = "txtNumDoc";
-            this.txtNumDoc.Size = new System.Drawing.Size(141, 22);
+            this.txtNumDoc.Size = new System.Drawing.Size(107, 20);
             this.txtNumDoc.TabIndex = 15;
             // 
             // txtProveedor
             // 
-            this.txtProveedor.Location = new System.Drawing.Point(198, 99);
+            this.txtProveedor.Location = new System.Drawing.Point(190, 83);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(141, 22);
+            this.txtProveedor.Size = new System.Drawing.Size(107, 20);
             this.txtProveedor.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 188);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(35, 153);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 17);
+            this.label6.Size = new System.Drawing.Size(92, 15);
             this.label6.TabIndex = 13;
             this.label6.Text = "Es Laboratorio:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 145);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(35, 118);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 17);
+            this.label5.Size = new System.Drawing.Size(129, 15);
             this.label5.TabIndex = 12;
             this.label5.Text = "Numero Documento: ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(47, 104);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(35, 84);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 17);
+            this.label7.Size = new System.Drawing.Size(69, 15);
             this.label7.TabIndex = 11;
             this.label7.Text = "Proveedor:";
             // 
             // txtIdCliente
             // 
             this.txtIdCliente.AutoSize = true;
-            this.txtIdCliente.Location = new System.Drawing.Point(76, 60);
+            this.txtIdCliente.Location = new System.Drawing.Point(57, 49);
+            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(0, 17);
+            this.txtIdCliente.Size = new System.Drawing.Size(0, 13);
             this.txtIdCliente.TabIndex = 10;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(47, 60);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(35, 49);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 17);
+            this.label8.Size = new System.Drawing.Size(20, 15);
             this.label8.TabIndex = 9;
             this.label8.Text = "Id:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 19);
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(14, 15);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 17);
+            this.label9.Size = new System.Drawing.Size(83, 15);
             this.label9.TabIndex = 8;
             this.label9.Text = "PROVEEDOR:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // frmEditarProveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 545);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(513, 443);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmEditarProveedor";
             this.Text = "Editar Proveedor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditarProveedor_FormClosed);
@@ -288,7 +311,6 @@ namespace General.GUI.PROVEEDOR
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnEditar;
         private System.Windows.Forms.PictureBox pictureBox6;

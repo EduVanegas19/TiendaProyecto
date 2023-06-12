@@ -53,14 +53,15 @@ namespace General.GUI.UNIDAD_MEDIDA
             this.id_unidadmedida,
             this.unidad_medida,
             this.btnEliminar});
-            this.dtgUnidadMedida.Location = new System.Drawing.Point(12, 12);
+            this.dtgUnidadMedida.Location = new System.Drawing.Point(9, 10);
+            this.dtgUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgUnidadMedida.MultiSelect = false;
             this.dtgUnidadMedida.Name = "dtgUnidadMedida";
             this.dtgUnidadMedida.ReadOnly = true;
             this.dtgUnidadMedida.RowHeadersWidth = 51;
             this.dtgUnidadMedida.RowTemplate.Height = 24;
             this.dtgUnidadMedida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgUnidadMedida.Size = new System.Drawing.Size(648, 291);
+            this.dtgUnidadMedida.Size = new System.Drawing.Size(486, 236);
             this.dtgUnidadMedida.TabIndex = 18;
             this.dtgUnidadMedida.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgUnidadMedida_CellContentDoubleClick);
             // 
@@ -105,10 +106,9 @@ namespace General.GUI.UNIDAD_MEDIDA
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(12, 310);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(9, 252);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(52, 40);
+            this.btnAgregar.Size = new System.Drawing.Size(39, 32);
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.TabStop = false;
@@ -116,11 +116,13 @@ namespace General.GUI.UNIDAD_MEDIDA
             // 
             // frmVisorUnidadMedida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 359);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(509, 292);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dtgUnidadMedida);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmVisorUnidadMedida";
             this.Text = "frmVisorUnidadMedida";
             this.Load += new System.EventHandler(this.frmVisorUnidadMedida_Load);

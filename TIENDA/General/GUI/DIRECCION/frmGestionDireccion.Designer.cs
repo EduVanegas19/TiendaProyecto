@@ -34,11 +34,9 @@ namespace General.GUI.DIRECCION
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,8 +57,8 @@ namespace General.GUI.DIRECCION
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btReportes = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
@@ -68,6 +66,7 @@ namespace General.GUI.DIRECCION
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDireccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btReportes)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -76,11 +75,11 @@ namespace General.GUI.DIRECCION
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUsuario,
             this.lblRol});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 573);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 466);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1210, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(908, 24);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -88,53 +87,45 @@ namespace General.GUI.DIRECCION
             // 
             this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(75, 24);
+            this.lblUsuario.Size = new System.Drawing.Size(60, 19);
             this.lblUsuario.Text = "USUARIO";
             // 
             // lblRol
             // 
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(36, 24);
+            this.lblRol.Size = new System.Drawing.Size(29, 19);
             this.lblRol.Text = "ROL";
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.Location = new System.Drawing.Point(-1, 1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1211, 67);
+            this.panel3.Size = new System.Drawing.Size(908, 54);
             this.panel3.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BANNER DE LOGO DE LA EMPRESA COMO EL SPLASH";
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Controls.Add(this.btReportes);
             this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(1104, 75);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(828, 61);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(106, 497);
+            this.panel2.Size = new System.Drawing.Size(80, 404);
             this.panel2.TabIndex = 6;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(13, 53);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(10, 21);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(67, 62);
+            this.btnAgregar.Size = new System.Drawing.Size(50, 50);
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.TabStop = false;
@@ -143,32 +134,20 @@ namespace General.GUI.DIRECCION
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(13, 133);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(10, 97);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(67, 62);
+            this.btnEditar.Size = new System.Drawing.Size(50, 50);
             this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEditar.TabIndex = 1;
             this.btnEditar.TabStop = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 337);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "*REPORTE *";
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(13, 213);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(10, 183);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
+            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.TabStop = false;
@@ -177,10 +156,9 @@ namespace General.GUI.DIRECCION
             // btnSalir
             // 
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(13, 435);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(10, 348);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(67, 58);
+            this.btnSalir.Size = new System.Drawing.Size(50, 47);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSalir.TabIndex = 4;
             this.btnSalir.TabStop = false;
@@ -188,38 +166,42 @@ namespace General.GUI.DIRECCION
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.cbbOrdenar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtgDireccion);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(2, 75);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(2, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 497);
+            this.panel1.Size = new System.Drawing.Size(828, 404);
             this.panel1.TabIndex = 5;
             // 
             // cbbOrdenar
             // 
+            this.cbbOrdenar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbOrdenar.FormattingEnabled = true;
             this.cbbOrdenar.Items.AddRange(new object[] {
             "Ultimo Agreado",
             "Primero Agregado",
             "0 - 9 Postal",
             "9 - 0 Postal"});
-            this.cbbOrdenar.Location = new System.Drawing.Point(891, 23);
+            this.cbbOrdenar.Location = new System.Drawing.Point(692, 18);
+            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbOrdenar.Name = "cbbOrdenar";
-            this.cbbOrdenar.Size = new System.Drawing.Size(171, 24);
+            this.cbbOrdenar.Size = new System.Drawing.Size(129, 23);
             this.cbbOrdenar.TabIndex = 14;
             this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(795, 26);
+            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(596, 21);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 17);
+            this.label3.Size = new System.Drawing.Size(80, 15);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ordenar por:";
             // 
@@ -243,14 +225,13 @@ namespace General.GUI.DIRECCION
             this.municipio,
             this.departamento,
             this.estado});
-            this.dtgDireccion.Location = new System.Drawing.Point(10, 57);
-            this.dtgDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgDireccion.Location = new System.Drawing.Point(8, 46);
             this.dtgDireccion.MultiSelect = false;
             this.dtgDireccion.Name = "dtgDireccion";
             this.dtgDireccion.ReadOnly = true;
             this.dtgDireccion.RowHeadersWidth = 51;
             this.dtgDireccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDireccion.Size = new System.Drawing.Size(1084, 430);
+            this.dtgDireccion.Size = new System.Drawing.Size(813, 349);
             this.dtgDireccion.TabIndex = 0;
             this.dtgDireccion.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDireccion_CellContentDoubleClick);
             // 
@@ -367,40 +348,49 @@ namespace General.GUI.DIRECCION
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 29);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 17);
+            this.label2.Size = new System.Drawing.Size(143, 15);
             this.label2.TabIndex = 9;
             this.label2.Text = "Digite aqui para buscar:";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(194, 26);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(192, 21);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(156, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(118, 21);
             this.txtBuscar.TabIndex = 6;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // btReportes
+            // 
+            this.btReportes.Image = ((System.Drawing.Image)(resources.GetObject("btReportes.Image")));
+            this.btReportes.Location = new System.Drawing.Point(10, 260);
+            this.btReportes.Name = "btReportes";
+            this.btReportes.Size = new System.Drawing.Size(50, 50);
+            this.btReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btReportes.TabIndex = 5;
+            this.btReportes.TabStop = false;
+            // 
             // frmGestionDireccion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 603);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(908, 490);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGestionDireccion";
             this.Text = "Gestion de Direccion";
             this.Load += new System.EventHandler(this.frmGestionDireccion_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
@@ -408,6 +398,7 @@ namespace General.GUI.DIRECCION
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDireccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btReportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,11 +410,9 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox btnAgregar;
         private System.Windows.Forms.PictureBox btnEditar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.Panel panel1;
@@ -444,5 +433,6 @@ namespace General.GUI.DIRECCION
         private System.Windows.Forms.DataGridViewTextBoxColumn municipio;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.PictureBox btReportes;
     }
 }

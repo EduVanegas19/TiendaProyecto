@@ -52,14 +52,15 @@ namespace General.GUI.AREA
             this.id_area,
             this.area,
             this.btnEliminar});
-            this.dtgArea.Location = new System.Drawing.Point(12, 12);
+            this.dtgArea.Location = new System.Drawing.Point(9, 10);
+            this.dtgArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgArea.MultiSelect = false;
             this.dtgArea.Name = "dtgArea";
             this.dtgArea.ReadOnly = true;
             this.dtgArea.RowHeadersWidth = 51;
             this.dtgArea.RowTemplate.Height = 24;
             this.dtgArea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgArea.Size = new System.Drawing.Size(679, 284);
+            this.dtgArea.Size = new System.Drawing.Size(509, 231);
             this.dtgArea.TabIndex = 18;
             this.dtgArea.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgArea_CellContentDoubleClick);
             // 
@@ -100,11 +101,12 @@ namespace General.GUI.AREA
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(13, 306);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(9, 246);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(52, 40);
+            this.btnAgregar.Size = new System.Drawing.Size(43, 38);
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.TabStop = false;
@@ -112,11 +114,13 @@ namespace General.GUI.AREA
             // 
             // frmVisorArea
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 351);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(534, 285);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dtgArea);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmVisorArea";
             this.Text = "frmVisorArea";
             this.Load += new System.EventHandler(this.frmVisorArea_Load);
