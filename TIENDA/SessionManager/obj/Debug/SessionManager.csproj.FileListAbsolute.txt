@@ -25,3 +25,21 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debu
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.dll
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\SessionManager\obj\Debug\SessionManager.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\bin\Debug\SessionManager.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\bin\Debug\SessionManager.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\bin\Debug\DataManager.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\bin\Debug\DataManager.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.AssemblyReference.cache
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CoreCompileInputs.cache
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\bin\Debug\SessionManager.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\bin\Debug\SessionManager.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\bin\Debug\DataManager.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\bin\Debug\DataManager.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.AssemblyReference.cache
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CoreCompileInputs.cache
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\SessionManager\obj\Debug\SessionManager.pdb

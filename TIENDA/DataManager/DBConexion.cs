@@ -33,6 +33,12 @@ namespace DataManager
             return result;
         }
 
+        public SqlConnection ObtenerConexion()
+        {
+            return _CONEXION;
+        }
+
+
         public void Desconectar()
         {
             try

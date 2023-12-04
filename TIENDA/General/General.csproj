@@ -111,6 +111,12 @@
     <Compile Include="GUI\DETALLE_PEDIDO\frmGestionDetallePedido.Designer.cs">
       <DependentUpon>frmGestionDetallePedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DETALLE_VENTA\frmDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DETALLE_VENTA\frmDescuento.Designer.cs">
+      <DependentUpon>frmDescuento.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DETALLE_VENTA\frmEditarDetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DETALLE_PEDIDO\frmGestionDetallePedido.resx">
       <DependentUpon>frmGestionDetallePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DETALLE_VENTA\frmDescuento.resx">
+      <DependentUpon>frmDescuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DETALLE_VENTA\frmEditarDetalleVenta.resx">
       <DependentUpon>frmEditarDetalleVenta.cs</DependentUpon>

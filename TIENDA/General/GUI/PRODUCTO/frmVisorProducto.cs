@@ -61,5 +61,38 @@ namespace General.GUI.PRODUCTO
 
             }
         }
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtBuscar.Text.ToLower();
+
+            // Deshabilitar el administrador de divisas
+            dtgProducto.BindingContext[dtgProducto.DataSource].SuspendBinding();
+
+            // Filtra los datos en la columna 'nombre' de manera flexible
+            foreach (DataGridViewRow row in dtgProducto.Rows)
+            {
+                bool isVisible = false;
+
+                DataGridViewCell nameCell = row.Cells["nombre"]; // Ajusta el nombre de la columna según tu caso
+                DataGridViewCell codeCell = row.Cells["codigo_barras"]; // Ajusta el nombre de la columna según tu caso
+
+                if (nameCell != null && nameCell.Value != null && codeCell != null && codeCell.Value != null)
+                {
+                    string nameCellValue = nameCell.Value.ToString().ToLower();
+                    string codeCellValue = codeCell.Value.ToString().ToLower();
+
+                    if (nameCellValue.Contains(searchText) || codeCellValue.Contains(searchText))
+                    {
+                        isVisible = true;
+                    }
+                }
+
+                row.Visible = isVisible;
+            }
+
+            // Habilitar el administrador de divisas
+            dtgProducto.BindingContext[dtgProducto.DataSource].ResumeBinding();
+        }
+
     }
 }

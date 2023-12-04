@@ -931,5 +931,22 @@ namespace DataManager
             }
             return Resultado;
         }
+
+        public static DataTable ObtenerConfiguracionEmpresa()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"EXEC ObtenerConfiguracionEmpresa";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
     }
 }

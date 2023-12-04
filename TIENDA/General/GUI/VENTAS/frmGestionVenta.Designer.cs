@@ -35,17 +35,6 @@ namespace General.GUI
             this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgfactura = new System.Windows.Forms.DataGridView();
-            this.id_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad_productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,6 +45,19 @@ namespace General.GUI
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.id_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Razon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgfactura)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,10 +72,10 @@ namespace General.GUI
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 2);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1144, 66);
+            this.panel3.Size = new System.Drawing.Size(858, 54);
             this.panel3.TabIndex = 12;
             // 
             // panel1
@@ -85,10 +87,9 @@ namespace General.GUI
             this.panel1.Controls.Add(this.dtgfactura);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(3, 71);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(2, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1049, 500);
+            this.panel1.Size = new System.Drawing.Size(787, 406);
             this.panel1.TabIndex = 13;
             // 
             // cbbOrdenar
@@ -100,10 +101,10 @@ namespace General.GUI
             "Primero Agregado",
             "A - Z",
             "Z - A"});
-            this.cbbOrdenar.Location = new System.Drawing.Point(891, 20);
-            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbOrdenar.Location = new System.Drawing.Point(668, 16);
+            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(2);
             this.cbbOrdenar.Name = "cbbOrdenar";
-            this.cbbOrdenar.Size = new System.Drawing.Size(121, 25);
+            this.cbbOrdenar.Size = new System.Drawing.Size(92, 21);
             this.cbbOrdenar.TabIndex = 14;
             this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
@@ -111,9 +112,10 @@ namespace General.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(783, 23);
+            this.label3.Location = new System.Drawing.Point(587, 19);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 17);
+            this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ordenar por:";
             // 
@@ -132,19 +134,128 @@ namespace General.GUI
             this.monto_total,
             this.cantidad_productos,
             this.monto_cliente,
+            this.Descuento,
+            this.Razon,
             this.Cambio,
             this.tipo_pago,
             this.NombreCompleto,
             this.cliente});
-            this.dtgfactura.Location = new System.Drawing.Point(29, 53);
-            this.dtgfactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgfactura.Location = new System.Drawing.Point(22, 43);
             this.dtgfactura.MultiSelect = false;
             this.dtgfactura.Name = "dtgfactura";
             this.dtgfactura.ReadOnly = true;
             this.dtgfactura.RowHeadersWidth = 51;
             this.dtgfactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgfactura.Size = new System.Drawing.Size(1013, 433);
+            this.dtgfactura.Size = new System.Drawing.Size(760, 352);
             this.dtgfactura.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Digite aqui para buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(169, 16);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(118, 20);
+            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Controls.Add(this.frmCrearReporte);
+            this.panel2.Controls.Add(this.btnAgregar);
+            this.panel2.Controls.Add(this.btnEliminar);
+            this.panel2.Controls.Add(this.btnSalir);
+            this.panel2.Location = new System.Drawing.Point(790, 58);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(70, 404);
+            this.panel2.TabIndex = 14;
+            // 
+            // frmCrearReporte
+            // 
+            this.frmCrearReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.frmCrearReporte.Image = ((System.Drawing.Image)(resources.GetObject("frmCrearReporte.Image")));
+            this.frmCrearReporte.Location = new System.Drawing.Point(9, 277);
+            this.frmCrearReporte.Name = "frmCrearReporte";
+            this.frmCrearReporte.Size = new System.Drawing.Size(50, 50);
+            this.frmCrearReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.frmCrearReporte.TabIndex = 12;
+            this.frmCrearReporte.TabStop = false;
+            this.frmCrearReporte.Click += new System.EventHandler(this.frmCrearReporte_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(10, 43);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(50, 50);
+            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(9, 108);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(10, 348);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(50, 47);
+            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUsuario,
+            this.lblRol});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 457);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.statusStrip1.Size = new System.Drawing.Size(861, 24);
+            this.statusStrip1.TabIndex = 15;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(60, 19);
+            this.lblUsuario.Text = "USUARIO";
+            // 
+            // lblRol
+            // 
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(29, 19);
+            this.lblRol.Text = "ROL";
             // 
             // id_factura
             // 
@@ -209,6 +320,20 @@ namespace General.GUI
             this.monto_cliente.ReadOnly = true;
             this.monto_cliente.Width = 125;
             // 
+            // Descuento
+            // 
+            this.Descuento.DataPropertyName = "descuento_monto";
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            this.Descuento.ReadOnly = true;
+            // 
+            // Razon
+            // 
+            this.Razon.DataPropertyName = "descuento_razon";
+            this.Razon.HeaderText = "Razon";
+            this.Razon.Name = "Razon";
+            this.Razon.ReadOnly = true;
+            // 
             // Cambio
             // 
             this.Cambio.DataPropertyName = "cambio";
@@ -245,133 +370,18 @@ namespace General.GUI
             this.cliente.ReadOnly = true;
             this.cliente.Width = 125;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Digite aqui para buscar:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(225, 20);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(156, 23);
-            this.txtBuscar.TabIndex = 6;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Controls.Add(this.frmCrearReporte);
-            this.panel2.Controls.Add(this.btnAgregar);
-            this.panel2.Controls.Add(this.btnEliminar);
-            this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(1053, 71);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(93, 497);
-            this.panel2.TabIndex = 14;
-            // 
-            // frmCrearReporte
-            // 
-            this.frmCrearReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.frmCrearReporte.Image = ((System.Drawing.Image)(resources.GetObject("frmCrearReporte.Image")));
-            this.frmCrearReporte.Location = new System.Drawing.Point(12, 341);
-            this.frmCrearReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.frmCrearReporte.Name = "frmCrearReporte";
-            this.frmCrearReporte.Size = new System.Drawing.Size(67, 62);
-            this.frmCrearReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.frmCrearReporte.TabIndex = 12;
-            this.frmCrearReporte.TabStop = false;
-            this.frmCrearReporte.Click += new System.EventHandler(this.frmCrearReporte_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(13, 53);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(67, 62);
-            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.TabStop = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(12, 133);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
-            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.TabStop = false;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(13, 428);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(67, 58);
-            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.TabStop = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblUsuario,
-            this.lblRol});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 562);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1148, 30);
-            this.statusStrip1.TabIndex = 15;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(75, 24);
-            this.lblUsuario.Text = "USUARIO";
-            // 
-            // lblRol
-            // 
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(36, 24);
-            this.lblRol.Text = "ROL";
-            // 
             // frmGestionVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1148, 592);
+            this.ClientSize = new System.Drawing.Size(861, 481);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmGestionVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Ventas";
@@ -407,6 +417,7 @@ namespace General.GUI
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
+        private System.Windows.Forms.PictureBox frmCrearReporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_factura;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
@@ -414,10 +425,11 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_productos;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Razon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cambio;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
-        private System.Windows.Forms.PictureBox frmCrearReporte;
     }
 }

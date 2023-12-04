@@ -25,5 +25,12 @@ namespace TIENDA.Properties
                 return defaultInstance;
             }
         }
+
+        public string NombreEmpresa { get; internal set; }
+        public string DireccionEmpresa { get; internal set; }
+        public string TelefonoEmpresa { get; internal set; }
+        public string RutaImagenEmpresa { get; internal set; }
+        public bool FirstRun { get; internal set; }
+        public bool ConfiguracionCargadaDesdeBD { get; internal set; }
     }
 }

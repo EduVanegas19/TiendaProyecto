@@ -39,7 +39,12 @@ namespace General.GUI.PRODUCTO
             this.precio_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgProducto
@@ -58,15 +63,15 @@ namespace General.GUI.PRODUCTO
             this.precio_unidad,
             this.precio_venta,
             this.fecha_ingreso});
-            this.dtgProducto.Location = new System.Drawing.Point(12, 12);
-            this.dtgProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgProducto.Location = new System.Drawing.Point(11, 58);
+            this.dtgProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgProducto.MultiSelect = false;
             this.dtgProducto.Name = "dtgProducto";
             this.dtgProducto.ReadOnly = true;
             this.dtgProducto.RowHeadersWidth = 51;
             this.dtgProducto.RowTemplate.Height = 24;
             this.dtgProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProducto.Size = new System.Drawing.Size(1004, 313);
+            this.dtgProducto.Size = new System.Drawing.Size(729, 279);
             this.dtgProducto.TabIndex = 17;
             this.dtgProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProducto_CellContentDoubleClick);
             // 
@@ -144,20 +149,65 @@ namespace General.GUI.PRODUCTO
             this.fecha_ingreso.ReadOnly = true;
             this.fecha_ingreso.Width = 125;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.dtgProducto);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtBuscar);
+            this.panel1.Location = new System.Drawing.Point(6, 77);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(753, 352);
+            this.panel1.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Digite aqui para buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(180, 22);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(186, 20);
+            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(-2, -6);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(776, 78);
+            this.panel3.TabIndex = 19;
+            // 
             // frmVisorProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1028, 337);
-            this.Controls.Add(this.dtgProducto);
+            this.ClientSize = new System.Drawing.Size(765, 436);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmVisorProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visor Producto";
             this.Load += new System.EventHandler(this.frmVisorProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +223,9 @@ namespace General.GUI.PRODUCTO
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_ingreso;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Panel panel3;
     }
 }

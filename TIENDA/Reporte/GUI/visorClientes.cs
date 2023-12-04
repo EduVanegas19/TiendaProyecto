@@ -20,6 +20,14 @@ namespace Reporte.GUI
             oReporte.SetDataSource(Datos);
             crvVisor.ReportSource = oReporte;
         }
+        private void CargarEmpresa()
+        {
+            DataTable Datos = new DataTable();
+            Reporte.REP.Clientes oReporte = new REP.Clientes();
+            Datos = DataManager.DBConsultas.ObtenerConfiguracionEmpresa();
+            oReporte.SetDataSource(Datos);
+            crvVisor.ReportSource = oReporte;
+        }
         public visorClientes()
         {
             InitializeComponent();
@@ -27,7 +35,11 @@ namespace Reporte.GUI
 
         private void visorClientes_Load(object sender, EventArgs e)
         {
+            CargarEmpresa();
             CargarReportes();
+            
         }
+
+        
     }
 }

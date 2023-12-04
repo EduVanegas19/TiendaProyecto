@@ -57,5 +57,39 @@ namespace General.GUI.CLIENTES
 
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtBuscar.Text.ToLower();
+
+            // Deshabilitar el administrador de divisas
+            dtgCliente.BindingContext[dtgCliente.DataSource].SuspendBinding();
+
+            // Filtra los datos en las columnas 'nombre', 'identificacion', 'id_cliente' de manera flexible
+            foreach (DataGridViewRow row in dtgCliente.Rows)
+            {
+                bool isVisible = false;
+
+                DataGridViewCell identificacionCell = row.Cells["identificacion"]; // Ajusta el nombre de la columna según tu caso
+                DataGridViewCell nameCell = row.Cells["nombre"]; // Ajusta el nombre de la columna según tu caso
+
+                if (identificacionCell != null && identificacionCell.Value != null && nameCell != null && nameCell.Value != null)
+                {
+                    string identificacionCellValue = identificacionCell.Value.ToString().ToLower();
+                    string nameCellValue = nameCell.Value.ToString().ToLower();
+
+                    if ( identificacionCellValue.Contains(searchText) || nameCellValue.Contains(searchText))
+                    {
+                        isVisible = true;
+                    }
+                }
+
+                row.Visible = isVisible;
+            }
+
+            // Habilitar el administrador de divisas
+            dtgCliente.BindingContext[dtgCliente.DataSource].ResumeBinding();
+        }
+
     }
 }

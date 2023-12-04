@@ -240,5 +240,12 @@ namespace TIENDA.GUI
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+            {
+                // Crear e mostrar la ventana de configuración
+                ConfigForm configForm = new ConfigForm();
+                configForm.ShowDialog();
+            }
     }
 }

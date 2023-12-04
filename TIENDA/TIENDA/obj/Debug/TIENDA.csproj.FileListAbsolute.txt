@@ -39,3 +39,87 @@ C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.exe
 C:\Users\davp9\OneDrive\Escritorio\TiendaProyecto\TIENDA\TIENDA\obj\Debug\TIENDA.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\TIENDA.exe.config
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\TIENDA.exe
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\TIENDA.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\DataManager.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\General.exe
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\Reporte.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\SessionManager.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\stdole.dll
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\DataManager.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\General.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\General.exe.config
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\Reporte.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\bin\Debug\SessionManager.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.AssemblyReference.cache
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Login.resources
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Main.resources
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Splash.resources
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.Properties.Resources.resources
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.GenerateResource.cache
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CoreCompileInputs.cache
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.exe
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.pdb
+C:\Users\Mahico\Documents\ENTORNO DE PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.ConfigForm.resources
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\TIENDA.exe.config
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\TIENDA.exe
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\TIENDA.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\DataManager.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\General.exe
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\Reporte.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\SessionManager.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\stdole.dll
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\DataManager.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\General.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\General.exe.config
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\Reporte.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\bin\Debug\SessionManager.pdb
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.AssemblyReference.cache
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.ConfigForm.resources
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Login.resources
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Main.resources
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.GUI.Splash.resources
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.Properties.Resources.resources
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.GenerateResource.cache
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CoreCompileInputs.cache
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.csproj.CopyComplete
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.exe
+C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\TIENDA\obj\Debug\TIENDA.pdb
