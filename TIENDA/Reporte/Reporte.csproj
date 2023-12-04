@@ -72,10 +72,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Productos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\Proveedores.cs">
+      <DependentUpon>Proveedores.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\Proveedores.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Proveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\ReporteDeVentasPorOpciones.cs">
+      <DependentUpon>ReporteDeVentasPorOpciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\ReporteDeVentasPorOpciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDeVentasPorOpciones.xsd</DependentUpon>
     </Compile>
     <Compile Include="DAT\Ticket.cs">
       <DependentUpon>Ticket.xsd</DependentUpon>
@@ -126,7 +137,18 @@
     <Compile Include="GUI\visorUsuario.Designer.cs">
       <DependentUpon>visorUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\VisorVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorVenta.Designer.cs">
+      <DependentUpon>VisorVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="REP\Clientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,6 +185,12 @@
       <DependentUpon>Usuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REP\Ventas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ventas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUI\visorClientes.resx">
@@ -182,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\visorUsuario.resx">
       <DependentUpon>visorUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VisorVenta.resx">
+      <DependentUpon>VisorVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\Clientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -207,8 +238,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Usuarios.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REP\Ventas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Ventas.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DAT\Clientes.xsc">
       <DependentUpon>Clientes.xsd</DependentUpon>
     </None>
@@ -253,6 +289,17 @@
     <None Include="DAT\Proveedores.xss">
       <DependentUpon>Proveedores.xsd</DependentUpon>
     </None>
+    <None Include="DAT\ReporteDeVentasPorOpciones.xsc">
+      <DependentUpon>ReporteDeVentasPorOpciones.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\ReporteDeVentasPorOpciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteDeVentasPorOpciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\ReporteDeVentasPorOpciones.xss">
+      <DependentUpon>ReporteDeVentasPorOpciones.xsd</DependentUpon>
+    </None>
     <None Include="DAT\Ticket.xsc">
       <DependentUpon>Ticket.xsd</DependentUpon>
     </None>
@@ -274,6 +321,10 @@
     </None>
     <None Include="DAT\Usuarios.xss">
       <DependentUpon>Usuarios.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

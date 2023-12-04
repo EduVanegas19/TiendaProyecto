@@ -43,6 +43,7 @@ namespace Reporte.GUI
             this.crvVisor.Size = new System.Drawing.Size(1211, 603);
             this.crvVisor.TabIndex = 0;
             this.crvVisor.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crvVisor.Load += new System.EventHandler(this.crvVisor_Load);
             // 
             // visorClientes
             // 

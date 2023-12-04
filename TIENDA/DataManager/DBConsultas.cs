@@ -67,22 +67,53 @@ namespace DataManager
 
             return Resultado;
         }
-        public static DataTable LISTARVENTAOPCION(int pIdOrden)
+        public static DataTable LISTARVENTAOPCION(int pIdOrden, DateTime? pfechaSeleccionada)
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"exec LISTARVENTAOPCION " + pIdOrden + ";";
-            DBOperacion Consultor = new DBOperacion();
+
             try
             {
-                Resultado = Consultor.Consultar(Sentencia);
+                using (SqlConnection conexion = new SqlConnection("Data Source=alfredserver.com;Initial Catalog=Tienda;User ID=OscarAppUser;Password=OQl&@%(R"))
+                {
+                    using (SqlCommand comando = new SqlCommand("LISTARVENTAOPCION", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+
+                        // Agregando parámetros de forma segura
+                        comando.Parameters.Add(new SqlParameter("@opcion", pIdOrden));
+
+                        if (pfechaSeleccionada.HasValue)
+                        {
+                            comando.Parameters.Add(new SqlParameter("@FechaEspecifica", pfechaSeleccionada.Value));
+                        }
+                        else
+                        {
+                            comando.Parameters.Add(new SqlParameter("@FechaEspecifica", DBNull.Value));
+                        }
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(comando))
+                        {
+                            adapter.Fill(Resultado);
+                        }
+                    }
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                // Manejo adecuado de excepciones
+                // Por ejemplo, registrando la excepción
+                LogError(ex);
                 Resultado = new DataTable();
             }
 
             return Resultado;
         }
+
+        private static void LogError(Exception ex)
+        {
+            throw new NotImplementedException();
+        }
+
         public static DataTable LISTARCLIENTEOPCION(int pIdOrden)
         {
             DataTable Resultado = new DataTable();
