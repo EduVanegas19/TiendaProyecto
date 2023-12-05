@@ -32,8 +32,6 @@ namespace General.GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionVenta));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFechaEspecial = new System.Windows.Forms.TextBox();
             this.cbbOrdenar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgfactura = new System.Windows.Forms.DataGridView();
@@ -47,7 +45,6 @@ namespace General.GUI
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
-<<<<<<< Updated upstream
             this.id_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,9 +58,6 @@ namespace General.GUI
             this.tipo_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
-            this.lblFechaEspecial = new System.Windows.Forms.Label();
->>>>>>> Stashed changes
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgfactura)).BeginInit();
             this.panel2.SuspendLayout();
@@ -88,39 +82,15 @@ namespace General.GUI
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.lblFechaEspecial);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtFechaEspecial);
             this.panel1.Controls.Add(this.cbbOrdenar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtgfactura);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBuscar);
-<<<<<<< Updated upstream
             this.panel1.Location = new System.Drawing.Point(2, 58);
-=======
-            this.panel1.Location = new System.Drawing.Point(3, 71);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> Stashed changes
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(787, 406);
             this.panel1.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            // 
-            // txtFechaEspecial
-            // 
-            this.txtFechaEspecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaEspecial.Location = new System.Drawing.Point(620, 22);
-            this.txtFechaEspecial.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFechaEspecial.Name = "txtFechaEspecial";
-            this.txtFechaEspecial.Size = new System.Drawing.Size(156, 23);
-            this.txtFechaEspecial.TabIndex = 15;
             // 
             // cbbOrdenar
             // 
@@ -129,25 +99,13 @@ namespace General.GUI
             this.cbbOrdenar.Items.AddRange(new object[] {
             "Ultimo Agregado",
             "Primero Agregado",
-<<<<<<< Updated upstream
             "A - Z",
             "Z - A"});
             this.cbbOrdenar.Location = new System.Drawing.Point(668, 16);
             this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(2);
-=======
-            "Fecha Màs Reciente",
-            "Fecha Màs Antigua",
-            "Ultima Semana",
-            "Ultimo Mes",
-            "UItimo Año",
-            "Fecha Especial"});
-            this.cbbOrdenar.Location = new System.Drawing.Point(891, 20);
-            this.cbbOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> Stashed changes
             this.cbbOrdenar.Name = "cbbOrdenar";
             this.cbbOrdenar.Size = new System.Drawing.Size(92, 21);
             this.cbbOrdenar.TabIndex = 14;
-            this.cbbOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbbOrdenar_SelectedIndexChanged);
             this.cbbOrdenar.SelectedValueChanged += new System.EventHandler(this.cbbOrdenar_SelectedValueChanged);
             // 
             // label3
@@ -182,12 +140,7 @@ namespace General.GUI
             this.tipo_pago,
             this.NombreCompleto,
             this.cliente});
-<<<<<<< Updated upstream
             this.dtgfactura.Location = new System.Drawing.Point(22, 43);
-=======
-            this.dtgfactura.Location = new System.Drawing.Point(29, 53);
-            this.dtgfactura.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> Stashed changes
             this.dtgfactura.MultiSelect = false;
             this.dtgfactura.Name = "dtgfactura";
             this.dtgfactura.ReadOnly = true;
@@ -417,136 +370,6 @@ namespace General.GUI
             this.cliente.ReadOnly = true;
             this.cliente.Width = 125;
             // 
-<<<<<<< Updated upstream
-=======
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Digite aqui para buscar:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(225, 20);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(156, 23);
-            this.txtBuscar.TabIndex = 6;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Controls.Add(this.frmCrearReporte);
-            this.panel2.Controls.Add(this.btnAgregar);
-            this.panel2.Controls.Add(this.btnEliminar);
-            this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(1053, 71);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(93, 497);
-            this.panel2.TabIndex = 14;
-            // 
-            // frmCrearReporte
-            // 
-            this.frmCrearReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.frmCrearReporte.Image = ((System.Drawing.Image)(resources.GetObject("frmCrearReporte.Image")));
-            this.frmCrearReporte.Location = new System.Drawing.Point(12, 341);
-            this.frmCrearReporte.Margin = new System.Windows.Forms.Padding(4);
-            this.frmCrearReporte.Name = "frmCrearReporte";
-            this.frmCrearReporte.Size = new System.Drawing.Size(67, 62);
-            this.frmCrearReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.frmCrearReporte.TabIndex = 12;
-            this.frmCrearReporte.TabStop = false;
-            this.frmCrearReporte.Click += new System.EventHandler(this.frmCrearReporte_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(13, 53);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(67, 62);
-            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.TabStop = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(12, 133);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(67, 62);
-            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.TabStop = false;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(13, 428);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(67, 58);
-            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.TabStop = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblUsuario,
-            this.lblRol});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 562);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1148, 30);
-            this.statusStrip1.TabIndex = 15;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(75, 24);
-            this.lblUsuario.Text = "USUARIO";
-            // 
-            // lblRol
-            // 
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(36, 24);
-            this.lblRol.Text = "ROL";
-            // 
-            // lblFechaEspecial
-            // 
-            this.lblFechaEspecial.AutoSize = true;
-            this.lblFechaEspecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEspecial.Location = new System.Drawing.Point(429, 23);
-            this.lblFechaEspecial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechaEspecial.Name = "lblFechaEspecial";
-            this.lblFechaEspecial.Size = new System.Drawing.Size(183, 17);
-            this.lblFechaEspecial.TabIndex = 16;
-            this.lblFechaEspecial.Text = "Digite la fecha especial:";
-            this.lblFechaEspecial.Click += new System.EventHandler(this.label4_Click);
-            // 
->>>>>>> Stashed changes
             // frmGestionVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,12 +431,5 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
-<<<<<<< Updated upstream
-=======
-        private System.Windows.Forms.PictureBox frmCrearReporte;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFechaEspecial;
-        private System.Windows.Forms.Label lblFechaEspecial;
->>>>>>> Stashed changes
     }
 }

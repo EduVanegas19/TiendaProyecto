@@ -40,13 +40,6 @@ namespace Reporte.GUI
             
         }
 
-<<<<<<< Updated upstream
         
-=======
-        private void crvVisor_Load(object sender, EventArgs e)
-        {
-
-        }
->>>>>>> Stashed changes
     }
 }
