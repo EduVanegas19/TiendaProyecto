@@ -21,14 +21,37 @@ namespace General.GUI
         public frmGestionVenta()
         {
             InitializeComponent();
+            txtFechaEspecial.KeyPress += new KeyPressEventHandler(txtFechaEspecial_KeyPress);
+        }
+        // Evento KeyPress para el campo de texto
+        private void txtFechaEspecial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && cbbOrdenar.SelectedIndex + 1 == 8)
+            {
+                DateTime? pfecha = ObtenerFechaDigitada();
+                if (pfecha != null)
+                {
+                    try
+                    {
+                        DataTable factura = DataManager.DBConsultas.LISTARVENTAOPCION(8, pfecha);
+                        dtgfactura.AutoGenerateColumns = false;
+                        dtgfactura.DataSource = factura;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
         private void CargarDatos()
         {
             DataTable factura = new DataTable();
             int pId = 2;
+            DateTime? pfecha = null;
             try
             {
-                factura = DataManager.DBConsultas.LISTARVENTAOPCION(pId);
+                factura = DataManager.DBConsultas.LISTARVENTAOPCION(pId, pfecha);
                 dtgfactura.AutoGenerateColumns = false;
                 dtgfactura.DataSource = factura;
             }
@@ -40,22 +63,61 @@ namespace General.GUI
         private void CargarOrden()
         {
             DataTable factura = new DataTable();
-            //le digo que dependiendo de la opcion que se seleccione se muestre en orden correspondiente
             int pId = cbbOrdenar.SelectedIndex + 1;
-            try
-            {
-                factura = DataManager.DBConsultas.LISTARVENTAOPCION(pId);
-                dtgfactura.AutoGenerateColumns = false;
-                dtgfactura.DataSource = factura;
-            }
-            catch (Exception)
-            {
 
+            lblFechaEspecial.Visible = pId == 8;
+            txtFechaEspecial.Visible = pId == 8;
+
+            if (pId != 8)
+            {
+                try
+                {
+                    factura = DataManager.DBConsultas.LISTARVENTAOPCION(pId, null);
+                    dtgfactura.AutoGenerateColumns = false;
+                    dtgfactura.DataSource = factura;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            // No se maneja aquí la opción 8, se deja para el evento KeyPress de txtFechaEspecial
+        }
+
+
+        private DateTime? ObtenerFechaDigitada()
+        {
+            // Implementa la lógica para obtener la fecha digitada
+            DateTime fechaDigitada;
+            if (DateTime.TryParse(txtFechaEspecial.Text, out fechaDigitada))
+            {
+                // Formatear la fecha en un formato compatible con SQL (por ejemplo, yyyy-MM-dd)
+                string fechaFormateada = fechaDigitada.ToString("dd-MM-yyyy");
+
+                // Convertir la fecha formateada de nuevo a DateTime
+                if (DateTime.TryParse(fechaFormateada, out DateTime fechaFormateadaDateTime))
+                {
+                    return fechaFormateadaDateTime;
+                }
+                else
+                {
+                    // Manejar si la conversión no es exitosa (esto debería ser poco probable)
+                    MessageBox.Show("Error al formatear la fecha", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+            else
+            {
+                // Si la fecha no es válida, podrías manejarlo de alguna manera, como mostrar un mensaje al usuario
+                MessageBox.Show("Fecha no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
 
         private void frmGestionVenta_Load(object sender, EventArgs e)
         {
+            lblFechaEspecial.Visible = false;
+            txtFechaEspecial.Visible = false;
             CargarDatos();
             lblUsuario.Text = Session.Instancia.usuario;
             lblRol.Text = Session.Instancia.rol;
@@ -112,12 +174,37 @@ namespace General.GUI
 
         private void frmCrearReporte_Click(object sender, EventArgs e)
         {
-            Reporte.GUI.visorUsuario f = new Reporte.GUI.visorUsuario();
-            this.Close();
-            f.ShowDialog();
+            int pIdOrden = cbbOrdenar.SelectedIndex + 1;
+            DateTime? pfechaSeleccionada = null;
+
+            if (pIdOrden == 8)
+            {
+                pfechaSeleccionada = ObtenerFechaDigitada();
+                if (pfechaSeleccionada == null)
+                {
+                    MessageBox.Show("Fecha no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Salir del método si la fecha no es válida
+                }
+            }
+
+            Reporte.GUI.VisorVenta visor = new Reporte.GUI.VisorVenta(pIdOrden, pfechaSeleccionada);
+            this.Close(); // Cierra el formulario actual
+            visor.ShowDialog(); // Muestra el nuevo formulario
         }
 
+
+
         private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbOrdenar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

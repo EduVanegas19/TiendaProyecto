@@ -25,3 +25,11 @@ C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\DataManager\obj\Debug\DataManag
 C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\DataManager\obj\Debug\DataManager.csproj.CopyComplete
 C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\DataManager\obj\Debug\DataManager.dll
 C:\Users\Max\Documents\ENTORNO-DE-PRUEBAS\TIENDA\DataManager\obj\Debug\DataManager.pdb
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\bin\Debug\DataManager.dll
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\bin\Debug\DataManager.pdb
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\bin\Debug\System.Data.Common.dll
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\bin\Debug\System.Data.SqlClient.dll
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\DataManager.csproj.AssemblyReference.cache
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\DataManager.csproj.CoreCompileInputs.cache
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\DataManager.dll
+C:\Users\SANDOVAL\Desktop\ADS\TiendaProyectoEdu\TIENDA\DataManager\obj\Debug\DataManager.pdb
